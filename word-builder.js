@@ -45,6 +45,8 @@
   let activityIndex = 0;
   let selectedParts = [];
   let mistakes = 0;
+  let incorrectWords = new Set();
+  let currentWordHadMistake = false;
   let completed = false;
 
   function getProgress() {
@@ -162,6 +164,8 @@
     activities = shuffle(available.filter(a => a.level === level));
     activityIndex = 0;
     mistakes = 0;
+    incorrectWords = new Set();
+    currentWordHadMistake = false;
     renderActivity();
   }
 
@@ -175,6 +179,7 @@
     }
 
     completed = false;
+    currentWordHadMistake = false;
     selectedParts = [];
 
     area.innerHTML = `
@@ -236,6 +241,8 @@
 
           if (piece.index !== selectedParts.length) {
             mistakes++;
+            currentWordHadMistake = true;
+            incorrectWords.add(activityIndex);
             feedback.textContent = encourage(false);
             effect("wrong");
             return;
@@ -294,7 +301,9 @@
 
   function finishLevel() {
     const area = createActivityArea();
-    const passed = mistakes === 0 && activities.length >= 5;
+    const correctWords = activities.length - incorrectWords.size;
+    const masteryPercent = Math.round((correctWords / activities.length) * 100);
+    const passed = activities.length >= 5 && masteryPercent >= 80;
 
     if (passed) {
       saveLevel(selectedLevel);
@@ -306,7 +315,10 @@
       <p>${passed
         ? "تم فتح المستوى التالي إن كان متاحًا."
         : "يمكنك إعادة التدريب لتحسين مستواك."}</p>
+      <p>نسبة الإتقان: ${masteryPercent}%</p>
+      <p>الكلمات الصحيحة من أول محاولة: ${correctWords} من ${activities.length}</p>
       <p>عدد الأخطاء أثناء التدريب: ${mistakes}</p>
+      <button id="reviewWrong" class="sound-button">راجع الكلمات التي أخطأت فيها</button>
       <button id="repeatLevel" class="primary-button">إعادة المستوى</button>
       <button id="backLevels" class="sound-button">المستويات</button>
     `;
@@ -316,6 +328,24 @@
         LETTER_ORDER.indexOf(a.letter) <=
         LETTER_ORDER.indexOf(selectedLetter)
       ));
+
+    document.getElementById("reviewWrong").onclick = () => {
+      if (incorrectWords.size === 0) {
+        alert("أحسنت! لا توجد كلمات خاطئة للمراجعة.");
+        return;
+      }
+
+      const wrongActivities = activities.filter(
+        (_, index) => incorrectWords.has(index)
+      );
+
+      activities = wrongActivities;
+      activityIndex = 0;
+      mistakes = 0;
+      incorrectWords = new Set();
+      currentWordHadMistake = false;
+      renderActivity();
+    };
 
     document.getElementById("backLevels").onclick = showLevels;
   }

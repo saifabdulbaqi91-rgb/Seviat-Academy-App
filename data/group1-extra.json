@@ -1,0 +1,855 @@
+{
+  "version": 1,
+  "unit": 1,
+  "title": "بنك أسئلة المجموعة الأولى",
+  "letters": [
+    "م",
+    "ب",
+    "ل",
+    "د",
+    "ن",
+    "ر"
+  ],
+  "questions": [
+    {
+      "id": "g1-0628-001",
+      "skill": "letter-shape",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف الباء من بين الحروف.",
+      "options": [
+        "ب",
+        "م",
+        "ل"
+      ],
+      "answer": "ب",
+      "letter": "ب",
+      "unit": 1
+    },
+    {
+      "id": "g1-0628-002",
+      "skill": "letter-shape",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف الباء من بين الحروف.",
+      "options": [
+        "ب",
+        "ل",
+        "د"
+      ],
+      "answer": "ب",
+      "letter": "ب",
+      "unit": 1
+    },
+    {
+      "id": "g1-0628-003",
+      "skill": "letter-shape",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف الباء من بين الحروف.",
+      "options": [
+        "ب",
+        "د",
+        "ن"
+      ],
+      "answer": "ب",
+      "letter": "ب",
+      "unit": 1
+    },
+    {
+      "id": "g1-0628-004",
+      "skill": "letter-shape",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف الباء من بين الحروف.",
+      "options": [
+        "ب",
+        "ن",
+        "ر"
+      ],
+      "answer": "ب",
+      "letter": "ب",
+      "unit": 1
+    },
+    {
+      "id": "g1-0628-005",
+      "skill": "letter-shape",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف الباء من بين الحروف.",
+      "options": [
+        "ب",
+        "ر",
+        "م"
+      ],
+      "answer": "ب",
+      "letter": "ب",
+      "unit": 1
+    },
+    {
+      "id": "g1-0628-006",
+      "skill": "short-vowels",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف الباء وعليه فتحة.",
+      "options": [
+        "بَ",
+        "بِ",
+        "بُ"
+      ],
+      "answer": "بَ",
+      "letter": "ب",
+      "unit": 1
+    },
+    {
+      "id": "g1-0628-011",
+      "skill": "short-vowels",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف الباء وعليه كسرة.",
+      "options": [
+        "بَ",
+        "بِ",
+        "بُ"
+      ],
+      "answer": "بِ",
+      "letter": "ب",
+      "unit": 1
+    },
+    {
+      "id": "g1-0628-016",
+      "skill": "short-vowels",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف الباء وعليه ضمة.",
+      "options": [
+        "بَ",
+        "بِ",
+        "بُ"
+      ],
+      "answer": "بُ",
+      "letter": "ب",
+      "unit": 1
+    },
+    {
+      "id": "g1-0628-021",
+      "skill": "sukoon",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف الباء وعليه سكون.",
+      "options": [
+        "بْ",
+        "بَ",
+        "بُ"
+      ],
+      "answer": "بْ",
+      "letter": "ب",
+      "unit": 1
+    },
+    {
+      "id": "g1-0628-026",
+      "skill": "long-vowels",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف الباء مع مد الألف.",
+      "options": [
+        "با",
+        "بي",
+        "بو"
+      ],
+      "answer": "با",
+      "letter": "ب",
+      "unit": 1
+    },
+    {
+      "id": "g1-0628-031",
+      "skill": "long-vowels",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف الباء مع مد الياء.",
+      "options": [
+        "با",
+        "بي",
+        "بو"
+      ],
+      "answer": "بي",
+      "letter": "ب",
+      "unit": 1
+    },
+    {
+      "id": "g1-0628-036",
+      "skill": "long-vowels",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف الباء مع مد الواو.",
+      "options": [
+        "با",
+        "بي",
+        "بو"
+      ],
+      "answer": "بو",
+      "letter": "ب",
+      "unit": 1
+    },
+    {
+      "id": "g1-0644-041",
+      "skill": "letter-shape",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف اللام من بين الحروف.",
+      "options": [
+        "ل",
+        "م",
+        "ب"
+      ],
+      "answer": "ل",
+      "letter": "ل",
+      "unit": 1
+    },
+    {
+      "id": "g1-0644-042",
+      "skill": "letter-shape",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف اللام من بين الحروف.",
+      "options": [
+        "ل",
+        "ب",
+        "د"
+      ],
+      "answer": "ل",
+      "letter": "ل",
+      "unit": 1
+    },
+    {
+      "id": "g1-0644-043",
+      "skill": "letter-shape",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف اللام من بين الحروف.",
+      "options": [
+        "ل",
+        "د",
+        "ن"
+      ],
+      "answer": "ل",
+      "letter": "ل",
+      "unit": 1
+    },
+    {
+      "id": "g1-0644-044",
+      "skill": "letter-shape",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف اللام من بين الحروف.",
+      "options": [
+        "ل",
+        "ن",
+        "ر"
+      ],
+      "answer": "ل",
+      "letter": "ل",
+      "unit": 1
+    },
+    {
+      "id": "g1-0644-045",
+      "skill": "letter-shape",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف اللام من بين الحروف.",
+      "options": [
+        "ل",
+        "ر",
+        "م"
+      ],
+      "answer": "ل",
+      "letter": "ل",
+      "unit": 1
+    },
+    {
+      "id": "g1-0644-046",
+      "skill": "short-vowels",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف اللام وعليه فتحة.",
+      "options": [
+        "لَ",
+        "لِ",
+        "لُ"
+      ],
+      "answer": "لَ",
+      "letter": "ل",
+      "unit": 1
+    },
+    {
+      "id": "g1-0644-051",
+      "skill": "short-vowels",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف اللام وعليه كسرة.",
+      "options": [
+        "لَ",
+        "لِ",
+        "لُ"
+      ],
+      "answer": "لِ",
+      "letter": "ل",
+      "unit": 1
+    },
+    {
+      "id": "g1-0644-056",
+      "skill": "short-vowels",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف اللام وعليه ضمة.",
+      "options": [
+        "لَ",
+        "لِ",
+        "لُ"
+      ],
+      "answer": "لُ",
+      "letter": "ل",
+      "unit": 1
+    },
+    {
+      "id": "g1-0644-061",
+      "skill": "sukoon",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف اللام وعليه سكون.",
+      "options": [
+        "لْ",
+        "لَ",
+        "لُ"
+      ],
+      "answer": "لْ",
+      "letter": "ل",
+      "unit": 1
+    },
+    {
+      "id": "g1-0644-066",
+      "skill": "long-vowels",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف اللام مع مد الألف.",
+      "options": [
+        "لا",
+        "لي",
+        "لو"
+      ],
+      "answer": "لا",
+      "letter": "ل",
+      "unit": 1
+    },
+    {
+      "id": "g1-0644-071",
+      "skill": "long-vowels",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف اللام مع مد الياء.",
+      "options": [
+        "لا",
+        "لي",
+        "لو"
+      ],
+      "answer": "لي",
+      "letter": "ل",
+      "unit": 1
+    },
+    {
+      "id": "g1-0644-076",
+      "skill": "long-vowels",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف اللام مع مد الواو.",
+      "options": [
+        "لا",
+        "لي",
+        "لو"
+      ],
+      "answer": "لو",
+      "letter": "ل",
+      "unit": 1
+    },
+    {
+      "id": "g1-062f-081",
+      "skill": "letter-shape",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف الدال من بين الحروف.",
+      "options": [
+        "د",
+        "م",
+        "ب"
+      ],
+      "answer": "د",
+      "letter": "د",
+      "unit": 1
+    },
+    {
+      "id": "g1-062f-082",
+      "skill": "letter-shape",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف الدال من بين الحروف.",
+      "options": [
+        "د",
+        "ب",
+        "ل"
+      ],
+      "answer": "د",
+      "letter": "د",
+      "unit": 1
+    },
+    {
+      "id": "g1-062f-083",
+      "skill": "letter-shape",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف الدال من بين الحروف.",
+      "options": [
+        "د",
+        "ل",
+        "ن"
+      ],
+      "answer": "د",
+      "letter": "د",
+      "unit": 1
+    },
+    {
+      "id": "g1-062f-084",
+      "skill": "letter-shape",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف الدال من بين الحروف.",
+      "options": [
+        "د",
+        "ن",
+        "ر"
+      ],
+      "answer": "د",
+      "letter": "د",
+      "unit": 1
+    },
+    {
+      "id": "g1-062f-085",
+      "skill": "letter-shape",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف الدال من بين الحروف.",
+      "options": [
+        "د",
+        "ر",
+        "م"
+      ],
+      "answer": "د",
+      "letter": "د",
+      "unit": 1
+    },
+    {
+      "id": "g1-062f-086",
+      "skill": "short-vowels",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف الدال وعليه فتحة.",
+      "options": [
+        "دَ",
+        "دِ",
+        "دُ"
+      ],
+      "answer": "دَ",
+      "letter": "د",
+      "unit": 1
+    },
+    {
+      "id": "g1-062f-091",
+      "skill": "short-vowels",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف الدال وعليه كسرة.",
+      "options": [
+        "دَ",
+        "دِ",
+        "دُ"
+      ],
+      "answer": "دِ",
+      "letter": "د",
+      "unit": 1
+    },
+    {
+      "id": "g1-062f-096",
+      "skill": "short-vowels",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف الدال وعليه ضمة.",
+      "options": [
+        "دَ",
+        "دِ",
+        "دُ"
+      ],
+      "answer": "دُ",
+      "letter": "د",
+      "unit": 1
+    },
+    {
+      "id": "g1-062f-101",
+      "skill": "sukoon",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف الدال وعليه سكون.",
+      "options": [
+        "دْ",
+        "دَ",
+        "دُ"
+      ],
+      "answer": "دْ",
+      "letter": "د",
+      "unit": 1
+    },
+    {
+      "id": "g1-062f-106",
+      "skill": "long-vowels",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف الدال مع مد الألف.",
+      "options": [
+        "دا",
+        "دي",
+        "دو"
+      ],
+      "answer": "دا",
+      "letter": "د",
+      "unit": 1
+    },
+    {
+      "id": "g1-062f-111",
+      "skill": "long-vowels",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف الدال مع مد الياء.",
+      "options": [
+        "دا",
+        "دي",
+        "دو"
+      ],
+      "answer": "دي",
+      "letter": "د",
+      "unit": 1
+    },
+    {
+      "id": "g1-062f-116",
+      "skill": "long-vowels",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف الدال مع مد الواو.",
+      "options": [
+        "دا",
+        "دي",
+        "دو"
+      ],
+      "answer": "دو",
+      "letter": "د",
+      "unit": 1
+    },
+    {
+      "id": "g1-0646-121",
+      "skill": "letter-shape",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف النون من بين الحروف.",
+      "options": [
+        "ن",
+        "م",
+        "ب"
+      ],
+      "answer": "ن",
+      "letter": "ن",
+      "unit": 1
+    },
+    {
+      "id": "g1-0646-122",
+      "skill": "letter-shape",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف النون من بين الحروف.",
+      "options": [
+        "ن",
+        "ب",
+        "ل"
+      ],
+      "answer": "ن",
+      "letter": "ن",
+      "unit": 1
+    },
+    {
+      "id": "g1-0646-123",
+      "skill": "letter-shape",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف النون من بين الحروف.",
+      "options": [
+        "ن",
+        "ل",
+        "د"
+      ],
+      "answer": "ن",
+      "letter": "ن",
+      "unit": 1
+    },
+    {
+      "id": "g1-0646-124",
+      "skill": "letter-shape",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف النون من بين الحروف.",
+      "options": [
+        "ن",
+        "د",
+        "ر"
+      ],
+      "answer": "ن",
+      "letter": "ن",
+      "unit": 1
+    },
+    {
+      "id": "g1-0646-125",
+      "skill": "letter-shape",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف النون من بين الحروف.",
+      "options": [
+        "ن",
+        "ر",
+        "م"
+      ],
+      "answer": "ن",
+      "letter": "ن",
+      "unit": 1
+    },
+    {
+      "id": "g1-0646-126",
+      "skill": "short-vowels",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف النون وعليه فتحة.",
+      "options": [
+        "نَ",
+        "نِ",
+        "نُ"
+      ],
+      "answer": "نَ",
+      "letter": "ن",
+      "unit": 1
+    },
+    {
+      "id": "g1-0646-131",
+      "skill": "short-vowels",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف النون وعليه كسرة.",
+      "options": [
+        "نَ",
+        "نِ",
+        "نُ"
+      ],
+      "answer": "نِ",
+      "letter": "ن",
+      "unit": 1
+    },
+    {
+      "id": "g1-0646-136",
+      "skill": "short-vowels",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف النون وعليه ضمة.",
+      "options": [
+        "نَ",
+        "نِ",
+        "نُ"
+      ],
+      "answer": "نُ",
+      "letter": "ن",
+      "unit": 1
+    },
+    {
+      "id": "g1-0646-141",
+      "skill": "sukoon",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف النون وعليه سكون.",
+      "options": [
+        "نْ",
+        "نَ",
+        "نُ"
+      ],
+      "answer": "نْ",
+      "letter": "ن",
+      "unit": 1
+    },
+    {
+      "id": "g1-0646-146",
+      "skill": "long-vowels",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف النون مع مد الألف.",
+      "options": [
+        "نا",
+        "ني",
+        "نو"
+      ],
+      "answer": "نا",
+      "letter": "ن",
+      "unit": 1
+    },
+    {
+      "id": "g1-0646-151",
+      "skill": "long-vowels",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف النون مع مد الياء.",
+      "options": [
+        "نا",
+        "ني",
+        "نو"
+      ],
+      "answer": "ني",
+      "letter": "ن",
+      "unit": 1
+    },
+    {
+      "id": "g1-0646-156",
+      "skill": "long-vowels",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف النون مع مد الواو.",
+      "options": [
+        "نا",
+        "ني",
+        "نو"
+      ],
+      "answer": "نو",
+      "letter": "ن",
+      "unit": 1
+    },
+    {
+      "id": "g1-0631-161",
+      "skill": "letter-shape",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف الراء من بين الحروف.",
+      "options": [
+        "ر",
+        "م",
+        "ب"
+      ],
+      "answer": "ر",
+      "letter": "ر",
+      "unit": 1
+    },
+    {
+      "id": "g1-0631-162",
+      "skill": "letter-shape",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف الراء من بين الحروف.",
+      "options": [
+        "ر",
+        "ب",
+        "ل"
+      ],
+      "answer": "ر",
+      "letter": "ر",
+      "unit": 1
+    },
+    {
+      "id": "g1-0631-163",
+      "skill": "letter-shape",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف الراء من بين الحروف.",
+      "options": [
+        "ر",
+        "ل",
+        "د"
+      ],
+      "answer": "ر",
+      "letter": "ر",
+      "unit": 1
+    },
+    {
+      "id": "g1-0631-164",
+      "skill": "letter-shape",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف الراء من بين الحروف.",
+      "options": [
+        "ر",
+        "د",
+        "ن"
+      ],
+      "answer": "ر",
+      "letter": "ر",
+      "unit": 1
+    },
+    {
+      "id": "g1-0631-165",
+      "skill": "letter-shape",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف الراء من بين الحروف.",
+      "options": [
+        "ر",
+        "ن",
+        "م"
+      ],
+      "answer": "ر",
+      "letter": "ر",
+      "unit": 1
+    },
+    {
+      "id": "g1-0631-166",
+      "skill": "short-vowels",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف الراء وعليه فتحة.",
+      "options": [
+        "رَ",
+        "رِ",
+        "رُ"
+      ],
+      "answer": "رَ",
+      "letter": "ر",
+      "unit": 1
+    },
+    {
+      "id": "g1-0631-171",
+      "skill": "short-vowels",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف الراء وعليه كسرة.",
+      "options": [
+        "رَ",
+        "رِ",
+        "رُ"
+      ],
+      "answer": "رِ",
+      "letter": "ر",
+      "unit": 1
+    },
+    {
+      "id": "g1-0631-176",
+      "skill": "short-vowels",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف الراء وعليه ضمة.",
+      "options": [
+        "رَ",
+        "رِ",
+        "رُ"
+      ],
+      "answer": "رُ",
+      "letter": "ر",
+      "unit": 1
+    },
+    {
+      "id": "g1-0631-181",
+      "skill": "sukoon",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف الراء وعليه سكون.",
+      "options": [
+        "رْ",
+        "رَ",
+        "رُ"
+      ],
+      "answer": "رْ",
+      "letter": "ر",
+      "unit": 1
+    },
+    {
+      "id": "g1-0631-186",
+      "skill": "long-vowels",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف الراء مع مد الألف.",
+      "options": [
+        "را",
+        "ري",
+        "رو"
+      ],
+      "answer": "را",
+      "letter": "ر",
+      "unit": 1
+    },
+    {
+      "id": "g1-0631-191",
+      "skill": "long-vowels",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف الراء مع مد الياء.",
+      "options": [
+        "را",
+        "ري",
+        "رو"
+      ],
+      "answer": "ري",
+      "letter": "ر",
+      "unit": 1
+    },
+    {
+      "id": "g1-0631-196",
+      "skill": "long-vowels",
+      "type": "multiple-choice",
+      "prompt": "اختر حرف الراء مع مد الواو.",
+      "options": [
+        "را",
+        "ري",
+        "رو"
+      ],
+      "answer": "رو",
+      "letter": "ر",
+      "unit": 1
+    }
+  ]
+}

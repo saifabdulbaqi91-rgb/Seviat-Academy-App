@@ -186,7 +186,8 @@ function renderLetterPicker() {
 
       button.addEventListener("click", () => {
         currentLetter = letter;
-        openLetterPractice();
+        window.location.hash = 'letter-' + encodeURIComponent(letter);
+        openLetterActivity();
       });
 
       grid.appendChild(button);
@@ -204,7 +205,46 @@ function renderLetterPicker() {
   area.scrollIntoView({ behavior: "smooth" });
 }
 
-function openLetterPractice() {
+function openLetterActivity() {
+  const area = createActivityArea();
+  area.innerHTML = `
+    <h2>حرف ${currentLetter}</h2>
+    <p>اختر نوع النشاط:</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin:20px 0">
+      <button id="startPractice" class="primary-button">📚 التدريب والتعلم</button>
+      <button id="startAssessment" class="primary-button">📝 الاختبار النهائي للحرف</button>
+      <button id="backToLetters" class="sound-button">العودة للحروف</button>
+    </div>
+  `;
+
+  document.getElementById("startPractice").onclick = openLetterPractice;
+  document.getElementById("startAssessment").onclick = openLetterAssessment;
+  document.getElementById("backToLetters").onclick = renderLetterPicker;
+  area.scrollIntoView({ behavior: "smooth" });
+}
+
+function openLetterAssessment() {
+  const letterQuestions = questionsData.questions.filter(
+    question => question.letter === currentLetter
+  );
+
+  if (letterQuestions.length < 5) {
+    showMessage(
+      "الاختبار غير متاح",
+      "لا توجد أسئلة كافية لتقييم هذا الحرف حاليا."
+    );
+    return;
+  }
+
+  quizMode = "assessment";
+  currentQuestions = shuffleArray(letterQuestions);
+  currentQuestionIndex = 0;
+  quizResults = [];
+  renderQuiz();
+}
+
+function openLegacyLetterPractice() {
+  quizMode = 'practice';
   const allQuestions = questionsData.questions;
 
   const letterQuestions = allQuestions.filter(
@@ -220,7 +260,7 @@ function openLetterPractice() {
   }
 
   currentQuestions = shuffleArray(letterQuestions);
-  currentQuestionIndex = 0;
+  currentQuestionIndex = 0;  quizResults = [];
 
   renderQuiz();
 }
@@ -236,13 +276,16 @@ function shuffleArray(items) {
   return result;
 }
 
+let quizResults = [];
+let quizMode = 'practice';
+
 function renderQuiz() {
   const area = createActivityArea();
   const question = currentQuestions[currentQuestionIndex];
 
   if (!question) {
     window.SeviatEffects?.play("complete");
-    showMessage("انتهى التدريب", "أحسنت يا بطل! انتهيت من التدريب.");
+    if (quizMode === "assessment") { showAssessmentResults(); } else { showMessage("انتهى التدريب", "أحسنت يا بطل! انتهيت من التدريب."); }
     return;
   }
 
@@ -319,18 +362,100 @@ function renderQuiz() {
   area.scrollIntoView({ behavior: "smooth" });
 }
 
+function showAssessmentResults() {
+  const area = createActivityArea();
+  const total = quizResults.length;
+  const correct = quizResults.filter(r => r.correct).length;
+  const wrong = quizResults.filter(r => !r.correct);
+  const percent = total ? Math.round(correct / total * 100) : 0;
+  const passed = total >= 5 && percent >= 80;
+
+  area.innerHTML = "";
+
+  const heading = document.createElement("h2");
+  heading.textContent = "📊 نتيجة الاختبار";
+
+  const summary = document.createElement("p");
+  summary.textContent =
+    `الإجابات الصحيحة: ${correct} من ${total} | الأخطاء: ${wrong.length} | نسبة الإتقان: ${percent}%`;
+
+  const status = document.createElement("h3");
+  status.textContent = passed
+    ? "🎉 أحسنت! اجتزت الاختبار."
+    : "تحتاج إلى مزيد من التدريب قبل اجتياز الاختبار.";
+
+  const review = document.createElement("div");
+  const title = document.createElement("h3");
+  title.textContent = "الأسئلة التي تحتاج مراجعة";
+  review.appendChild(title);
+
+  if (!wrong.length) {
+    const message = document.createElement("p");
+    message.textContent = "لا توجد إجابات خاطئة.";
+    review.appendChild(message);
+  }
+
+  wrong.forEach((result, index) => {
+    const question = currentQuestions.find(q => q.id === result.id);
+    const item = document.createElement("p");
+    item.textContent =
+      `${index + 1}. ${question?.prompt || "السؤال"} | إجابتك: ${result.answer} | الصحيح: ${result.expected}`;
+    review.appendChild(item);
+  });
+
+  const back = document.createElement("button");
+  back.className = "primary-button";
+  back.textContent = "العودة إلى الحروف";
+  back.onclick = renderLetterPicker;
+
+  area.append(heading, summary, status, review, back);
+  area.scrollIntoView({ behavior: "smooth" });
+}
+
 function checkAnswer(answer, selectedButton) {
   const question = currentQuestions[currentQuestionIndex];
   const feedback = document.getElementById("gameFeedback");
   const buttons = document.querySelectorAll("#answerOptions button");
   const next = document.getElementById("nextQuestion");
 
-  if (answer === question.answer) {
+  if (!question || !feedback || !next) return;
+
+  const isAssessment = quizMode === "assessment";
+  const alreadyAnswered = quizResults.some(r => r.id === question.id);
+
+  if (isAssessment && alreadyAnswered) return;
+
+  const isCorrect = answer === question.answer;
+
+  if (!alreadyAnswered) {
+    quizResults.push({
+      id: question.id,
+      correct: isCorrect,
+      answer: answer,
+      expected: question.answer
+    });
+  }
+
+  if (isAssessment) {
+    buttons.forEach(button => {
+      button.disabled = true;
+    });
+
+    selectedButton.style.background = isCorrect ? "#d8f7e8" : "#ffe0e0";
+
+    feedback.textContent = "تم تسجيل إجابتك. انتقل إلى السؤال التالي.";
+    window.SeviatEffects?.play(isCorrect ? "correct" : "wrong");
+    next.disabled = false;
+    return;
+  }
+
+  if (isCorrect) {
     buttons.forEach(button => {
       button.disabled = true;
       button.style.background = "#eaf4ff";
       button.style.borderColor = "#2878cf";
     });
+
     selectedButton.style.background = "#d8f7e8";
     feedback.textContent = "🎉 أحسنت يا بطل! إجابة صحيحة.";
     window.SeviatEffects?.play("correct");
@@ -349,14 +474,20 @@ function checkAnswer(answer, selectedButton) {
     feedback.textContent = "حاول مرة أخرى يا بطل!";
     window.SeviatEffects?.play("wrong");
     speak(window.SeviatGroup1?.randomPraise("wrong") || "حاول مرة أخرى يا بطل!");
-    next.disabled = true;
+    next.disabled = false;
   }
 
   document.getElementById("gameScore").textContent =
     "⭐ نقاطك: " + score;
 }
+
 function openStage(stage) {
   selectedStage = stage;
+
+  if (stage === "preparation") {
+    window.openPreparation();
+    return;
+  }
 
   if (stage === "letters") {
     renderLetterPicker();
@@ -386,7 +517,7 @@ function openStage(stage) {
 
     currentLetter = available[0].letter;
     currentQuestions = shuffleArray(available);
-    currentQuestionIndex = 0;
+    currentQuestionIndex = 0;    quizResults = [];
     renderQuiz();
     return;
   }
