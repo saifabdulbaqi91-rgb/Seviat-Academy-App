@@ -1,0 +1,23 @@
+﻿{
+  "version": 1,
+  "student": {
+    "id": "local-student",
+    "name": "",
+    "createdAt": null
+  },
+  "statistics": {
+    "totalPoints": 0,
+    "completedQuestions": 0,
+    "correctAnswers": 0,
+    "incorrectAnswers": 0
+  },
+  "preparation": {
+    "completedSkills": [],
+    "mastered": false
+  },
+  "letters": {},
+  "units": {},
+  "skillAttempts": {},
+  "achievements": [],
+  "lastActivity": null
+}

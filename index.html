@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173b70">
+  <meta name="description" content="أكاديمية سيفيات لتأسيس الأطفال في القراءة والكتابة العربية">
+  <title>أكاديمية سيفيات</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-logo">س</div>
+      <div>
+        <h1>أكاديمية سيفيات</h1>
+        <p>نتعلم ونبدع ونرتقي</p>
+      </div>
+    </div>
+    <button id="soundToggle" class="sound-button" type="button">🔊 الصوت</button>
+  </header>
+
+  <main class="container">
+    <section class="welcome">
+      <div>
+        <span class="welcome-label">رحلة التعلم الممتعة</span>
+        <h2>أهلًا بك في عالم الحروف!</h2>
+        <p>هيا نتعلم القراءة والكتابة من البداية، خطوة بخطوة.</p>
+        <button class="primary-button" id="startButton">ابدأ التعلم ←</button>
+      </div>
+      <div class="welcome-art" aria-hidden="true">أ ب ت</div>
+    </section>
+
+    <section class="progress-section">
+      <div class="section-heading">
+        <h2>رحلتك التعليمية</h2>
+        <span id="progressText">0% مكتمل</span>
+      </div>
+      <div class="progress-track">
+        <div id="progressBar"></div>
+      </div>
+      <p class="muted">كل خطوة صغيرة تقربك من إتقان القراءة.</p>
+    </section>
+
+    <section id="stages">
+      <div class="section-heading">
+        <h2>ماذا سنتعلم اليوم؟</h2>
+        <span class="section-icon">🌟</span>
+      </div>
+
+      <div class="stage-grid">
+        <button class="stage-card" data-stage="preparation">
+          <span class="stage-icon">✏️</span>
+          <strong>التهيئة والاستعداد</strong>
+          <small>التتبع والتمييز والانتباه</small>
+        </button>
+
+        <button class="stage-card" data-stage="letters">
+          <span class="stage-icon">🔤</span>
+          <strong>عالم الحروف</strong>
+          <small>أشكال الحروف وأصواتها</small>
+        </button>
+
+        <button class="stage-card" data-stage="movements">
+          <span class="stage-icon">🎵</span>
+          <strong>الحركات والمدود</strong>
+          <small>الفتحة والضمة والكسرة والسكون</small>
+        </button>
+
+        <button class="stage-card" data-stage="combination">
+          <span class="stage-icon">🧩</span>
+          <strong>تركيب الكلمات</strong>
+          <small>نجمع الحروف ونقرأ الكلمات</small>
+        </button>
+
+        <button class="stage-card" data-stage="writing">
+          <span class="stage-icon">🖍️</span>
+          <strong>الكتابة والتدريب</strong>
+          <small>نتدرب على الكتابة والتتبع</small>
+        </button>
+
+        <button class="stage-card" data-stage="games">
+          <span class="stage-icon">🏆</span>
+          <strong>الألعاب والتحديات</strong>
+          <small>نتعلم ونلعب ونكسب النجوم</small>
+        </button>
+      </div>
+    </section>
+
+    <section class="today-card">
+      <div>
+        <span class="welcome-label">تحدي اليوم</span>
+        <h2>هل أنت مستعد لاكتشاف حرف جديد؟</h2>
+        <p>ابدأ رحلتك واكتشف عالم اللغة العربية.</p>
+      </div>
+      <span class="today-star">⭐</span>
+    </section>
+  </main>
+
+  <footer>
+    <strong>أكاديمية سيفيات</strong>
+    <p>0531343626</p>
+    <small>التعلم رحلة ممتعة تبدأ بخطوة.</small>
+  </footer>
+
+  <script src="sounds/effects.js"></script><script src="app.js"></script>
+<script src="writing-board.js"></script>
+<script src="word-builder.js"></script>
+<script src="skill-menu.js"></script>
+<script src="group1-engine.js"></script>
+</body>
+</html>
+

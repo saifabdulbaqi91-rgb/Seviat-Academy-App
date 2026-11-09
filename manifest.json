@@ -1,0 +1,12 @@
+﻿{
+  "name": "أكاديمية سيفيات",
+  "short_name": "سيفيات",
+  "description": "تطبيق تفاعلي لتأسيس الأطفال في القراءة والكتابة العربية",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2878cf"
+}

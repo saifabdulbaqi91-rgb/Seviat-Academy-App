@@ -1,0 +1,12 @@
+﻿*.backup.js
+*.backup.json
+*.before-*.js
+*.before-*.json
+*.before-*.html
+*.py
+*.ps1
+*.zip
+__pycache__/
+.env
+.env.*
+node_modules/

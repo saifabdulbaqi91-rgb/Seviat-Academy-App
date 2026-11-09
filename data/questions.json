@@ -1,0 +1,378 @@
+{
+  "questions": [
+    {
+      "id": "meem-name-01",
+      "skill": "letter-sound",
+      "type": "multiple-choice",
+      "prompt": "المعلم يقول اسم الحرف: ميم. اختر الحرف الصحيح.",
+      "options": [
+        "م",
+        "ب",
+        "ل"
+      ],
+      "answer": "م",
+      "letter": "م",
+      "unit": 1
+    },
+    {
+      "id": "meem-shape-01",
+      "skill": "letter-shape",
+      "type": "multiple-choice",
+      "prompt": "ابحث عن حرف الميم.",
+      "options": [
+        "ن",
+        "م",
+        "ب"
+      ],
+      "answer": "م",
+      "letter": "م",
+      "unit": 1
+    },
+    {
+      "id": "meem-shape-02",
+      "skill": "letter-shape",
+      "type": "multiple-choice",
+      "prompt": "أي حرف يشبه الدائرة الصغيرة وله ذيل",
+      "options": [
+        "م",
+        "د",
+        "ر"
+      ],
+      "answer": "م",
+      "letter": "م",
+      "unit": 1
+    },
+    {
+      "id": "meem-vowel-01",
+      "skill": "short-vowels",
+      "type": "multiple-choice",
+      "prompt": "اختر الميم المفتوحة.",
+      "options": [
+        "م",
+        "م",
+        "م"
+      ],
+      "answer": "م",
+      "letter": "م",
+      "unit": 1
+    },
+    {
+      "id": "meem-vowel-02",
+      "skill": "short-vowels",
+      "type": "multiple-choice",
+      "prompt": "اختر الميم المكسورة.",
+      "options": [
+        "م",
+        "م",
+        "م"
+      ],
+      "answer": "م",
+      "letter": "م",
+      "unit": 1
+    },
+    {
+      "id": "meem-vowel-03",
+      "skill": "short-vowels",
+      "type": "multiple-choice",
+      "prompt": "اختر الميم المضمومة.",
+      "options": [
+        "م",
+        "م",
+        "م"
+      ],
+      "answer": "م",
+      "letter": "م",
+      "unit": 1
+    },
+    {
+      "id": "meem-vowel-04",
+      "skill": "short-vowels",
+      "type": "teacher-listening",
+      "prompt": "المعلم ينطق م. اختر ما سمعت.",
+      "options": [
+        "م",
+        "م",
+        "م"
+      ],
+      "answer": "م",
+      "letter": "م",
+      "unit": 1
+    },
+    {
+      "id": "meem-vowel-05",
+      "skill": "short-vowels",
+      "type": "teacher-listening",
+      "prompt": "المعلم ينطق م. اختر ما سمعت.",
+      "options": [
+        "م",
+        "م",
+        "م"
+      ],
+      "answer": "م",
+      "letter": "م",
+      "unit": 1
+    },
+    {
+      "id": "meem-vowel-06",
+      "skill": "short-vowels",
+      "type": "teacher-listening",
+      "prompt": "المعلم ينطق م. اختر ما سمعت.",
+      "options": [
+        "م",
+        "م",
+        "م"
+      ],
+      "answer": "م",
+      "letter": "م",
+      "unit": 1
+    },
+    {
+      "id": "meem-sukoon-01",
+      "skill": "sukoon",
+      "type": "multiple-choice",
+      "prompt": "اختر الميم الساكنة.",
+      "options": [
+        "م",
+        "م",
+        "م"
+      ],
+      "answer": "م",
+      "letter": "م",
+      "unit": 1
+    },
+    {
+      "id": "meem-sukoon-02",
+      "skill": "sukoon",
+      "type": "multiple-choice",
+      "prompt": "أي كلمة تنتهي بميم ساكنة",
+      "options": [
+        "لم",
+        "ما",
+        "مي"
+      ],
+      "answer": "لم",
+      "letter": "م",
+      "unit": 1
+    },
+    {
+      "id": "meem-madd-01",
+      "skill": "long-vowels",
+      "type": "multiple-choice",
+      "prompt": "اختر الميم الممدودة بالألف.",
+      "options": [
+        "مي",
+        "ما",
+        "مو"
+      ],
+      "answer": "ما",
+      "letter": "م",
+      "unit": 1
+    },
+    {
+      "id": "meem-madd-02",
+      "skill": "long-vowels",
+      "type": "multiple-choice",
+      "prompt": "اختر الميم الممدودة بالياء.",
+      "options": [
+        "ما",
+        "مو",
+        "مي"
+      ],
+      "answer": "مي",
+      "letter": "م",
+      "unit": 1
+    },
+    {
+      "id": "meem-madd-03",
+      "skill": "long-vowels",
+      "type": "multiple-choice",
+      "prompt": "اختر الميم الممدودة بالواو.",
+      "options": [
+        "مو",
+        "ما",
+        "مي"
+      ],
+      "answer": "مو",
+      "letter": "م",
+      "unit": 1
+    },
+    {
+      "id": "meem-madd-04",
+      "skill": "long-vowels",
+      "type": "teacher-listening",
+      "prompt": "المعلم ينطق ما. اختر ما سمعت.",
+      "options": [
+        "مي",
+        "مو",
+        "ما"
+      ],
+      "answer": "ما",
+      "letter": "م",
+      "unit": 1
+    },
+    {
+      "id": "meem-madd-05",
+      "skill": "long-vowels",
+      "type": "teacher-listening",
+      "prompt": "المعلم ينطق مي. اختر ما سمعت.",
+      "options": [
+        "ما",
+        "مي",
+        "مو"
+      ],
+      "answer": "مي",
+      "letter": "م",
+      "unit": 1
+    },
+    {
+      "id": "meem-madd-06",
+      "skill": "long-vowels",
+      "type": "teacher-listening",
+      "prompt": "المعلم ينطق مو. اختر ما سمعت.",
+      "options": [
+        "مو",
+        "مي",
+        "ما"
+      ],
+      "answer": "مو",
+      "letter": "م",
+      "unit": 1
+    },
+    {
+      "id": "meem-position-visual-01",
+      "letter": "م",
+      "unit": 1,
+      "skill": "letter-positions",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر شكل الميم في أول الكلمة",
+      "options": [
+        "مـ",
+        "ـمـ",
+        "ـم",
+        "م"
+      ],
+      "answer": "مـ",
+      "explanation": "لاحظ شكل الميم وطريقة اتصالها بالحروف."
+    },
+    {
+      "id": "meem-position-visual-02",
+      "letter": "م",
+      "unit": 1,
+      "skill": "letter-positions",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر شكل الميم في وسط الكلمة",
+      "options": [
+        "مـ",
+        "ـمـ",
+        "ـم",
+        "م"
+      ],
+      "answer": "ـمـ",
+      "explanation": "لاحظ شكل الميم وطريقة اتصالها بالحروف."
+    },
+    {
+      "id": "meem-position-visual-03",
+      "letter": "م",
+      "unit": 1,
+      "skill": "letter-positions",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر الميم المتصلة في آخر الكلمة",
+      "options": [
+        "مـ",
+        "ـمـ",
+        "ـم",
+        "م"
+      ],
+      "answer": "ـم",
+      "explanation": "لاحظ شكل الميم وطريقة اتصالها بالحروف."
+    },
+    {
+      "id": "meem-position-visual-04",
+      "letter": "م",
+      "unit": 1,
+      "skill": "letter-positions",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر الميم المنفصلة",
+      "options": [
+        "مـ",
+        "ـمـ",
+        "ـم",
+        "م"
+      ],
+      "answer": "م",
+      "explanation": "لاحظ شكل الميم وطريقة اتصالها بالحروف."
+    },
+    {
+      "id": "meem-position-visual-05",
+      "letter": "م",
+      "unit": 1,
+      "skill": "letter-positions",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "أي شكل للميم يتصل من الجانبين",
+      "options": [
+        "مـ",
+        "ـمـ",
+        "ـم",
+        "م"
+      ],
+      "answer": "ـمـ",
+      "explanation": "لاحظ شكل الميم وطريقة اتصالها بالحروف."
+    },
+    {
+      "id": "meem-position-visual-06",
+      "letter": "م",
+      "unit": 1,
+      "skill": "letter-positions",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "أي شكل للميم يتصل بما بعده فقط",
+      "options": [
+        "مـ",
+        "ـمـ",
+        "ـم",
+        "م"
+      ],
+      "answer": "مـ",
+      "explanation": "لاحظ شكل الميم وطريقة اتصالها بالحروف."
+    },
+    {
+      "id": "meem-position-visual-07",
+      "letter": "م",
+      "unit": 1,
+      "skill": "letter-positions",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "أي شكل للميم يتصل بما قبله فقط",
+      "options": [
+        "مـ",
+        "ـمـ",
+        "ـم",
+        "م"
+      ],
+      "answer": "ـم",
+      "explanation": "لاحظ شكل الميم وطريقة اتصالها بالحروف."
+    },
+    {
+      "id": "meem-position-visual-08",
+      "letter": "م",
+      "unit": 1,
+      "skill": "letter-positions",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "أي شكل للميم لا يتصل بأي حرف",
+      "options": [
+        "مـ",
+        "ـمـ",
+        "ـم",
+        "م"
+      ],
+      "answer": "م",
+      "explanation": "لاحظ شكل الميم وطريقة اتصالها بالحروف."
+    }
+  ]
+}
