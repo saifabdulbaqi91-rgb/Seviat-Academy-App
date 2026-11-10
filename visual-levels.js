@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
   "use strict";
 
   const LEVELS = [
@@ -157,7 +157,7 @@
       const unlocked = number <= (saved.unlocked || 1);
       const row = document.createElement("div");
       row.style.cssText =
-        "padding:15px;background:#f2f7ff;border-radius:15px";
+        "padding:15px;background:#f2f7ff;color:#17345a;border-radius:15px";
 
       row.innerHTML = `
         <h3>المستوى ${number}: ${item.name}</h3>

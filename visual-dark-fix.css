@@ -1,0 +1,20 @@
+﻿html[data-seviat-theme="dark"] #visualLevelList > div {
+    background: #243650 !important;
+    color: #ffffff !important;
+    border: 1px solid #6485ad !important;
+}
+
+html[data-seviat-theme="dark"] #visualLevelList > div h3,
+html[data-seviat-theme="dark"] #visualLevelList > div p {
+    color: #ffffff !important;
+}
+
+html[data-seviat-theme="light"] #visualLevelList > div {
+    background: #f2f7ff !important;
+    color: #17345a !important;
+}
+
+html[data-seviat-theme="light"] #visualLevelList > div h3,
+html[data-seviat-theme="light"] #visualLevelList > div p {
+    color: #17345a !important;
+}
