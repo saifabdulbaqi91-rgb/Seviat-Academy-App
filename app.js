@@ -122,7 +122,7 @@ function showMessage(title, message) {
   area.innerHTML = `
     <div class="section-heading">
       <h2>${title}</h2>
-      <span>أكاديمية سيفيات</span>
+      <span>آفاق</span>
     </div>
     <div style="text-align:center;padding:25px">
       <p>${message}</p>
@@ -237,7 +237,7 @@ function openLetterAssessment() {
   }
 
   quizMode = "assessment";
-  currentQuestions = shuffleArray(letterQuestions);
+  currentQuestions = spreadQuestionTypes(letterQuestions);
   currentQuestionIndex = 0;
   quizResults = [];
   renderQuiz();
@@ -259,7 +259,7 @@ function openLegacyLetterPractice() {
     return;
   }
 
-  currentQuestions = shuffleArray(letterQuestions);
+  currentQuestions = spreadQuestionTypes(letterQuestions);
   currentQuestionIndex = 0;  quizResults = [];
 
   renderQuiz();
@@ -279,7 +279,53 @@ function shuffleArray(items) {
 let quizResults = [];
 let quizMode = 'practice';
 
+
+let autoNextTimer = null;
+
+function spreadQuestionTypes(items) {
+  const groups = new Map();
+
+  shuffleArray([...items]).forEach(q => {
+    const type = q.skill || q.skillId || q.category || q.type || "other";
+    if (!groups.has(type)) groups.set(type, []);
+    groups.get(type).push(q);
+  });
+
+  const result = [];
+  let previous = null;
+
+  while ([...groups.values()].some(group => group.length)) {
+    const candidates = [...groups.entries()]
+      .filter(([type, group]) => group.length && type !== previous);
+
+    const available = candidates.length
+      ? candidates
+      : [...groups.entries()].filter(([, group]) => group.length);
+
+    available.sort((a, b) => b[1].length - a[1].length);
+
+    const [type, group] = available[0];
+    result.push(group.shift());
+    previous = type;
+  }
+
+  return result;
+}
+
+function advanceQuiz() {
+  if (autoNextTimer !== null) {
+    clearTimeout(autoNextTimer);
+    autoNextTimer = null;
+  }
+  currentQuestionIndex++;
+  renderQuiz();
+}
+
 function renderQuiz() {
+  if (autoNextTimer !== null) {
+    clearTimeout(autoNextTimer);
+    autoNextTimer = null;
+  }
   const area = createActivityArea();
   const question = currentQuestions[currentQuestionIndex];
 
@@ -355,8 +401,7 @@ function renderQuiz() {
   });
 
   next.addEventListener("click", () => {
-    currentQuestionIndex++;
-    renderQuiz();
+    if (next.dataset.answered === "yes") advanceQuiz();
   });
 
   area.scrollIntoView({ behavior: "smooth" });
@@ -415,70 +460,68 @@ function showAssessmentResults() {
 function checkAnswer(answer, selectedButton) {
   const question = currentQuestions[currentQuestionIndex];
   const feedback = document.getElementById("gameFeedback");
-  const buttons = document.querySelectorAll("#answerOptions button");
+  const buttons = [...document.querySelectorAll("#answerOptions button")];
   const next = document.getElementById("nextQuestion");
 
-  if (!question || !feedback || !next) return;
+  if (!question || !feedback || !next ||
+      next.dataset.answered === "yes") return;
 
-  const isAssessment = quizMode === "assessment";
-  const alreadyAnswered = quizResults.some(r => r.id === question.id);
+  next.dataset.answered = "yes";
 
-  if (isAssessment && alreadyAnswered) return;
+  const correct = answer === question.answer;
+  const alreadyRecorded = quizResults.some(r => r.id === question.id);
 
-  const isCorrect = answer === question.answer;
-
-  if (!alreadyAnswered) {
+  if (!alreadyRecorded) {
     quizResults.push({
       id: question.id,
-      correct: isCorrect,
-      answer: answer,
+      correct,
+      answer,
       expected: question.answer
     });
   }
 
-  if (isAssessment) {
-    buttons.forEach(button => {
-      button.disabled = true;
-    });
+  buttons.forEach(button => {
+    button.disabled = true;
 
-    selectedButton.style.background = isCorrect ? "#d8f7e8" : "#ffe0e0";
-
-    feedback.textContent = "تم تسجيل إجابتك. انتقل إلى السؤال التالي.";
-    window.SeviatEffects?.play(isCorrect ? "correct" : "wrong");
-    next.disabled = false;
-    return;
-  }
-
-  if (isCorrect) {
-    buttons.forEach(button => {
-      button.disabled = true;
-      button.style.background = "#eaf4ff";
-      button.style.borderColor = "#2878cf";
-    });
-
-    selectedButton.style.background = "#d8f7e8";
-    feedback.textContent = "🎉 أحسنت يا بطل! إجابة صحيحة.";
-    window.SeviatEffects?.play("correct");
-
-    if (!answeredQuestions.includes(question.id)) {
-      answeredQuestions.push(question.id);
-      score += 10;
-      saveProgress();
+    if (button.textContent === question.answer) {
+      button.style.setProperty("background", "#bbf7d0", "important");
+      button.style.setProperty("border-color", "#15803d", "important");
+      button.style.setProperty("color", "#14532d", "important");
+      button.textContent = "\u2705 " + button.textContent;
+    } else if (button === selectedButton) {
+      button.style.setProperty("background", "#fecaca", "important");
+      button.style.setProperty("border-color", "#dc2626", "important");
+      button.style.setProperty("color", "#7f1d1d", "important");
+      button.textContent = "\u274c " + button.textContent;
     }
+  });
 
-    speak(window.SeviatGroup1?.randomPraise("correct") || "أحسنت يا بطل!");
-    next.disabled = false;
-  } else {
-    selectedButton.style.background = "#ffe0e0";
-    selectedButton.disabled = true;
-    feedback.textContent = "حاول مرة أخرى يا بطل!";
-    window.SeviatEffects?.play("wrong");
-    speak(window.SeviatGroup1?.randomPraise("wrong") || "حاول مرة أخرى يا بطل!");
-    next.disabled = false;
+  feedback.textContent = correct
+    ? "\u2705 \u0625\u062c\u0627\u0628\u0629 \u0635\u062d\u064a\u062d\u0629!"
+    : "\u274c \u0627\u0644\u0625\u062c\u0627\u0628\u0629 \u0627\u0644\u0635\u062d\u064a\u062d\u0629 \u0628\u0627\u0644\u0623\u062e\u0636\u0631.";
+
+  window.SeviatEffects?.play(correct ? "correct" : "wrong");
+
+  if (correct && quizMode !== "assessment" &&
+      !answeredQuestions.includes(question.id)) {
+    answeredQuestions.push(question.id);
+    score += 10;
+    saveProgress();
   }
 
-  document.getElementById("gameScore").textContent =
-    "⭐ نقاطك: " + score;
+  const points = document.getElementById("gameScore");
+  if (points) {
+    points.textContent = "\u2b50 \u0646\u0642\u0627\u0637\u0643: " + score;
+  }
+
+  next.disabled = true;
+
+  autoNextTimer = setTimeout(() => {
+    autoNextTimer = null;
+    if (document.getElementById("nextQuestion") === next) {
+      advanceQuiz();
+    }
+  }, 2000);
 }
 
 function openStage(stage) {
@@ -581,7 +624,7 @@ async function initializeApp() {
       }
     });
 
-    console.log("أكاديمية سيفيات جاهزة", {
+    console.log("آفاق جاهزة", {
       units: curriculumData.curriculum.units.length,
       skills: skillsData.letterLearningSequence.length,
       questions: questionsData.questions.length
