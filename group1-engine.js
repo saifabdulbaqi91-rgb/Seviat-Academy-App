@@ -38,14 +38,30 @@
       throw new Error("سؤال غير صالح: " + prompt);
     }
 
+    const isListening = prompt.includes("?????? ????");
+
+    const duplicate = QUESTIONS.some(q =>
+      q.letter === letter &&
+      q.skill === skill &&
+      q.prompt === (isListening
+        ? "????? ??? ?????? ???? ????? ?????? ?? ???? ??????? ???????."
+        : prompt) &&
+      q.answer === answer
+    );
+
+    if (duplicate) return;
+
     QUESTIONS.push({
       id: "g1-" + QUESTIONS.length.toString().padStart(4, "0"),
       letter,
       unit: 1,
       skill,
-      type: "multiple-choice",
+      type: isListening ? "teacher-listening" : "multiple-choice",
       difficulty: 1,
-      prompt,
+      prompt: isListening
+        ? "????? ??? ?????? ???? ????? ?????? ?? ???? ??????? ???????."
+        : prompt,
+      audioText: isListening ? answer : undefined,
       options: unique,
       answer,
       explanation: "راجع الإجابة مع المعلم."
@@ -304,6 +320,8 @@
   }
 
   function installQuestions() {
+    // UNIT1_ARCHIVE_ONLY: original generated records remain available for audit.
+    if (window.Unit1Learning) return true;
     if (
       typeof questionsData === "undefined" ||
       !questionsData ||

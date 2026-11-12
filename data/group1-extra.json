@@ -26,62 +26,6 @@
       "unit": 1
     },
     {
-      "id": "g1-0628-002",
-      "skill": "letter-shape",
-      "type": "multiple-choice",
-      "prompt": "اختر حرف الباء من بين الحروف.",
-      "options": [
-        "ب",
-        "ل",
-        "د"
-      ],
-      "answer": "ب",
-      "letter": "ب",
-      "unit": 1
-    },
-    {
-      "id": "g1-0628-003",
-      "skill": "letter-shape",
-      "type": "multiple-choice",
-      "prompt": "اختر حرف الباء من بين الحروف.",
-      "options": [
-        "ب",
-        "د",
-        "ن"
-      ],
-      "answer": "ب",
-      "letter": "ب",
-      "unit": 1
-    },
-    {
-      "id": "g1-0628-004",
-      "skill": "letter-shape",
-      "type": "multiple-choice",
-      "prompt": "اختر حرف الباء من بين الحروف.",
-      "options": [
-        "ب",
-        "ن",
-        "ر"
-      ],
-      "answer": "ب",
-      "letter": "ب",
-      "unit": 1
-    },
-    {
-      "id": "g1-0628-005",
-      "skill": "letter-shape",
-      "type": "multiple-choice",
-      "prompt": "اختر حرف الباء من بين الحروف.",
-      "options": [
-        "ب",
-        "ر",
-        "م"
-      ],
-      "answer": "ب",
-      "letter": "ب",
-      "unit": 1
-    },
-    {
       "id": "g1-0628-006",
       "skill": "short-vowels",
       "type": "multiple-choice",
@@ -188,62 +132,6 @@
         "ل",
         "م",
         "ب"
-      ],
-      "answer": "ل",
-      "letter": "ل",
-      "unit": 1
-    },
-    {
-      "id": "g1-0644-042",
-      "skill": "letter-shape",
-      "type": "multiple-choice",
-      "prompt": "اختر حرف اللام من بين الحروف.",
-      "options": [
-        "ل",
-        "ب",
-        "د"
-      ],
-      "answer": "ل",
-      "letter": "ل",
-      "unit": 1
-    },
-    {
-      "id": "g1-0644-043",
-      "skill": "letter-shape",
-      "type": "multiple-choice",
-      "prompt": "اختر حرف اللام من بين الحروف.",
-      "options": [
-        "ل",
-        "د",
-        "ن"
-      ],
-      "answer": "ل",
-      "letter": "ل",
-      "unit": 1
-    },
-    {
-      "id": "g1-0644-044",
-      "skill": "letter-shape",
-      "type": "multiple-choice",
-      "prompt": "اختر حرف اللام من بين الحروف.",
-      "options": [
-        "ل",
-        "ن",
-        "ر"
-      ],
-      "answer": "ل",
-      "letter": "ل",
-      "unit": 1
-    },
-    {
-      "id": "g1-0644-045",
-      "skill": "letter-shape",
-      "type": "multiple-choice",
-      "prompt": "اختر حرف اللام من بين الحروف.",
-      "options": [
-        "ل",
-        "ر",
-        "م"
       ],
       "answer": "ل",
       "letter": "ل",
@@ -362,62 +250,6 @@
       "unit": 1
     },
     {
-      "id": "g1-062f-082",
-      "skill": "letter-shape",
-      "type": "multiple-choice",
-      "prompt": "اختر حرف الدال من بين الحروف.",
-      "options": [
-        "د",
-        "ب",
-        "ل"
-      ],
-      "answer": "د",
-      "letter": "د",
-      "unit": 1
-    },
-    {
-      "id": "g1-062f-083",
-      "skill": "letter-shape",
-      "type": "multiple-choice",
-      "prompt": "اختر حرف الدال من بين الحروف.",
-      "options": [
-        "د",
-        "ل",
-        "ن"
-      ],
-      "answer": "د",
-      "letter": "د",
-      "unit": 1
-    },
-    {
-      "id": "g1-062f-084",
-      "skill": "letter-shape",
-      "type": "multiple-choice",
-      "prompt": "اختر حرف الدال من بين الحروف.",
-      "options": [
-        "د",
-        "ن",
-        "ر"
-      ],
-      "answer": "د",
-      "letter": "د",
-      "unit": 1
-    },
-    {
-      "id": "g1-062f-085",
-      "skill": "letter-shape",
-      "type": "multiple-choice",
-      "prompt": "اختر حرف الدال من بين الحروف.",
-      "options": [
-        "د",
-        "ر",
-        "م"
-      ],
-      "answer": "د",
-      "letter": "د",
-      "unit": 1
-    },
-    {
       "id": "g1-062f-086",
       "skill": "short-vowels",
       "type": "multiple-choice",
@@ -530,62 +362,6 @@
       "unit": 1
     },
     {
-      "id": "g1-0646-122",
-      "skill": "letter-shape",
-      "type": "multiple-choice",
-      "prompt": "اختر حرف النون من بين الحروف.",
-      "options": [
-        "ن",
-        "ب",
-        "ل"
-      ],
-      "answer": "ن",
-      "letter": "ن",
-      "unit": 1
-    },
-    {
-      "id": "g1-0646-123",
-      "skill": "letter-shape",
-      "type": "multiple-choice",
-      "prompt": "اختر حرف النون من بين الحروف.",
-      "options": [
-        "ن",
-        "ل",
-        "د"
-      ],
-      "answer": "ن",
-      "letter": "ن",
-      "unit": 1
-    },
-    {
-      "id": "g1-0646-124",
-      "skill": "letter-shape",
-      "type": "multiple-choice",
-      "prompt": "اختر حرف النون من بين الحروف.",
-      "options": [
-        "ن",
-        "د",
-        "ر"
-      ],
-      "answer": "ن",
-      "letter": "ن",
-      "unit": 1
-    },
-    {
-      "id": "g1-0646-125",
-      "skill": "letter-shape",
-      "type": "multiple-choice",
-      "prompt": "اختر حرف النون من بين الحروف.",
-      "options": [
-        "ن",
-        "ر",
-        "م"
-      ],
-      "answer": "ن",
-      "letter": "ن",
-      "unit": 1
-    },
-    {
       "id": "g1-0646-126",
       "skill": "short-vowels",
       "type": "multiple-choice",
@@ -692,62 +468,6 @@
         "ر",
         "م",
         "ب"
-      ],
-      "answer": "ر",
-      "letter": "ر",
-      "unit": 1
-    },
-    {
-      "id": "g1-0631-162",
-      "skill": "letter-shape",
-      "type": "multiple-choice",
-      "prompt": "اختر حرف الراء من بين الحروف.",
-      "options": [
-        "ر",
-        "ب",
-        "ل"
-      ],
-      "answer": "ر",
-      "letter": "ر",
-      "unit": 1
-    },
-    {
-      "id": "g1-0631-163",
-      "skill": "letter-shape",
-      "type": "multiple-choice",
-      "prompt": "اختر حرف الراء من بين الحروف.",
-      "options": [
-        "ر",
-        "ل",
-        "د"
-      ],
-      "answer": "ر",
-      "letter": "ر",
-      "unit": 1
-    },
-    {
-      "id": "g1-0631-164",
-      "skill": "letter-shape",
-      "type": "multiple-choice",
-      "prompt": "اختر حرف الراء من بين الحروف.",
-      "options": [
-        "ر",
-        "د",
-        "ن"
-      ],
-      "answer": "ر",
-      "letter": "ر",
-      "unit": 1
-    },
-    {
-      "id": "g1-0631-165",
-      "skill": "letter-shape",
-      "type": "multiple-choice",
-      "prompt": "اختر حرف الراء من بين الحروف.",
-      "options": [
-        "ر",
-        "ن",
-        "م"
       ],
       "answer": "ر",
       "letter": "ر",

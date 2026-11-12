@@ -1,0 +1,8 @@
+/* Accessibility-first presentation for Unit 1 */
+#activityArea #u1-options { display:grid!important;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:16px!important;margin:20px 0!important; }
+#activityArea #u1-options button {min-height:92px!important;padding:18px!important;font-size:clamp(32px,5vw,46px)!important;font-weight:800!important;border-radius:18px!important;touch-action:manipulation;}
+#activityArea h3 {font-size:clamp(26px,4.5vw,38px)!important;line-height:1.65!important;text-align:center!important;margin:22px 0!important;}
+#activityArea #u1-feedback {font-size:clamp(21px,3.5vw,29px)!important;font-weight:700!important;text-align:center!important;min-height:2em;}
+#activityArea button:focus-visible {outline:4px solid #ffbf47!important;outline-offset:3px;}
+#activityArea #u1-options button:disabled {opacity:.7;}
+@media(max-width:450px){#activityArea #u1-options{grid-template-columns:repeat(2,minmax(0,1fr));}}

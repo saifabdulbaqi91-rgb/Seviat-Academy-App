@@ -23,41 +23,51 @@
     return audioContext;
   }
 
-  async function playNotes(notes) {
+  let stopPlayback = () => {};
+  async function playNotes(notes, owner) {
+    stopPlayback();
+    if (window.SeviatEffects?.isEnabled() === false) throw Error("شغّل الصوت أولًا.");
     const ctx = getContext();
-    if (!ctx) {
-      alert("المتصفح لا يدعم تشغيل الأصوات.");
-      return;
-    }
-
+    if (!ctx) throw Error("المتصفح لا يدعم تشغيل الأصوات.");
     await ctx.resume();
-    const start = ctx.currentTime + 0.08;
-
-    let offset = 0;
-
-    notes.forEach(note => {
-      const oscillator = ctx.createOscillator();
-      const gain = ctx.createGain();
-
-      oscillator.type = "sine";
-      oscillator.frequency.value = note.frequency;
-
-      oscillator.connect(gain);
-      gain.connect(ctx.destination);
-
-      const begin = start + offset;
-      const end = begin + note.duration;
-
-      gain.gain.setValueAtTime(0.0001, begin);
-      gain.gain.exponentialRampToValueAtTime(0.15, begin + 0.02);
-      gain.gain.exponentialRampToValueAtTime(0.0001, end);
-
-      oscillator.start(begin);
-      oscillator.stop(end + 0.02);
-
-      offset += note.duration + (note.gap ?? 0.3);
+    if (owner && !owner.isConnected) return false;
+    return new Promise((resolve, reject) => {
+      const oscillators = [];
+      let ended = 0, settled = false, watch = null;
+      function finish(completed) {
+        if (settled) return;
+        settled = true;
+        clearInterval(watch);
+        oscillators.forEach(o => { o.onended = null; try { o.stop(); o.disconnect(); } catch {} });
+        stopPlayback = () => {};
+        resolve(completed);
+      }
+      stopPlayback = () => finish(false);
+      watch = setInterval(() => {
+        if ((owner && !owner.isConnected) || window.SeviatEffects?.isEnabled() === false) finish(false);
+      }, 50);
+      let offset = 0;
+      const start = ctx.currentTime + 0.08;
+      try {
+        notes.forEach(note => {
+          const oscillator = ctx.createOscillator(), gain = ctx.createGain();
+          oscillators.push(oscillator);
+          oscillator.type = "sine";
+          oscillator.frequency.value = note.frequency;
+          oscillator.connect(gain); gain.connect(ctx.destination);
+          const begin = start + offset, end = begin + note.duration;
+          gain.gain.setValueAtTime(0.0001, begin);
+          gain.gain.exponentialRampToValueAtTime(0.15, begin + 0.02);
+          gain.gain.exponentialRampToValueAtTime(0.0001, end);
+          oscillator.onended = () => { gain.disconnect(); if (++ended === notes.length) finish(true); };
+          oscillator.start(begin); oscillator.stop(end + 0.02);
+          offset += note.duration + (note.gap ?? 0.3);
+        });
+        if (!notes.length) finish(false);
+      } catch (error) { finish(false); }
     });
   }
+  window.addEventListener('seviat-access-changed', () => { session++; stopPlayback(); });
 
   function note(frequency, duration = 0.3, gap = 0.3) {
     return { frequency, duration, gap };
@@ -156,18 +166,17 @@
     ]);
 
     return {
-      instruction: "عد مرات ظهور الصوت المرتفع.",
-      sounds: [
-        note(660, 0.45, 0.6),
-        ...pattern.map(f => note(f, 0.25, 0.25))
-      ],
+      instruction: "عُدَّ النَّغَمَاتِ الْحَادَّةَ (الْأَعْلَى طَبَقَةً) بَيْنَ النَّغَمَاتِ الْخَمْسِ. يَشْرَحُ الْمُعَلِّمُ الْفَرْقَ قَبْلَ الْبَدْءِ.",
+      sounds: pattern.map(f => note(f, 0.25, 0.25)),
       options: ["1", "2", "3", "4"],
       answer: String(targetCount)
     };
   }
 
   function openAuditoryLevels() {
+    if(window.SeviatAccessGuard&&!window.SeviatAccessGuard.coarseAllowed('preparation'))return;
     session++;
+    stopPlayback();
     const area = createActivityArea();
 
     area.innerHTML = `
@@ -196,7 +205,7 @@
         button.className =
           mode === "practice" ? "primary-button" : "sound-button";
         button.textContent =
-          mode === "practice" ? "التدريب" : "اختبار الإتقان";
+          mode === "practice" ? "التدريب" : "اختبار المستوى";
         button.disabled = level > unlocked();
         button.style.margin = "6px";
         button.onclick = () => startAuditory(level, mode);
@@ -213,12 +222,15 @@
   }
 
   function startAuditory(level, mode) {
+    if(window.SeviatAccessGuard&&!window.SeviatAccessGuard.coarseAllowed('preparation'))return;
+    stopPlayback();
     const mySession = ++session;
     const total = mode === "assessment" ? 5 : 3;
     let round = 0;
     let correct = 0;
 
     function render() {
+    if(window.SeviatAccessGuard&&!window.SeviatAccessGuard.coarseAllowed('preparation'))return;
       if (mySession !== session) return;
 
       if (round >= total) {
@@ -234,7 +246,7 @@
 
       area.innerHTML = `
         <h2>🎧 ${LEVELS[level - 1]}</h2>
-        <p>${mode === "practice" ? "التدريب" : "اختبار الإتقان"}
+        <p>${mode === "practice" ? "التدريب" : "اختبار المستوى"}
         — السؤال ${round + 1} من ${total}</p>
         <h3>${q.instruction}</h3>
         <button id="playAuditory" class="primary-button">
@@ -261,14 +273,19 @@
       playButton.onclick = async () => {
         if (playing || finished) return;
         playing = true;
+        listened = false;
+        chosen.length = 0;
         playButton.disabled = true;
 
         try {
-          await playNotes(q.sounds);
-          listened = true;
+          const completed = await playNotes(q.sounds, playButton);
+          listened = completed && mySession === session && playButton.isConnected;
+          if (!listened && playButton.isConnected) feedback.textContent = "لم يكتمل الاستماع. شغّل الصوت وأعد المحاولة.";
+        } catch (error) {
+          if (playButton.isConnected) feedback.textContent = error.message;
         } finally {
           playing = false;
-          if (!finished && mySession === session) {
+          if (!finished && mySession === session && playButton.isConnected) {
             playButton.disabled = false;
           }
         }
@@ -307,7 +324,7 @@
         button.style.margin = "5px";
 
         button.onclick = () => {
-          if (!listened || finished) {
+          if (!listened || playing || finished || !playButton.isConnected || mySession !== session) {
             if (!listened) feedback.textContent = "استمع أولا.";
             return;
           }
@@ -346,6 +363,7 @@
     }
 
     function finish() {
+    if(window.SeviatAccessGuard&&!window.SeviatAccessGuard.coarseAllowed('preparation'))return;
       const passed =
         mode === "assessment" && correct >= 4;
 
@@ -367,7 +385,7 @@
           ? "أحسنت! تم فتح المستوى التالي."
           : mode === "assessment"
             ? "تحتاج إلى 4 إجابات صحيحة من 5."
-            : "يمكنك إعادة التدريب أو بدء اختبار الإتقان."}</p>
+            : "يمكنك إعادة التدريب أو بدء اختبار المستوى."}</p>
         <button id="auditoryRepeat" class="primary-button">
           إعادة النشاط
         </button>

@@ -1,0 +1,772 @@
+{
+  "questions": [
+    {
+      "id": "seviat-reading-001",
+      "letter": "م",
+      "unit": 1,
+      "skill": "word-reading",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر الكلمة المطلوبة: مَا",
+      "options": [
+        "مَا",
+        "مِي",
+        "مُو"
+      ],
+      "answer": "مَا",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-002",
+      "letter": "م",
+      "unit": 1,
+      "skill": "sound-analysis",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "ما الصوت الأول في: مَا",
+      "options": [
+        "مَ",
+        "مِ",
+        "مُ"
+      ],
+      "answer": "مَ",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-003",
+      "letter": "م",
+      "unit": 1,
+      "skill": "syllable-building",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر المقطع الصحيح لبداية: مَا",
+      "options": [
+        "مَ",
+        "مِ",
+        "مُ"
+      ],
+      "answer": "مَ",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-004",
+      "letter": "ب",
+      "unit": 1,
+      "skill": "word-reading",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر الكلمة المطلوبة: بَاب",
+      "options": [
+        "بَاب",
+        "بَال",
+        "بَام"
+      ],
+      "answer": "بَاب",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-005",
+      "letter": "ب",
+      "unit": 1,
+      "skill": "sound-analysis",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "ما الصوت الأول في: بَاب",
+      "options": [
+        "بَ",
+        "بِ",
+        "بُ"
+      ],
+      "answer": "بَ",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-006",
+      "letter": "ب",
+      "unit": 1,
+      "skill": "syllable-building",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر المقطع الصحيح لبداية: بَاب",
+      "options": [
+        "بَ",
+        "بِ",
+        "بُ"
+      ],
+      "answer": "بَ",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-007",
+      "letter": "ل",
+      "unit": 1,
+      "skill": "word-reading",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر الكلمة المطلوبة: لَبَن",
+      "options": [
+        "لَبَن",
+        "لَمَن",
+        "لَدَن"
+      ],
+      "answer": "لَبَن",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-008",
+      "letter": "ل",
+      "unit": 1,
+      "skill": "sound-analysis",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "ما الصوت الأول في: لَبَن",
+      "options": [
+        "لَ",
+        "لِ",
+        "لُ"
+      ],
+      "answer": "لَ",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-009",
+      "letter": "ل",
+      "unit": 1,
+      "skill": "syllable-building",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر المقطع الصحيح لبداية: لَبَن",
+      "options": [
+        "لَ",
+        "لِ",
+        "لُ"
+      ],
+      "answer": "لَ",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-010",
+      "letter": "د",
+      "unit": 1,
+      "skill": "word-reading",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر الكلمة المطلوبة: دَلَا",
+      "options": [
+        "دَلَا",
+        "دَمَا",
+        "دَنَا"
+      ],
+      "answer": "دَلَا",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-011",
+      "letter": "د",
+      "unit": 1,
+      "skill": "sound-analysis",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "ما الصوت الأول في: دَلَا",
+      "options": [
+        "دَ",
+        "دِ",
+        "دُ"
+      ],
+      "answer": "دَ",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-012",
+      "letter": "د",
+      "unit": 1,
+      "skill": "syllable-building",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر المقطع الصحيح لبداية: دَلَا",
+      "options": [
+        "دَ",
+        "دِ",
+        "دُ"
+      ],
+      "answer": "دَ",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-013",
+      "letter": "ن",
+      "unit": 1,
+      "skill": "word-reading",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر الكلمة المطلوبة: نَامَ",
+      "options": [
+        "نَامَ",
+        "نَابَ",
+        "نَالَ"
+      ],
+      "answer": "نَامَ",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-014",
+      "letter": "ن",
+      "unit": 1,
+      "skill": "sound-analysis",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "ما الصوت الأول في: نَامَ",
+      "options": [
+        "نَ",
+        "نِ",
+        "نُ"
+      ],
+      "answer": "نَ",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-015",
+      "letter": "ن",
+      "unit": 1,
+      "skill": "syllable-building",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر المقطع الصحيح لبداية: نَامَ",
+      "options": [
+        "نَ",
+        "نِ",
+        "نُ"
+      ],
+      "answer": "نَ",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-016",
+      "letter": "ر",
+      "unit": 1,
+      "skill": "word-reading",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر الكلمة المطلوبة: رَمَل",
+      "options": [
+        "رَمَل",
+        "رَبَل",
+        "رَنَل"
+      ],
+      "answer": "رَمَل",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-017",
+      "letter": "ر",
+      "unit": 1,
+      "skill": "sound-analysis",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "ما الصوت الأول في: رَمَل",
+      "options": [
+        "رَ",
+        "رِ",
+        "رُ"
+      ],
+      "answer": "رَ",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-018",
+      "letter": "ر",
+      "unit": 1,
+      "skill": "syllable-building",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر المقطع الصحيح لبداية: رَمَل",
+      "options": [
+        "رَ",
+        "رِ",
+        "رُ"
+      ],
+      "answer": "رَ",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-019",
+      "letter": "م",
+      "unit": 1,
+      "skill": "sound-analysis",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر صوت الحرف: مَ",
+      "options": [
+        "مِ",
+        "مَ",
+        "مُ"
+      ],
+      "answer": "مَ",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-020",
+      "letter": "م",
+      "unit": 1,
+      "skill": "sound-analysis",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر صوت الحرف: مِ",
+      "options": [
+        "مُ",
+        "مِ",
+        "مَ"
+      ],
+      "answer": "مِ",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-021",
+      "letter": "م",
+      "unit": 1,
+      "skill": "sound-analysis",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر صوت الحرف: مُ",
+      "options": [
+        "مَ",
+        "مُ",
+        "مِ"
+      ],
+      "answer": "مُ",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-022",
+      "letter": "م",
+      "unit": 1,
+      "skill": "sukoon",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "أي حرف عليه سكون؟",
+      "options": [
+        "مَ",
+        "مْ",
+        "مُ"
+      ],
+      "answer": "مْ",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-023",
+      "letter": "م",
+      "unit": 1,
+      "skill": "letter-sound",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر الحرف المطلوب: م",
+      "options": [
+        "م",
+        "ب",
+        "ل"
+      ],
+      "answer": "م",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-024",
+      "letter": "ب",
+      "unit": 1,
+      "skill": "sound-analysis",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر صوت الحرف: بَ",
+      "options": [
+        "بِ",
+        "بَ",
+        "بُ"
+      ],
+      "answer": "بَ",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-025",
+      "letter": "ب",
+      "unit": 1,
+      "skill": "sound-analysis",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر صوت الحرف: بِ",
+      "options": [
+        "بُ",
+        "بِ",
+        "بَ"
+      ],
+      "answer": "بِ",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-026",
+      "letter": "ب",
+      "unit": 1,
+      "skill": "sound-analysis",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر صوت الحرف: بُ",
+      "options": [
+        "بَ",
+        "بُ",
+        "بِ"
+      ],
+      "answer": "بُ",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-027",
+      "letter": "ب",
+      "unit": 1,
+      "skill": "sukoon",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "أي حرف عليه سكون؟",
+      "options": [
+        "بَ",
+        "بْ",
+        "بُ"
+      ],
+      "answer": "بْ",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-028",
+      "letter": "ب",
+      "unit": 1,
+      "skill": "letter-sound",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر الحرف المطلوب: ب",
+      "options": [
+        "ب",
+        "ل",
+        "د"
+      ],
+      "answer": "ب",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-029",
+      "letter": "ل",
+      "unit": 1,
+      "skill": "sound-analysis",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر صوت الحرف: لَ",
+      "options": [
+        "لِ",
+        "لَ",
+        "لُ"
+      ],
+      "answer": "لَ",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-030",
+      "letter": "ل",
+      "unit": 1,
+      "skill": "sound-analysis",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر صوت الحرف: لِ",
+      "options": [
+        "لُ",
+        "لِ",
+        "لَ"
+      ],
+      "answer": "لِ",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-031",
+      "letter": "ل",
+      "unit": 1,
+      "skill": "sound-analysis",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر صوت الحرف: لُ",
+      "options": [
+        "لَ",
+        "لُ",
+        "لِ"
+      ],
+      "answer": "لُ",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-032",
+      "letter": "ل",
+      "unit": 1,
+      "skill": "sukoon",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "أي حرف عليه سكون؟",
+      "options": [
+        "لَ",
+        "لْ",
+        "لُ"
+      ],
+      "answer": "لْ",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-033",
+      "letter": "ل",
+      "unit": 1,
+      "skill": "letter-sound",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر الحرف المطلوب: ل",
+      "options": [
+        "ل",
+        "د",
+        "ن"
+      ],
+      "answer": "ل",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-034",
+      "letter": "د",
+      "unit": 1,
+      "skill": "sound-analysis",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر صوت الحرف: دَ",
+      "options": [
+        "دِ",
+        "دَ",
+        "دُ"
+      ],
+      "answer": "دَ",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-035",
+      "letter": "د",
+      "unit": 1,
+      "skill": "sound-analysis",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر صوت الحرف: دِ",
+      "options": [
+        "دُ",
+        "دِ",
+        "دَ"
+      ],
+      "answer": "دِ",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-036",
+      "letter": "د",
+      "unit": 1,
+      "skill": "sound-analysis",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر صوت الحرف: دُ",
+      "options": [
+        "دَ",
+        "دُ",
+        "دِ"
+      ],
+      "answer": "دُ",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-037",
+      "letter": "د",
+      "unit": 1,
+      "skill": "sukoon",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "أي حرف عليه سكون؟",
+      "options": [
+        "دَ",
+        "دْ",
+        "دُ"
+      ],
+      "answer": "دْ",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-038",
+      "letter": "د",
+      "unit": 1,
+      "skill": "letter-sound",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر الحرف المطلوب: د",
+      "options": [
+        "د",
+        "ن",
+        "ر"
+      ],
+      "answer": "د",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-039",
+      "letter": "ن",
+      "unit": 1,
+      "skill": "sound-analysis",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر صوت الحرف: نَ",
+      "options": [
+        "نِ",
+        "نَ",
+        "نُ"
+      ],
+      "answer": "نَ",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-040",
+      "letter": "ن",
+      "unit": 1,
+      "skill": "sound-analysis",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر صوت الحرف: نِ",
+      "options": [
+        "نُ",
+        "نِ",
+        "نَ"
+      ],
+      "answer": "نِ",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-041",
+      "letter": "ن",
+      "unit": 1,
+      "skill": "sound-analysis",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر صوت الحرف: نُ",
+      "options": [
+        "نَ",
+        "نُ",
+        "نِ"
+      ],
+      "answer": "نُ",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-042",
+      "letter": "ن",
+      "unit": 1,
+      "skill": "sukoon",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "أي حرف عليه سكون؟",
+      "options": [
+        "نَ",
+        "نْ",
+        "نُ"
+      ],
+      "answer": "نْ",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-043",
+      "letter": "ن",
+      "unit": 1,
+      "skill": "letter-sound",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر الحرف المطلوب: ن",
+      "options": [
+        "ن",
+        "ر",
+        "م"
+      ],
+      "answer": "ن",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-044",
+      "letter": "ر",
+      "unit": 1,
+      "skill": "sound-analysis",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر صوت الحرف: رَ",
+      "options": [
+        "رِ",
+        "رَ",
+        "رُ"
+      ],
+      "answer": "رَ",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-045",
+      "letter": "ر",
+      "unit": 1,
+      "skill": "sound-analysis",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر صوت الحرف: رِ",
+      "options": [
+        "رُ",
+        "رِ",
+        "رَ"
+      ],
+      "answer": "رِ",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-046",
+      "letter": "ر",
+      "unit": 1,
+      "skill": "sound-analysis",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر صوت الحرف: رُ",
+      "options": [
+        "رَ",
+        "رُ",
+        "رِ"
+      ],
+      "answer": "رُ",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-047",
+      "letter": "ر",
+      "unit": 1,
+      "skill": "sukoon",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "أي حرف عليه سكون؟",
+      "options": [
+        "رَ",
+        "رْ",
+        "رُ"
+      ],
+      "answer": "رْ",
+      "explanation": ""
+    },
+    {
+      "id": "seviat-reading-048",
+      "letter": "ر",
+      "unit": 1,
+      "skill": "letter-sound",
+      "type": "multiple-choice",
+      "difficulty": 1,
+      "prompt": "اختر الحرف المطلوب: ر",
+      "options": [
+        "ر",
+        "م",
+        "ب"
+      ],
+      "answer": "ر",
+      "explanation": ""
+    }
+  ]
+}

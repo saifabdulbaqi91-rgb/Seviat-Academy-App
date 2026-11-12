@@ -1,49 +1,128 @@
-﻿{
+{
   "preparation": [
     {
       "id": "visual-discrimination",
       "title": "التمييز البصري",
-      "activities": ["اختيار الشكل المختلف", "مطابقة الأشكال", "تمييز المتشابه والمختلف"]
+      "activities": [
+        "اختيار الشكل المختلف",
+        "مطابقة الأشكال",
+        "تمييز المتشابه والمختلف"
+      ]
     },
     {
       "id": "directions",
       "title": "الاتجاهات",
-      "activities": ["يمين ويسار", "أعلى وأسفل", "بداية ونهاية المسار"]
+      "activities": [
+        "يمين ويسار",
+        "أعلى وأسفل",
+        "بداية ونهاية المسار"
+      ]
     },
     {
       "id": "visual-motor",
       "title": "التآزر البصري الحركي",
-      "activities": ["تتبع الخطوط", "توصيل النقاط", "رسم الأشكال"]
+      "activities": [
+        "تتبع الخطوط",
+        "توصيل النقاط",
+        "رسم الأشكال"
+      ]
     },
     {
       "id": "fine-motor",
       "title": "التهيئة للكتابة",
-      "activities": ["تتبع المسارات", "رسم الدوائر والخطوط", "التدرب على التحكم بالقلم"]
+      "activities": [
+        "تتبع المسارات",
+        "رسم الدوائر والخطوط",
+        "التدرب على التحكم بالقلم"
+      ]
     },
     {
       "id": "auditory",
       "title": "التمييز السمعي",
-      "activities": ["تمييز الأصوات", "تحديد الصوت الأول", "تمييز الأصوات المتشابهة"]
+      "activities": [
+        "تمييز الأصوات",
+        "تحديد الصوت الأول",
+        "تمييز الأصوات المتشابهة"
+      ]
     },
     {
       "id": "memory",
       "title": "الذاكرة والتسلسل",
-      "activities": ["تذكر الصور", "ترتيب العناصر", "تذكر تسلسل الأصوات"]
+      "activities": [
+        "تذكر الصور",
+        "ترتيب العناصر",
+        "تذكر تسلسل الأصوات"
+      ]
     }
   ],
   "letterLearningSequence": [
-    {"id": "letter-shape", "title": "التعرف على شكل الحرف"},
-    {"id": "letter-sound", "title": "التعرف على صوت الحرف"},
-    {"id": "short-vowels", "title": "الحركات القصيرة", "details": ["الفتحة", "الكسرة", "الضمة"]},
-    {"id": "sukoon", "title": "السكون"},
-    {"id": "long-vowels", "title": "المدود", "details": ["المد بالألف", "المد بالواو", "المد بالياء"]},
-    {"id": "letter-positions", "title": "أشكال الحرف في الكلمة", "details": ["أول الكلمة", "وسط الكلمة", "آخر الكلمة"]},
-    {"id": "letter-detection", "title": "تمييز الحرف داخل الكلمات"},
-    {"id": "sound-analysis", "title": "تحليل الكلمات إلى مقاطع وأصوات"},
-    {"id": "syllable-building", "title": "تركيب المقاطع"},
-    {"id": "word-reading", "title": "قراءة الكلمات"},
-    {"id": "letter-writing", "title": "كتابة الحرف"},
-    {"id": "word-writing", "title": "كتابة الكلمات"}
+    {
+      "id": "letter-name",
+      "title": "التعرف على اسم الحرف"
+    },
+    {
+      "id": "letter-shape",
+      "title": "التعرف على شكل الحرف"
+    },
+    {
+      "id": "letter-sound",
+      "title": "التعرف على صوت الحرف"
+    },
+    {
+      "id": "short-vowels",
+      "title": "الحركات القصيرة",
+      "details": [
+        "الفتحة",
+        "الكسرة",
+        "الضمة"
+      ]
+    },
+    {
+      "id": "sukoon",
+      "title": "السكون"
+    },
+    {
+      "id": "long-vowels",
+      "title": "المدود",
+      "details": [
+        "المد بالألف",
+        "المد بالواو",
+        "المد بالياء"
+      ]
+    },
+    {
+      "id": "letter-positions",
+      "title": "أشكال الحرف في الكلمة",
+      "details": [
+        "أول الكلمة",
+        "وسط الكلمة",
+        "آخر الكلمة"
+      ]
+    },
+    {
+      "id": "letter-detection",
+      "title": "تمييز الحرف داخل الكلمات"
+    },
+    {
+      "id": "sound-analysis",
+      "title": "تحليل الكلمات إلى مقاطع وأصوات"
+    },
+    {
+      "id": "syllable-building",
+      "title": "تركيب المقاطع"
+    },
+    {
+      "id": "word-reading",
+      "title": "قراءة الكلمات"
+    },
+    {
+      "id": "letter-writing",
+      "title": "كتابة الحرف"
+    },
+    {
+      "id": "word-writing",
+      "title": "كتابة الكلمات"
+    }
   ],
   "mastery": {
     "minimumQuestions": 5,
@@ -51,7 +130,11 @@
     "allowRetry": true,
     "retryFailedSkillOnly": true,
     "unlockNextSkillAfterMastery": true,
-    "randomizeQuestions": true
+    "randomizeQuestions": true,
+    "consecutiveSuccesses": 2,
+    "minimumGapMs": 86400000,
+    "requireTeacherObservation": true,
+    "questionCountIsNotMastery": true
   },
   "assessmentLevels": [
     "اختبار المهارة",

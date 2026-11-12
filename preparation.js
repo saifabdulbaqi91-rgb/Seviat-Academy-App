@@ -35,6 +35,7 @@
   ];
 
   function openPreparation() {
+    if(window.SeviatAccessGuard&&!window.SeviatAccessGuard.coarseAllowed('preparation'))return;
     const area = createActivityArea();
 
     area.innerHTML = `
@@ -73,10 +74,12 @@
   }
 
   function startVisualTraining() {
+    if(window.SeviatAccessGuard&&!window.SeviatAccessGuard.coarseAllowed('preparation'))return;
     let index = 0;
     let mistakes = 0;
 
     function render() {
+    if(window.SeviatAccessGuard&&!window.SeviatAccessGuard.coarseAllowed('preparation'))return;
       const area = createActivityArea();
 
       if (index >= activities.length) {

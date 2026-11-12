@@ -11,6 +11,8 @@
 
 <link rel="stylesheet" href="visual-dark-fix.css">
   <link rel="stylesheet" href="afaq-fonts.css">
+<link rel="stylesheet" href="large-questions.css?v=1">
+<link rel="stylesheet" href="independent-writing.css?v=1">
 </head>
 <body>
   <header class="topbar">
@@ -102,12 +104,12 @@
   </main>
 
   <footer>
-    <strong>آفاق</strong>
+    <strong>أكاديمية سيفيات</strong>
     <p>0531343626</p>
     <small>التعلم رحلة ممتعة تبدأ بخطوة.</small>
   </footer>
 
-  <script src="sounds/effects.js"></script><script src="app.js?v=20261111-3"></script>
+  <script src="sounds/effects.js?v=20261111045951"></script><script src="app.js?v=20261111-3"></script>
 <script src="writing-board.js"></script>
 <script src="word-builder.js"></script>
 <script src="skill-menu.js"></script>
@@ -120,6 +122,64 @@
   <script src="extra-preparation-games.js"></script>
   <script src="theme-language.js"></script>
 
+<script src="unit1-rules.js"></script>
+
+
+<script src="unit1-learning.js"></script>
+<button id="seviat-menu-button"
+  type="button"
+  aria-label="فتح القائمة"
+  aria-expanded="false"
+  aria-controls="seviat-sidebar"
+  style="position:fixed;top:16px;right:16px;z-index:9998;
+  padding:12px 16px;border-radius:12px;
+  background:#1769aa;color:white;border:0;
+  font-size:24px;cursor:pointer">
+  ☰
+</button>
+
+<div id="seviat-menu-overlay"
+  style="display:none;position:fixed;inset:0;
+  background:rgba(0,0,0,.55);z-index:9998"></div>
+
+<aside id="seviat-sidebar"
+  aria-label="القائمة الجانبية"
+  style="position:fixed;top:0;right:0;bottom:0;
+  width:min(320px,85vw);background:#14283e;
+  color:white;z-index:9999;padding:24px;
+  box-sizing:border-box;overflow-y:auto;
+  transform:translateX(110%);
+  transition:transform .25s ease">
+
+  <button id="seviat-menu-close"
+    type="button"
+    style="background:transparent;color:white;
+    border:0;font-size:28px;cursor:pointer"
+    aria-label="إغلاق القائمة">✕</button>
+
+  <h2>أكاديمية سيفيات</h2>
+  <hr>
+
+  <button id="seviat-parent-settings"
+    type="button"
+    style="width:100%;padding:16px;
+    background:#1769aa;color:white;
+    border:0;border-radius:12px;
+    font-size:17px;cursor:pointer">
+    ⚙️ إعدادات المعلم وولي الأمر
+  </button>
+
+  <p style="margin-top:20px;font-size:14px">
+    التحكم في الحروف والمهارات والألعاب
+  </p>
+</aside>
+<script src="parent-controls.js?v=20261111052857"></script>
+<script src="access-tree.js?v=2"></script>
+<script src="./access-guard.js?v=3"></script>
+<script src="activity-access.js"></script>
+<script src="independent-writing.js?v=1"></script>
+<link rel="stylesheet" href="unit2-preparation.css?v=4"><script src="unit2-preparation.js?v=4"></script>
+<script src="seviat-sound-settings.js?v=2"></script>
 </body>
 </html>
 

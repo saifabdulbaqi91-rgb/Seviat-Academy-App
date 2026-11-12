@@ -68,6 +68,7 @@
   }
 
   function openLevels(id) {
+    if(window.SeviatAccessGuard&&!window.SeviatAccessGuard.coarseAllowed('preparation'))return;
     runId++;
     clearGameTimer();
 
@@ -83,7 +84,7 @@
 
     const description = document.createElement("p");
     description.textContent =
-      "ابدأ بالتدريب ثم اجتز اختبار الإتقان لفتح المستوى التالي.";
+      "ابدأ بالتدريب ثم اجتز اختبار المستوى لفتح المستوى التالي.";
     root.appendChild(description);
 
     for (let level = 1; level <= LEVELS; level++) {
@@ -97,7 +98,7 @@
 
       ["practice", "assessment"].forEach(mode => {
         const b = button(
-          mode === "practice" ? "التدريب" : "اختبار الإتقان",
+          mode === "practice" ? "التدريب" : "اختبار المستوى",
           () => startGame(id, level, mode),
           mode === "practice" ? "primary-button" : "sound-button"
         );
@@ -163,6 +164,7 @@
   }
 
   function startGame(id, level, mode) {
+    if(window.SeviatAccessGuard&&!window.SeviatAccessGuard.coarseAllowed('preparation'))return;
     const currentRun = ++runId;
     clearGameTimer();
 
@@ -173,6 +175,7 @@
     let reactionCount = 0;
 
     function nextRound() {
+    if(window.SeviatAccessGuard&&!window.SeviatAccessGuard.coarseAllowed('preparation'))return;
       if (currentRun !== runId) return;
       clearGameTimer();
 
@@ -323,6 +326,7 @@
     }
 
     function finish() {
+    if(window.SeviatAccessGuard&&!window.SeviatAccessGuard.coarseAllowed('preparation'))return;
       const passed = mode === "assessment" && correct >= 4;
 
       if (passed) unlock(id, level);
@@ -332,7 +336,7 @@
 
       const title = document.createElement("h2");
       title.textContent = mode === "assessment"
-        ? "نتيجة اختبار الإتقان"
+        ? "نتيجة اختبار المستوى"
         : "انتهى التدريب";
       root.appendChild(title);
 
@@ -354,7 +358,7 @@
         ? "أحسنت! اجتزت المستوى."
         : mode === "assessment"
           ? "تحتاج إلى 4 إجابات صحيحة من 5 لاجتياز المستوى."
-          : "يمكنك إعادة التدريب أو تجربة اختبار الإتقان.";
+          : "يمكنك إعادة التدريب أو تجربة اختبار المستوى.";
       root.appendChild(message);
 
       root.appendChild(

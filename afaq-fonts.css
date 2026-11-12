@@ -1,0 +1,67 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Tajawal:wght@400;500;600;700;800&display=swap');
+
+/* AFAQ - General interface */
+body,
+button,
+input,
+select,
+textarea,
+.stage-card,
+.primary-button,
+.sound-button {
+    font-family: 'Tajawal', sans-serif;
+}
+
+/* AFAQ - Arabic educational content */
+#activityArea h2,
+#activityArea h3,
+#activityArea .question-text,
+#activityArea .question-prompt,
+#activityArea #questionText,
+#activityArea #questionPrompt,
+#activityArea #quizOptions button,
+#activityArea .option-button,
+#activityArea .answer-option,
+#activityArea .letter,
+#activityArea .arabic-letter,
+#activityArea .word,
+#activityArea .syllable {
+    font-family: 'Noto Naskh Arabic', serif !important;
+    line-height: 1.9;
+}
+
+/* Keep Arabic diacritics clear */
+#activityArea .arabic-letter,
+#activityArea .letter {
+    font-size: 2.5rem;
+    line-height: 2;
+}
+
+/* AFAQ - Clear Arabic educational answers */
+#quizOptions button,
+#activityArea .option-button,
+#activityArea .answer-option,
+#activityArea .quiz-option {
+    font-family: 'Noto Naskh Arabic', serif !important;
+    font-size: clamp(30px, 5vw, 42px) !important;
+    font-weight: 600 !important;
+    line-height: 2 !important;
+    min-height: 105px;
+    color: #17345a;
+}
+
+/* Clear educational instructions */
+#activityArea p,
+#activityArea #quizFeedback,
+#activityArea #questionInstruction {
+    opacity: 1;
+    line-height: 1.9;
+}
+
+/* Preserve readable answers in dark mode */
+html[data-seviat-theme="dark"] #quizOptions button,
+html[data-seviat-theme="dark"] #activityArea .option-button,
+html[data-seviat-theme="dark"] #activityArea .answer-option {
+    color: #ffffff !important;
+}
+

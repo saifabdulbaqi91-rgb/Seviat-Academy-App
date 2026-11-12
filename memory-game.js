@@ -19,8 +19,10 @@
 
   const STORAGE_KEY = "seviat-memory-unlocked-v1";
   let timer = null;
+  let generation = 0;
 
   function stopTimer() {
+    generation++;
     if (timer !== null) {
       clearTimeout(timer);
       timer = null;
@@ -42,6 +44,7 @@
   }
 
   function openMemoryLevels() {
+    if(window.SeviatAccessGuard&&!window.SeviatAccessGuard.coarseAllowed('preparation'))return;
     stopTimer();
 
     const area = createActivityArea();
@@ -73,7 +76,7 @@
         button.className =
           mode === "practice" ? "primary-button" : "sound-button";
         button.textContent =
-          mode === "practice" ? "التدريب" : "اختبار الإتقان";
+          mode === "practice" ? "التدريب" : "اختبار المستوى";
         button.disabled = number > unlocked();
         button.style.margin = "6px";
 
@@ -92,6 +95,7 @@
   }
 
   function startMemory(levelNumber, mode) {
+    if(window.SeviatAccessGuard&&!window.SeviatAccessGuard.coarseAllowed('preparation'))return;
     stopTimer();
 
     const settings = LEVELS[levelNumber - 1];
@@ -101,6 +105,7 @@
     let correctRounds = 0;
 
     function showRound() {
+    if(window.SeviatAccessGuard&&!window.SeviatAccessGuard.coarseAllowed('preparation'))return;
       stopTimer();
 
       if (round >= totalRounds) {
@@ -116,7 +121,7 @@
 
       area.innerHTML = `
         <h2>🧠 الذاكرة البصرية — المستوى ${levelNumber}</h2>
-        <p>${mode === "practice" ? "تدريب" : "اختبار إتقان"}
+        <p>${mode === "practice" ? "تدريب" : "اختبار المستوى"}
           — الجولة ${round + 1} من ${totalRounds}</p>
         <h3 id="memoryInstruction">تذكر ترتيب الألوان</h3>
         <div id="memoryDisplay"
@@ -212,9 +217,14 @@
         choices.appendChild(button);
       });
 
+      const instruction = document.getElementById("memoryInstruction");
+      const roundGeneration = generation;
       timer = setTimeout(() => {
+        if (roundGeneration !== generation || !instruction.isConnected ||
+            document.getElementById("memoryInstruction") !== instruction ||
+            document.getElementById("memoryDisplay") !== display) return;
         display.replaceChildren();
-        document.getElementById("memoryInstruction").textContent =
+        instruction.textContent =
           "اختر الألوان بالترتيب الذي شاهدته";
         choices.style.display = "flex";
         timer = null;
@@ -231,6 +241,7 @@
     }
 
     function finish() {
+    if(window.SeviatAccessGuard&&!window.SeviatAccessGuard.coarseAllowed('preparation'))return;
       const passed =
         mode === "assessment" && correctRounds >= 4;
 
@@ -252,7 +263,7 @@
           ? "أحسنت! اجتزت المستوى."
           : mode === "assessment"
             ? "تحتاج إلى 4 إجابات صحيحة من 5 لاجتياز المستوى."
-            : "يمكنك التدريب مرة أخرى أو تجربة اختبار الإتقان."}</p>
+            : "يمكنك التدريب مرة أخرى أو تجربة اختبار المستوى."}</p>
         <button id="memoryRepeat" class="primary-button">
           إعادة النشاط
         </button>
@@ -271,5 +282,6 @@
     showRound();
   }
 
+  window.addEventListener('seviat-access-changed', stopTimer);
   window.openMemoryLevels = openMemoryLevels;
 })();

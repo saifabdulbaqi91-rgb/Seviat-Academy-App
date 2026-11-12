@@ -1,167 +1,88 @@
-﻿{
+{
   "version": 1,
   "letter": "م",
   "unit": 1,
   "questions": [
     {
-      "id": "meem-name-01",
-      "skill": "letter-name",
-      "type": "multiple-choice",
-      "prompt": "المعلم يقول اسم الحرف: ميم. اختر الحرف الصحيح.",
-      "options": ["م", "ب", "ل"],
-      "answer": "م"
-    },
-    {
-      "id": "meem-shape-01",
-      "skill": "letter-shape",
-      "type": "multiple-choice",
-      "prompt": "ابحث عن حرف الميم.",
-      "options": ["ن", "م", "ب"],
-      "answer": "م"
-    },
-    {
-      "id": "meem-shape-02",
-      "skill": "letter-shape",
-      "type": "multiple-choice",
-      "prompt": "أي حرف يشبه الدائرة الصغيرة وله ذيل",
-      "options": ["م", "د", "ر"],
-      "answer": "م"
-    },
-    {
-      "id": "meem-vowel-01",
-      "skill": "short-vowels",
-      "type": "multiple-choice",
-      "prompt": "اختر الميم المفتوحة.",
-      "options": ["م", "م", "م"],
-      "answer": "م"
-    },
-    {
-      "id": "meem-vowel-02",
-      "skill": "short-vowels",
-      "type": "multiple-choice",
-      "prompt": "اختر الميم المكسورة.",
-      "options": ["م", "م", "م"],
-      "answer": "م"
-    },
-    {
-      "id": "meem-vowel-03",
-      "skill": "short-vowels",
-      "type": "multiple-choice",
-      "prompt": "اختر الميم المضمومة.",
-      "options": ["م", "م", "م"],
-      "answer": "م"
-    },
-    {
-      "id": "meem-vowel-04",
-      "skill": "short-vowels",
-      "type": "teacher-listening",
-      "prompt": "المعلم ينطق م. اختر ما سمعت.",
-      "options": ["م", "م", "م"],
-      "answer": "م"
-    },
-    {
-      "id": "meem-vowel-05",
-      "skill": "short-vowels",
-      "type": "teacher-listening",
-      "prompt": "المعلم ينطق م. اختر ما سمعت.",
-      "options": ["م", "م", "م"],
-      "answer": "م"
-    },
-    {
-      "id": "meem-vowel-06",
-      "skill": "short-vowels",
-      "type": "teacher-listening",
-      "prompt": "المعلم ينطق م. اختر ما سمعت.",
-      "options": ["م", "م", "م"],
-      "answer": "م"
-    },
-    {
-      "id": "meem-sukoon-01",
-      "skill": "sukoon",
-      "type": "multiple-choice",
-      "prompt": "اختر الميم الساكنة.",
-      "options": ["م", "م", "م"],
-      "answer": "م"
-    },
-    {
-      "id": "meem-sukoon-02",
-      "skill": "sukoon",
-      "type": "multiple-choice",
-      "prompt": "أي كلمة تنتهي بميم ساكنة",
-      "options": ["لم", "ما", "مي"],
-      "answer": "لم"
-    },
-    {
-      "id": "meem-madd-01",
-      "skill": "long-vowels",
-      "type": "multiple-choice",
-      "prompt": "اختر الميم الممدودة بالألف.",
-      "options": ["مي", "ما", "مو"],
-      "answer": "ما"
-    },
-    {
-      "id": "meem-madd-02",
-      "skill": "long-vowels",
-      "type": "multiple-choice",
-      "prompt": "اختر الميم الممدودة بالياء.",
-      "options": ["ما", "مو", "مي"],
-      "answer": "مي"
-    },
-    {
-      "id": "meem-madd-03",
-      "skill": "long-vowels",
-      "type": "multiple-choice",
-      "prompt": "اختر الميم الممدودة بالواو.",
-      "options": ["مو", "ما", "مي"],
-      "answer": "مو"
-    },
-    {
-      "id": "meem-madd-04",
+      "id": "meem-extra-meem-madd-04",
       "skill": "long-vowels",
       "type": "teacher-listening",
-      "prompt": "المعلم ينطق ما. اختر ما سمعت.",
-      "options": ["مي", "مو", "ما"],
-      "answer": "ما"
+      "prompt": "استمع إلى المعلم، ثم اختر المقطع الذي سمعته.",
+      "options": [
+        "مي",
+        "مو",
+        "ما"
+      ],
+      "answer": "ما",
+      "letter": "م",
+      "audioText": "ما"
     },
     {
-      "id": "meem-madd-05",
+      "id": "meem-extra-meem-madd-05",
       "skill": "long-vowels",
       "type": "teacher-listening",
-      "prompt": "المعلم ينطق مي. اختر ما سمعت.",
-      "options": ["ما", "مي", "مو"],
-      "answer": "مي"
+      "prompt": "استمع إلى المعلم، ثم اختر المقطع الذي سمعته.",
+      "options": [
+        "ما",
+        "مي",
+        "مو"
+      ],
+      "answer": "مي",
+      "letter": "م",
+      "audioText": "مي"
     },
     {
-      "id": "meem-madd-06",
+      "id": "meem-extra-meem-madd-06",
       "skill": "long-vowels",
       "type": "teacher-listening",
-      "prompt": "المعلم ينطق مو. اختر ما سمعت.",
-      "options": ["مو", "مي", "ما"],
-      "answer": "مو"
+      "prompt": "استمع إلى المعلم، ثم اختر المقطع الذي سمعته.",
+      "options": [
+        "مو",
+        "مي",
+        "ما"
+      ],
+      "answer": "مو",
+      "letter": "م",
+      "audioText": "مو"
     },
     {
       "id": "meem-position-01",
       "skill": "letter-positions",
       "type": "multiple-choice",
       "prompt": "أين حرف الميم في كلمة موز",
-      "options": ["أول الكلمة", "وسط الكلمة", "آخر الكلمة"],
-      "answer": "أول الكلمة"
+      "options": [
+        "أول الكلمة",
+        "وسط الكلمة",
+        "آخر الكلمة"
+      ],
+      "answer": "أول الكلمة",
+      "letter": "م"
     },
     {
       "id": "meem-position-02",
       "skill": "letter-positions",
       "type": "multiple-choice",
       "prompt": "أين حرف الميم في كلمة قلم",
-      "options": ["أول الكلمة", "وسط الكلمة", "آخر الكلمة"],
-      "answer": "آخر الكلمة"
+      "options": [
+        "أول الكلمة",
+        "وسط الكلمة",
+        "آخر الكلمة"
+      ],
+      "answer": "آخر الكلمة",
+      "letter": "م"
     },
     {
       "id": "meem-position-03",
       "skill": "letter-positions",
       "type": "multiple-choice",
       "prompt": "أين حرف الميم في كلمة تمر",
-      "options": ["أول الكلمة", "وسط الكلمة", "آخر الكلمة"],
-      "answer": "وسط الكلمة"
+      "options": [
+        "أول الكلمة",
+        "وسط الكلمة",
+        "آخر الكلمة"
+      ],
+      "answer": "وسط الكلمة",
+      "letter": "م"
     }
   ]
 }

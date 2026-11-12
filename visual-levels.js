@@ -81,13 +81,16 @@
           ])
         });
       } else if (selectedLevel === 2) {
+        // Shared within each question: size and color cannot identify the answer.
+        const optionSize = shuffle([65, 85])[0];
+        const optionColor = shuffle(COLORS.filter(c => c !== COLORS[i]))[0];
         generated.push({
           prompt: "اختر الشكل نفسه رغم اختلاف اللون والحجم",
           target: { shape: target, color: COLORS[i], size: 90 },
           options: shuffle([
-            { shape: target, color: COLORS[(i + 2) % 5], size: 65, correct: true },
+            { shape: target, color: optionColor, size: optionSize, correct: true },
             ...others.map((s, j) => ({
-              shape: s, color: COLORS[(i + j + 3) % 5], size: 85
+              shape: s, color: optionColor, size: optionSize
             }))
           ])
         });
@@ -139,13 +142,14 @@
   }
 
   function openLevels() {
+    if(window.SeviatAccessGuard&&!window.SeviatAccessGuard.coarseAllowed('preparation'))return;
     clearTimer();
     const area = createActivityArea();
     const saved = getSaved();
 
     area.innerHTML = `
       <h2>👁️ مستويات التمييز البصري</h2>
-      <p>نتدرب أولا ثم نختبر الإتقان قبل الانتقال للمستوى التالي.</p>
+      <p>نتدرب أولا ثم نختبر الأداء قبل الانتقال للمستوى التالي.</p>
       <div id="visualLevelList" style="display:grid;gap:12px;margin:20px 0"></div>
       <button id="visualHome" class="sound-button">العودة إلى التهيئة</button>
     `;
@@ -172,7 +176,7 @@
 
       const test = document.createElement("button");
       test.className = "sound-button";
-      test.textContent = "اختبار الإتقان";
+      test.textContent = "اختبار المستوى";
       test.disabled = !unlocked;
       test.style.margin = "8px";
       test.onclick = () => start(number, "assessment");
@@ -188,6 +192,7 @@
   }
 
   function start(selectedLevel, selectedMode) {
+    if(window.SeviatAccessGuard&&!window.SeviatAccessGuard.coarseAllowed('preparation'))return;
     clearTimer();
     level = selectedLevel;
     mode = selectedMode;
@@ -198,6 +203,7 @@
   }
 
   function render() {
+    if(window.SeviatAccessGuard&&!window.SeviatAccessGuard.coarseAllowed('preparation'))return;
     clearTimer();
 
     if (index >= questions.length) {
@@ -211,7 +217,7 @@
 
     area.innerHTML = `
       <h2>${LEVELS[level - 1].name}</h2>
-      <p>${mode === "practice" ? "التدريب" : "اختبار الإتقان"}
+      <p>${mode === "practice" ? "التدريب" : "اختبار المستوى"}
         — السؤال ${index + 1} من ${questions.length}</p>
       <h3 style="text-align:center">${item.prompt}</h3>
       <div id="visualTarget" style="text-align:center;min-height:115px;margin:15px"></div>
@@ -309,6 +315,7 @@
   }
 
   function finish() {
+    if(window.SeviatAccessGuard&&!window.SeviatAccessGuard.coarseAllowed('preparation'))return;
     clearTimer();
     const area = createActivityArea();
     const correct = results.filter(Boolean).length;
@@ -320,10 +327,10 @@
     if (passed) saveUnlocked(level + 1);
 
     area.innerHTML = `
-      <h2>${mode === "assessment" ? "نتيجة اختبار الإتقان" : "أحسنت! انتهى التدريب"}</h2>
+      <h2>${mode === "assessment" ? "نتيجة اختبار المستوى" : "أحسنت! انتهى التدريب"}</h2>
       <p>${mode === "assessment"
-        ? `الإجابات الصحيحة: ${correct} من ${questions.length} — نسبة الإتقان: ${percent}%`
-        : "أكملت التدريب. يمكنك الآن أداء اختبار الإتقان."}</p>
+        ? `الإجابات الصحيحة: ${correct} من ${questions.length} — نسبة الإجابات الصحيحة: ${percent}%`
+        : "أكملت التدريب. يمكنك الآن أداء اختبار المستوى."}</p>
       <p>${passed
         ? "أحسنت! تم فتح المستوى التالي."
         : mode === "assessment"

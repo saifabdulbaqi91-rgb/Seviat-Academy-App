@@ -11,7 +11,7 @@ let curriculumData;
 let skillsData;
 let questionsData;
 
-let soundEnabled = true;
+let soundEnabled = window.SeviatEffects?.isEnabled() ?? true;
 let score = 0;
 let answeredQuestions = [];
 let currentQuestions = [];
@@ -57,7 +57,8 @@ function saveProgress() {
 
 function updateProgressDisplay() {
   const total = questionsData?.questions?.length || 0;
-  const completed = answeredQuestions.length;
+  const activeIds = new Set((questionsData?.questions || []).map(q => q.id));
+  const completed = answeredQuestions.filter(id => activeIds.has(id)).length;
   const percentage = total
     ? Math.round((completed / total) * 100)
     : 0;
@@ -422,7 +423,7 @@ function showAssessmentResults() {
 
   const summary = document.createElement("p");
   summary.textContent =
-    `الإجابات الصحيحة: ${correct} من ${total} | الأخطاء: ${wrong.length} | نسبة الإتقان: ${percent}%`;
+    `الإجابات الصحيحة: ${correct} من ${total} | الأخطاء: ${wrong.length} | نسبة الإجابات الصحيحة: ${percent}%`;
 
   const status = document.createElement("h3");
   status.textContent = passed
@@ -525,6 +526,7 @@ function checkAnswer(answer, selectedButton) {
 }
 
 function openStage(stage) {
+  if (stage === 'writing') { window.openIndependentWriting(); return; }
   selectedStage = stage;
 
   if (stage === "preparation") {
@@ -600,6 +602,19 @@ async function initializeApp() {
       questionsResponse.json()
     ]);
 
+
+    // UNIT1_REVIEWED_LOADER: wait for all sources before enabling any activity.
+    const sourceFiles = ["data/group1-reading-extra.json", "data/meem-questions.json", "data/group1-extra.json", "data/unit1-reviewed.json"];
+    const loaded = await Promise.all(sourceFiles.map(async file => {
+      const response = await fetch(file);
+      if (!response.ok) throw new Error("تعذر تحميل " + file);
+      return response.json();
+    }));
+    const legacy = [...questionsData.questions, ...loaded.slice(0, 3).flatMap(d => d.questions), ...window.SeviatGroup1.questions];
+    window.Unit1Learning.configure(loaded[3], legacy);
+    questionsData = window.Unit1Rules.merge(loaded[3].questions, legacy);
+    window.Unit1Learning.ready = true;
+
     updateProgressDisplay();
 
     document.querySelectorAll(".stage-card").forEach(card => {
@@ -616,6 +631,7 @@ async function initializeApp() {
 
     soundToggle.addEventListener("click", () => {
       soundEnabled = !soundEnabled;
+    window.SeviatEffects?.setEnabled(soundEnabled);
 
       soundToggle.textContent = soundEnabled ? "🔊 الصوت" : "🔇 الصوت";
 
@@ -639,6 +655,6 @@ async function initializeApp() {
   }
 }
 
-initializeApp();
+document.addEventListener("DOMContentLoaded", initializeApp, { once: true });
 
 

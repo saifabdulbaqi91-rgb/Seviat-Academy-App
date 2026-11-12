@@ -1,0 +1,47 @@
+﻿{
+  "version": 1,
+  "defaultAccess": "all",
+  "curriculum": "لغتي - الصف الأول الابتدائي",
+  "units": [
+    {
+      "id": "unit-1",
+      "title": "أسرتي",
+      "letters": ["م", "ب", "ل", "د", "ن", "ر"]
+    }
+  ],
+  "skills": [
+    {"id": "letter-name", "title": "اسم الحرف"},
+    {"id": "letter-shape", "title": "شكل الحرف"},
+    {"id": "letter-sound", "title": "صوت الحرف"},
+    {
+      "id": "short-vowels",
+      "title": "الحركات القصيرة",
+      "subskills": [
+        {"id": "fatha", "title": "الفتحة"},
+        {"id": "kasra", "title": "الكسرة"},
+        {"id": "damma", "title": "الضمة"}
+      ]
+    },
+    {"id": "sukoon", "title": "السكون"},
+    {
+      "id": "long-vowels",
+      "title": "المدود",
+      "subskills": [
+        {"id": "alif", "title": "المد بالألف"},
+        {"id": "waw", "title": "المد بالواو"},
+        {"id": "ya", "title": "المد بالياء"}
+      ]
+    },
+    {"id": "letter-positions", "title": "أشكال الحرف واتصاله"},
+    {"id": "letter-detection", "title": "تمييز الحرف"},
+    {"id": "sound-analysis", "title": "تحليل الأصوات"},
+    {"id": "syllable-building", "title": "تركيب المقاطع"},
+    {"id": "word-reading", "title": "قراءة الكلمات"},
+    {"id": "letter-writing", "title": "كتابة الحرف"},
+    {"id": "word-writing", "title": "كتابة الكلمات"}
+  ],
+  "activityModes": [
+    {"id": "practice", "title": "التدريب"},
+    {"id": "assessment", "title": "الاختبار"}
+  ]
+}

@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
   window.openWritingBoard = function (letter = "م") {
     if (typeof createActivityArea !== "function") {
       alert("تعذر فتح سبورة الكتابة.");
@@ -14,6 +14,9 @@
       { name: "وسط الكلمة", value: "\u0640" + letter + "\u0640" },
       { name: "آخر الكلمة متصل", value: "\u0640" + letter }
     ];
+
+    // UNIT1_NON_JOINING
+    if (["د", "ر", "ا", "أ", "و", "ز", "ذ"].includes(letter)) shapes.splice(1, 2);
 
     let currentShape = shapes[0];
     let drawing = false;

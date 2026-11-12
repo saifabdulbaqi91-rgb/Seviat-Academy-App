@@ -1,11 +1,46 @@
-﻿(function () {
+(function () {
   "use strict";
 
   const THEME_KEY = "seviat-theme";
   const LANG_KEY = "seviat-language";
 
   const dictionary = {
-    "أكاديمية سيفيات": "Seviat Academy",
+    "منهج الصف الأول": "Grade 1 Curriculum",
+    "اختر الحرف الذي تريد تعلمه": "Choose a Letter to Learn",
+    "الأسئلة التي تحتاج مراجعة": "Questions to Review",
+    "لا توجد إجابات خاطئة.": "No Incorrect Answers.",
+    "تم تسجيل إجابتك. انتقل إلى السؤال التالي.": "Answer Recorded. Go to the Next Question.",
+    "أحسنت يا بطل! إجابة صحيحة.": "Excellent! Correct Answer.",
+    "حاول مرة أخرى يا بطل!": "Try Again!",
+    "الاختبار غير متاح": "Test Unavailable",
+    "لا توجد أسئلة كافية لتقييم هذا الحرف حاليا.": "Not Enough Questions to Assess This Letter Yet.",
+    "المعلم ينطق الحرف ثم يختار الطفل الإجابة": "Listen to the Letter Sound, Then Choose an Answer.",
+    "انتهى التدريب": "Practice Complete",
+    "أحسنت يا بطل! انتهيت من التدريب.": "Well Done! You Completed the Practice.",
+    "أحسنت! اجتزت الاختبار.": "Well Done! You Passed the Test.",
+    "تحتاج إلى مزيد من التدريب قبل اجتياز الاختبار.": "More Practice Is Needed Before Passing.",
+    "الصوت": "Sound",
+    "متشابهان": "Same",
+    "مختلفان": "Different",
+    "الأول": "First",
+    "الثاني": "Second",
+    "منخفض": "Low",
+    "متوسط": "Medium",
+    "مرتفع": "High",
+    "استمع جيدا ثم اختر الإجابة.": "Listen Carefully, Then Choose an Answer.",
+    "استمع إلى الصوتين. هل هما متشابهان أم مختلفان": "Are the Two Sounds the Same or Different?",
+    "استمع إلى الصوتين. أيهما أطول": "Which Sound Is Longer?",
+    "استمع جيدا. كم صوتا سمعت": "How Many Sounds Did You Hear?",
+    "استمع إلى ترتيب النغمات ثم أعده.": "Listen to the Tone Sequence and Repeat It.",
+    "عد مرات ظهور الصوت المرتفع.": "Count the High Tones.",
+    "استمع إلى الأصوات": "Listen to the Sounds",
+    "تمييز الصوتين المتشابهين والمختلفين": "Same or Different Sounds",
+    "الصوت القصير والطويل": "Short and Long Sounds",
+    "عد الأصوات": "Count the Sounds",
+    "الذاكرة السمعية": "Auditory Memory",
+    "الانتباه السمعي": "Auditory Attention",
+    "المتصفح لا يدعم تشغيل الأصوات.": "Your Browser Does Not Support Audio Playback.",
+    "آفاق": "AFAQ",
     "التهيئة والاستعداد": "Preparation & Readiness",
     "عالم الحروف": "Letter World",
     "الحركات والمدود": "Vowels & Long Sounds",
@@ -64,6 +99,14 @@
   );
 
   const patterns = [
+    [/^الوحدة\s+(\d+):\s*(.+)$/u, (_, n, name) => `Unit ${n}: ${dictionary[name] || name}`],
+    [/^المستوى\s+(\d+):\s*(.+)$/u, (_, n, name) => `Level ${n}: ${dictionary[name] || name}`],
+    [/^مهارات حرف\s+(.+)$/u, (_, letter) => `Letter Skills: ${letter}`],
+    [/^تدريب حرف\s+(.+)$/u, (_, letter) => `Practice Letter ${letter}`],
+    [/^حرف\s+(.+)$/u, (_, letter) => `Letter ${letter}`],
+    [/^(\d+)%\s+من الأسئلة أنجزت$/u, (_, n) => `${n}% of questions completed`],
+    [/^🔊\s*الصوت$/u, () => "🔊 Sound"],
+    [/^🔇\s*الصوت$/u, () => "🔇 Sound"],
     [/^تدريب حرف\s+([مبلدنر])$/, (_, l) => `Practice Letter ${l}`],
     [/^حرف\s+([مبلدنر])$/, (_, l) => `Letter ${l}`],
     [/^مهارات حرف\s+([مبلدنر])$/, (_, l) => `Letter Skills: ${l}`],
