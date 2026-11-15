@@ -1,0 +1,16 @@
+/* Diagnostic-only presentation; existing identity and approved-logo slot untouched. */
+.diagnostic-arabic{font-family:'Noto Naskh Arabic',serif;font-size:clamp(26px,6vw,40px);line-height:2.2;padding-block:12px;overflow:visible;overflow-wrap:anywhere}
+.diagnostic-view .journey-options{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.diagnostic-view button{min-height:48px;min-width:48px;touch-action:manipulation}
+.diagnostic-view label{display:block;padding:12px}.diagnostic-view input[type=checkbox]{width:24px;height:24px;vertical-align:middle;margin:8px}
+.diagnostic-teacher{margin-block:24px;padding:clamp(12px,3vw,24px);border:1px solid #b8cad8;border-radius:20px;overflow-wrap:anywhere}
+.diagnostic-teacher input,.diagnostic-teacher select{max-width:100%;min-height:44px;padding:8px;margin:8px}
+.diagnostic-table{width:100%;table-layout:fixed;border-collapse:collapse}.diagnostic-table th,.diagnostic-table td{padding:8px;border:1px solid #b8cad8;overflow-wrap:anywhere}
+.diagnostic-teacher pre{max-height:450px;overflow:auto;direction:rtl}
+html[data-seviat-theme=dark] .diagnostic-teacher,html[data-seviat-theme=dark] #journey.diagnostic-view{background:#14283e;color:#fff}
+html[data-seviat-theme=dark] .diagnostic-view button{color:#173b70;background:#eaf4ff}
+html[data-seviat-theme=dark] .diagnostic-teacher select,html[data-seviat-theme=dark] .diagnostic-teacher input{color:#173b70;background:#fff}
+@media(max-width:480px){.diagnostic-table th,.diagnostic-table td{font-size:13px;padding:4px}.diagnostic-teacher label{display:block!important}}
+/* Keep encouragement readable against the companion’s pale panel in both themes. */
+#journey.diagnostic-view .learning-companion .companion-message{color:#173b70!important}
+#diagnostic-teacher>h3{padding-inline-end:64px}

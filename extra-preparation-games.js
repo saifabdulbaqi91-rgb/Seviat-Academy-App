@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
   "use strict";
 
   const SHAPES = ["●", "■", "▲", "★", "◆", "♥"];
@@ -396,6 +396,6 @@
     };
   }
 
-  window.SeviatExtraGames = { openLevels, startGame };
+  window.SeviatExtraGames = { openLevels, startGame, makeQuestion };
   addGames();
 })();

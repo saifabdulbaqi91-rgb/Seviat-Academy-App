@@ -1,0 +1,9 @@
+﻿const fs=require('fs');let s=fs.readFileSync('tests/access-browser.cjs','utf8');const old="e.scrollIntoView({block:'center',behavior:'instant'});const r=e.getBoundingClientRect();";if(!s.includes(old))throw Error('Click helper point missing');s=s.replace(old,"window.scrollTo({top:window.scrollY,behavior:'instant'});e.scrollIntoView({block:'center',behavior:'instant'});const r=e.getBoundingClientRect();");fs.writeFileSync('tests/access-browser.cjs',s,'utf8');
+s=fs.readFileSync('tools/verify-adaptive-preservation.cjs','utf8');s=s.replace("'tests/journey-browser.cjs']);", "'tests/journey-browser.cjs','tests/access-browser.cjs']);");fs.writeFileSync('tools/verify-adaptive-preservation.cjs',s,'utf8');
+s=fs.readFileSync('tests/adaptive-check.cjs','utf8');s=s.replace("console.log(JSON.stringify({passed:true,checks}));",`
+const waived=Object.fromEntries(R.nodes.filter(n=>!n.optional).map(n=>[n.id,'allow']));
+const gameState={runs:[run('م:letter-shape'),run('م:letter-shape')],overrides:waived};
+check(!E.recommend(gameState,R,now).nodeId?.startsWith('word-game:'),'words are not automatically assigned without taught vocabulary');
+check(E.recommend({...gameState,studiedWords:['مَالْ','رَمْلْ','مَنَارْ','بَابْ','لَبَنْ']},R,now).nodeId==='word-game:1','word game uses explicitly taught vocabulary');
+console.log(JSON.stringify({passed:true,checks}));`);fs.writeFileSync('tests/adaptive-check.cjs',s,'utf8');
+s=fs.readFileSync('tests/adaptive-browser.cjs','utf8');s=s.replace(" await seed({overrides:known,homework:'word-game:1',studiedWords:"," await seed({overrides:known,homework:'word-game:1'});await click('#journey-start');assert.equal(await cdp.eval(\"!!document.querySelector('#journey .journey-model')\"),false);\n await seed({overrides:known,homework:'word-game:1',studiedWords:");fs.writeFileSync('tests/adaptive-browser.cjs',s,'utf8');

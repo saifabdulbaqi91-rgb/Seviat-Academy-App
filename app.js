@@ -77,33 +77,79 @@ function updateProgressDisplay() {
 
 
 
-function speak(text) {
-  if (!soundEnabled || !("speechSynthesis" in window)) return;
-
-  const synth = window.speechSynthesis;
-  synth.cancel();
-
-  const utterance = new SpeechSynthesisUtterance(text);
-
-  utterance.lang = "ar-SA";
-  utterance.rate = 0.85;
-  utterance.pitch = 1;
-  utterance.volume = 1;
-
-  const voices = synth.getVoices();
-  const arabicVoices = voices.filter(v =>
-    v.lang.toLowerCase().startsWith("ar")
-  );
-
-  const saudiVoice = arabicVoices.find(v =>
-    v.lang.toLowerCase() === "ar-sa"
-  );
-
-  utterance.voice = saudiVoice || arabicVoices[0] || null;
-
-  synth.speak(utterance);
+function speak() {
+  // Educational pronunciation requires a reviewed recording or the teacher.
+  return false;
 }
 
+
+function createGlobalBackButton() {
+  if (document.getElementById("afaq-global-back")) return;
+
+  const button = document.createElement("button");
+  button.id = "afaq-global-back";
+  button.type = "button";
+  button.textContent = "↩ رجوع خطوة";
+  button.disabled = false;
+
+  button.addEventListener("click", () => {
+    const smartAudio = document.getElementById("afaq-smart-audio-panel");
+    if (smartAudio) {
+      smartAudio.remove();
+      return;
+    }
+
+    const audioEditor = document.getElementById("afaq-audio-library");
+    if (audioEditor) {
+      audioEditor.remove();
+      return;
+    }
+
+    const area = document.getElementById("activityArea");
+    if (!area) {
+      stages.scrollIntoView({ behavior: "smooth" });
+      return;
+    }
+
+    if (area.querySelector("#answerOptions, #nextQuestion")) {
+      openLetterActivity();
+      return;
+    }
+
+    if (area.querySelector("#startPractice, #startAssessment")) {
+      renderLetterPicker();
+      return;
+    }
+
+    area.remove();
+    stages.scrollIntoView({ behavior: "smooth" });
+  });
+  button.title = "سيتم تفعيل الرجوع بعد ربط سجل التنقل";
+
+  button.style.cssText = `
+    position:fixed;
+    bottom:calc(16px + env(safe-area-inset-bottom, 0px));
+    left:50%;transform:translateX(-50%);
+    z-index:100000;
+    padding:10px 16px;
+    border:2px solid #173b70;
+    border-radius:12px;
+    background:#ffffff;
+    color:#173b70;
+    font-family:Tajawal,Arial,sans-serif;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
+  `;
+
+  document.body.appendChild(button);
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", createGlobalBackButton);
+} else {
+  createGlobalBackButton();
+}
 function createActivityArea() {
   let area = document.getElementById("activityArea");
 
@@ -482,7 +528,40 @@ function checkAnswer(answer, selectedButton) {
   }
 
   buttons.forEach(button => {
-    button.disabled = true;
+    button.disabled = false;
+
+  button.addEventListener("click", () => {
+    const smartAudio = document.getElementById("afaq-smart-audio-panel");
+    if (smartAudio) {
+      smartAudio.remove();
+      return;
+    }
+
+    const audioEditor = document.getElementById("afaq-audio-library");
+    if (audioEditor) {
+      audioEditor.remove();
+      return;
+    }
+
+    const area = document.getElementById("activityArea");
+    if (!area) {
+      stages.scrollIntoView({ behavior: "smooth" });
+      return;
+    }
+
+    if (area.querySelector("#answerOptions, #nextQuestion")) {
+      openLetterActivity();
+      return;
+    }
+
+    if (area.querySelector("#startPractice, #startAssessment")) {
+      renderLetterPicker();
+      return;
+    }
+
+    area.remove();
+    stages.scrollIntoView({ behavior: "smooth" });
+  });
 
     if (button.textContent === question.answer) {
       button.style.setProperty("background", "#bbf7d0", "important");
@@ -614,6 +693,7 @@ async function initializeApp() {
     window.Unit1Learning.configure(loaded[3], legacy);
     questionsData = window.Unit1Rules.merge(loaded[3].questions, legacy);
     window.Unit1Learning.ready = true;
+    window.dispatchEvent(new Event('seviat-curriculum-ready'));
 
     updateProgressDisplay();
 
@@ -647,6 +727,8 @@ async function initializeApp() {
     });
 
   } catch (error) {
+    if(window.Unit1Learning)window.Unit1Learning.ready=false;
+    window.dispatchEvent(new Event('seviat-curriculum-error'));
     console.error(error);
     showMessage(
       "تعذر تحميل المنهج",

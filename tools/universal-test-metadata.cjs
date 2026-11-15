@@ -1,0 +1,1 @@
+const fs=require('fs');let s=fs.readFileSync('tests/universal-path-check.cjs','utf8').replace("{id:'root',skill:","{id:'root',title:'تمييز',skill:").replace("{id:'parallel',skill:","{id:'parallel',title:'كتابة',skill:").replace("{id:'cross',skill:","{id:'cross',title:'تحليل',skill:");fs.writeFileSync('tests/universal-path-check.cjs',s);

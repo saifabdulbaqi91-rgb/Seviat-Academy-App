@@ -1,0 +1,1 @@
+const fs=require('fs');let s=fs.readFileSync('tests/unit1-browser.cjs','utf8').replace("document.body.innerText.includes('تعذر تحميل المنهج')","document.body?.innerText?.includes('تعذر تحميل المنهج')");fs.writeFileSync('tests/unit1-browser.cjs',s);

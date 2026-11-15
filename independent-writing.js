@@ -6,6 +6,7 @@ const nonJoin=new Set(['د','ر']);
 let active=null;
 const el=(tag,cls,text)=>{const x=document.createElement(tag);if(cls)x.className=cls;if(text!==undefined)x.textContent=text;return x;};
 const words={م:['مَ','مَالْ','مَنَارْ'],ب:['بَ','بَابْ','لَبَنْ'],ل:['لَ','لَبَنْ','بَلَدْ'],د:['دَ','دَارْ','بَلَدْ'],ن:['نَ','نَارْ','مِنْبَرْ'],ر:['رَ','رَمْلْ','نَارْ'],ص:['صَ','صَفْ','فَصْلْ'],ف:['فَ','فَمْ','فَصْلْ'],س:['سَ','سَمَكْ','سَلَمْ'],ق:['قَ','قَلَمْ','سَقْفْ'],ت:['تَ','تَمْرْ','بِنْتْ'],ح:['حَ','حَبْلْ','مِلْحْ']};
+window.SeviatWritingModels={words};
 function models(l,skill){
  if(skill==='shape')return [{label:'منفصل',value:l},{label:'أول الكلمة',value:nonJoin.has(l)?l:l+'ـ'},{label:'وسط الكلمة',value:nonJoin.has(l)?'ـ'+l:'ـ'+l+'ـ'},{label:'آخر الكلمة',value:'ـ'+l}].filter((v,i,a)=>a.findIndex(q=>q.value===v.value)===i);
  if(skill==='vowels')return ['َ','ِ','ُ','ْ'].map((v,i)=>({label:['فتحة','كسرة','ضمة','سكون'][i],value:l+v}));

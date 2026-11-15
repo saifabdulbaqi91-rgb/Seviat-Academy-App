@@ -1,11 +1,11 @@
 (function () {
-  window.openWritingBoard = function (letter = "م") {
+  window.openWritingBoard = function (letter = "م", targetArea) {
     if (typeof createActivityArea !== "function") {
       alert("تعذر فتح سبورة الكتابة.");
       return;
     }
 
-    const area = createActivityArea();
+    const area = targetArea || createActivityArea();
     area.innerHTML = "";
 
     const shapes = [
@@ -18,6 +18,7 @@
     // UNIT1_NON_JOINING
     if (["د", "ر", "ا", "أ", "و", "ز", "ذ"].includes(letter)) shapes.splice(1, 2);
 
+    if ([...letter].length > 1) shapes.splice(1);
     let currentShape = shapes[0];
     let drawing = false;
     let hasDrawn = false;
@@ -44,7 +45,7 @@
     guide.style.cssText =
       "position:absolute;inset:0;display:flex;align-items:center;" +
       "justify-content:center;font-size:150px;color:#d5e5f0;" +
-      "font-family:Arial,sans-serif;direction:rtl;" +
+      "font-family:'Noto Naskh Arabic',serif;line-height:2;direction:rtl;" +
       "pointer-events:none;user-select:none;";
 
     const canvas = document.createElement("canvas");
@@ -206,4 +207,5 @@
 
     area.scrollIntoView({ behavior: "smooth" });
   };
+window.SeviatWritingActivity=window.openWritingBoard;
 })();

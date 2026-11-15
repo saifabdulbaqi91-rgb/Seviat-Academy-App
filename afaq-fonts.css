@@ -65,3 +65,21 @@ html[data-seviat-theme="dark"] #activityArea .answer-option {
     color: #ffffff !important;
 }
 
+
+/* Journey and current lesson renderers: preserve Arabic shaping and marks. */
+#journey h3,#journey .journey-model,#journey .journey-options button,
+#u1-options button,#activityArea .sv2-prompt,#activityArea .sv2-options button,
+#activityArea .sv2-target,#activityArea [data-shape],.sw-guide {
+ font-family:'Noto Naskh Arabic',serif!important;line-height:2!important;
+ padding-block:12px;overflow:visible;letter-spacing:normal;
+}
+#journey .journey-options{grid-template-columns:repeat(auto-fit,minmax(min(120px,100%),1fr))}
+#journey .journey-model{overflow-wrap:anywhere;margin-inline:0}
+#journey .journey-options button{overflow-wrap:anywhere;min-width:0}
+
+/* Scanning games stay touch friendly without a twenty-row mobile list. */
+#journey .journey-options[data-family="attention"],#journey .journey-options[data-family="observation"]{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+#journey .journey-options[data-family="attention"] button,#journey .journey-options[data-family="observation"] button{min-height:64px;padding:6px;font-size:30px}
+#journey .journey-options svg{max-width:100%;height:auto}
+
+#journey .journey-options[data-family="attention"] button,#journey .journey-options[data-family="observation"] button{padding-block:6px!important;margin:0}

@@ -1,0 +1,32 @@
+{
+  "created": "2026-11-14T02:17:28.066Z",
+  "checkpoint": ".access-staging/audio-repair-2026-11-14T01-09-13-675Z",
+  "finalRun": ".access-staging/adaptive-2026-11-14T01-58-31-176Z",
+  "head": "e8a60ac00c91351cfb8b6fc6e06f004a99141fe2",
+  "originals": 368,
+  "unchanged": 365,
+  "changed": [
+    "afaq-workspace.js",
+    "index.html",
+    "tools\\run-adaptive-checks.cjs"
+  ],
+  "missing": [],
+  "corruptCopies": [],
+  "addedFiles": {
+    "literacy-foundation.js": "0c95ccadefb43619fc3160afed47a9ea3d07810517578cbe3980a34deca6c60e",
+    "literacy-foundation-ui.js": "00613dbb191971e08204bb1f8f331d246ff1ec461d52df43ff8e273ef6d9a1cf",
+    "literacy-foundation.css": "dd61bccb84c08e84cc74a85b8527ed165b094d6db33dce5dcb364947dea359da",
+    "tests/literacy-foundation-check.cjs": "0812a90df18f58c0f8625f16a35671dbd973ae2b97d719aa964f32b5641a66e7",
+    "tests/literacy-foundation-browser.cjs": "cbc90520a72408818bee87931affe37ceb7d0d49f9f0b5d7b34699c893412ae9",
+    "tools/literacy-foundation-audit.cjs": "39ff441eb2b59811669640bcd4512f834e4a9074b4aba94367dd88c61b4e3e21",
+    "docs/AFAQ_CURRICULUM_CONTENT_AUDIT.json": "d82cb7d5c324cf15e1b6e555fa215c07ef90cef6254734a392cc0580af37781e",
+    "docs/AFAQ_CURRICULUM_ASSESSMENT_IMPLEMENTATION_PLAN.md": "bac23b72e5012795d7a6d756f22ea2e12a8ef72c78972fb578402e22e3af7164",
+    "docs/AFAQ_CURRICULUM_ASSESSMENT_FOUNDATION_REVIEW.md": "af1ef14e62adfb2f12036cee3fcde06f1839a27e13e92db4b9f0689741d678ca"
+  },
+  "allGroupsPassed": 31,
+  "sourceUnchangedDuringTests": true,
+  "sourceMatchesFinalRun": true,
+  "noCommitPushDeploy": true,
+  "officialTextbookInspected": false,
+  "humanAssessmentValidated": false
+}

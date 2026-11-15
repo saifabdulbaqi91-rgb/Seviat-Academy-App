@@ -1,0 +1,21 @@
+﻿'use strict';
+const fs=require('fs'),path=require('path'),vm=require('vm'),assert=require('assert/strict');const root=path.resolve(__dirname,'..');const read=f=>fs.readFileSync(path.join(root,f),'utf8').replace(/^\uFEFF/,'');const R=require('../journey-rules'),E=require('../adaptive-learning'),A=require('../adaptive-activities');let checks=0;const check=(v,m)=>{assert(v,m);checks++;};
+const reviewed=JSON.parse(read('data/unit1-reviewed.json'));require('../unit1-rules').validate(reviewed.questions);
+const context={window:{},document:{readyState:'loading',addEventListener(){}},console};vm.runInNewContext(read('unit2-preparation.js'),context);const unit2=context.window.SeviatUnit2;
+const all=[...reviewed.questions,...R.nodes.flatMap(n=>A.questions(n))];
+for(const l of R.letters.slice(6))for(const skill of ['name','shape','vowels','sukoon','madd','position','syllable'])all.push(...unit2.questions(l,skill));
+for(const group of unit2.prepLevels)for(const item of group.items)all.push({prompt:'مطابقة النموذج',answer:item.target,options:item.choices});
+check(R.nodes.filter(n=>n.family==='extended').length===unit2.prepLevels.reduce((n,g)=>n+g.items.length,0),'every extended preparation level belongs to the journey');
+for(const q of all){check(q.options.includes(q.answer),'answer missing '+q.id);check(new Set(q.options.map(x=>x.normalize('NFC').trim())).size===q.options.length,'duplicate options '+q.id);for(const value of [q.prompt,q.answer,...q.options]){check(!/[\u064b-\u0650\u0652]{2}/u.test(value),'conflicting vowel marks '+q.id);check(!value.includes('\ufffd'),'broken Arabic '+q.id);}}
+check(R.letters.join('')==='مبلدنرصفسقتح','Saudi sequence');
+for(const n of R.nodes)for(const id of n.requires)check(R.nodes.some(p=>p.id===id),'unknown prerequisite');
+let serial=0;const now=Date.now(),make=(id,time=now)=>({id:'r'+(++serial),node:id,independent:true,completedAt:time,results:Array.from({length:5},(_,i)=>({id:'q'+i,correct:true}))});
+const overrides=Object.fromEntries(R.nodes.filter(n=>!n.optional).map(n=>[n.id,'allow']));delete overrides['م:letter-shape'];
+const returning={runs:[make('م:letter-shape',now-5*86400000),make('م:letter-shape',now-4*86400000),make('ب:letter-shape'),make('ب:letter-shape')],overrides,studiedWords:['a','b','c','d','e']};
+check(E.recommend(returning,R,now).reason==='spaced-review','returning learner review must precede games');
+const gameDone={runs:[make('word-game:1'),make('word-game:1')],overrides,studiedWords:['a','b','c','d','e']};check(E.recommend(gameDone,R,now).nodeId!=='word-game:1','completed word game must not loop');
+check(E.recommend({runs:[],overrides:{}},R).nodeId==='prep:matching','new learner');
+check(E.recommend({runs:[{...make('prep:matching'),results:Array.from({length:5},(_,i)=>({id:'q'+i,correct:false}))}]},R).difficulty==='supported','struggling learner support');
+const app=read('app.js');check(!app.includes('new SpeechSynthesisUtterance'),'educational TTS must remain disabled');check(!app.includes('synth.speak('),'no automatic pronunciation');
+check(read('afaq-fonts.css').includes('#journey .journey-options button'),'journey Naskh coverage');
+console.log(JSON.stringify({passed:true,checks,reviewedTasks:all.length,scope:'automated structural and mark review; pronunciation/handwriting require a human'}));

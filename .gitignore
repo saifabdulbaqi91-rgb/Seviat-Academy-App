@@ -1,4 +1,4 @@
-﻿*.backup.js
+*.backup.js
 *.backup.json
 *.before-*.js
 *.before-*.json
@@ -10,3 +10,29 @@ __pycache__/
 .env
 .env.*
 node_modules/
+.unit1-staging/
+backups/
+
+.access-staging/
+
+# AFAQ generated backups and temporary files
+*.bak
+*.backup*
+*.before-*
+*.audio-backup
+*.ui-backup
+Seviat-*-Backup.zip
+.quality-staging/
+.access-staging/
+
+# Internal audit outputs
+afaq-answer-revealed-ids.txt
+afaq-complete-question-audit.txt
+afaq-content-duplicates.txt
+afaq-final-question-review.txt
+afaq-final-validation.txt
+afaq-question-audit.txt
+afaq-question-conflicts.txt
+afaq-question-review.txt
+afaq-revealed-review.txt
+seviat-question-final-audit.txt

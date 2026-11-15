@@ -226,7 +226,7 @@
     if (!p) return true;
 
     return !!p.closest(
-      "script,style,textarea,input," +
+      "script,style,textarea,input,#journey,#activityArea,#teacherHub,.afaq-report,[data-ar],[data-instructional],.brand," +
       "#seviat-settings-panel,#seviat-settings-toggle," +
       "#quizOptions,#visualOptions,#gameOptions,#letterGrid," +
       ".question-text,.question-prompt,#questionText,#questionPrompt," +
@@ -244,6 +244,7 @@
 
     document.documentElement.lang = english ? "en" : "ar";
     document.documentElement.dir = "rtl";
+    document.querySelectorAll("#journey,#activityArea,#teacherHub,.afaq-report").forEach(e=>{e.lang="ar";});
 
     const walker = document.createTreeWalker(
       document.body,
@@ -336,5 +337,6 @@
     characterData:true
   });
 
+  window.SeviatInterface={language,setTheme,setLanguage(value){if(!['ar','en'].includes(value))throw Error('Invalid language');localStorage.setItem(LANG_KEY,value);translatePage();window.dispatchEvent(new Event('afaq-interface-changed'));}};
   setTheme(localStorage.getItem(THEME_KEY) || "light");
 })();

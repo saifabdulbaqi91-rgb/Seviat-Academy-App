@@ -1,0 +1,1 @@
+const fs=require('fs');const base=fs.readFileSync('tests/interactions-browser.cjs','utf8');const split=base.indexOf(' const preserved=');if(split<0)throw Error('Missing harness');fs.writeFileSync('tests/diagnostic-browser.cjs',base.slice(0,split)+fs.readFileSync('tools/diagnostic-browser-body.txt','utf8'));

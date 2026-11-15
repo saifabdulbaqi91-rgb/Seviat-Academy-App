@@ -1,0 +1,4 @@
+const fs=require('fs');let s=fs.readFileSync('tests/unit1-browser.cjs','utf8');s=s.replace(" const getState=()=>",` const loginIfNeeded=async()=>{if(await cdp.eval("!!document.querySelector('#seviat-parent-pin')")){await cdp.eval("document.querySelector('#seviat-parent-pin').value='123456'");await click('#seviat-parent-login');return true;}return false;};
+ const getState=()=>`);
+s=s.replace("assert.equal(await cdp.eval(\"Unit1Rules.mastered(JSON.parse(localStorage.getItem('seviat-unit1-learning-v2')),'م','letter-name')\"),true);","if(await loginIfNeeded())await click('#u1-save-attempt');\n assert.equal(await cdp.eval(\"Unit1Rules.mastered(JSON.parse(localStorage.getItem('seviat-unit1-learning-v2')),'م','letter-name')\"),true);");
+s=s.replace("await click('#u1-save-writing-0');assert.equal", "await click('#u1-save-writing-0');if(await loginIfNeeded())await click('#u1-save-writing-0');assert.equal");fs.writeFileSync('tests/unit1-browser.cjs',s);

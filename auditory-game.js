@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
   "use strict";
 
   const LEVELS = [
@@ -26,7 +26,7 @@
   let stopPlayback = () => {};
   async function playNotes(notes, owner) {
     stopPlayback();
-    if (window.SeviatEffects?.isEnabled() === false) throw Error("شغّل الصوت أولًا.");
+    if (window.SeviatEffects?.isEnabled() === false || window.AfaqWorkspace?.audioGain()===0) throw Error("شغّل الصوت أولًا.");
     const ctx = getContext();
     if (!ctx) throw Error("المتصفح لا يدعم تشغيل الأصوات.");
     await ctx.resume();
@@ -57,7 +57,7 @@
           oscillator.connect(gain); gain.connect(ctx.destination);
           const begin = start + offset, end = begin + note.duration;
           gain.gain.setValueAtTime(0.0001, begin);
-          gain.gain.exponentialRampToValueAtTime(0.15, begin + 0.02);
+          gain.gain.exponentialRampToValueAtTime(Math.max(0.0001,0.15*(window.AfaqWorkspace?.audioGain()??1)), begin + 0.02);
           gain.gain.exponentialRampToValueAtTime(0.0001, end);
           oscillator.onended = () => { gain.disconnect(); if (++ended === notes.length) finish(true); };
           oscillator.start(begin); oscillator.stop(end + 0.02);
@@ -404,5 +404,6 @@
     render();
   }
 
+  window.SeviatAudioQuestions={createQuestion,playNotes,stop:()=>stopPlayback()};
   window.openAuditoryLevels = openAuditoryLevels;
 })();

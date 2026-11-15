@@ -1,0 +1,96 @@
+# AFAQ — Phase 5: Student Experience, Teacher Workspace & Arabic Reports
+
+2026-11-13, Asia/Riyadh. **Completed within the supported scope below: 21/21 test groups passed on unchanged source hashes.** Incremental work over the Phase 4 final 19/19 baseline; no rebuild, commit, push, deployment, data reset, external speech API, paid service or new infrastructure. Stop here for review.
+
+## Inspection, plan and preservation
+
+Read docs/ADAPTIVE_DIAGNOSTIC_PLACEMENT_PHASE3.md and docs/CHILD_FIRST_LEARNING_PHASE4.md; inspected journey, prerequisite graph, curriculum mapping, adaptive engine, all activity adapters, diagnostic store/UI, local profiles, voice/recording storage, teacher controls, old theme/language and sound controls, sidebar, reports, manifest and tests. Plan: docs/AFAQ_PHASE5_PLAN.md.
+
+Checkpoint: .access-staging/phase5-1794568139612/checkpoint.json (152 pre-existing runtime/test/data/asset/report files, with SHA-256 and dirty Git status). Exact pre-Phase5 runner also retained at .access-staging/phase5-runner-baseline-1794568966101, verified against its Phase 4 final-run hash. Existing backups were not edited. Final comparison protects 134 unchanged checkpoint files. Data banks, curriculum graph, adaptive rules, diagnostic engine/content, original games/content, whiteboards, fonts, styles.css and official logo assets remain unchanged. Header/brand markup is preserved. Repository name, internal seviat keys and historical assessment formats remain intact.
+
+## Delivered student experience
+
+- Student mode remains the default. One prominent start/resume action leads through the existing placement/routing/learning flow. New learners use «ابدأ التعلم»; learners with history use «تابع رحلتك». A saved unfinished activity also retains an explicit resume label. Initialization attaches to an already-ready home and can safely run twice without duplicating settings/library controls. No new unlocking engine or arbitrary level picker.
+- «ألعب وأتدرّب» is a secondary disclosure. It catalogs previously learned/completed, currently prerequisite-safe and teacher-policy-allowed practice by visual discrimination, memory/attention, letter recognition, listening, speaking, reading, writing, construction and comprehension. Replays explicitly request practice, not assessment, and do not grant completion just by browsing. Locks are rechecked at selection. Existing advanced teacher assignments/overrides remain explicit teacher decisions, distinct from verified mastery.
+- All existing games and learning records remain. Categories with no safe learned content are not exposed as playable games. Dictation appears in the report foundation map as لم يُقيّم; no dictation game/scoring was invented.
+- Teacher entry is inside the shared menu, away from the primary learning action. Administrative settings/assessments and raw data remain outside ordinary student screens.
+
+## One shared settings menu
+
+The existing sidebar is reused. Its button is in the header, preventing floating overlap. Old separate floating theme/language panel and duplicate top sound button are hidden; their working implementations/APIs remain. Escape closes the menu, opening focuses its close control, and keyboard focus is contained while open.
+
+Shared controls cover master sound mute, volume, light/dark, Arabic/English interface navigation and reduced motion. Separate existing effects/encouragement toggles and recorded-instruction mute/volume are retained. Master audio output is a new additive local preference, afaq-audio-output-v1, and does not rewrite independent sound preferences. Malformed/unknown-version or concurrently modified output data is refused instead of overwritten. Volume is applied to existing feedback tones/clips, auditory exercises, approved instruction playback and DOM audio playback; changing output stops ongoing scheduled playback safely. It is an application control, not an OS/device volume guarantee.
+
+Arabic instructional containers declare lang=ar even when the interface is English; translated navigation labels declare their own language for assistive technology. Arabic instructional questions, choices, letters, diacritics and reports are protected from the general text translator. Primary navigation/settings have Arabic/English labels; the retained advanced curriculum-management tools and instructional content remain Arabic. This is not a claim of a complete English translation of every legacy teacher tool. Existing theme/language storage keys remain.
+
+## Teacher workspace
+
+The menu opens four primary actions: «ابدأ جلسة»، «طلابي»، «التقارير»، «إعدادات متقدمة». Start-session uses the current student's appropriate primary journey with existing policy/homework/drafts/placement rather than asking for a unit and skill each time. It does not reset deliberate existing teacher configurations.
+
+Local profiles can be selected/added from «طلابي» using the existing profile implementation. Detailed assignments, difficulty/thresholds, any-activity previews, manual locks/unlocks, diagnostics, rewards, original Unit 1/2 activities, writing board, recordings and teacher observations are preserved under advanced settings. Original direct teacher API remains a compatibility entry to advanced tools; the normal menu opens the simple workspace. Raw JSON is within a closed explicitly labelled technical disclosure; deliberate JSON export remains available. The local role switch is not secure authentication. Existing local parent-control restrictions are retained.
+
+## Arabic reports and PDF
+
+«التقارير» builds an RTL Arabic report from current existing evidence without writing learning or diagnostic results. It includes student, current recommended learning step, ten foundational categories, per-skill status, verified mastery separately from sampled independent accuracy, practice/assessment/diagnostic counts, errors/hints/retries, measured strengths/support needs and targeted interventions, diagnostic totals and human voice/diagnostic observations. One session or a diagnostic success cannot produce a performance percentage. Inadequate evidence shows «لم يُقيّم», which is distinct from measured low performance. Manual override/teacher observation never becomes verified mastery.
+
+The report is a readable table on desktop and labelled cards on narrow screens, using Tajawal for UI and Noto Naskh Arabic for instructional text. Print layout restores the full RTL table, repeated headers, page margins and black text on white, and omits navigation and other students/admin controls. The explicit print/PDF action awaits fonts, opens native browser printing, and explains selecting «حفظ بتنسيق PDF». No external renderer/service/library is used. Chrome generated afaq-arabic-student-report.pdf (566183 bytes) with embedded fonts, alongside screenshots. The final PDF was also rendered locally with the already installed PyMuPDF for inspection: 21 pages, white corner pixels and extractable Arabic text (pdf-inspection.json and page images in the final evidence directory). That verification tool is not an application dependency. This is browser-native Save-to-PDF, not a silent one-click downloadable PDF service.
+
+Reports use active journey-profile evidence. Historical Unit 1/2 records remain in their original stores and interfaces; shared old handwriting observations are not arbitrarily attributed to newly created local students. Existing valid historical mastery projection continues through the existing context. This is not a migration of historical records into a new report database.
+
+## Files
+
+New runtime: afaq-workspace-core.js (read-only grouping/report adapter), afaq-workspace.js (shared shell, teacher organization and report/print UI), afaq-workspace.css (scoped responsive/print styles).
+
+Modified existing runtime: index.html (module links and visible footer/sidebar legacy name only), manifest.json (visible AFAQ name only), student-journey.js (hooks and explicit practice replay), theme-language.js (public settings API and Arabic content protection), guided-audio.js (master output and preference API), seviat-sound-settings.js and auditory-game.js (optional master volume adapter).
+
+Tests: tests/workspace-check.cjs, tests/workspace-browser.cjs; tools/run-adaptive-checks.cjs includes the two new groups. Existing child/interactions/journey/access browser navigation reaches the reorganized controls via actual menu/disclosure clicks, preserving their assertions. Existing diagnostic/child preservation tests normalize only the exact authorized Phase 5 branding/volume substitutions before checking original hashes; all other protected bytes must still match. The old assertion that the entire menu is hidden in student mode was replaced with the new explicit requirement: shared settings are visible while legacy administrator entry and the teacher workspace remain hidden. All educational success criteria, deadlines, authentication/save assertions and evidence requirements remain.
+
+Documentation: docs/AFAQ_PHASE5_PLAN.md, this report, docs/AFAQ_PHASE5_PRESERVATION.json and docs/AFAQ_FUTURE_ROADMAP.md and docs/AFAQ_PHASE5_TEST_HISTORY.md. Small checkpoint/integration/verification helpers remain in tools; prior tools and artifacts are preserved.
+
+## Executed verification
+
+Final command: node tools/run-adaptive-checks.cjs --browser.
+Evidence: .access-staging/adaptive-2026-11-13T12-17-04-679Z/summary.json. **21/21 PASS**, sourceUnchangedDuringTests:true and all final source hashes matched the working files before this report was produced. git diff --check also passed (Windows line-ending warnings only).
+
+| Group | Result |
+|---|---|
+| tests/workspace-check.cjs | PASS |
+| tests/child-experience-check.cjs | PASS |
+| tests/diagnostic-check.cjs | PASS |
+| tests/interactions-check.cjs | PASS |
+| tests/universal-path-check.cjs | PASS |
+| tests/pedagogical-check.cjs | PASS |
+| tests/adaptive-check.cjs | PASS |
+| tests/journey-check.cjs | PASS |
+| tests/unit1-check.cjs --live | PASS |
+| tests/quality-check.cjs | PASS |
+| tests/access-check.cjs --live | PASS |
+| tests/workspace-browser.cjs --live | PASS |
+| tests/child-experience-browser.cjs --live | PASS |
+| tests/diagnostic-browser.cjs --live | PASS |
+| tests/interactions-browser.cjs --live | PASS |
+| tests/universal-path-browser.cjs --live | PASS |
+| tests/pedagogical-browser.cjs --live | PASS |
+| tests/journey-browser.cjs --live | PASS |
+| tests/adaptive-browser.cjs --live | PASS |
+| tests/access-browser.cjs --live | PASS |
+| tests/unit1-browser.cjs --live | PASS |
+
+The new pure group covers ten foundational categories, all 193 existing graph nodes, safe replay, insufficient vs low evidence, diagnostic/mastery separation, actual independent percentages, manual observation separation and protected data/assets/engines/logo. New Chrome checks default student entry, local profiles and persistence, minimal session routing, shared settings/master mute/volume, preference corruption/concurrency handling, English UI with Arabic learning content, hidden raw JSON, actual printing/PDF with embedded fonts, safe practice replays, blocked future curriculum, keyboard menu behavior, no header overlap, 320/390/768/1280 layouts and both themes. Existing suites retain diagnostic, voice, prerequisite, game, accessibility, historical assessment, whiteboard, quota, corruption and learning evidence checks.
+
+Intermediate failures and edited-source attempts remain preserved and are not relabelled as successful acceptance runs. Corrections covered pointer readiness and legacy navigation, unique readiness artifacts, white PDF paper, early home initialization/resume labels, language metadata, and bounded browser cleanup. A transient cleanup-comment parse error was corrected and all affected harnesses parsed before final verification.
+
+See [AFAQ_PHASE5_TEST_HISTORY.md](AFAQ_PHASE5_TEST_HISTORY.md) for actual run totals, source stability and failure details. The final 21/21 run above supersedes them; no educational assertion, grading threshold or readiness deadline was relaxed.
+
+## Limits, human review and remaining tasks
+
+- Supply human-approved Arabic instruction recordings; the approved registry remains empty and written/visual fallback remains intentional. Speaking/voice recording is local capture/manual review, not automatic pronunciation, transcription or grading. Handwriting and listening-language observations require actual human evaluation. Dictation and wider oral/text comprehension coverage must not be inferred from the report category list.
+- Review the actual PDF visually with Arabic teachers, including diacritics, reading order, age appropriateness, printer settings and long real student names. Automated embedded-font/print/layout checks do not establish linguistic or assessment validity. Verify real phones/tablets, touch, screen readers, physical microphone and real speakers; browser microphone testing uses a fake device.
+- Existing local-only privacy, storage quota, best-effort concurrent-write protection and voice expiry-on-next-visit limitations remain. No secure accounts, remote reporting, background expiry worker or authenticated roles were added.
+- Current reports deliberately retain insufficient-evidence states and sampled-accuracy scope. Historical shared records are not silently reassigned to separate local profiles. Advanced legacy teacher controls remain Arabic.
+- Font delivery remains the existing Google Fonts setup; no new self-hosted font bundle was added. Verify first-use offline/cached font availability on target devices; the current Chrome run loaded the declared Noto Naskh face.
+- Native PDF requires a browser with Save-to-PDF support (tested in installed desktop Chrome); other mobile browsers/printers require manual validation. No external/PDF infrastructure was introduced.
+
+## Future roadmap — documentation only
+
+See docs/AFAQ_FUTURE_ROADMAP.md: original Arabic educational mascot separate from the official logo; validated automatic Arabic speaking feedback; teacher-reviewed photographed handwriting; AI educational assistant; parent-teacher communication; live tutoring/interactive whiteboard; secure accounts/subscriptions; and integrated remediation/progress evidence. None of those future systems was implemented in Phase 5. Existing companion/whiteboard/adaptive remediation are preserved without new capability claims.

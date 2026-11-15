@@ -69,7 +69,7 @@
       "retryFailedSkills": true,
       "randomizeQuestions": true,
       "requireRepeatedSuccess": true,
-      "activityExamples": "الجمادات والنباتات فقط"
+      "activityExamples": "الأشخاص والحيوانات والنباتات والجمادات، مع طمس ملامح الوجوه في الرسوم والصور والحفاظ على وضوح الموضوع"
     }
   }
 }

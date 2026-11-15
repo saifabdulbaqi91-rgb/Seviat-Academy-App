@@ -1,0 +1,1 @@
+﻿const fs=require('fs');let s=fs.readFileSync('student-journey.js','utf8');s=s.replace('for(const submission of state().homeworkSubmissions||[])','for(const submission of (Array.isArray(state().homeworkSubmissions)?state().homeworkSubmissions:[]))');fs.writeFileSync('student-journey.js',s,'utf8');

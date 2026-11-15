@@ -1,0 +1,1465 @@
+{
+  "sourceCount": 255,
+  "sourceFiles": [
+    "data/questions.json",
+    "data/group1-reading-extra.json",
+    "data/meem-questions.json",
+    "data/group1-extra.json",
+    "group1-engine.js"
+  ],
+  "entries": [
+    {
+      "id": "meem-name-01",
+      "status": "retained-equivalent",
+      "activeId": "meem-name-01",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "meem-shape-01",
+      "status": "retained-equivalent",
+      "activeId": "meem-shape-01",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "meem-shape-02",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "meem-vowel-01",
+      "status": "retained-equivalent",
+      "activeId": "meem-vowel-01",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "meem-vowel-02",
+      "status": "retained-equivalent",
+      "activeId": "meem-vowel-02",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "meem-vowel-03",
+      "status": "retained-equivalent",
+      "activeId": "meem-vowel-03",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "meem-vowel-04",
+      "status": "retained-equivalent",
+      "activeId": "meem-vowel-04",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "meem-vowel-05",
+      "status": "retained-equivalent",
+      "activeId": "meem-vowel-05",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "meem-vowel-06",
+      "status": "retained-equivalent",
+      "activeId": "meem-vowel-06",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "meem-sukoon-01",
+      "status": "retained-equivalent",
+      "activeId": "meem-sukoon-01",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "meem-sukoon-02",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "meem-madd-01",
+      "status": "retained-equivalent",
+      "activeId": "meem-madd-01",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "meem-madd-02",
+      "status": "retained-equivalent",
+      "activeId": "meem-madd-02",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "meem-madd-03",
+      "status": "retained-equivalent",
+      "activeId": "meem-madd-03",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "meem-madd-04",
+      "status": "retained-equivalent",
+      "activeId": "meem-madd-04",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "meem-madd-05",
+      "status": "retained-equivalent",
+      "activeId": "meem-madd-05",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "meem-madd-06",
+      "status": "retained-equivalent",
+      "activeId": "meem-madd-06",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "meem-position-visual-01",
+      "status": "retained-equivalent",
+      "activeId": "meem-position-visual-01",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "meem-position-visual-02",
+      "status": "retained-equivalent",
+      "activeId": "meem-position-visual-02",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "meem-position-visual-03",
+      "status": "retained-equivalent",
+      "activeId": "meem-position-visual-03",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "meem-position-visual-04",
+      "status": "retained-equivalent",
+      "activeId": "meem-position-visual-04",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "meem-position-visual-05",
+      "status": "duplicate-preserved",
+      "activeId": "meem-position-visual-02",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "meem-position-visual-06",
+      "status": "duplicate-preserved",
+      "activeId": "meem-position-visual-01",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "meem-position-visual-07",
+      "status": "duplicate-preserved",
+      "activeId": "meem-position-visual-03",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "meem-position-visual-08",
+      "status": "duplicate-preserved",
+      "activeId": "meem-position-visual-04",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "seviat-reading-001",
+      "status": "review-only",
+      "reason": "قراءة قد تكشف الإجابة أو تحتوي بدائل غير مناسبة؛ حفظ الأصل واستبداله بمهمة جديدة بمعرّف جديد في المراجعة التراكمية."
+    },
+    {
+      "id": "seviat-reading-002",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "seviat-reading-003",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "seviat-reading-004",
+      "status": "review-only",
+      "reason": "قراءة قد تكشف الإجابة أو تحتوي بدائل غير مناسبة؛ حفظ الأصل واستبداله بمهمة جديدة بمعرّف جديد في المراجعة التراكمية."
+    },
+    {
+      "id": "seviat-reading-005",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "seviat-reading-006",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "seviat-reading-007",
+      "status": "review-only",
+      "reason": "قراءة قد تكشف الإجابة أو تحتوي بدائل غير مناسبة؛ حفظ الأصل واستبداله بمهمة جديدة بمعرّف جديد في المراجعة التراكمية."
+    },
+    {
+      "id": "seviat-reading-008",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "seviat-reading-009",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "seviat-reading-010",
+      "status": "review-only",
+      "reason": "قراءة قد تكشف الإجابة أو تحتوي بدائل غير مناسبة؛ حفظ الأصل واستبداله بمهمة جديدة بمعرّف جديد في المراجعة التراكمية."
+    },
+    {
+      "id": "seviat-reading-011",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "seviat-reading-012",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "seviat-reading-013",
+      "status": "review-only",
+      "reason": "قراءة قد تكشف الإجابة أو تحتوي بدائل غير مناسبة؛ حفظ الأصل واستبداله بمهمة جديدة بمعرّف جديد في المراجعة التراكمية."
+    },
+    {
+      "id": "seviat-reading-014",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "seviat-reading-015",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "seviat-reading-016",
+      "status": "review-only",
+      "reason": "قراءة قد تكشف الإجابة أو تحتوي بدائل غير مناسبة؛ حفظ الأصل واستبداله بمهمة جديدة بمعرّف جديد في المراجعة التراكمية."
+    },
+    {
+      "id": "seviat-reading-017",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "seviat-reading-018",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "seviat-reading-019",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "seviat-reading-020",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "seviat-reading-021",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "seviat-reading-022",
+      "status": "duplicate-preserved",
+      "activeId": "meem-sukoon-01",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "seviat-reading-023",
+      "status": "review-only",
+      "reason": "المهمة القديمة تخلط اسم الحرف أو المطابقة البصرية بالصوت؛ محفوظة دون احتسابها في تقييم الصوت."
+    },
+    {
+      "id": "seviat-reading-024",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "seviat-reading-025",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "seviat-reading-026",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "seviat-reading-027",
+      "status": "retained-equivalent",
+      "activeId": "seviat-reading-027",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "seviat-reading-028",
+      "status": "review-only",
+      "reason": "المهمة القديمة تخلط اسم الحرف أو المطابقة البصرية بالصوت؛ محفوظة دون احتسابها في تقييم الصوت."
+    },
+    {
+      "id": "seviat-reading-029",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "seviat-reading-030",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "seviat-reading-031",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "seviat-reading-032",
+      "status": "retained-equivalent",
+      "activeId": "seviat-reading-032",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "seviat-reading-033",
+      "status": "review-only",
+      "reason": "المهمة القديمة تخلط اسم الحرف أو المطابقة البصرية بالصوت؛ محفوظة دون احتسابها في تقييم الصوت."
+    },
+    {
+      "id": "seviat-reading-034",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "seviat-reading-035",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "seviat-reading-036",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "seviat-reading-037",
+      "status": "retained-equivalent",
+      "activeId": "seviat-reading-037",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "seviat-reading-038",
+      "status": "review-only",
+      "reason": "المهمة القديمة تخلط اسم الحرف أو المطابقة البصرية بالصوت؛ محفوظة دون احتسابها في تقييم الصوت."
+    },
+    {
+      "id": "seviat-reading-039",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "seviat-reading-040",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "seviat-reading-041",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "seviat-reading-042",
+      "status": "retained-equivalent",
+      "activeId": "seviat-reading-042",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "seviat-reading-043",
+      "status": "review-only",
+      "reason": "المهمة القديمة تخلط اسم الحرف أو المطابقة البصرية بالصوت؛ محفوظة دون احتسابها في تقييم الصوت."
+    },
+    {
+      "id": "seviat-reading-044",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "seviat-reading-045",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "seviat-reading-046",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "seviat-reading-047",
+      "status": "retained-equivalent",
+      "activeId": "seviat-reading-047",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "seviat-reading-048",
+      "status": "review-only",
+      "reason": "المهمة القديمة تخلط اسم الحرف أو المطابقة البصرية بالصوت؛ محفوظة دون احتسابها في تقييم الصوت."
+    },
+    {
+      "id": "meem-extra-meem-madd-04",
+      "status": "duplicate-preserved",
+      "activeId": "meem-madd-04",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "meem-extra-meem-madd-05",
+      "status": "duplicate-preserved",
+      "activeId": "meem-madd-05",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "meem-extra-meem-madd-06",
+      "status": "duplicate-preserved",
+      "activeId": "meem-madd-06",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "meem-position-01",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "meem-position-02",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "meem-position-03",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "g1-0628-001",
+      "status": "retained-equivalent",
+      "activeId": "g1-0628-001",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0628-006",
+      "status": "retained-equivalent",
+      "activeId": "g1-0628-006",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0628-011",
+      "status": "retained-equivalent",
+      "activeId": "g1-0628-011",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0628-016",
+      "status": "retained-equivalent",
+      "activeId": "g1-0628-016",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0628-021",
+      "status": "duplicate-preserved",
+      "activeId": "seviat-reading-027",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0628-026",
+      "status": "retained-equivalent",
+      "activeId": "g1-0628-026",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0628-031",
+      "status": "retained-equivalent",
+      "activeId": "g1-0628-031",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0628-036",
+      "status": "retained-equivalent",
+      "activeId": "g1-0628-036",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0644-041",
+      "status": "retained-equivalent",
+      "activeId": "g1-0644-041",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0644-046",
+      "status": "retained-equivalent",
+      "activeId": "g1-0644-046",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0644-051",
+      "status": "retained-equivalent",
+      "activeId": "g1-0644-051",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0644-056",
+      "status": "retained-equivalent",
+      "activeId": "g1-0644-056",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0644-061",
+      "status": "duplicate-preserved",
+      "activeId": "seviat-reading-032",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0644-066",
+      "status": "retained-equivalent",
+      "activeId": "g1-0644-066",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0644-071",
+      "status": "retained-equivalent",
+      "activeId": "g1-0644-071",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0644-076",
+      "status": "retained-equivalent",
+      "activeId": "g1-0644-076",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-062f-081",
+      "status": "retained-equivalent",
+      "activeId": "g1-062f-081",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-062f-086",
+      "status": "retained-equivalent",
+      "activeId": "g1-062f-086",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-062f-091",
+      "status": "retained-equivalent",
+      "activeId": "g1-062f-091",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-062f-096",
+      "status": "retained-equivalent",
+      "activeId": "g1-062f-096",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-062f-101",
+      "status": "duplicate-preserved",
+      "activeId": "seviat-reading-037",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-062f-106",
+      "status": "retained-equivalent",
+      "activeId": "g1-062f-106",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-062f-111",
+      "status": "retained-equivalent",
+      "activeId": "g1-062f-111",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-062f-116",
+      "status": "retained-equivalent",
+      "activeId": "g1-062f-116",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0646-121",
+      "status": "retained-equivalent",
+      "activeId": "g1-0646-121",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0646-126",
+      "status": "retained-equivalent",
+      "activeId": "g1-0646-126",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0646-131",
+      "status": "retained-equivalent",
+      "activeId": "g1-0646-131",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0646-136",
+      "status": "retained-equivalent",
+      "activeId": "g1-0646-136",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0646-141",
+      "status": "duplicate-preserved",
+      "activeId": "seviat-reading-042",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0646-146",
+      "status": "retained-equivalent",
+      "activeId": "g1-0646-146",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0646-151",
+      "status": "retained-equivalent",
+      "activeId": "g1-0646-151",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0646-156",
+      "status": "retained-equivalent",
+      "activeId": "g1-0646-156",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0631-161",
+      "status": "retained-equivalent",
+      "activeId": "g1-0631-161",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0631-166",
+      "status": "retained-equivalent",
+      "activeId": "g1-0631-166",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0631-171",
+      "status": "retained-equivalent",
+      "activeId": "g1-0631-171",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0631-176",
+      "status": "retained-equivalent",
+      "activeId": "g1-0631-176",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0631-181",
+      "status": "duplicate-preserved",
+      "activeId": "seviat-reading-047",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0631-186",
+      "status": "retained-equivalent",
+      "activeId": "g1-0631-186",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0631-191",
+      "status": "retained-equivalent",
+      "activeId": "g1-0631-191",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0631-196",
+      "status": "retained-equivalent",
+      "activeId": "g1-0631-196",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0000",
+      "status": "duplicate-preserved",
+      "activeId": "meem-shape-01",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0001",
+      "status": "review-only",
+      "reason": "المهمة القديمة تخلط اسم الحرف أو المطابقة البصرية بالصوت؛ محفوظة دون احتسابها في تقييم الصوت."
+    },
+    {
+      "id": "g1-0002",
+      "status": "duplicate-preserved",
+      "activeId": "meem-vowel-01",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0003",
+      "status": "duplicate-preserved",
+      "activeId": "meem-vowel-04",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0004",
+      "status": "duplicate-preserved",
+      "activeId": "meem-vowel-02",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0005",
+      "status": "duplicate-preserved",
+      "activeId": "meem-vowel-05",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0006",
+      "status": "duplicate-preserved",
+      "activeId": "meem-vowel-03",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0007",
+      "status": "duplicate-preserved",
+      "activeId": "meem-vowel-06",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0008",
+      "status": "duplicate-preserved",
+      "activeId": "meem-sukoon-01",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0009",
+      "status": "duplicate-preserved",
+      "activeId": "meem-sukoon-01",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0010",
+      "status": "duplicate-preserved",
+      "activeId": "meem-madd-01",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0011",
+      "status": "duplicate-preserved",
+      "activeId": "meem-madd-04",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0012",
+      "status": "duplicate-preserved",
+      "activeId": "meem-madd-02",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0013",
+      "status": "duplicate-preserved",
+      "activeId": "meem-madd-05",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0014",
+      "status": "duplicate-preserved",
+      "activeId": "meem-madd-03",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0015",
+      "status": "duplicate-preserved",
+      "activeId": "meem-madd-06",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0016",
+      "status": "duplicate-preserved",
+      "activeId": "meem-position-visual-04",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0017",
+      "status": "duplicate-preserved",
+      "activeId": "meem-position-visual-03",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0018",
+      "status": "duplicate-preserved",
+      "activeId": "meem-position-visual-01",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0019",
+      "status": "duplicate-preserved",
+      "activeId": "meem-position-visual-02",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0020",
+      "status": "duplicate-preserved",
+      "activeId": "g1-0628-001",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0021",
+      "status": "review-only",
+      "reason": "المهمة القديمة تخلط اسم الحرف أو المطابقة البصرية بالصوت؛ محفوظة دون احتسابها في تقييم الصوت."
+    },
+    {
+      "id": "g1-0022",
+      "status": "duplicate-preserved",
+      "activeId": "g1-0628-006",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0023",
+      "status": "retained-equivalent",
+      "activeId": "g1-0023",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0024",
+      "status": "duplicate-preserved",
+      "activeId": "g1-0628-011",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0025",
+      "status": "retained-equivalent",
+      "activeId": "g1-0025",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0026",
+      "status": "duplicate-preserved",
+      "activeId": "g1-0628-016",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0027",
+      "status": "retained-equivalent",
+      "activeId": "g1-0027",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0028",
+      "status": "duplicate-preserved",
+      "activeId": "seviat-reading-027",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0029",
+      "status": "duplicate-preserved",
+      "activeId": "seviat-reading-027",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0030",
+      "status": "duplicate-preserved",
+      "activeId": "g1-0628-026",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0031",
+      "status": "retained-equivalent",
+      "activeId": "g1-0031",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0032",
+      "status": "duplicate-preserved",
+      "activeId": "g1-0628-031",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0033",
+      "status": "retained-equivalent",
+      "activeId": "g1-0033",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0034",
+      "status": "duplicate-preserved",
+      "activeId": "g1-0628-036",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0035",
+      "status": "retained-equivalent",
+      "activeId": "g1-0035",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0036",
+      "status": "retained-equivalent",
+      "activeId": "g1-0036",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0037",
+      "status": "retained-equivalent",
+      "activeId": "g1-0037",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0038",
+      "status": "retained-equivalent",
+      "activeId": "g1-0038",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0039",
+      "status": "retained-equivalent",
+      "activeId": "g1-0039",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0040",
+      "status": "duplicate-preserved",
+      "activeId": "g1-0644-041",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0041",
+      "status": "review-only",
+      "reason": "المهمة القديمة تخلط اسم الحرف أو المطابقة البصرية بالصوت؛ محفوظة دون احتسابها في تقييم الصوت."
+    },
+    {
+      "id": "g1-0042",
+      "status": "duplicate-preserved",
+      "activeId": "g1-0644-046",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0043",
+      "status": "retained-equivalent",
+      "activeId": "g1-0043",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0044",
+      "status": "duplicate-preserved",
+      "activeId": "g1-0644-051",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0045",
+      "status": "retained-equivalent",
+      "activeId": "g1-0045",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0046",
+      "status": "duplicate-preserved",
+      "activeId": "g1-0644-056",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0047",
+      "status": "retained-equivalent",
+      "activeId": "g1-0047",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0048",
+      "status": "duplicate-preserved",
+      "activeId": "seviat-reading-032",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0049",
+      "status": "duplicate-preserved",
+      "activeId": "seviat-reading-032",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0050",
+      "status": "duplicate-preserved",
+      "activeId": "g1-0644-066",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0051",
+      "status": "retained-equivalent",
+      "activeId": "g1-0051",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0052",
+      "status": "duplicate-preserved",
+      "activeId": "g1-0644-071",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0053",
+      "status": "retained-equivalent",
+      "activeId": "g1-0053",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0054",
+      "status": "duplicate-preserved",
+      "activeId": "g1-0644-076",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0055",
+      "status": "retained-equivalent",
+      "activeId": "g1-0055",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0056",
+      "status": "retained-equivalent",
+      "activeId": "g1-0056",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0057",
+      "status": "retained-equivalent",
+      "activeId": "g1-0057",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0058",
+      "status": "retained-equivalent",
+      "activeId": "g1-0058",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0059",
+      "status": "retained-equivalent",
+      "activeId": "g1-0059",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0060",
+      "status": "duplicate-preserved",
+      "activeId": "g1-062f-081",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0061",
+      "status": "review-only",
+      "reason": "المهمة القديمة تخلط اسم الحرف أو المطابقة البصرية بالصوت؛ محفوظة دون احتسابها في تقييم الصوت."
+    },
+    {
+      "id": "g1-0062",
+      "status": "duplicate-preserved",
+      "activeId": "g1-062f-086",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0063",
+      "status": "retained-equivalent",
+      "activeId": "g1-0063",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0064",
+      "status": "duplicate-preserved",
+      "activeId": "g1-062f-091",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0065",
+      "status": "retained-equivalent",
+      "activeId": "g1-0065",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0066",
+      "status": "duplicate-preserved",
+      "activeId": "g1-062f-096",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0067",
+      "status": "retained-equivalent",
+      "activeId": "g1-0067",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0068",
+      "status": "duplicate-preserved",
+      "activeId": "seviat-reading-037",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0069",
+      "status": "duplicate-preserved",
+      "activeId": "seviat-reading-037",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0070",
+      "status": "duplicate-preserved",
+      "activeId": "g1-062f-106",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0071",
+      "status": "retained-equivalent",
+      "activeId": "g1-0071",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0072",
+      "status": "duplicate-preserved",
+      "activeId": "g1-062f-111",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0073",
+      "status": "retained-equivalent",
+      "activeId": "g1-0073",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0074",
+      "status": "duplicate-preserved",
+      "activeId": "g1-062f-116",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0075",
+      "status": "retained-equivalent",
+      "activeId": "g1-0075",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0076",
+      "status": "duplicate-preserved",
+      "activeId": "g1-0646-121",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0077",
+      "status": "review-only",
+      "reason": "المهمة القديمة تخلط اسم الحرف أو المطابقة البصرية بالصوت؛ محفوظة دون احتسابها في تقييم الصوت."
+    },
+    {
+      "id": "g1-0078",
+      "status": "duplicate-preserved",
+      "activeId": "g1-0646-126",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0079",
+      "status": "retained-equivalent",
+      "activeId": "g1-0079",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0080",
+      "status": "duplicate-preserved",
+      "activeId": "g1-0646-131",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0081",
+      "status": "retained-equivalent",
+      "activeId": "g1-0081",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0082",
+      "status": "duplicate-preserved",
+      "activeId": "g1-0646-136",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0083",
+      "status": "retained-equivalent",
+      "activeId": "g1-0083",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0084",
+      "status": "duplicate-preserved",
+      "activeId": "seviat-reading-042",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0085",
+      "status": "duplicate-preserved",
+      "activeId": "seviat-reading-042",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0086",
+      "status": "duplicate-preserved",
+      "activeId": "g1-0646-146",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0087",
+      "status": "retained-equivalent",
+      "activeId": "g1-0087",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0088",
+      "status": "duplicate-preserved",
+      "activeId": "g1-0646-151",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0089",
+      "status": "retained-equivalent",
+      "activeId": "g1-0089",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0090",
+      "status": "duplicate-preserved",
+      "activeId": "g1-0646-156",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0091",
+      "status": "retained-equivalent",
+      "activeId": "g1-0091",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0092",
+      "status": "retained-equivalent",
+      "activeId": "g1-0092",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0093",
+      "status": "retained-equivalent",
+      "activeId": "g1-0093",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0094",
+      "status": "retained-equivalent",
+      "activeId": "g1-0094",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0095",
+      "status": "retained-equivalent",
+      "activeId": "g1-0095",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0096",
+      "status": "duplicate-preserved",
+      "activeId": "g1-0631-161",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0097",
+      "status": "review-only",
+      "reason": "المهمة القديمة تخلط اسم الحرف أو المطابقة البصرية بالصوت؛ محفوظة دون احتسابها في تقييم الصوت."
+    },
+    {
+      "id": "g1-0098",
+      "status": "duplicate-preserved",
+      "activeId": "g1-0631-166",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0099",
+      "status": "retained-equivalent",
+      "activeId": "g1-0099",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0100",
+      "status": "duplicate-preserved",
+      "activeId": "g1-0631-171",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0101",
+      "status": "retained-equivalent",
+      "activeId": "g1-0101",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0102",
+      "status": "duplicate-preserved",
+      "activeId": "g1-0631-176",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0103",
+      "status": "retained-equivalent",
+      "activeId": "g1-0103",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0104",
+      "status": "duplicate-preserved",
+      "activeId": "seviat-reading-047",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0105",
+      "status": "duplicate-preserved",
+      "activeId": "seviat-reading-047",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0106",
+      "status": "duplicate-preserved",
+      "activeId": "g1-0631-186",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0107",
+      "status": "retained-equivalent",
+      "activeId": "g1-0107",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0108",
+      "status": "duplicate-preserved",
+      "activeId": "g1-0631-191",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0109",
+      "status": "retained-equivalent",
+      "activeId": "g1-0109",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0110",
+      "status": "duplicate-preserved",
+      "activeId": "g1-0631-196",
+      "reason": "مهمة مكافئة موجودة بالفعل؛ السجل الأصلي محفوظ ولا يعرض مرتين."
+    },
+    {
+      "id": "g1-0111",
+      "status": "retained-equivalent",
+      "activeId": "g1-0111",
+      "reason": "نفس المهمة التعليمية؛ ضبط الصياغة والحركات عند الحاجة."
+    },
+    {
+      "id": "g1-0112",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "g1-0113",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "g1-0114",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "g1-0115",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "g1-0116",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "g1-0117",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "g1-0118",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "g1-0119",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "g1-0120",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "g1-0121",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "g1-0122",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "g1-0123",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "g1-0124",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "g1-0125",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "g1-0126",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "g1-0127",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "g1-0128",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "g1-0129",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "g1-0130",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "g1-0131",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "g1-0132",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "g1-0133",
+      "status": "review-only",
+      "reason": "قراءة قد تكشف الإجابة أو تحتوي بدائل غير مناسبة؛ حفظ الأصل واستبداله بمهمة جديدة بمعرّف جديد في المراجعة التراكمية."
+    },
+    {
+      "id": "g1-0134",
+      "status": "review-only",
+      "reason": "محفوظ للمراجعة: يحتاج ضبط المهمة أو التدرج أو إزالة كشف الإجابة؛ لا يعرض في التدريب المعتمد."
+    },
+    {
+      "id": "g1-0135",
+      "status": "review-only",
+      "reason": "قراءة قد تكشف الإجابة أو تحتوي بدائل غير مناسبة؛ حفظ الأصل واستبداله بمهمة جديدة بمعرّف جديد في المراجعة التراكمية."
+    }
+  ]
+}

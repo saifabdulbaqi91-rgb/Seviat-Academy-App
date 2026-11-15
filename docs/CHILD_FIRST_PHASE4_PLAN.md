@@ -1,0 +1,12 @@
+# Phase 4 safe implementation plan
+
+Read Phase 3 completion report and inspected journey, diagnostic rules/UI, interaction journal, engine, sound settings, curriculum, styles, manifest and current dirty Git tree. Baseline is 17 passing groups; no applicable AGENTS.md found.
+
+Checkpoint: .access-staging/child-phase4-1794530505181/checkpoint.json (122 files including runtime, tests, data, current brand assets and sounds). Existing backups/unrelated changes retained. No destructive Git operations or publishing.
+
+1. Add a pure child-experience policy and scoped evidence summaries. Use one primary start/resume action: appropriate fresh/requested placement, otherwise existing recommended learning and saved session. Keep teacher-reviewed recommendations, homework, prerequisite and remediation priority. Returning/assigned learners do not repeat placement. Simplify child-facing path text and keep detailed navigation/settings in collapsible/teacher areas.
+2. Add instruction playback registry and independent mute/volume settings. Approved recorded generic instructions only, no TTS or repurposed test clips. No approved instruction bank is present: default registry stays empty, with visible written/visual fallback. Existing sounds remain intact.
+3. Add explicit-action MediaRecorder controls, in-memory preview by default, opt-in device-only teacher submission in a separate versioned IndexedDB store, per-clip deletion and declared expiry. Stop microphone/URLs on navigation, errors and page lifecycle changes. No upload or automatic speech scoring; teacher reviews are separate observations.
+4. Add domain/skill reports using existing graph and eligible independent learning evidence; show percentages only with sufficient samples, diagnostic/practice/confirmed mastery/manual observations separately. Add durable feedback hints and non-credit practice retries without changing original answer correctness.
+5. Run incremental pure/Chrome checks, then all 17 prior groups plus new Phase 4 groups. Existing browser regression fixtures explicitly select supported teacher-requested placement and manual session continuation; a dedicated new suite exercises default child routing and real browser recording with a fake microphone. No weakening educational assertions. Preserve the logo and styles.css; index.html changes only new module links.
+6. Document actual results, source hashes, missing approved audio, human-only scoring, local storage/privacy limits and changed files in CHILD_FIRST_LEARNING_PHASE4.md; stop for review.

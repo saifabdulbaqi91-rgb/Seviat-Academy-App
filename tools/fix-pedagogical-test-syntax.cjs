@@ -1,0 +1,1 @@
+﻿const fs=require('fs');let s=fs.readFileSync('tests/pedagogical-browser.cjs','utf8');s=s.replace("document.querySelector('[aria-label*=\"الإجابة الصحيحة\"]')!==null", "[...document.querySelectorAll('[aria-label]')].some(e=>e.getAttribute('aria-label').includes('الإجابة الصحيحة'))");fs.writeFileSync('tests/pedagogical-browser.cjs',s,'utf8');

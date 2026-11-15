@@ -1,0 +1,23 @@
+/* Phase 4 scoped child/adult presentation. No logo or base-theme edits. */
+#journey .child-primary,#journey>#journey-next{background:#173b70!important;color:#fff!important;font-weight:800;font-size:24px;min-height:64px;min-width:min(240px,100%);border:2px solid #173b70}
+#journey .path-current{margin:16px 0;padding:14px}.path-current h3{font-size:23px}
+#journey .learning-companion .companion-message{color:#173b70!important}
+.guided-instruction{border:1px solid #a4becb;border-radius:18px;padding:12px;margin:12px 0;font-family:Tajawal,sans-serif}
+#journey .guided-instruction p{margin:6px 0;font-size:18px}.instruction-status{font-size:16px!important;min-height:0!important}
+#journey .guided-instruction button{background:#eaf4ff!important;color:#173b70!important;border:1px solid #89b1c8;font-size:19px;min-height:52px}.guided-instruction button:disabled{opacity:.65}
+.guided-instruction details>summary{cursor:pointer;padding:10px}.guided-instruction label{display:block;padding:8px}.guided-instruction input[type=range]{min-width:150px;max-width:100%;vertical-align:middle;accent-color:#2563eb}.guided-instruction input[type=checkbox]{width:24px;height:24px;vertical-align:middle}
+.student-voice{margin:20px 0;padding:16px;border:2px solid #89b1c8;border-radius:20px;display:flex;gap:8px;flex-wrap:wrap;text-align:start}
+.student-voice h3,.student-voice p,.student-voice label{width:100%;margin:6px 0}.student-voice p,.student-voice label{font-size:17px}.student-voice audio,.voice-review-item audio{width:100%;max-width:100%;min-width:0}
+#journey .student-voice button{flex:1 1 140px;min-height:56px;margin:0;background:#eaf4ff!important;color:#173b70!important;border:1px solid #89b1c8;font-size:19px}
+.student-voice input[type=checkbox]{width:24px;height:24px;vertical-align:middle;margin-inline-end:10px}
+#journey .journey-retry-options{padding:16px;border:2px dashed #89b1c8;border-radius:18px;display:flex;gap:12px;flex-wrap:wrap}#journey .journey-retry-options p{width:100%}#journey .journey-retry-options button{background:#eaf4ff;color:#173b70;min-height:70px;min-width:70px;font-family:'Noto Naskh Arabic',serif;font-size:32px}
+.child-adult-dashboard{margin:24px 0;padding:16px;border:1px solid #89b1c8;border-radius:18px;overflow-wrap:anywhere}.child-adult-dashboard label{display:block!important}.child-adult-dashboard input[type=checkbox]{width:24px;height:24px;min-height:24px!important;padding:0!important;vertical-align:middle}.child-adult-dashboard input,.child-adult-dashboard select{max-width:100%}
+#child-domain-report{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:12px}#child-domain-report section{padding:12px;border:1px solid #89b1c8;border-radius:16px}
+.child-skill-report{width:100%;table-layout:fixed;border-collapse:collapse;font-size:14px}.child-skill-report th,.child-skill-report td{padding:6px;border:1px solid #89b1c8;overflow-wrap:anywhere}
+.voice-review-item{margin:12px 0;padding:12px;border:1px solid #89b1c8;border-radius:14px}
+html[data-seviat-theme=dark] .guided-instruction,html[data-seviat-theme=dark] .student-voice,html[data-seviat-theme=dark] .child-adult-dashboard{background:#14283e;color:#fff}
+@media(max-width:480px){#journey .journey-model{font-size:50px;margin:16px;line-height:2}.child-skill-report{font-size:12px}.child-skill-report td,.child-skill-report th{padding:3px}.student-voice{padding:12px}}
+@media(prefers-reduced-motion:reduce){.student-voice,.guided-instruction{animation:none!important;transition:none!important}}
+#journey .student-voice .voice-primary{background:#173b70!important;color:#fff!important;font-weight:800;border:2px solid #fff}#journey.speaking-view .journey-model{margin:4px;font-size:52px}#journey.speaking-view .student-voice{margin:8px 0}#journey.speaking-view>#journey-next{background:#eaf4ff!important;border:1px solid #89b1c8;color:#173b70!important;min-height:52px;font-size:20px}
+
+#journey.speaking-view>h2{margin:0 0 12px;font-size:26px}#journey.speaking-view .learning-companion{padding:8px}#journey.speaking-view .companion-sprout{width:46px;height:46px}#journey.speaking-view .journey-model{font-size:48px;line-height:1.5;margin:0}#journey .student-voice [role=status]{font-size:17px;min-height:28px}

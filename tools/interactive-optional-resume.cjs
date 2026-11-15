@@ -1,0 +1,6 @@
+const fs=require('fs');
+let p='student-journey.js',s=fs.readFileSync(p,'utf8');const old='if(!node||state().overrides?.[node.id]';if(!s.includes(old))throw Error('missing');s=s.replace(old,'if(!id&&skippedOptional.has(node?.id))return null;if(!node||state().overrides?.[node.id]');fs.writeFileSync(p,s);
+p='tests/interactions-browser.cjs';s=fs.readFileSync(p,'utf8');const marker=' // Optional challenge is ordinary available practice';const test=` // Leaving an optional game preserves its draft without hijacking the next recommendation.
+ await seed({sessionMode:'assessment',overrides:{'prep:matching':'allow'}});await cdp.eval('SeviatJourney.begin("prep:memory:1")');const optionalId=(await draft()).id;await click('#journey-home');await click('#journey-start');assert.notEqual((await draft()).nodeId,'prep:memory:1');assert(await cdp.eval('!!SeviatJourney.getState().interactiveV1.sessions['+JSON.stringify(optionalId)+']'));
+`;
+if(!s.includes(marker))throw Error('missing test marker');s=s.replace(marker,test+marker);fs.writeFileSync(p,s);

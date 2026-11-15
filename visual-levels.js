@@ -345,5 +345,6 @@
     document.getElementById("visualLevelsBack").onclick = openLevels;
   }
 
+  window.SeviatVisualQuestions={makeQuestions,shapeSVG};
   window.openVisualLevels = openLevels;
 })();

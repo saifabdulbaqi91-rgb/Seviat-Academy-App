@@ -1,0 +1,17 @@
+const fs=require('fs');let s=fs.readFileSync('tests/universal-path-browser.cjs','utf8');const anchor=' const widths=[320,390,768,1280];';if(!s.includes(anchor))throw Error('anchor');s=s.replace(anchor,`
+ // Student paths honor teacher access policy even when a teacher waived prerequisites.
+ await seed({overrides:{'prep:matching':'allow'}});
+ await cdp.eval('localStorage.setItem("seviat-access-policy-v2",JSON.stringify({version:2,coarse:{mode:"custom",allowed:["preparation"]},detailed:{mode:"all",allowed:[]}}));SeviatJourney.home()');
+ assert.equal(await cdp.eval('SeviatJourney.getPath().levels.find(l=>l.id==="level:م:letter-shape").status'),'unavailable');
+ await cdp.eval('SeviatJourney.begin("م:letter-shape")');assert.equal(await cdp.eval('document.querySelectorAll("#journey .journey-options").length'),0);
+ await cdp.eval('localStorage.setItem("seviat-access-policy-v2","invalid-original");SeviatJourney.home()');assert.equal(await cdp.eval('localStorage.getItem("seviat-access-policy-v2")'),'invalid-original');assert.equal(await cdp.eval('SeviatJourney.recommend().nodeId'),null);
+ await cdp.eval('localStorage.removeItem("seviat-access-policy-v2")');await seed({overrides:{'prep:matching':'allow'}});
+ assert.equal(await cdp.eval('SeviatJourney.getPath().levels.find(l=>l.id==="level:word-game:1").status'),'unavailable');
+ // Reuse historical confirmed assessments without saving synthetic journey runs.
+ const historical=await cdp.eval('(()=>{const p=questionsData.questions.filter(q=>q.letter==="م"&&q.skill==="letter-shape"&&q.phase==="training").slice(0,5);return JSON.stringify({version:2,attempts:[0,1].map(i=>({id:"historical-"+i,key:Unit1Rules.stateKey("م","letter-shape"),mode:"assessment",completedAt:Date.now()-(2-i)*86400001,independent:true,teacherConfirmed:true,results:p.map(q=>({id:q.id,answer:q.answer,correct:true}))})),practice:{},writing:[],unknown:"preserve"});})()');
+ await cdp.eval('localStorage.setItem("seviat-unit1-learning-v2",'+JSON.stringify(historical)+');localStorage.setItem("seviat-guided-journey-v1",JSON.stringify({active:"default",profiles:{default:{name:"سجل سابق",runs:[],overrides:{}}}}))');await reload();
+ assert.equal(await cdp.eval('SeviatJourney.getPath().levels.find(l=>l.id==="level:م:letter-shape").status'),'completed');assert.equal(await cdp.eval('SeviatJourney.getState().runs.length'),0);assert.equal(await cdp.eval('localStorage.getItem("seviat-unit1-learning-v2")'),historical);
+ await cdp.eval('localStorage.setItem("seviat-unit1-learning-v2",'+JSON.stringify(preserved['seviat-unit1-learning-v2'])+')');await seed({});
+ const widths=[320,390,768,1280];`);
+s=s.replace("'legacy bytes unchanged'","'legacy bytes unchanged','confirmed legacy assessment projection without migration','runtime missing vocabulary disabled','teacher policy and corrupt policy respected'");fs.writeFileSync('tests/universal-path-browser.cjs',s);
+s=fs.readFileSync('student-journey.js','utf8');s=s.replace("const sub=question?.subskill|| (question?SeviatAccessGuard.subskill(question):'all');", "const sub=question?.subskill|| (question?SeviatAccessGuard.subskill({...question,skill:node.skill}):'all');");s=s.replace("if(!preview&&!SeviatAccessGuard.isAllowed(node.letter,'letter-writing','all','practice','unit-'+node.unit))", "if(!preview&&!activityPolicy(node,'practice'))");fs.writeFileSync('student-journey.js',s);

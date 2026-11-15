@@ -1,0 +1,14 @@
+'use strict';
+const assert=require('assert/strict'),R=require('../journey-rules.js');
+assert.deepEqual(R.letters,['م','ب','ل','د','ن','ر','ص','ف','س','ق','ت','ح']);
+const state={runs:[],overrides:{}};assert.equal(R.next(state).id,'prep:matching');
+const results=Array.from({length:5},(_,i)=>({id:'q'+i,correct:true}));
+state.runs.push({node:'prep:matching',independent:true,results});assert(!R.complete(state,'prep:matching'));
+state.runs.push({node:'prep:matching',independent:false,results});assert(!R.complete(state,'prep:matching'));
+state.runs.push({node:'prep:matching',independent:true,results});assert(R.complete(state,'prep:matching'));assert.equal(R.next(state).id,'م:letter-shape');
+state.overrides['م:letter-shape']='lock';assert(!R.available(state,R.nodes.find(n=>n.id==='م:letter-shape')));
+state.overrides['ح:syllable-building']='allow';assert(R.available(state,R.nodes.find(n=>n.id==='ح:syllable-building')));
+assert.equal(R.nodes.filter(n=>n.kind==='preparation').length,46);
+for(const node of R.nodes)for(const id of node.requires)assert(R.nodes.some(n=>n.id===id),'missing prerequisite '+id);
+assert(!R.evidence({runs:[{node:'x',independent:true,results:[{id:'q',correct:true}]}]},'x'));
+console.log('Journey rules passed: ordering, prerequisites, optional preparation, evidence, overrides.');

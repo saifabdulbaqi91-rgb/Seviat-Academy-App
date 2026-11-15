@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "status": "approved-by-project-owner",
+  "approvedAt": "2026-11-14",
+  "scope": "Educational examples, illustrations, games and stories",
+  "allowedSubjects": ["people", "animals", "plants", "inanimate-objects"],
+  "facialFeatures": "Obscure facial features in illustrations and images showing faces; retain educational recognizability, characteristic body shape and relevant context.",
+  "officialTextbooks": "Preserve original PDFs and legitimate official animal-related content. Do not publish unprocessed source illustrations with visible facial features as new app assets.",
+  "futureAssetGate": "Human review of age suitability, obscured faces and recognizability before approval. This file does not claim automatic face detection or alteration of existing images.",
+  "legacyField": "curriculum.learningRules.activityExamples",
+  "previousValue": "الجمادات والنباتات فقط",
+  "approvedValue": "الأشخاص والحيوانات والنباتات والجمادات، مع طمس ملامح الوجوه في الرسوم والصور والحفاظ على وضوح الموضوع"
+}

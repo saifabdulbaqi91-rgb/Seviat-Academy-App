@@ -120,6 +120,6 @@ function integrate(){
    }
  },true);
 }
-window.SeviatUnit2={open:openUnit2,openLetter,openPreparationLevels:openPrep,questionCount:letters.length*7*6};
+window.SeviatUnit2={questions,prepLevels,open:openUnit2,openLetter,openPreparationLevels:openPrep,questionCount:letters.length*7*6};
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',integrate);else integrate();
 })();

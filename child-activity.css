@@ -1,0 +1,47 @@
+/* Compact question surface; no overflow clipping of Arabic marks or controls. */
+#journey.activity-focus{box-sizing:border-box;max-width:760px;margin:8px auto;padding:10px 14px;min-height:calc(100dvh - 16px);scroll-margin-top:8px;overflow-anchor:none;display:flex;flex-direction:column;gap:5px}
+#journey.activity-focus h2{font-size:22px;line-height:1.4;margin:0}
+#journey.activity-focus>p{font-size:16px;line-height:1.5;margin:0}
+#journey.activity-focus .afaq-stage-goal{font-family:Tajawal,sans-serif;font-size:14px;color:#35576a}
+#journey.activity-focus .learning-companion{margin:0;padding:0;min-height:0}
+#journey.activity-focus .companion-sprout{max-height:32px;width:32px}
+#journey.activity-focus .companion-message{font-size:15px;margin:0;line-height:1.4}
+#journey.activity-focus h3{font-size:clamp(22px,4vw,30px);margin:0;padding-block:0;line-height:1.8!important}
+#journey.activity-focus progress{height:8px;flex-shrink:0}
+#journey.activity-focus .journey-model,#journey.activity-focus>div.diagnostic-arabic{font-size:clamp(32px,6vh,48px);margin:0;line-height:1.8!important;padding-block:0;min-height:64px}
+#journey.activity-focus .journey-model svg{width:auto;height:64px;max-width:100%}
+#journey.activity-focus .journey-options{display:grid;grid-template-columns:repeat(var(--answer-columns,2),minmax(0,1fr));gap:6px;margin:2px 0}
+#journey.activity-focus .journey-options button{min-width:0;min-height:52px;margin:0;padding:2px 6px!important;font-size:clamp(23px,4vw,32px);line-height:1.7!important;touch-action:manipulation}
+#journey.activity-focus .journey-options svg{max-width:100%;width:50px;height:50px}
+#journey.activity-focus>button{min-height:44px;padding:7px 14px;margin:0;font-size:17px}
+#journey.activity-focus>[role=status]{min-height:26px;font-size:17px;line-height:1.5;margin:0}
+#journey.activity-focus .guided-instruction{padding:0;margin:0;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:4px;border:0}
+#journey.activity-focus .guided-instruction>p:first-child{font-size:15px;line-height:1.4;margin:0;flex-basis:100%}
+#journey.activity-focus .guided-instruction .instruction-status{font-size:13px;line-height:1.4;min-height:18px;margin:0;flex-basis:100%}
+#journey.activity-focus .guided-instruction button{min-height:44px;margin:0;padding:6px 12px;font-size:16px}
+#journey.activity-focus .guided-instruction details{margin:0;padding:0;font-size:14px}
+#journey.activity-focus .guided-instruction summary{min-height:44px;display:flex;align-items:center;cursor:pointer;padding:0 12px}
+#journey.activity-focus .guided-instruction details[open]{flex-basis:100%;background:var(--surface,#edf5fb);padding:8px}
+#journey.activity-focus #afaq-activity-menu{background:#e8f1f8;color:#163c62;border:1px solid #7895ac}
+#journey.activity-focus button:disabled{opacity:1;background:#e0e7ed;color:#425466;border:1px solid #9daebd;cursor:default}
+#afaq-activity-help{box-sizing:border-box;width:min(94vw,560px);max-height:90dvh;overflow:auto;border:2px solid #7895ac;border-radius:20px;background:#fff;color:#173b70;font-family:Tajawal,sans-serif;padding:20px}
+#afaq-activity-help::backdrop{background:#132a46b3}
+#afaq-activity-help button,#afaq-activity-help summary{min-height:44px;padding:8px 12px;font:inherit;cursor:pointer}
+#afaq-activity-help button{border:1px solid #7895ac;background:#edf5fb;color:#173b70;border-radius:10px;margin:4px}
+#afaq-demo{border:2px dashed #7895ac;padding:12px;margin:12px 0}.demo-model{font-size:48px;text-align:center}.demo-options{display:flex;justify-content:center}.demo-options button{font-size:32px!important;min-width:64px}
+#afaq-shared-settings>p{font-size:13px;line-height:1.6}#afaq-shared-settings>button{padding:8px 12px;min-height:44px;margin:3px 0}#afaq-audio-settings{border-block:1px solid #7895ac;padding:8px 0;margin:8px 0}#afaq-audio-settings>summary{min-height:44px;cursor:pointer;font-weight:700}#afaq-audio-settings label{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:6px 0}#afaq-audio-settings input[type=range]{width:125px;min-height:44px}.afaq-request-error{color:#fff;background:#803616;padding:10px;border-radius:8px}
+[data-seviat-theme=dark] #journey.activity-focus .afaq-stage-goal{color:#c9dfed}
+[data-seviat-theme=dark] #journey.activity-focus #afaq-activity-menu,[data-seviat-theme=dark] #afaq-activity-help,[data-seviat-theme=dark] #afaq-activity-help button{background:#183b55;color:#f5f9ff}
+[data-seviat-theme=dark] #journey.activity-focus button:disabled{background:#32495b;color:#e4edf3;border-color:#7895ac}
+@media(max-height:700px){#journey.activity-focus{gap:2px;padding:8px 10px}#journey.activity-focus .learning-companion{display:none}#journey.activity-focus h2{font-size:19px}#journey.activity-focus .journey-options button{min-height:44px}#journey.activity-focus .journey-options svg{height:40px}#journey.activity-focus .journey-model svg{height:50px}#journey.activity-focus .journey-model{min-height:50px}#journey.activity-focus h3{font-size:22px}}
+@media(prefers-reduced-motion:reduce){#journey.activity-focus *,#afaq-activity-help *{animation:none!important;scroll-behavior:auto!important}}
+#journey.activity-focus .activity-tools{display:flex;gap:6px;order:100;justify-content:center;margin-top:2px}#journey.activity-focus .activity-tools button{font-size:15px;min-height:44px;margin:0;padding:6px 10px;flex:1;max-width:50%}#journey.activity-focus>#journey-next{min-height:44px!important;font-size:19px;padding:6px 12px}
+
+#afaq-speech-review{border:1px solid #7895ac;padding:12px;border-radius:16px;margin-block:12px}#afaq-speech-review textarea{display:block;width:100%;min-height:100px;box-sizing:border-box;font-family:'Noto Naskh Arabic',serif;font-size:24px;line-height:2}#afaq-speech-review select{max-width:100%;white-space:normal}#afaq-speech-review input[type=checkbox]{min-height:24px;width:24px;height:24px}
+
+#journey.activity-focus .guided-instruction button:disabled{opacity:1!important;background:#e0e7ed!important;color:#425466!important;border-color:#9daebd}#journey.activity-focus .activity-tools #journey-home{background:#e8f1f8!important;color:#163c62!important;border:1px solid #7895ac}
+html[data-seviat-theme=dark] #journey.activity-focus .guided-instruction button:disabled{background:#32495b!important;color:#e4edf3!important}html[data-seviat-theme=dark] #journey.activity-focus .activity-tools #journey-home{background:#183b55!important;color:#f5f9ff!important}
+
+#journey.activity-focus .journey-model:empty{display:none}#journey.activity-focus.activity-dense{padding-inline:6px}#journey.activity-focus.activity-dense .journey-options{gap:3px}#journey.activity-focus.activity-dense .guided-instruction>p:first-child{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+
+#journey.activity-focus .guided-instruction>.instruction-replay,#journey.activity-focus .guided-instruction>details,#journey.activity-focus .guided-instruction>.question-replay,#journey.activity-focus .guided-instruction>.example-replay{order:1}#journey.activity-focus .guided-instruction>.instruction-status{order:2}
