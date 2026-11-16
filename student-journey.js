@@ -133,7 +133,56 @@ function pool(node,preview=false){
  if(node.unit===2){const map={'letter-shape':'shape','short-vowels':'vowels',sukoon:'sukoon','long-vowels':'madd','letter-positions':'position','syllable-building':'syllable'};return (window.SeviatUnit2.questions(node.letter,map[node.skill])||[]).map((q,i)=>({...q,id:node.id+'-'+i,teacherReview:!['letter-shape','short-vowels','letter-positions'].includes(node.skill)}));}
  return (typeof questionsData!=='undefined'?questionsData?.questions||[]:[]).filter(q=>q.letter===node.letter&&q.skill===node.skill&&q.phase==='training'&&q.type==='multiple-choice'&&Unit1Rules.assessmentEligible(q)&&(preview||SeviatAccessGuard.isAllowed(q.letter,q.skill,SeviatAccessGuard.subskill(q),'practice'))&&(preview||!q.requiredLetters||q.requiredLetters.every(l=>l===node.letter||R.complete(state(),l+':syllable-building'))));
 }
+// Tab-scoped navigation intent only. Never stored in academic evidence or rewards.
+const deferredEntryKey=()=> 'afaq-deferred-entry-v1:'+encodeURIComponent(store.active);
+function validEntry(value){return value?.version===1&&value.studentId===store.active&&['learning','speaking','alif-pilot'].includes(value.kind)&&(value.id===null||typeof value.id==='string'&&value.id.length<=160)&&(value.challengeDay===null||typeof value.challengeDay==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(value.challengeDay))&&typeof value.practiceOnly==='boolean';}
+function deferredEntry(){
+ const raw=sessionStorage.getItem(deferredEntryKey());if(raw===null)return null;
+ const value=JSON.parse(raw);if(!validEntry(value))throw Error('Unreadable deferred entry');return value;
+}
+function routingRecovery(retry){
+ const student=store.active;stop();document.body.dataset.mode='student';hub.hidden=true;entry.hidden=false;
+ screen('تعذر فتح رحلتك الآن');
+ const message=el('p','تعذر التحقق من مسار التعلم أو قراءة سجل الاستكشاف. لم نغيّر تقدمك، ولن نعيد الاستكشاف تلقائيًا. اطلب مساعدة المعلم إذا استمرت المشكلة.');message.setAttribute('role','alert');
+ button('أعد المحاولة بأمان',()=>{if(store.active===student)retry();else home();},root,'journey-routing-retry');
+ button('إعادة تحميل الصفحة',()=>location.reload(),root,'journey-routing-reload');
+ button('مساعدة المعلم',teacher,root,'journey-routing-teacher');
+}
+function retryEntry(request){if(request.studentId!==store.active){home();return;}if(request.kind==='speaking')openSpeaking(request.id);else if(request.kind==='alif-pilot'){if(window.AfaqAlifPilotUI?.launch)window.AfaqAlifPilotUI.launch(request.id);else routingRecovery(()=>retryEntry(request));}else begin(request.id,false,request.challengeDay,request.practiceOnly);}
+function routeActivity(request){
+ const value={version:1,studentId:store.active,kind:request.kind,id:request.id??null,challengeDay:request.challengeDay??null,practiceOnly:!!request.practiceOnly};
+ request=value;
+  let pending,selected=request;
+  try{
+   if(!validEntry(request))throw Error('Invalid entry request');
+   pending=deferredEntry();
+   if(request.kind==='learning'&&!request.id&&!request.challengeDay&&!request.practiceOnly&&pending)selected=pending;
+   const route=broken?'unavailable':window.SeviatChildUI?.route?.();
+   if(route!=='learning'&&route!=='placement'){routingRecovery(()=>retryEntry(selected));return;}
+   if(selected.kind==='alif-pilot'&&!window.AfaqAlifPilotUI?.launch){routingRecovery(()=>retryEntry(selected));return;}
+   if(route==='placement'){
+    if(selected.id||selected.challengeDay||selected.practiceOnly)sessionStorage.setItem(deferredEntryKey(),JSON.stringify(selected));
+    window.SeviatDiagnosticUI.start();return;
+   }
+   // Recheck a deferred destination using current permissions, prerequisites and assignment.
+   if(pending&&selected.kind!=='alif-pilot'&&selected.id&&selected.kind===pending.kind&&selected.id===pending.id){
+    const node=R.nodes.find(n=>n.id===selected.id);
+    if(!node||state().overrides?.[node.id]==='lock'||state().homework&&state().homework!==node.id||!R.available(learningState(),node)&&state().homework!==node.id||!activityPolicy(node,selected.kind==='speaking'||selected.practiceOnly?'practice':activityMode(node))){
+     sessionStorage.removeItem(deferredEntryKey());stop();document.body.dataset.mode='student';hub.hidden=true;entry.hidden=false;screen('نراجع خطوتك مع المعلم');
+     el('p','تغيرت إتاحة النشاط أو الواجب أثناء الاستكشاف. محاولاتك محفوظة؛ اختر خطوتك الحالية من الرحلة.');button('العودة إلى رحلتي',home,root,'journey-deferred-return');return;
+    }
+   }
+   if(pending)sessionStorage.removeItem(deferredEntryKey());
+   return selected;
+  }catch{routingRecovery(()=>retryEntry(selected));return;}
+}
 function begin(id,preview=false,challengeDay=null,practiceOnly=false){
+ if(!preview){
+  const selected=routeActivity({kind:'learning',id:id??null,challengeDay:challengeDay??null,practiceOnly:!!practiceOnly});
+  if(!selected)return;
+  if(selected.kind!=='learning'){retryEntry(selected);return;}
+  id=selected.id;challengeDay=selected.challengeDay;practiceOnly=selected.practiceOnly;
+ }
  if(store.active==='default'){try{const old=JSON.parse(localStorage.getItem('seviat-unit1-learning-v2')||'{}');state().legacyEvidence={};for(const n of R.nodes)if(n.unit===1&&Unit1Rules.mastered(old,n.letter,n.skill))state().legacyEvidence[n.id]=true;}catch{}}
  stop();document.body.dataset.mode='student';hub.hidden=true;entry.hidden=false;let resumed=null;if(!preview&&!challengeDay&&!practiceOnly){try{resumed=resumeDraft(id||state().homework);}catch(error){screen('سجلك محفوظ');el('p',error.message);button('العودة',home);return;}}if(resumed){run=resumed;if(run.phase==='intro')intro();else question(run.guided,true);return;}latestRecommendation=recommendation();const node=id?R.nodes.find(n=>n.id===id):R.nodes.find(n=>n.id===latestRecommendation.nodeId);
  if(!node){screen('أحسنت!');el('p',R.nodes.filter(n=>!n.optional).every(n=>R.complete(state(),n.id))?'أكملت رحلتك. يمكنك الاستكشاف مع المعلم.':'حان وقت الاستراحة. اطلب مساعدة المعلم لخطوتك التالية.');button('العودة',home);return;}
@@ -212,8 +261,8 @@ function teacher(){stop();document.body.dataset.mode='teacher';hub.hidden=false;
 function diagnosticContext(){return {studentId:store.active,profile:structuredClone(learningState()),rules:R,engine:E,hasHistory:(state().runs||[]).length>0||Object.keys(learningState().legacyEvidence||{}).length>0,allowed:node=>activityCapable(node)&&activityPolicy(node,'practice'),nodeTitle:id=>catalog?.activities.find(a=>a.sourceActivityId===id)?.title||R.nodes.find(n=>n.id===id)?.title||id,nodeDomains:node=>catalog?.activities.find(a=>a.sourceActivityId===node.id)?.domainIds||[],bank:configuration=>{const options={rules:R,profile:learningState(),engine:E,configuration,questions:node=>safePool([...pool(node,false),...SeviatAdaptiveActivities.questions(node)],node).filter(q=>activityPolicy(node,'practice',q)),allowed:(node,method)=>!broken&&activityPolicy(node,'practice')&&(method!=='teacher-rubric'||!state().overrides?.[node.id]||state().overrides[node.id]!=='lock'),contentAllowed};const bank=SeviatDiagnosticContent.build(options);return window.AfaqPersonalized?.extendDiagnosticBank(bank,options,SeviatDiagnosticContent.build)||bank;}};}
 function hasLearningHistory(){if(state().runs.length||Object.keys(learningState().legacyEvidence||{}).length)return true;if(store.active!=='default')return false;try{const one=JSON.parse(localStorage.getItem('seviat-unit1-learning-v2')||'{}'),two=JSON.parse(localStorage.getItem('seviat-unit2-practice-v1')||'{}'),legacy=JSON.parse(localStorage.getItem('seviatLearningProgress')||'{}');return !!(one.attempts?.length||one.writing?.length||Object.keys(one.practice||{}).length||two.attempts?.length||Object.keys(two.practice||{}).length||legacy.answeredQuestions?.length||legacy.score>0);}catch{return true;}}
 function experienceContext(){return {...diagnosticContext(),hasHistory:hasLearningHistory(),catalog};}
-function openSpeaking(id){const node=R.nodes.find(n=>n.id===id);if(!node||node.skill!=='letter-name'||!R.available(learningState(),node)||!R.complete(learningState(),node.letter+':letter-shape')||!activityPolicy(node,'practice'))return;stop();document.body.dataset.mode='student';hub.hidden=true;entry.hidden=false;screen('أجرّب بصوتي');el('p','قل اسم هذا الحرف إن أحببت.');const model=el('div',node.letter);model.className='journey-model';voicePanel(node);button('انتهيت',home,root,'journey-next');window.SeviatGuidedAudio?.mount(root,'speaking',{key:store.active+':speaking:'+node.id+':'+epoch});root.classList.add('speaking-view');}
-window.SeviatJourney={home,teacher,begin,createLocalProfile,getBaseRecommendation:baseRecommendation,getExcludedActivities:()=>[...activityExclusions()],openSpeaking,getExperienceContext:experienceContext,getDiagnosticContext:diagnosticContext,openDiagnosticScreen:(title,state)=>{stop();document.body.dataset.mode='student';hub.hidden=true;entry.hidden=false;document.getElementById('activityArea')?.remove();screen(title);companion.setState(state);},diagnosticReaction:state=>companion.setState(state),recommend:()=>recommendation(),getState:()=>structuredClone(state()),getPath:()=>structuredClone(pathView()),setPreferences,getInteraction:()=>({preferences:{...preferences},companion:companion.state,rewards:Interactive.rewards(state(),R),activeId:run?.id||null})};
+function openSpeaking(id){if(!routeActivity({kind:'speaking',id,practiceOnly:true}))return;const node=R.nodes.find(n=>n.id===id);if(!node||node.skill!=='letter-name'||!R.available(learningState(),node)||!R.complete(learningState(),node.letter+':letter-shape')||!activityPolicy(node,'practice'))return;stop();document.body.dataset.mode='student';hub.hidden=true;entry.hidden=false;screen('أجرّب بصوتي');el('p','قل اسم هذا الحرف إن أحببت.');const model=el('div',node.letter);model.className='journey-model';voicePanel(node);button('انتهيت',home,root,'journey-next');window.SeviatGuidedAudio?.mount(root,'speaking',{key:store.active+':speaking:'+node.id+':'+epoch});root.classList.add('speaking-view');}
+window.SeviatJourney={home,teacher,begin,routeActivity,routingRecovery,hasDeferredEntry:()=>{try{return !!deferredEntry();}catch{return true;}},createLocalProfile,getBaseRecommendation:baseRecommendation,getExcludedActivities:()=>[...activityExclusions()],openSpeaking,getExperienceContext:experienceContext,getDiagnosticContext:diagnosticContext,openDiagnosticScreen:(title,state)=>{stop();document.body.dataset.mode='student';hub.hidden=true;entry.hidden=false;document.getElementById('activityArea')?.remove();screen(title);companion.setState(state);},diagnosticReaction:state=>companion.setState(state),recommend:()=>recommendation(),getState:()=>structuredClone(state()),getPath:()=>structuredClone(pathView()),setPreferences,getInteraction:()=>({preferences:{...preferences},companion:companion.state,rewards:Interactive.rewards(state(),R),activeId:run?.id||null})};
 window.addEventListener('seviat-access-changed',()=>{if(document.body.dataset.mode==='student')home();});
 document.addEventListener('click',event=>{if(event.target.closest('#startButton')){event.preventDefault();event.stopImmediatePropagation();home();window.SeviatChildUI?SeviatChildUI.primary():begin();}},true);
 window.addEventListener('hashchange',()=>{if(document.body.dataset.mode==='student'&&location.hash)teacher();});
