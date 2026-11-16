@@ -8,7 +8,7 @@ function modelExample(skill,text){const category=['letter-name','letter-shape','
 function signature(entry,voice,rate){return JSON.stringify([1,entry.id,entry.display,entry.spoken,entry.category,entry.reading,voice?.voiceURI,voice?.name,voice?.lang,rate]);}
 function localArabic(voices){return (voices||[]).filter(v=>v&&/^ar(?:[-_]|$)/i.test(v.lang)&&v.localService===true);}
 // Only ordinary interface guidance may use an unreviewed local voice. Never model phonemes.
-function ordinary(entry){const words=typeof entry?.display==='string'?(entry.display.replace(/[\u064B-\u065F\u0670]/g,'').match(/[\u0621-\u064A]+/g)||[]):[];return !!entry&&((entry.category==='instruction'&&Object.hasOwn(instructions,entry.id.replace(/^instruction:/,''))&&entry.id.startsWith('instruction:'))||(entry.category==='question'&&entry.id.startsWith('question:')&&words.length>=2&&words.some(w=>w.length>=3)));}
+function ordinary(entry){if(/(?:^|[\s:\u060c\u00ab\x22(])[\u0621-\u064a][\u064B-\u065F\u0670]*(?:[\u0627\u0648\u064a][\u064B-\u065F\u0670]*)?(?=$|[\s.\u060c\u061f!\u00bb:;)])/u.test(entry?.spoken||entry?.display||''))return false;const words=typeof entry?.display==='string'?(entry.display.replace(/[\u064B-\u065F\u0670]/g,'').match(/[\u0621-\u064A]+/g)||[]):[];return !!entry&&((entry.category==='instruction'&&Object.hasOwn(instructions,entry.id.replace(/^instruction:/,''))&&entry.id.startsWith('instruction:'))||(entry.category==='question'&&entry.id.startsWith('question:')&&words.length>=2&&words.some(w=>w.length>=3)));}
 function playbackChoice(entry,voices,rate,reviews){if(!entry||!reviews)return null;const local=localArabic(voices);const approved=local.find(v=>reviews.approved(entry,v,rate));if(approved)return {entry,voice:approved,reviewed:true};const saved=reviews.read().entries[entry.id];if(!ordinary(entry)||saved?.status==='rejected'&&saved.display===entry.display)return null;const voice=local.find(v=>/^ar[-_]SA$/i.test(v.lang))||local.find(v=>v.default)||local[0];return voice?{entry,voice,reviewed:false}:null;}
 function createReviews(storage,key='afaq-speech-reviews-v1'){let raw=storage.getItem(key),value=raw===null?{version:1,entries:{},preferences:{questionReading:false,pronunciationExamples:false,rate:.85,music:false}}:JSON.parse(raw);const valid=v=>v?.version===1&&v.entries&&typeof v.entries==='object'&&!Array.isArray(v.entries)&&v.preferences&&typeof v.preferences.questionReading==='boolean'&&typeof v.preferences.pronunciationExamples==='boolean'&&Number.isFinite(v.preferences.rate)&&v.preferences.rate>=.65&&v.preferences.rate<=1.1&&typeof v.preferences.music==='boolean';if(!valid(value))throw Error('Unreadable speech reviews');function save(next){if(storage.getItem(key)!==raw)throw Error('Speech preferences changed elsewhere');if(!valid(next))throw Error('Invalid speech preferences');const bytes=JSON.stringify(next);storage.setItem(key,bytes);raw=bytes;value=next;return structuredClone(value);}return {read:()=>structuredClone(value),preferences:patch=>save({...value,preferences:{...value.preferences,...patch}}),review(entry,voice,rate,status,reviewer){if(!['approved','rejected'].includes(status)||!reviewer.trim()||!localArabic([voice]).length)throw Error('Invalid speech review');return save({...value,entries:{...value.entries,[entry.id]:{...entry,status,reviewer:reviewer.trim(),reviewedAt:new Date().toISOString(),signature:signature(entry,voice,rate)}}});},approved(entry,voice,rate){const r=value.entries[entry.id];return r?.version===1&&r.status==='approved'&&r.signature===signature(entry,voice,rate)&&!!r.reviewer?.trim()&&Number.isFinite(Date.parse(r.reviewedAt));}};}
 function validationCases(){const entries=[];const names=['مِيمْ','بَاءْ','لَامْ','دَالْ','نُونْ','رَاءْ','صَادْ','فَاءْ','سِينْ','قَافْ','تَاءْ','حَاءْ'];'مبلدنرصفسقتح'.split('').forEach((letter,i)=>entries.push(prepare({id:'name:'+letter,display:letter,spoken:names[i],category:'letter-name',reading:'pause'})));for(const [id,text,category,reading]of [['fatha','مَ','letter-sound'],['kasra','مِ','letter-sound'],['damma','مُ','letter-sound'],['long-a','مَا','long-vowel'],['long-i','مِي','long-vowel'],['long-u','مُو','long-vowel'],['sukoon','مْ','sukoon'],['shadda','مَدَّ','shadda'],['tanwin','بَابٌ','tanwin'],['hamza','أَمَلٌ','hamza'],['word','نَمِرٌ','word'],['sentence','رَسَمَ مَامَا.','sentence'],['waqf','بَابْ','word','pause'],['wasl','بَابٌ مَرْسُومٌ.','sentence','connected']])entries.push(prepare({id:'validation:'+id,display:text,category,reading:reading||'connected'}));return entries;}
@@ -72,34 +72,12 @@ const observer=new MutationObserver(()=>{if(capture&&document.body.dataset.mode!
 host.speechSynthesis?.addEventListener('voiceschanged',()=>host.dispatchEvent(new Event('afaq-instruction-settings')));
 host.AfaqSpeech={isRecording,settings,update,entry,candidate,selection,playbackSelection,availability,speak,speakInstructionWithHamed,stop,done:()=>engine.done(),voices:()=>engine.voices(),clip,mountTeacher,dispose:()=>{capture?.dispose();capture=null;stop();}};
 function speakInstructionWithHamed(text, options = {}) {
-  const synth = host.speechSynthesis;
-  const Utterance = host.SpeechSynthesisUtterance;
-
-  if (!synth || !Utterance || typeof text !== 'string' || !text.trim()) {
-    return false;
-  }
-
-  const voices = synth.getVoices();
-  const voice =
-    voices.find(v =>
-      v.name.includes('Microsoft Hamed') &&
-      v.lang === 'ar-SA'
-    ) ||
-    voices.find(v =>
-      /^ar[-_]SA$/i.test(v.lang) && v.localService
-    ) ||
-    localArabic(voices)[0];
-
-  if (!voice) return false;
-
-  const utterance = new Utterance(text);
-  utterance.voice = voice;
-  utterance.lang = voice.lang;
-  utterance.rate = options.rate ?? 0.85;
-  utterance.volume = options.volume ?? 0.8;
-
-  host.AfaqSpeech?.stop();
-  synth.speak(utterance);
+  // Compatibility entry point: use the same review policy and owned lifecycle.
+  if (typeof text !== 'string' || !text.trim()) return false;
+  const id = 'question:' + identity(text);
+  candidate(id, text);
+  if (!playbackSelection(id)) return false;
+  speak(id, options).catch(() => {});
   return true;
 }
 

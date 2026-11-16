@@ -22,8 +22,7 @@
     }
 
     if (window.AfaqVowelAudio?.sounds?.[token]) {
-      window.AfaqVowelAudio.play(token);
-      return true;
+      return await window.AfaqVowelAudio.play(token);
     }
 
     console.info('AFAQ: no approved audio:', token);

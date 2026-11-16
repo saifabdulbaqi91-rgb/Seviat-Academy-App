@@ -5,7 +5,7 @@
   const coreSkills = ['letter-name','letter-shape','letter-sound','short-vowels','sukoon','long-vowels','letter-positions','letter-detection','sound-analysis','syllable-building'];
   const skills = [...coreSkills,'word-reading'];
   const rules = Object.freeze({minimumQuestions:5,requiredCorrectAnswers:4,consecutiveSuccesses:2,minimumGapMs:24*60*60*1000});
-  const normalize = value => String(value).normalize('NFC').replace(/\s+/g,' ').trim();
+  const normalize = value => String(value).normalize('NFC').replace(/[\u200b-\u200f\u202a-\u202e\u2066-\u2069]/g,'').replace(/\s+/g,' ').trim();
   function taskKey(q) { return JSON.stringify([q.letter,q.skill,q.operation,normalize(q.stimulus)]); }
   function contentKey(q) { return JSON.stringify([q.letter,q.skill,normalize(q.prompt),normalize(q.audioText||''),[...q.options].map(normalize).sort(),normalize(q.answer)]); }
   function validate(questions) {

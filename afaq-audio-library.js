@@ -12,6 +12,8 @@
   let player = null;
   let playerURL = null;
   let currentId = 'syllable:qa';
+  let playbackGeneration = 0, playbackTimer = null;
+  let completion = Promise.resolve(false), finishPlayback = null;
 
   const LEGACY = {
     'syllable:qa': '\u0642\u064E'
@@ -81,6 +83,9 @@
   }
 
   function stopPlayback() {
+    playbackGeneration++;
+    clearTimeout(playbackTimer); playbackTimer = null;
+    finishPlayback?.(false); finishPlayback = null;
     if (player) {
       player.pause();
       player.removeAttribute('src');
@@ -95,17 +100,24 @@
 
   async function playBlob(blob) {
     stopPlayback();
+    window.SeviatGuidedAudio?.stop();
+    window.AfaqVowelAudio?.stop();
+    window.AfaqSpeech?.stop();
+    const token = playbackGeneration;
     playerURL = URL.createObjectURL(blob);
     const audio = new Audio(playerURL);
     player = audio;
 
-    audio.onended = stopPlayback;
-    audio.onerror = stopPlayback;
+    completion = new Promise(resolve => { finishPlayback = resolve; });
+    playbackTimer = setTimeout(() => { if (token === playbackGeneration) stopPlayback(); }, 120000);
+    audio.onended = () => { if (token === playbackGeneration) { finishPlayback?.(true); finishPlayback = null; stopPlayback(); } };
+    audio.onerror = () => { if (token === playbackGeneration) stopPlayback(); };
 
     try {
       await audio.play();
+      return token === playbackGeneration;
     } catch (error) {
-      stopPlayback();
+      if (token === playbackGeneration) stopPlayback();
       throw error;
     }
   }
@@ -388,14 +400,17 @@
   }
 
   window.AfaqAudioLibrary = {
+    stop: stopPlayback,
+    done: () => completion,
     mount,
     getClip,
     listIds,
     play: async text => {
+      stopPlayback();
+      const token = playbackGeneration;
       const blob = await getClip(clipId(text));
-      if (!blob) return false;
-      await playBlob(blob);
-      return true;
+      if (!blob || token !== playbackGeneration) return false;
+      return await playBlob(blob);
     }
   };
 })();
