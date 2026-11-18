@@ -352,7 +352,7 @@
     const section=el('section',undefined,area);section.id='u1-subskill-report';
     el('h3','ملاحظات أجزاء المهارة في هذه المحاولة',section);
     for(const r of report)note(section,labels[r.subskill]+': '+r.correct+' من '+r.total+' — '+(!r.total?'لم يُقيَّم في هذه المحاولة':r.correct<r.total?'يحتاج إلى مراجعة وتدريب':'إجابات صحيحة في هذه العينة المحدودة'));
-    note(section,'اجتياز ٤ من ٥ يبقى نتيجة المهارة الإجمالية؛ لا يثبت إتقان كل حركة أو مد. تُراجع الأجزاء الضعيفة مستقلة.');
+    note(section,'اجتياز 4 من 5 يبقى نتيجة المهارة الإجمالية؛ لا يثبت إتقان كل حركة أو مد. تُراجع الأجزاء الضعيفة مستقلة.');
   }
   function finish() {
     const run=session;if(!run)return;

@@ -32,27 +32,124 @@ const letterNames = {
   games: "الألعاب والتحديات"
 };
 
+let legacyProgressStatus = "unloaded";
+let legacyProgressRaw;
+let legacyProgressFields;
+let legacyProgressPending = false;
+
+// Presentation only: never localize score digits or change persisted values.
+function legacyPointsLabel() {
+  return "⭐ نقاطك: " + String(score) +
+    (legacyProgressPending ? " (غير محفوظة)" : "");
+}
+
+function validLegacyScore(value) {
+  return (typeof value === "number" ||
+    (typeof value === "string" && /^[+]?(?:\d+(?:\.\d*)?|\.\d+)(?:e[+-]?\d+)?$/i.test(value.trim()))) &&
+    Number.isFinite(Number(value)) && Number(value) >= 0;
+}
+
+function validLegacyProgress(value) {
+  // Missing fields were supported by the legacy reader. Unknown fields and
+  // retired question IDs belong to the student record and must be retained.
+  return value !== null && typeof value === "object" && !Array.isArray(value) &&
+    (!Object.hasOwn(value, "score") ||
+      validLegacyScore(value.score)) &&
+    (!Object.hasOwn(value, "answeredQuestions") ||
+      (Array.isArray(value.answeredQuestions) && value.answeredQuestions.every(id =>
+        typeof id === "string" && id.length > 0))) &&
+    (!Object.hasOwn(value, "updatedAt") ||
+      (typeof value.updatedAt === "string" && Number.isFinite(Date.parse(value.updatedAt))));
+}
+
 function loadProgress() {
+  // Corruption, an unreadable store or a conflict disables writes until reload.
+  // Never repair, normalize or back up the original value as a side effect.
+  if (legacyProgressStatus === "blocked") return false;
   try {
-    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
-    score = Number(saved.score || 0);
-    answeredQuestions = Array.isArray(saved.answeredQuestions)
-      ? saved.answeredQuestions
-      : [];
+    const raw = localStorage.getItem(STORAGE_KEY);
+    const saved = raw === null ? {} : JSON.parse(raw);
+    if (!validLegacyProgress(saved)) throw new Error("Invalid legacy progress schema");
+    legacyProgressRaw = raw;
+    legacyProgressFields = saved;
+    score = Number(saved.score ?? 0);
+    answeredQuestions = [...(saved.answeredQuestions ?? [])];
+    legacyProgressStatus = "ready";
+    return true;
   } catch {
-    score = 0;
-    answeredQuestions = [];
+    legacyProgressStatus = "blocked";
+    console.warn("Legacy progress unavailable; original storage preserved and saving disabled.");
+    return false;
   }
 }
 
 function saveProgress() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify({
-    score,
-    answeredQuestions,
-    updatedAt: new Date().toISOString()
-  }));
-
+  if (legacyProgressStatus !== "ready") return false;
+  const next = {...legacyProgressFields, score, answeredQuestions,
+    updatedAt: new Date().toISOString()};
+  if (!validLegacyProgress(next)) return false;
+  let bytes;
+  try {
+    bytes = JSON.stringify(next);
+    // Compare exact strings, including whitespace. localStorage has no atomic
+    // compare-and-set: a simultaneous writer between getItem and setItem can
+    // still race. See docs/LEGACY_PROGRESS_PERSISTENCE.md for the boundary.
+    if (localStorage.getItem(STORAGE_KEY) !== legacyProgressRaw) {
+      legacyProgressStatus = "blocked";
+      console.warn("Legacy progress changed in another tab; saving disabled until reload.");
+      return false;
+    }
+  } catch {
+    legacyProgressStatus = "blocked";
+    console.warn("Legacy progress cannot be read safely; saving disabled until reload.");
+    return false;
+  }
+  try {
+    localStorage.setItem(STORAGE_KEY, bytes);
+  } catch {
+    // A failed setItem (including quota/security errors) leaves the stored
+    // value unchanged. Keep the old comparison baseline so a retry is safe.
+    console.warn("Legacy progress was not saved; original storage preserved.");
+    return false;
+  }
+  legacyProgressRaw = bytes;
+  legacyProgressFields = next;
+  legacyProgressPending = false;
   updateProgressDisplay();
+  return true;
+}
+
+function showLegacyProgressWarning() {
+  let notice = document.getElementById("legacy-progress-warning");
+  if (!notice) {
+    notice = document.createElement("section");
+    notice.id = "legacy-progress-warning";
+    notice.setAttribute("role", "alert");
+    document.body.append(notice);
+  }
+  notice.replaceChildren();
+  const message = document.createElement("p");
+  message.textContent = legacyProgressStatus === "ready"
+    ? "تعذر حفظ تقدمك. النقاط الجديدة مؤقتة وستفقد عند إغلاق الصفحة ما لم تنجح إعادة الحفظ."
+    : "تعذر حفظ التقدم بأمان. لم نستبدل السجل المخزن؛ لا تغلق الصفحة قبل طلب مساعدة المعلم. النقاط الجديدة غير محفوظة.";
+  notice.append(message);
+  if (legacyProgressStatus === "ready") {
+    const retry = document.createElement("button");
+    retry.id = "legacy-progress-retry";
+    retry.type = "button";
+    retry.textContent = "إعادة حفظ التقدم";
+    retry.onclick = saveLegacyProgressFromUI;
+    notice.append(retry);
+  }
+}
+
+function saveLegacyProgressFromUI() {
+  const saved = saveProgress();
+  if (saved) document.getElementById("legacy-progress-warning")?.remove();
+  else showLegacyProgressWarning();
+  const points = document.getElementById("gameScore");
+  if (points) points.textContent = legacyPointsLabel();
+  return saved;
 }
 
 function updateProgressDisplay() {
@@ -417,7 +514,7 @@ function renderQuiz() {
 
   const points = document.createElement("p");
   points.id = "gameScore";
-  points.textContent = "⭐ نقاطك: " + score;
+  points.textContent = legacyPointsLabel();
 
   const next = document.createElement("button");
   next.id = "nextQuestion";
@@ -586,12 +683,13 @@ function checkAnswer(answer, selectedButton) {
       !answeredQuestions.includes(question.id)) {
     answeredQuestions.push(question.id);
     score += 10;
-    saveProgress();
+    legacyProgressPending = true;
+    saveLegacyProgressFromUI();
   }
 
   const points = document.getElementById("gameScore");
   if (points) {
-    points.textContent = "\u2b50 \u0646\u0642\u0627\u0637\u0643: " + score;
+    points.textContent = legacyPointsLabel();
   }
 
   next.disabled = true;
@@ -661,7 +759,7 @@ function openStage(stage) {
 }
 
 async function initializeApp() {
-  loadProgress();
+  if (!loadProgress()) showLegacyProgressWarning();
 
   try {
     const [curriculumResponse, skillsResponse, questionsResponse] =
