@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "origin": {
+    "curriculumMapCommit": "b94f220f6ce572d75b99bf47daefbf60586cbc94",
+    "curriculumMapBlob": "c9a9558b3a7a33de9a72714d51e0604620101774",
+    "curriculumMapCanonicalSha256": "21e911dd792943acf64555999835e7ba4f7e75490a74d8b34a6eabe126e922b1",
+    "sourcePointer": "/sources/0",
+    "lessonPointer": "/units/2/lessons/0",
+    "originalPdfSha256": "0f5721705c9c048138f5ef9b90eb5f042d9c17a9d9523829dc0ed9f8e0da89ae",
+    "originalPdfByteLength": 31042535,
+    "verification": "Original local PDF hashed read-only and matched the committed reference; no new page-content or human linguistic validation is claimed."
+  },
+  "reference": {
+    "sourceId": "source-1",
+    "filename": "لغتي صف اول_compressed.pdf",
+    "sha256": "0f5721705c9c048138f5ef9b90eb5f042d9c17a9d9523829dc0ed9f8e0da89ae",
+    "pdfPageCount": 266,
+    "title": "لغتي — الصف الأول الابتدائي",
+    "edition": "1448هـ / 2026م",
+    "part": 1,
+    "unit": 3,
+    "lessonId": "sa-g1-u3-l1",
+    "letter": "أ",
+    "fromPdfPage": 220,
+    "toPdfPage": 226,
+    "activityPages": [
+      220,
+      223,
+      224,
+      225,
+      226
+    ],
+    "priorIntroducedLetters": [
+      "م",
+      "ب",
+      "ل",
+      "د",
+      "ن",
+      "ر",
+      "ص",
+      "ف",
+      "س",
+      "ق",
+      "ت",
+      "ح"
+    ],
+    "lessonVerification": "contents-and-lesson-heading-visually-verified",
+    "qualifiedHumanReviewCompleted": false
+  }
+}

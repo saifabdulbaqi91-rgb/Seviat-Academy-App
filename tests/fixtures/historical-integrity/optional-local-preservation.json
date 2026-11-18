@@ -1,0 +1,230 @@
+{
+  "version": 1,
+  "purpose": "Optional audit only; original raw hashes for ignored backups and local audio. Contains no file contents. Never required by repository tests.",
+  "entries": [
+    {
+      "file": "data/group1-extra.before-dedup.json",
+      "historicalSha256": "10602848969d8ba79bc4549ad68bf77de7ec511a6914cf6f949e0368ec690605",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "data/group1-extra.before-semantic-dedup.json",
+      "historicalSha256": "b3fe5abed4b857420de3adb9d9982c5912656161712bae5cb45167e711392997",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "data/group1-extra.before-vowels-fix.json",
+      "historicalSha256": "b4e4881db94e145a70e7b7cdca3f72d36ecdb68800f857006a0630ca2b99fae6",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "data/group1-reading-extra.backup.json",
+      "historicalSha256": "aafcbdeaf5ca4027d70135d4c04fec431eb209dc6e5ace0f4a5ad9245cebfe35",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "data/meem-questions.before-final-dedup.json",
+      "historicalSha256": "225eced2eb1198346ad9d90c4b8146df22fe8c0e9e207ac0de9a6bbc00ff37d9",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "data/meem-questions.before-full-cleanup.json",
+      "historicalSha256": "a5d8a9825c3a9f53a6eaea656359f8bc107000c3f3b67d5cbd99108956069ab1",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "data/meem-questions.before-id-repair.json",
+      "historicalSha256": "1572cd5a65a83b486d77672fbe719a669c4983ad4136a9fb6b77cc7adbdb9979",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "data/meem-questions.before-letter-fix.json",
+      "historicalSha256": "65ca4e06e77cb67d1bbe86ea8a5d07f033e5ede7e45a80813ae9c9b30ce6cf59",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "data/meem-questions.before-listening-fix.json",
+      "historicalSha256": "190bdb90d9d0c15999afb618fe1b3dbd3015bcc6b7e97a6e666c14166826c5db",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "data/questions.backup-before-diacritics.json",
+      "historicalSha256": "7feabce835f975e5cf91a08ab7edf45e9a8f013cb2d4d99b9a9917741b17739a",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "data/questions.backup.json",
+      "historicalSha256": "6d9afd44d44c78aa3158752ae3e83eb2a32b59aae76589d40628170212eab655",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "data/questions.before-conflict-repair.json",
+      "historicalSha256": "3e94b7fccee703bc66047956cb6880a28e23c3da3998448ea20464a570d0ba79",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "data/questions.before-fix.json",
+      "historicalSha256": "9ddb38cebac6b8a32c8b508e0b1c02a1c307b63231a22077d0d56813fa9db4b0",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "data/questions.before-listening-fix.json",
+      "historicalSha256": "8473c225f45539b0d2b924463485b36b6fb70aa191be83b98936d394d0b52fe3",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "data/questions.before-meem-merge.json",
+      "historicalSha256": "d22de437715bc2656906325825e931906a383fb895b13f1051554adee860397b",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "data/questions.before-shapes.json",
+      "historicalSha256": "e86d94a5a8a5edbca8801d902f75c24bed3a9faf331af67b644f61ead2ad9258",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "data/questions.before-subskills-20261111-061106.json",
+      "historicalSha256": "c910d4b669efdbbdd21ec74a18a8b4f5a75ef13e33c434f8280ca933e912af9c",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "data/questions.before-unicode-repair.json",
+      "historicalSha256": "4b0cbddbed1c479fc677659b29b9442c523fa9831c085932947f6f5560b99902",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "data/questions.before-vowel-fix.json",
+      "historicalSha256": "29d73616315aa3934b4b3ca4280322271d09c6fe92a60360c6a0fb2b6719f5f9",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "data/unit1-reviewed.before-subskills-20261111-065227.json",
+      "historicalSha256": "56aac59fb233c88885f7ba5659c36870c2e913196012933baa43c834188a019e",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "sounds/effects.js.backup-20261111-042320",
+      "historicalSha256": "aca452356cf15d7b008b46f0fb2174912859e0e0f5d97d1941a67cdfc29b35f9",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "sounds/effects.js.backup-20261111-045951",
+      "historicalSha256": "e2e075a6f61d8ab6f9ce8896b87e6b12f682e1d16973f66c7720145e5d5108ab",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "sounds/effects.js.before-mp3.bak",
+      "historicalSha256": "6b20dfb31798396541d5eada5e3ace6efdc2e8057a533c475180cee46bd348f6",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "sounds/feedback/correct-test.mp3",
+      "historicalSha256": "4d65a469812419d48341d0ed0e000a3978c0cacbe4247cc7f932c592d41391f9",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "sounds/feedback/hero-test.mp3",
+      "historicalSha256": "d1ad1b26daf3d8c80ea5180a8a35ac679832b2dc366496c9c9a3385558f033e0",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "sounds/feedback/success-test.mp3",
+      "historicalSha256": "bea3ebd9f9b7a894a0ac9c299de1bc8c4e133fcc4f449ab14637b1344490efc1",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "sounds/feedback/wrong-test.mp3",
+      "historicalSha256": "631aaf37cb149674ad92636abbb16b1a2dfeba3e4072e5941435a7db144b1ef4",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "sounds/teacher/sample.mp3",
+      "historicalSha256": "63f543ecfb533f89404f664f4e6adae97570a3a38263f79c0c0cbe5085d4b323",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    }
+  ]
+}

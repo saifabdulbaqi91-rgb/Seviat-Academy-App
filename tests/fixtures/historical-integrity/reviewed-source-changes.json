@@ -1,0 +1,214 @@
+{
+  "version": 1,
+  "files": [
+    {
+      "file": "arabic-speech.js",
+      "reviewedCommit": "d66f9831872706ae6c70bb425bde1692951767e0",
+      "gitBlob": "56b6aeb1c0dc57763e7d15af0bdac4d0c734833a",
+      "reviewedCanonicalSha256": "2dd40966a50a7242c34d7f7e434a5ab8bc9228048c1c227d143d093abb196f27",
+      "historicalCanonicalSha256": "60e6a18b21051ad9180c33c131afdf9460e61fb58e2162c8544ad490e43e5c2f",
+      "purpose": "Committed answer-leakage/audio compatibility changes and adult-session/async recording guards; historical source is a verified intermediate working-tree snapshot.",
+      "hunks": [
+        {
+          "historicalLine": 10,
+          "reviewedLine": 10,
+          "historical": [
+            "function ordinary(entry){const words=typeof entry?.display==='string'?(entry.display.replace(/[\\u064B-\\u065F\\u0670]/g,'').match(/[\\u0621-\\u064A]+/g)||[]):[];return !!entry&&((entry.category==='instruction'&&Object.hasOwn(instructions,entry.id.replace(/^instruction:/,''))&&entry.id.startsWith('instruction:'))||(entry.category==='question'&&entry.id.startsWith('question:')&&words.length>=2&&words.some(w=>w.length>=3)));}"
+          ],
+          "reviewed": [
+            "function ordinary(entry){if(/(?:^|[\\s:\\u060c\\u00ab\\x22(])[\\u0621-\\u064a][\\u064B-\\u065F\\u0670]*(?:[\\u0627\\u0648\\u064a][\\u064B-\\u065F\\u0670]*)?(?=$|[\\s.\\u060c\\u061f!\\u00bb:;)])/u.test(entry?.spoken||entry?.display||''))return false;const words=typeof entry?.display==='string'?(entry.display.replace(/[\\u064B-\\u065F\\u0670]/g,'').match(/[\\u0621-\\u064A]+/g)||[]):[];return !!entry&&((entry.category==='instruction'&&Object.hasOwn(instructions,entry.id.replace(/^instruction:/,''))&&entry.id.startsWith('instruction:'))||(entry.category==='question'&&entry.id.startsWith('question:')&&words.length>=2&&words.some(w=>w.length>=3)));}"
+          ]
+        },
+        {
+          "historicalLine": 12,
+          "reviewedLine": 12,
+          "historical": [
+            "function createReviews(storage,key='afaq-speech-reviews-v1'){let raw=storage.getItem(key),value=raw===null?{version:1,entries:{},preferences:{questionReading:false,pronunciationExamples:false,rate:.85,music:false}}:JSON.parse(raw);const valid=v=>v?.version===1&&v.entries&&typeof v.entries==='object'&&!Array.isArray(v.entries)&&v.preferences&&typeof v.preferences.questionReading==='boolean'&&typeof v.preferences.pronunciationExamples==='boolean'&&Number.isFinite(v.preferences.rate)&&v.preferences.rate>=.65&&v.preferences.rate<=1.1&&typeof v.preferences.music==='boolean';if(!valid(value))throw Error('Unreadable speech reviews');function save(next){if(storage.getItem(key)!==raw)throw Error('Speech preferences changed elsewhere');if(!valid(next))throw Error('Invalid speech preferences');const bytes=JSON.stringify(next);storage.setItem(key,bytes);raw=bytes;value=next;return structuredClone(value);}return {read:()=>structuredClone(value),preferences:patch=>save({...value,preferences:{...value.preferences,...patch}}),review(entry,voice,rate,status,reviewer){if(!['approved','rejected'].includes(status)||!reviewer.trim()||!localArabic([voice]).length)throw Error('Invalid speech review');return save({...value,entries:{...value.entries,[entry.id]:{...entry,status,reviewer:reviewer.trim(),reviewedAt:new Date().toISOString(),signature:signature(entry,voice,rate)}}});},approved(entry,voice,rate){const r=value.entries[entry.id];return r?.version===1&&r.status==='approved'&&r.signature===signature(entry,voice,rate)&&!!r.reviewer?.trim()&&Number.isFinite(Date.parse(r.reviewedAt));}};}"
+          ],
+          "reviewed": [
+            "function createReviews(storage,key='afaq-speech-reviews-v1'){let raw=storage.getItem(key),value=raw===null?{version:1,entries:{},preferences:{questionReading:false,pronunciationExamples:false,rate:.85,music:false}}:JSON.parse(raw);const valid=v=>v?.version===1&&v.entries&&typeof v.entries==='object'&&!Array.isArray(v.entries)&&v.preferences&&typeof v.preferences.questionReading==='boolean'&&typeof v.preferences.pronunciationExamples==='boolean'&&Number.isFinite(v.preferences.rate)&&v.preferences.rate>=.65&&v.preferences.rate<=1.1&&typeof v.preferences.music==='boolean';if(!valid(value))throw Error('Unreadable speech reviews');function save(next){if(storage.getItem(key)!==raw)throw Error('Speech preferences changed elsewhere');if(!valid(next))throw Error('Invalid speech preferences');const bytes=JSON.stringify(next);storage.setItem(key,bytes);raw=bytes;value=next;return structuredClone(value);}return {read:()=>structuredClone(value),preferences:patch=>save({...value,preferences:{...value.preferences,...patch}}),review(entry,voice,rate,status,reviewer){if(typeof window!=='undefined')window.AfaqAdult.assert();if(!['approved','rejected'].includes(status)||!reviewer.trim()||!localArabic([voice]).length)throw Error('Invalid speech review');return save({...value,entries:{...value.entries,[entry.id]:{...entry,status,reviewer:reviewer.trim(),reviewedAt:new Date().toISOString(),signature:signature(entry,voice,rate)}}});},approved(entry,voice,rate){const r=value.entries[entry.id];return r?.version===1&&r.status==='approved'&&r.signature===signature(entry,voice,rate)&&!!r.reviewer?.trim()&&Number.isFinite(Date.parse(r.reviewedAt));}};}"
+          ]
+        },
+        {
+          "historicalLine": 48,
+          "reviewedLine": 48,
+          "historical": [
+            "async function storeClip(id,blob,reviewer){if(!blob?.size||blob.size>2*1024*1024||!blob.type.startsWith('audio/')||!reviewer.trim())throw Error('Invalid instruction recording');const d=await db();return new Promise((resolve,reject)=>{const tx=d.transaction('clips','readwrite');tx.objectStore('clips').put({id,version:1,display:entry(id)?.display,blob,approved:true,reviewer:reviewer.trim(),reviewedAt:new Date().toISOString()});tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);});}"
+          ],
+          "reviewed": [
+            "// Keep authorization tied to this operation, including while opening the database.",
+            "// A lock aborts an active transaction; a subsequent login cannot revive it.",
+            "async function instructionMutation(work){",
+            " host.AfaqAdult.assert();",
+            " let revoked=false,tx=null,failure=null;",
+            " const revoke=()=>{revoked=true;if(tx)try{tx.abort();}catch{}};",
+            " const check=()=>{if(revoked)throw Error('Adult operation revoked');host.AfaqAdult.assert();};",
+            " host.addEventListener('afaq-adult-locked',revoke);",
+            " try{",
+            "  const d=await db();",
+            "  check();",
+            "  return await new Promise((resolve,reject)=>{",
+            "   tx=d.transaction('clips','readwrite');",
+            "   const fail=error=>{failure=error;try{tx.abort();}catch{}reject(error);};",
+            "   const guarded=fn=>()=>{try{check();fn();}catch(error){fail(error);}};",
+            "   tx.oncomplete=()=>resolve();",
+            "   tx.onerror=()=>reject(failure||tx.error||Error('Instruction recording transaction failed'));",
+            "   tx.onabort=()=>reject(failure||tx.error||Error('Instruction recording transaction aborted'));",
+            "   try{check();work(tx.objectStore('clips'),guarded,check);}catch(error){fail(error);}",
+            "  });",
+            " }finally{host.removeEventListener('afaq-adult-locked',revoke);}",
+            "}",
+            "async function storeClip(id,blob,reviewer){",
+            " host.AfaqAdult.assert();",
+            " if(!blob?.size||blob.size>2*1024*1024||!blob.type.startsWith('audio/')||!reviewer.trim())throw Error('Invalid instruction recording');",
+            " return instructionMutation((store,guarded,check)=>{",
+            "  check();",
+            "  const request=store.put({id,version:1,display:entry(id)?.display,blob,approved:true,reviewer:reviewer.trim(),reviewedAt:new Date().toISOString()});",
+            "  request.onsuccess=guarded(()=>{});",
+            " });",
+            "}",
+            "async function deleteInstructionClip(id){",
+            " return instructionMutation((store,guarded,check)=>{",
+            "  const request=store.get(id);",
+            "  request.onsuccess=guarded(()=>{",
+            "   if(request.result&&request.result.version!==1)throw Error('Unrecognized instruction recording');",
+            "   check(); // The get callback is an asynchronous boundary: check immediately before delete.",
+            "   const deletion=store.delete(id);",
+            "   deletion.onsuccess=guarded(()=>{});",
+            "  });",
+            " });",
+            "}"
+          ]
+        },
+        {
+          "historicalLine": 52,
+          "reviewedLine": 93,
+          "historical": [
+            "function mountTeacher(parent){if(document.body.dataset.mode!=='teacher'||parent.querySelector('#afaq-speech-review'))return;capture?.dispose();capture=null;stop();const root=document.createElement('section');root.id='afaq-speech-review';parent.append(root);const add=(tag,text,p=root)=>{const e=document.createElement(tag);if(text)e.textContent=text;p.append(e);return e;};add('h3','مراجعة النطق والشرح العربي');add('p','مسودات للمراجعة وليست نطقًا معتمدًا. لا يوجد تشكيل أو تحليل نحوي آلي مضمون. الاعتماد لهذا النص والصوت والسرعة فقط، ولا يقيم نطق الطالب.');const voice=add('select');voice.setAttribute('aria-label','صوت عربي محلي');const select=add('select');select.setAttribute('aria-label','نص مراجعة النطق');for(const e of candidates.values()){const o=add('option',e.id.startsWith('instruction:')?'شرح: '+e.display:({'letter-name':'اسم الحرف','letter-sound':'صوت الحرف','long-vowel':'مد','sukoon':'سكون','shadda':'شدة','tanwin':'تنوين','hamza':'همزة','word':'كلمة','sentence':'جملة','question':'سؤال','syllable':'مقطع','pronunciation':'مثال نطق'}[e.category]||'نص')+': '+e.display,select);o.value=e.id;}"
+          ],
+          "reviewed": [
+            "function mountTeacher(parent){host.AfaqAdult.assert();if(document.body.dataset.mode!=='teacher'||parent.querySelector('#afaq-speech-review'))return;capture?.dispose();capture=null;stop();const root=document.createElement('section');root.id='afaq-speech-review';parent.append(root);const add=(tag,text,p=root)=>{const e=document.createElement(tag);if(text)e.textContent=text;p.append(e);return e;};add('h3','مراجعة النطق والشرح العربي');add('p','مسودات للمراجعة وليست نطقًا معتمدًا. لا يوجد تشكيل أو تحليل نحوي آلي مضمون. الاعتماد لهذا النص والصوت والسرعة فقط، ولا يقيم نطق الطالب.');const voice=add('select');voice.setAttribute('aria-label','صوت عربي محلي');const select=add('select');select.setAttribute('aria-label','نص مراجعة النطق');for(const e of candidates.values()){const o=add('option',e.id.startsWith('instruction:')?'شرح: '+e.display:({'letter-name':'اسم الحرف','letter-sound':'صوت الحرف','long-vowel':'مد','sukoon':'سكون','shadda':'شدة','tanwin':'تنوين','hamza':'همزة','word':'كلمة','sentence':'جملة','question':'سؤال','syllable':'مقطع','pronunciation':'مثال نطق'}[e.category]||'نص')+': '+e.display,select);o.value=e.id;}"
+          ]
+        },
+        {
+          "historicalLine": 56,
+          "reviewedLine": 97,
+          "historical": [
+            "const action=(text,id,fn)=>{const b=add('button',text);b.type='button';b.id=id;b.onclick=async()=>{try{await fn();}catch(e){status.textContent=/elsewhere/i.test(e.message)?'تغيرت مراجعات الصوت في نافذة أخرى. أعد تحميل الصفحة.':'تعذر تنفيذ الإجراء. بقيت السجلات الأصلية محفوظة.';}};return b;};"
+          ],
+          "reviewed": [
+            "const action=(text,id,fn)=>{const b=add('button',text);b.type='button';b.id=id;b.onclick=async()=>{try{host.AfaqAdult.assert();await fn();}catch(e){status.textContent=/elsewhere/i.test(e.message)?'تغيرت مراجعات الصوت في نافذة أخرى. أعد تحميل الصفحة.':'تعذر تنفيذ الإجراء. بقيت السجلات الأصلية محفوظة.';}};return b;};"
+          ]
+        },
+        {
+          "historicalLine": 65,
+          "reviewedLine": 106,
+          "historical": [
+            "action('حذف تسجيل الشرح المحدد','afaq-instruction-delete',async()=>{const d=await db();await new Promise((resolve,reject)=>{const tx=d.transaction('clips','readwrite');const store=tx.objectStore('clips'),request=store.get(select.value);request.onsuccess=()=>{if(request.result&&request.result.version!==1){tx.abort();return;}store.delete(select.value);};tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);});stop();status.textContent='حُذف تسجيل الشرح المحدد فقط.';});"
+          ],
+          "reviewed": [
+            "action('حذف تسجيل الشرح المحدد','afaq-instruction-delete',async()=>{await deleteInstructionClip(select.value);stop();status.textContent='حُذف تسجيل الشرح المحدد فقط.';});"
+          ]
+        },
+        {
+          "historicalLine": 72,
+          "reviewedLine": 113,
+          "historical": [
+            "host.AfaqSpeech={isRecording,settings,update,entry,candidate,selection,playbackSelection,availability,speak,stop,done:()=>engine.done(),voices:()=>engine.voices(),clip,mountTeacher,dispose:()=>{capture?.dispose();capture=null;stop();}};"
+          ],
+          "reviewed": [
+            "host.AfaqSpeech={isRecording,settings,update,entry,candidate,selection,playbackSelection,availability,speak,speakInstructionWithHamed,stop,done:()=>engine.done(),voices:()=>engine.voices(),clip,mountTeacher,dispose:()=>{capture?.dispose();capture=null;stop();}};",
+            "function speakInstructionWithHamed(text, options = {}) {",
+            "  // Compatibility entry point: use the same review policy and owned lifecycle.",
+            "  if (typeof text !== 'string' || !text.trim()) return false;",
+            "  const id = 'question:' + identity(text);",
+            "  candidate(id, text);",
+            "  if (!playbackSelection(id)) return false;",
+            "  speak(id, options).catch(() => {});",
+            "  return true;",
+            "}",
+            ""
+          ]
+        },
+        {
+          "historicalLine": 74,
+          "reviewedLine": 125,
+          "historical": [],
+          "reviewed": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "file": "guided-audio.js",
+      "reviewedCommit": "a6dd866a3e75961f484790a9246093a03f5b250f",
+      "gitBlob": "98308c8b8dbad8f76e5ad51dd258288709b5fef1",
+      "reviewedCanonicalSha256": "316c27d2b9c41aaf194a63d29cc129ec77876b7531d0f6b25a36cc7ddaab3635",
+      "historicalCanonicalSha256": "922e9657ffc7444c6d0bb193ddfa209c71f1646ae700eb961a6099dfef0ccdfb",
+      "purpose": "Committed audio ownership and primary-question replay fix.",
+      "hunks": [
+        {
+          "historicalLine": 15,
+          "reviewedLine": 15,
+          "historical": [
+            "const stop=(options={})=>{generation++;current.stop();host.AfaqSpeech?.stop(options);if(url){URL.revokeObjectURL(url);url=null;}};"
+          ],
+          "reviewed": [
+            "const stop=(options={})=>{generation++;current.stop();host.AfaqAudioLibrary?.stop();host.AfaqVowelAudio?.stop();host.AfaqSpeech?.stop(options);if(url){URL.revokeObjectURL(url);url=null;}};"
+          ]
+        },
+        {
+          "historicalLine": 31,
+          "reviewedLine": 31,
+          "historical": [
+            " function sync(){if(!panel.isConnected)return;const p=prefs.read(),exists=available(instructionId);replay.disabled=muted()||!exists||!loadedOverrides;replay.title=!loadedOverrides?'جارٍ تجهيز صوت الشرح…':!exists?'لا يتوفر صوت عربي محلي أو تسجيل معتمد؛ راجع إعدادات أصوات الجهاز أو اطلب تسجيلًا من المعلم.':muted()?'فعّل صوت الشرح والصوت العام.':'استمع إلى طريقة النشاط';if(!loadedOverrides)status.textContent='جارٍ تجهيز صوت الشرح…';else if(!exists){const reason=host.AfaqSpeech?.availability(instructionId).reason;status.textContent=reason==='rejected'?'رفض المعلم هذا الشرح؛ اطلب مراجعته أو تسجيل بديل.':reason==='preferences-unreadable'?'تعذر قراءة إعدادات الشرح المحفوظة. اطلب مساعدة المعلم؛ لم تُحذف الإعدادات.':reason==='unsupported'?'هذا المتصفح لا يدعم الشرح المنطوق؛ اتبع التعليمات المكتوبة أو استخدم متصفحًا يدعمه.':'لا يتوفر صوت عربي محلي أو تسجيل معتمد. فعّل صوتًا عربيًا في الجهاز أو اطلب مساعدة المعلم.';}else if(muted())status.textContent='الشرح مكتوم؛ فعّله من إعدادات الصوت.';else if(status.textContent.includes('لا يتوفر')||status.textContent.includes('لا يدعم')||status.textContent.includes('مكتوم')||status.textContent.includes('جارٍ تجهيز'))status.textContent='اضغط «أعد الشرح» للاستماع.';mute.checked=p.muted;volume.value=String(p.volume);auto.checked=p.autoExplain;if(exampleButton){exampleButton.hidden=!host.AfaqSpeech.settings().pronunciationExamples;exampleButton.disabled=muted()||!available(exampleId);exampleButton.title='مثال بمراجعة بشرية فقط، ولا يقيّم نطق الطالب.';}if(questionButton){questionButton.hidden=!host.AfaqSpeech.settings().questionReading;questionButton.disabled=muted()||!available(questionId);questionButton.title=questionButton.disabled?'فعّل الصوت؛ يحتاج نطق الحروف المنفردة إلى مراجعة المعلم.':'استمع إلى السؤال';}}"
+          ],
+          "reviewed": [
+            " function sync(){if(!panel.isConnected)return;const p=prefs.read(),exists=available(context.primaryQuestion&&questionId?questionId:instructionId);replay.disabled=muted()||!exists||!loadedOverrides;replay.title=!loadedOverrides?'جارٍ تجهيز صوت الشرح…':!exists?'لا يتوفر صوت عربي محلي أو تسجيل معتمد؛ راجع إعدادات أصوات الجهاز أو اطلب تسجيلًا من المعلم.':muted()?'فعّل صوت الشرح والصوت العام.':'استمع إلى طريقة النشاط';if(!loadedOverrides)status.textContent='جارٍ تجهيز صوت الشرح…';else if(!exists){const reason=host.AfaqSpeech?.availability(instructionId).reason;status.textContent=reason==='rejected'?'رفض المعلم هذا الشرح؛ اطلب مراجعته أو تسجيل بديل.':reason==='preferences-unreadable'?'تعذر قراءة إعدادات الشرح المحفوظة. اطلب مساعدة المعلم؛ لم تُحذف الإعدادات.':reason==='unsupported'?'هذا المتصفح لا يدعم الشرح المنطوق؛ اتبع التعليمات المكتوبة أو استخدم متصفحًا يدعمه.':'لا يتوفر صوت عربي محلي أو تسجيل معتمد. فعّل صوتًا عربيًا في الجهاز أو اطلب مساعدة المعلم.';}else if(muted())status.textContent='الشرح مكتوم؛ فعّله من إعدادات الصوت.';else if(status.textContent.includes('لا يتوفر')||status.textContent.includes('لا يدعم')||status.textContent.includes('مكتوم')||status.textContent.includes('جارٍ تجهيز'))status.textContent='اضغط «أعد الشرح» للاستماع.';mute.checked=p.muted;volume.value=String(p.volume);auto.checked=p.autoExplain;if(exampleButton){exampleButton.hidden=!host.AfaqSpeech.settings().pronunciationExamples;exampleButton.disabled=muted()||!available(exampleId);exampleButton.title='مثال بمراجعة بشرية فقط، ولا يقيّم نطق الطالب.';}if(questionButton){questionButton.hidden=!host.AfaqSpeech.settings().questionReading;questionButton.disabled=muted()||!available(questionId);questionButton.title=questionButton.disabled?'فعّل الصوت؛ يحتاج نطق الحروف المنفردة إلى مراجعة المعلم.':'استمع إلى السؤال';}}"
+          ]
+        },
+        {
+          "historicalLine": 38,
+          "reviewedLine": 38,
+          "historical": [
+            " const manual=id=>{stop();token=generation;return play(id);};replay.onclick=()=>manual(instructionId);if(questionButton)questionButton.onclick=()=>manual(questionId);if(exampleButton)exampleButton.onclick=()=>manual(exampleId);"
+          ],
+          "reviewed": [
+            " const manual=id=>{stop();token=generation;return play(id);};replay.onclick=()=>manual(context.primaryQuestion&&questionId?questionId:instructionId);if(questionButton)questionButton.onclick=()=>manual(questionId);if(exampleButton)exampleButton.onclick=()=>manual(exampleId);"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "diagnostic-placement.js",
+      "reviewedCommit": "d66f9831872706ae6c70bb425bde1692951767e0",
+      "gitBlob": "0da16330c3205ca78a4051b7005d1614bd097ca5",
+      "reviewedCanonicalSha256": "fc1b424f0dd73ca5f7feb32436f0cf96afb03f3201a206ba40e5fbd695b62c82",
+      "historicalCanonicalSha256": "c290793e73523fea343f87dc5366e339e9adab90f6252542b056a2bd780a9362",
+      "purpose": "Committed adult authorization for teacher rubric and placement decisions.",
+      "hunks": [
+        {
+          "historicalLine": 22,
+          "reviewedLine": 22,
+          "historical": [
+            "function answer(a,{itemId,answer,ratings,hints=0,assistance=false,observer=null,now=Date.now()}){if(a.responses.some(r=>r.itemId===itemId))return {assessment:a,accepted:false};if(a.status!=='active'||a.pendingItemId!==itemId)throw Error('No active item');const item=a.bank.find(i=>i.id===itemId);if(!Number.isInteger(hints)||hints<0||typeof assistance!=='boolean')throw Error('Invalid assistance');let correct,score;"
+          ],
+          "reviewed": [
+            "function answer(a,{itemId,answer,ratings,hints=0,assistance=false,observer=null,now=Date.now()}){if(ratings&&typeof window!=='undefined')window.AfaqAdult.assert();if(a.responses.some(r=>r.itemId===itemId))return {assessment:a,accepted:false};if(a.status!=='active'||a.pendingItemId!==itemId)throw Error('No active item');const item=a.bank.find(i=>i.id===itemId);if(!Number.isInteger(hints)||hints<0||typeof assistance!=='boolean')throw Error('Invalid assistance');let correct,score;"
+          ]
+        },
+        {
+          "historicalLine": 38,
+          "reviewedLine": 38,
+          "historical": [
+            "return {read(id){const p=profile(id);validateProfile(p);return clone(p);},update(id,change){if(storage.getItem(key)!==raw)throw Error('Placement changed in another window');const p=profile(id);validateProfile(p);const updated=change(clone(p));validateProfile(updated);const nextData={...data,profiles:{...data.profiles,[id]:updated}},bytes=JSON.stringify(nextData);storage.setItem(key,bytes);data=nextData;raw=bytes;return clone(updated);}};"
+          ],
+          "reviewed": [
+            "return {read(id){const p=profile(id);validateProfile(p);return clone(p);},update(id,change){if(storage.getItem(key)!==raw)throw Error('Placement changed in another window');const p=profile(id);validateProfile(p);const updated=change(clone(p));validateProfile(updated);if(typeof window!=='undefined'){const adultEvidence=x=>JSON.stringify({decisions:x.decisions,manual:x.assessments.flatMap(a=>a.responses.filter(r=>r.method==='teacher-rubric')),ended:x.assessments.filter(a=>a.stopReason==='teacher-ended')});if(adultEvidence(p)!==adultEvidence(updated))window.AfaqAdult.assert();}const nextData={...data,profiles:{...data.profiles,[id]:updated}},bytes=JSON.stringify(nextData);storage.setItem(key,bytes);data=nextData;raw=bytes;return clone(updated);}};"
+          ]
+        }
+      ]
+    }
+  ]
+}

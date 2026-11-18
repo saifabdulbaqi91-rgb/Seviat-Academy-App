@@ -1,0 +1,452 @@
+{
+  "version": 1,
+  "origins": {
+    "literacy": {
+      "checkpoint": ".access-staging/audio-repair-2026-11-14T01-09-13-675Z/checkpoint.json",
+      "sha256": "1dac07fd100449555819b670c550e212ffb8de866602a8d63aeea5054fbf2281",
+      "created": "2026-11-14T01:09:19.251Z",
+      "recordedHead": "e8a60ac00c91351cfb8b6fc6e06f004a99141fe2",
+      "note": "Historical working-tree checkpoint, not a claim of a clean Git revision."
+    },
+    "workspace": {
+      "checkpoint": ".access-staging/phase5-1794568139612/checkpoint.json",
+      "sha256": "621fb6cc6741321fb824821ba01beaa9969d075d3973f833c082209ff2e0a352",
+      "created": "2026-11-13T11:09:00.250Z",
+      "recordedHead": null,
+      "note": "Historical working-tree checkpoint, not a claim of a clean Git revision."
+    }
+  },
+  "entries": [
+    {
+      "file": "adaptive-activities.js",
+      "kind": "text",
+      "historicalSha256": "f5680ea17d802f058c0cb79e28bdd6b0299f6e9e66498b68358c8c76c8558d2c",
+      "canonicalHistoricalSha256": "8e6fee21df72ac2b09ac454fd42d4370237b5708e884324464b3876532a11b91",
+      "groups": [
+        "workspace"
+      ]
+    },
+    {
+      "file": "adaptive-learning.js",
+      "kind": "text",
+      "historicalSha256": "ee4e73cffc685994df8959bfc902dd5bfbb771215e9fa58b93836ff775127023",
+      "canonicalHistoricalSha256": "b6990a04d4bd749d2f2e31201a295f13974d91dccad12d60351e21961cac54e8",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "arabic-learning-path.js",
+      "kind": "text",
+      "historicalSha256": "baacb1a77c0b851389300621a4e0039b5f9fcbe84dc2a64e57bcbcd61ebd3014",
+      "canonicalHistoricalSha256": "baacb1a77c0b851389300621a4e0039b5f9fcbe84dc2a64e57bcbcd61ebd3014",
+      "groups": [
+        "workspace"
+      ]
+    },
+    {
+      "file": "arabic-speech.js",
+      "kind": "text",
+      "historicalSha256": "60e6a18b21051ad9180c33c131afdf9460e61fb58e2162c8544ad490e43e5c2f",
+      "canonicalHistoricalSha256": "60e6a18b21051ad9180c33c131afdf9460e61fb58e2162c8544ad490e43e5c2f",
+      "groups": [
+        "literacy"
+      ]
+    },
+    {
+      "file": "assets/branding/afaq-logo-dark.png",
+      "kind": "binary",
+      "historicalSha256": "2b659fdc7a88a9c8bffc9f3d0a1bf36f6b90a8f07cf22beb158bcbd3e54b70d5",
+      "canonicalHistoricalSha256": "2b659fdc7a88a9c8bffc9f3d0a1bf36f6b90a8f07cf22beb158bcbd3e54b70d5",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "assets/branding/afaq-logo-light.png",
+      "kind": "binary",
+      "historicalSha256": "eae557b42ab83f2c36a94739ce5f1fbf12ec4eb7fd1be370e9f3f42de7d3bf52",
+      "canonicalHistoricalSha256": "eae557b42ab83f2c36a94739ce5f1fbf12ec4eb7fd1be370e9f3f42de7d3bf52",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "data/access-catalog.json",
+      "kind": "text",
+      "historicalSha256": "2d894736757bac3967824a95fdd98b948502d081c53e90c0f75612b5275a0d1f",
+      "canonicalHistoricalSha256": "f227d590353519eb9bd4613e388c9227784580d554904a6475b5c077333dc924",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "data/curriculum.json",
+      "kind": "text",
+      "historicalSha256": "2c44029daa3036842d961062c8ed3298308355d8dc773076c44a01d1c8f04685",
+      "canonicalHistoricalSha256": "63297ac0c792605a64ee7b3fef8aacafe092d0cda3118f010a1309ad341d3b37",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "data/group1-extra.json",
+      "kind": "text",
+      "historicalSha256": "9736a74c39c58667a323864ba78a5dd61b1f711e04f1a030425bf41ad7782492",
+      "canonicalHistoricalSha256": "441041fffcbdf06783be017820af3f73f5a2d7b5c2e5c620f7d30a672d3a57ba",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "data/group1-reading-extra.json",
+      "kind": "text",
+      "historicalSha256": "aafcbdeaf5ca4027d70135d4c04fec431eb209dc6e5ace0f4a5ad9245cebfe35",
+      "canonicalHistoricalSha256": "c2b398b4cc182652c355a9d2fee2bcb28c4ff0b26d3c70539100fa81b2fdc89b",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "data/meem-questions.json",
+      "kind": "text",
+      "historicalSha256": "0c005f6fce0989194856da66a8e54a12feeb43fb0a10a7c0b2ea244f781211bd",
+      "canonicalHistoricalSha256": "1bc29b465e1eaeee016858984195f67da367db22040cd8df30198950e091166f",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "data/progress.json",
+      "kind": "text",
+      "historicalSha256": "4ef7a79170e57f59edeec10ed33530ba261f999ba6154c15988e716a72087050",
+      "canonicalHistoricalSha256": "ffeb619ad3ebda4aa492355572bbd8b6c40ce325c8b48b2d72c76793bcdabb61",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "data/questions.json",
+      "kind": "text",
+      "historicalSha256": "59fba579b16b0d6ea7ee79bcd7c4e7319c7d023a0fce62c1dc466f5675a99b40",
+      "canonicalHistoricalSha256": "f9d8def285ea1de3abcc28f4aced1619d5e17b61996531092c93fa22da7914e4",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "data/skills.json",
+      "kind": "text",
+      "historicalSha256": "c3b586c91299ea46c0d8798a8865212709e0cc802d5a5905e5f073c3b59bdea4",
+      "canonicalHistoricalSha256": "c3b586c91299ea46c0d8798a8865212709e0cc802d5a5905e5f073c3b59bdea4",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "data/unit1-legacy-audit.json",
+      "kind": "text",
+      "historicalSha256": "bcb7de1bf3777337dece10e00e2a67f3da37130e921083acaee74c0030b354aa",
+      "canonicalHistoricalSha256": "bcb7de1bf3777337dece10e00e2a67f3da37130e921083acaee74c0030b354aa",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "data/unit1-reviewed.json",
+      "kind": "text",
+      "historicalSha256": "659b30595ea1d6b14461bd9fac71b2286127e4f9f4393c027331a3e3097bb3a3",
+      "canonicalHistoricalSha256": "86a74ce84703ff98210dfaa2a447b564de380696eb66de888bda067108d5fd13",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "diagnostic-content.js",
+      "kind": "text",
+      "historicalSha256": "7b234f36f6415ef803e3285154f47dd2f8ea58e51a109058ae356ab634149397",
+      "canonicalHistoricalSha256": "7b234f36f6415ef803e3285154f47dd2f8ea58e51a109058ae356ab634149397",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "diagnostic-placement.js",
+      "kind": "text",
+      "historicalSha256": "c290793e73523fea343f87dc5366e339e9adab90f6252542b056a2bd780a9362",
+      "canonicalHistoricalSha256": "c290793e73523fea343f87dc5366e339e9adab90f6252542b056a2bd780a9362",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "guided-audio.js",
+      "kind": "text",
+      "historicalSha256": "922e9657ffc7444c6d0bb193ddfa209c71f1646ae700eb961a6099dfef0ccdfb",
+      "canonicalHistoricalSha256": "922e9657ffc7444c6d0bb193ddfa209c71f1646ae700eb961a6099dfef0ccdfb",
+      "groups": [
+        "literacy"
+      ]
+    },
+    {
+      "file": "journey-interactions.js",
+      "kind": "text",
+      "historicalSha256": "6c3078a6e8d53870ada376e16b0d54cbe9955026f5ebdfff8024b3e3d003fae3",
+      "canonicalHistoricalSha256": "6c3078a6e8d53870ada376e16b0d54cbe9955026f5ebdfff8024b3e3d003fae3",
+      "groups": [
+        "workspace"
+      ]
+    },
+    {
+      "file": "journey-rules.js",
+      "kind": "text",
+      "historicalSha256": "2bbea5c03085d187d83085c4f1605f43700afe0242d7611d2174af7003051e8d",
+      "canonicalHistoricalSha256": "3cc4b9454a06c8c60ff3bdf92903f57301c9f7bafb6bd36dd2940dcae0f4a5ca",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "seviat-sound-settings.js",
+      "kind": "text",
+      "historicalSha256": "02b9dbd2ccd27600dc7238b3fb46fac9747c5e568e46d4e3b6599bfd5af44895",
+      "canonicalHistoricalSha256": "02b9dbd2ccd27600dc7238b3fb46fac9747c5e568e46d4e3b6599bfd5af44895",
+      "groups": [
+        "literacy"
+      ]
+    },
+    {
+      "file": "sounds/effects.js",
+      "kind": "text",
+      "historicalSha256": "589a0e9cfe8109119b02bcdc46ff00fae4a685f39fdb9c44cdc6758ae27bd59a",
+      "canonicalHistoricalSha256": "88efb7f81aefff0db929f3031ff324a2d434eaf2c0380e31e5c23d6e76dfa482",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "sounds/feedback/correct.mp3",
+      "kind": "binary",
+      "historicalSha256": "c3de5fd21d678b74d953555acacce6c12c0c7d470209d4f6cc20b67a2aa92539",
+      "canonicalHistoricalSha256": "c3de5fd21d678b74d953555acacce6c12c0c7d470209d4f6cc20b67a2aa92539",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "sounds/feedback/success.mp3",
+      "kind": "binary",
+      "historicalSha256": "5f8261ac49ca2f6a2beea43cee496c7b01e1247f29cd3709c9c73f3fb1e4bf22",
+      "canonicalHistoricalSha256": "5f8261ac49ca2f6a2beea43cee496c7b01e1247f29cd3709c9c73f3fb1e4bf22",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "sounds/feedback/wrong.mp3",
+      "kind": "binary",
+      "historicalSha256": "42574bf46498f74d11eda54e4520c65a95236040dd5190acb506032f790d1440",
+      "canonicalHistoricalSha256": "42574bf46498f74d11eda54e4520c65a95236040dd5190acb506032f790d1440",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "sounds/meem-review.mp3",
+      "kind": "binary",
+      "historicalSha256": "bd1fc69970eb464f7672336e9a53546628a67f90860a1427479ec122d0f8d1ac",
+      "canonicalHistoricalSha256": "bd1fc69970eb464f7672336e9a53546628a67f90860a1427479ec122d0f8d1ac",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "sounds/meem-slow.mp3",
+      "kind": "binary",
+      "historicalSha256": "f88eaf5b8e02cf078b672a51c99af263ec6b874f0a711e42c538737bc22f9427",
+      "canonicalHistoricalSha256": "f88eaf5b8e02cf078b672a51c99af263ec6b874f0a711e42c538737bc22f9427",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "sounds/teacher/correct-1.mp3",
+      "kind": "binary",
+      "historicalSha256": "7a7631513cb8e1b4fed04ab279d2f2609287f34562c43fea55a9dbec374f9fc9",
+      "canonicalHistoricalSha256": "7a7631513cb8e1b4fed04ab279d2f2609287f34562c43fea55a9dbec374f9fc9",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "sounds/teacher/correct-2.mp3",
+      "kind": "binary",
+      "historicalSha256": "2f9f8dde9378c7943a18eeccc0891a531041bde82419f7cb908f3f10c70eb805",
+      "canonicalHistoricalSha256": "2f9f8dde9378c7943a18eeccc0891a531041bde82419f7cb908f3f10c70eb805",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "sounds/teacher/correct-3.mp3",
+      "kind": "binary",
+      "historicalSha256": "a50e76d03d3bfbd71dd17ba837ef37f6fd433e20f95189ff45066615afafbecf",
+      "canonicalHistoricalSha256": "a50e76d03d3bfbd71dd17ba837ef37f6fd433e20f95189ff45066615afafbecf",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "sounds/teacher/correct-4.mp3",
+      "kind": "binary",
+      "historicalSha256": "e3b3599d21207d4b112c49cbfa87414b622e83c8684d326f559b2bc5c4cdd845",
+      "canonicalHistoricalSha256": "e3b3599d21207d4b112c49cbfa87414b622e83c8684d326f559b2bc5c4cdd845",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "sounds/teacher/sample.txt",
+      "kind": "text",
+      "historicalSha256": "548ab567661a8ba8e4a2841832ad218c39b9669ab964e251d0e2e32a162bbcb6",
+      "canonicalHistoricalSha256": "23297b3b59912b0acdf999af01c79e357576580d25d6f28fdbd034c8dbcb53b5",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "sounds/teacher/success-1.mp3",
+      "kind": "binary",
+      "historicalSha256": "b4440f2ecadbd7e3f7e38124f2587f71ae1901c228bae9946c515682451fe1c4",
+      "canonicalHistoricalSha256": "b4440f2ecadbd7e3f7e38124f2587f71ae1901c228bae9946c515682451fe1c4",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "sounds/teacher/success-2.mp3",
+      "kind": "binary",
+      "historicalSha256": "4b569b9054a9b2193041ced3d74d91a4533c6094ff1301e4bc106f580899b04c",
+      "canonicalHistoricalSha256": "4b569b9054a9b2193041ced3d74d91a4533c6094ff1301e4bc106f580899b04c",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "sounds/teacher/success-3.mp3",
+      "kind": "binary",
+      "historicalSha256": "6acaf6d992c7b02cf194dcbcd193bb0243c951276a1857a95f09b1c64a636a8c",
+      "canonicalHistoricalSha256": "6acaf6d992c7b02cf194dcbcd193bb0243c951276a1857a95f09b1c64a636a8c",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "sounds/teacher/wrong-1.mp3",
+      "kind": "binary",
+      "historicalSha256": "2211ea76e069d6f25e4cf1d1d522cd15e875b9d866f237a7782816ee8994fde5",
+      "canonicalHistoricalSha256": "2211ea76e069d6f25e4cf1d1d522cd15e875b9d866f237a7782816ee8994fde5",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "sounds/teacher/wrong-2.mp3",
+      "kind": "binary",
+      "historicalSha256": "9fe2972477ed3a3f52d6aff1b27f5bea4003607f9776a32b4faa8b28834c8a27",
+      "canonicalHistoricalSha256": "9fe2972477ed3a3f52d6aff1b27f5bea4003607f9776a32b4faa8b28834c8a27",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "sounds/teacher/wrong-3.mp3",
+      "kind": "binary",
+      "historicalSha256": "db106024e534444baa261810d37a87d4209384cb09c552d81c884b9ad4129145",
+      "canonicalHistoricalSha256": "db106024e534444baa261810d37a87d4209384cb09c552d81c884b9ad4129145",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "sounds/test-m.mp3",
+      "kind": "binary",
+      "historicalSha256": "39905ec540605087b3dd435831c149cddacd47d27c618bb329245f62a88dd06c",
+      "canonicalHistoricalSha256": "39905ec540605087b3dd435831c149cddacd47d27c618bb329245f62a88dd06c",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "styles.css",
+      "kind": "text",
+      "historicalSha256": "3a85dd32a49358fbbfd809b2ff7da1e5e3df75cd2d226c1145eefa33b3f66d3a",
+      "canonicalHistoricalSha256": "cfd0cbe8d03c693c99a440be81125170c87e88b8dff77641524cad289e550bac",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    },
+    {
+      "file": "writing-board.js",
+      "kind": "text",
+      "historicalSha256": "c664a7a9e3538f91acc1ee7b332c1710f11aed2226296bc617d1523e8544e5c3",
+      "canonicalHistoricalSha256": "c664a7a9e3538f91acc1ee7b332c1710f11aed2226296bc617d1523e8544e5c3",
+      "groups": [
+        "literacy",
+        "workspace"
+      ]
+    }
+  ],
+  "reviewedChanges": {
+    "file": "reviewed-source-changes.json",
+    "sha256": "a6664459c70977dc9b65bb0d184a473865c904e2400fce0bd1e3ad4c7e416942"
+  },
+  "brand": {
+    "file": "brand.html",
+    "historicalSha256": "eb187aed04a7d3d61e7a46a56a7c221294fcdcfed6a1e4a1767367283c054d87",
+    "canonicalSha256": "eb187aed04a7d3d61e7a46a56a7c221294fcdcfed6a1e4a1767367283c054d87",
+    "originCommit": "b94f220f6ce572d75b99bf47daefbf60586cbc94",
+    "purpose": "Public div.brand through closing header, independently matching the historical workspace index."
+  },
+  "policy": {
+    "file": "data/content-policy.json",
+    "canonicalSha256": "e1f07831ad29f22e529cc153558500899f2103ea4e24ca353f886100347d088b",
+    "originCommit": "d66f9831872706ae6c70bb425bde1692951767e0",
+    "purpose": "Pin the existing owner-approved curriculum normalization policy, without changing production policy."
+  }
+}
