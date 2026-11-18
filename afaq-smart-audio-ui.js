@@ -86,11 +86,12 @@
     }
   }
 
-  async function open() {
+  async function open() {window.AfaqAdult.assert();
     const result = await window.AfaqAudioCatalog.load();
     state.entries = result.entries;
     state.saved = new Set(await window.AfaqAudioLibrary.listIds());
 
+    window.AfaqAdult.assert();
     document.getElementById("afaq-smart-audio-panel")?.remove();
 
     const panel = el("section");
@@ -104,7 +105,7 @@
 
     const heading = el("h2", "آفاق | المكتبة الصوتية الذكية");
     const close = el("button", "إغلاق");
-    close.onclick = () => panel.remove();
+    close.onclick = () => {panel.remove();window.AfaqAdult.lock();};
 
     const controls = el("div");
     controls.style.cssText =

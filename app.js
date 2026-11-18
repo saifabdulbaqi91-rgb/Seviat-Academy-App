@@ -192,13 +192,13 @@ function createGlobalBackButton() {
   button.addEventListener("click", () => {
     const smartAudio = document.getElementById("afaq-smart-audio-panel");
     if (smartAudio) {
-      smartAudio.remove();
+      smartAudio.remove();window.AfaqAdult.lock();
       return;
     }
 
     const audioEditor = document.getElementById("afaq-audio-library");
     if (audioEditor) {
-      audioEditor.remove();
+      audioEditor.remove();window.AfaqAdult.lock();
       return;
     }
 
@@ -630,13 +630,13 @@ function checkAnswer(answer, selectedButton) {
   button.addEventListener("click", () => {
     const smartAudio = document.getElementById("afaq-smart-audio-panel");
     if (smartAudio) {
-      smartAudio.remove();
+      smartAudio.remove();window.AfaqAdult.lock();
       return;
     }
 
     const audioEditor = document.getElementById("afaq-audio-library");
     if (audioEditor) {
-      audioEditor.remove();
+      audioEditor.remove();window.AfaqAdult.lock();
       return;
     }
 

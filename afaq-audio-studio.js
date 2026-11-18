@@ -27,15 +27,28 @@
   }
 
   async function saveClip(blob) {
-    const db = await openDB();
-
-    return new Promise((resolve, reject) => {
-      const tx = db.transaction('clips', 'readwrite');
-      tx.objectStore('clips').put(blob, CLIP_ID);
-
-      tx.oncomplete = () => resolve();
-      tx.onerror = () => reject(tx.error);
-    });
+    window.AfaqAdult.assert();
+    let revoked = false, tx, db;
+    const revoke = () => { revoked = true; if (tx) try { tx.abort(); } catch {} };
+    const check = () => { if (revoked) throw new Error('Adult operation revoked'); window.AfaqAdult.assert(); };
+    window.addEventListener('afaq-adult-locked', revoke);
+    try {
+      db = await openDB();
+      check();
+      return await new Promise((resolve, reject) => {
+        tx = db.transaction('clips', 'readwrite');
+        let failure;
+        const fail = error => { failure = error; try { tx.abort(); } catch {} reject(error); };
+        tx.oncomplete = () => resolve();
+        tx.onerror = () => reject(failure || tx.error || new Error('Audio transaction failed'));
+        tx.onabort = () => reject(failure || tx.error || new Error('Audio transaction aborted'));
+        try {
+          check();
+          const request = tx.objectStore('clips').put(blob, CLIP_ID);
+          request.onsuccess = () => { try { check(); } catch (error) { fail(error); } };
+        } catch (error) { fail(error); }
+      });
+    } finally { window.removeEventListener('afaq-adult-locked', revoke); db?.close(); }
   }
 
   async function getClip() {
@@ -74,7 +87,7 @@
     }
   }
 
-  function mount() {
+  function mount() {window.AfaqAdult.assert();
     if (document.querySelector('#afaq-audio-studio')) return;
 
     const root = document.createElement('section');

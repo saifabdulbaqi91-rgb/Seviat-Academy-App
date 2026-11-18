@@ -42,7 +42,7 @@
   }
   function note(parent,text){return el('p',text,parent);}
   function teacherPanel(parent,text) {
-    const details=el('details',undefined,parent);details.style.cssText='margin:15px 0;padding:12px;border:1px solid #7995af;border-radius:8px';el('summary','للمعلم أو ولي الأمر — يُفتح بعيدًا عن نظر الطفل',details);note(details,text);details.querySelector('summary').addEventListener('click',event=>{if(!window.SeviatParentControls.isAuthenticated()){event.preventDefault();window.SeviatParentControls.requireTeacher(()=>{if(details.isConnected)details.open=true;});}});return details;
+    const details=el('details',undefined,parent);details.style.cssText='margin:15px 0;padding:12px;border:1px solid #7995af;border-radius:8px';el('summary','للمعلم أو ولي الأمر — يُفتح بعيدًا عن نظر الطفل',details);note(details,text);details.querySelector('summary').addEventListener('click',event=>{if(!window.SeviatParentControls.isAuthenticated()){event.preventDefault();window.SeviatParentControls.requireTeacher(()=>{if(details.isConnected)details.open=true;});}});details.addEventListener('toggle',()=>{if(!details.open)window.AfaqAdult.lock();});return details;
   }
   function checkbox(parent,text,id) {const label=el('label',undefined,parent);label.style.display='block';const input=el('input',undefined,label);input.type='checkbox';if(id)input.id=id;label.append(document.createTextNode(' '+text));return input;}
 

@@ -41,40 +41,47 @@
     });
   }
 
+  async function authorizedWrite(work) {
+    window.AfaqAdult.assert();
+    let revoked = false, tx;
+    const revoke = () => { revoked = true; if (tx) try { tx.abort(); } catch {} };
+    const check = () => { if (revoked) throw new Error('Adult operation revoked'); window.AfaqAdult.assert(); };
+    window.addEventListener('afaq-adult-locked', revoke);
+    try { return await work(check, transaction => { check(); tx = transaction; }); }
+    finally { window.removeEventListener('afaq-adult-locked', revoke); }
+  }
+
   async function dbRequest(mode, action) {
-    const db = await openDB();
-
-    return new Promise((resolve, reject) => {
-      const tx = db.transaction(STORE, mode);
-      const store = tx.objectStore(STORE);
-      let result;
-
+    const run = async (check = () => {}, track = () => {}) => {
+      const db = await openDB();
       try {
-        const request = action(store);
-        if (request) {
-          request.onsuccess = () => { result = request.result; };
-          request.onerror = () => reject(request.error);
-        }
-      } catch (error) {
-        db.close();
-        reject(error);
-        return;
-      }
-
-      tx.oncomplete = () => {
-        db.close();
-        resolve(result);
-      };
-      tx.onerror = () => reject(tx.error);
-      tx.onabort = () => reject(tx.error);
-    });
+        check();
+        return await new Promise((resolve, reject) => {
+          const tx = db.transaction(STORE, mode);
+          let result, failure;
+          const fail = error => { failure = error; try { tx.abort(); } catch {} reject(error); };
+          tx.oncomplete = () => resolve(result);
+          tx.onerror = () => reject(failure || tx.error || new Error('Audio transaction failed'));
+          tx.onabort = () => reject(failure || tx.error || new Error('Audio transaction aborted'));
+          try {
+            track(tx); check();
+            const request = action(tx.objectStore(STORE));
+            if (request) {
+              request.onsuccess = () => { try { check(); result = request.result; } catch (error) { fail(error); } };
+              request.onerror = () => fail(request.error);
+            }
+          } catch (error) { fail(error); }
+        });
+      } finally { db.close(); }
+    };
+    return mode === 'readwrite' ? authorizedWrite(run) : run();
   }
 
   function getClip(id = currentId) {
     return dbRequest('readonly', store => store.get(id));
   }
 
-  function saveClip(id, blob) {
+  function saveClip(id, blob) {window.AfaqAdult.assert();
     return dbRequest('readwrite', store => store.put(blob, id));
   }
 
@@ -129,7 +136,7 @@
     }
   }
 
-  function mount() {
+  function mount() {window.AfaqAdult.assert();
     if (document.getElementById('afaq-audio-library')) return;
 
     const root = document.createElement('section');
@@ -294,11 +301,13 @@
         draft = null;
         setBusy(true);
 
+        window.AfaqAdult.assert();
         stream = await navigator.mediaDevices.getUserMedia({
           audio: true
         });
 
         chunks = [];
+        if(!window.AfaqAdult.authenticated()){stopMicrophone();throw Error('انتهت جلسة البالغين.');}
         const activeRecorder = new MediaRecorder(stream);
         recorder = activeRecorder;
 
@@ -361,17 +370,24 @@
       }
     };
 
-    approve.onclick = async () => {
+    approve.onclick = async () => {window.AfaqAdult.assert();
       if (!draft || recorder?.state === 'recording') return;
 
       try {
-        const existing = await getClip(currentId);
+        const saved = await authorizedWrite(async check => {
+          const id = currentId, recording = draft;
+          const existing = await getClip(id);
+          check();
 
-        if (existing && !window.confirm(
-          'يوجد تسجيل معتمد. هل تريد استبداله؟'
-        )) return;
+          if (existing && !window.confirm(
+            'يوجد تسجيل معتمد. هل تريد استبداله؟'
+          )) return;
 
-        await saveClip(currentId, draft);
+          check();
+          await saveClip(id, recording);
+          return true;
+        });
+        if (!saved) return;
         draft = null;
         approve.disabled = true;
         status.textContent =
@@ -401,6 +417,7 @@
 
   window.AfaqAudioLibrary = {
     stop: stopPlayback,
+    dispose: () => {stopMicrophone();if(recorder?.state==='recording')recorder.stop();stopPlayback();draft=null;},
     done: () => completion,
     mount,
     getClip,

@@ -16,29 +16,32 @@
     });
   }
 
-  async function dbAction(mode, callback) {
+  async function dbAction(mode, callback) {return authorizedBackup(async check => {
     const db = await openDB();
+    let tx;
+    const revoke = () => { if (tx && mode === 'readwrite') try { tx.abort(); } catch {} };
+    window.addEventListener('afaq-adult-locked', revoke);
     try {
+      check();
       return await new Promise((resolve, reject) => {
-        const tx = db.transaction(STORE, mode);
-        const store = tx.objectStore(STORE);
-        let result;
-        try {
-          const request = callback(store);
-          request.onsuccess = () => { result = request.result; };
-          request.onerror = () => reject(request.error);
-        } catch (error) {
-          tx.abort();
-          reject(error);
-        }
+        tx = db.transaction(STORE, mode);
+        let result, failure;
+        const fail = error => { failure = error; try { tx.abort(); } catch {} reject(error); };
         tx.oncomplete = () => resolve(result);
-        tx.onerror = () => reject(tx.error);
-        tx.onabort = () => reject(tx.error);
+        tx.onerror = () => reject(failure || tx.error || new Error('Audio transaction failed'));
+        tx.onabort = () => reject(failure || tx.error || new Error('Audio transaction aborted'));
+        try {
+          check();
+          const request = callback(tx.objectStore(STORE));
+          request.onsuccess = () => { try { check(); result = request.result; } catch (error) { fail(error); } };
+          request.onerror = () => fail(request.error);
+        } catch (error) { fail(error); }
       });
     } finally {
+      window.removeEventListener('afaq-adult-locked', revoke);
       db.close();
     }
-  }
+  });}
 
   function readAsDataURL(blob) {
     return new Promise((resolve, reject) => {
@@ -49,17 +52,29 @@
     });
   }
 
-  async function exportBackup() {
+  // A new adult login must not revive a backup operation revoked during an await.
+  async function authorizedBackup(work) {
+    window.AfaqAdult.assert();
+    let revoked = false;
+    const revoke = () => { revoked = true; };
+    const check = () => { if (revoked) throw new Error('Adult operation revoked'); window.AfaqAdult.assert(); };
+    window.addEventListener('afaq-adult-locked', revoke);
+    try { return await work(check); }
+    finally { window.removeEventListener('afaq-adult-locked', revoke); }
+  }
+
+  async function exportBackup() {return authorizedBackup(async check => {
     const ids = await window.AfaqAudioLibrary.listIds();
+    check();
     const clips = [];
 
     for (const id of ids) {
       const blob = await window.AfaqAudioLibrary.getClip(id);
+      check();
       if (blob) {
-        clips.push({
-          id,
-          data: await readAsDataURL(blob)
-        });
+        const data = await readAsDataURL(blob);
+        check();
+        clips.push({ id, data });
       }
     }
 
@@ -86,18 +101,19 @@
       new Date().toISOString().slice(0, 10) + '.json';
 
     document.body.appendChild(link);
-    link.click();
-    link.remove();
-    setTimeout(() => URL.revokeObjectURL(url), 10000);
+    try { check(); link.click(); }
+    finally { link.remove(); setTimeout(() => URL.revokeObjectURL(url), 10000); }
 
     alert('تم تجهيز نسخة احتياطية من ' +
       clips.length + ' تسجيلات.');
-  }
+  });}
 
-  async function importBackup(file) {
+  async function importBackup(file) {return authorizedBackup(async check => {
     if (!file) return;
 
-    const backup = JSON.parse(await file.text());
+    const text = await file.text();
+    check();
+    const backup = JSON.parse(text);
 
     if (
       backup.format !== 'afaq-audio-backup-v1' ||
@@ -119,7 +135,9 @@
       }
 
       const response = await fetch(clip.data);
+      check();
       const blob = await response.blob();
+      check();
 
       if (!blob.size || !blob.type.startsWith('audio/')) {
         throw new Error('ملف صوتي غير صالح: ' + clip.id);
@@ -134,6 +152,7 @@
     }
 
     const existingIds = await window.AfaqAudioLibrary.listIds();
+    check();
     const existing = new Set(existingIds);
     const conflicts = prepared.filter(x => existing.has(x.id));
 
@@ -147,6 +166,7 @@
         '\nإلغاء: استعادة التسجيلات المفقودة فقط.'
       );
 
+      check();
       if (!overwrite) {
         toImport = prepared.filter(x => !existing.has(x.id));
       }
@@ -158,7 +178,9 @@
     }
 
     await dbAction('readwrite', store => {
+      check();
       for (const clip of toImport) {
+        check();
         store.put(clip.blob, clip.id);
       }
       return store.count();
@@ -167,7 +189,7 @@
     alert('تم استيراد ' + toImport.length +
       ' تسجيلات بنجاح. سيتم تحديث الصفحة.');
     location.reload();
-  }
+  });}
 
   function makeButton(text, handler) {
     const button = document.createElement('button');

@@ -13,27 +13,15 @@
       border:"0",borderRadius:"12px",
       fontSize:"16px",cursor:"pointer"
     });
-    button.onclick=function(){
+    button.onclick=function(){return window.AfaqAdult.require(()=>{
       if(!window.AfaqAudioLibrary){
         alert("تعذر تحميل المكتبة الصوتية");
         return;
       }
-      const pin=localStorage.getItem("afaq-owner-audio-pin");
-      if(!pin){
-        const chosen=prompt("أنشئ رمز المدير المحلي (6 أرقام على الأقل):");
-        if(chosen===null)return;
-        if(!/^\d{6,}$/.test(chosen)){
-          alert("الرمز يجب أن يحتوي على 6 أرقام على الأقل");
-          return;
-        }
-        localStorage.setItem("afaq-owner-audio-pin",chosen);
-      }else{
-        const entered=prompt("أدخل رمز المدير لفتح المكتبة الصوتية:");
-        if(entered!==pin)return alert("رمز غير صحيح");
-      }
       window.AfaqSmartAudioUI.open();
 
       document.getElementById("seviat-menu-close")?.click();
+      });
     };
     sidebar.appendChild(button);
   }

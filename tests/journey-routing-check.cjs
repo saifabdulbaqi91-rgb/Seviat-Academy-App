@@ -9,6 +9,7 @@ const memory=()=>{const data=new Map();return {getItem:k=>data.get(k)??null,setI
 const registered=()=>({runs:[],overrides:{},phase6Registration:{version:1,placementRequired:true}});
 function harness(profile=registered(),options={}){
  const local=memory(),session=memory(),bodies=[],buttons=new Map(),messages=[];
+ const adult=require('../adult-session').createSession({storage:{getItem:k=>k==='seviat-parent-pin-v1'?'123456':null},schedule:()=>0,cancel(){}});adult.login('123456');
  if(options.settingsBroken)local.setItem('seviat-child-experience-v1','{');
  if(options.decisionsBroken)local.setItem(P.decisionKey,'{');
  options.seed?.(local);
@@ -20,7 +21,7 @@ function harness(profile=registered(),options={}){
   SeviatJourney:{getExperienceContext:context},store,state:()=>store.profiles[store.active],R,broken:false,learningState:()=>store.profiles[store.active],activityMode:()=> 'practice',activityPolicy:()=>!denied,
   root:{},hub:{},entry:{},document:{body:{dataset:{}}},stop(){},screen:text=>messages.push(text),el:()=>({setAttribute(){}}),button:(text,fn,parent,id)=>buttons.set(id,fn),home(){},teacher(){},location:{reload(){}},bodies,
   openSpeaking(id){const request=sandbox.routeActivity({kind:'speaking',id,practiceOnly:true});if(request)bodies.push({kind:'speaking',id});},console};
- window.SeviatDiagnosticUI=diagnostic;
+ window.AfaqAdult=adult;window.SeviatDiagnosticUI=diagnostic;
  window.AfaqAlifPilotUI={launch(id){if(sandbox.routeActivity({kind:'alif-pilot',id}))bodies.push({kind:'alif-pilot',id});}};
  vm.createContext(sandbox);
  vm.runInContext(read('personalized-learning-ui.js'),sandbox);
