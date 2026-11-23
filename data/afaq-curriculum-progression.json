@@ -1,0 +1,484 @@
+{
+  "version": 1,
+  "runtimeEnabled": false,
+  "lessons": [
+    {
+      "id": "sa-g1-u1-l1",
+      "unitId": 1,
+      "order": 1,
+      "previousLessonId": null,
+      "kind": "letter-learning",
+      "letter": "م",
+      "prerequisiteLessonIds": [],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u1-l2",
+      "unitId": 1,
+      "order": 2,
+      "previousLessonId": "sa-g1-u1-l1",
+      "kind": "letter-learning",
+      "letter": "ب",
+      "prerequisiteLessonIds": [
+        "sa-g1-u1-l1"
+      ],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u1-l3",
+      "unitId": 1,
+      "order": 3,
+      "previousLessonId": "sa-g1-u1-l2",
+      "kind": "letter-learning",
+      "letter": "ل",
+      "prerequisiteLessonIds": [
+        "sa-g1-u1-l2"
+      ],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u1-l4",
+      "unitId": 1,
+      "order": 4,
+      "previousLessonId": "sa-g1-u1-l3",
+      "kind": "letter-learning",
+      "letter": "د",
+      "prerequisiteLessonIds": [
+        "sa-g1-u1-l3"
+      ],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u1-l5",
+      "unitId": 1,
+      "order": 5,
+      "previousLessonId": "sa-g1-u1-l4",
+      "kind": "letter-learning",
+      "letter": "ن",
+      "prerequisiteLessonIds": [
+        "sa-g1-u1-l4"
+      ],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u1-l6",
+      "unitId": 1,
+      "order": 6,
+      "previousLessonId": "sa-g1-u1-l5",
+      "kind": "letter-learning",
+      "letter": "ر",
+      "prerequisiteLessonIds": [
+        "sa-g1-u1-l5"
+      ],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u2-l1",
+      "unitId": 2,
+      "order": 7,
+      "previousLessonId": "sa-g1-u1-l6",
+      "kind": "letter-learning",
+      "letter": "ص",
+      "prerequisiteLessonIds": [
+        "sa-g1-u1-l6"
+      ],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u2-l2",
+      "unitId": 2,
+      "order": 8,
+      "previousLessonId": "sa-g1-u2-l1",
+      "kind": "letter-learning",
+      "letter": "ف",
+      "prerequisiteLessonIds": [
+        "sa-g1-u2-l1"
+      ],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u2-l3",
+      "unitId": 2,
+      "order": 9,
+      "previousLessonId": "sa-g1-u2-l2",
+      "kind": "letter-learning",
+      "letter": "س",
+      "prerequisiteLessonIds": [
+        "sa-g1-u2-l2"
+      ],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u2-l4",
+      "unitId": 2,
+      "order": 10,
+      "previousLessonId": "sa-g1-u2-l3",
+      "kind": "letter-learning",
+      "letter": "ق",
+      "prerequisiteLessonIds": [
+        "sa-g1-u2-l3"
+      ],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u2-l5",
+      "unitId": 2,
+      "order": 11,
+      "previousLessonId": "sa-g1-u2-l4",
+      "kind": "letter-learning",
+      "letter": "ت",
+      "prerequisiteLessonIds": [
+        "sa-g1-u2-l4"
+      ],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u2-l6",
+      "unitId": 2,
+      "order": 12,
+      "previousLessonId": "sa-g1-u2-l5",
+      "kind": "letter-learning",
+      "letter": "ح",
+      "prerequisiteLessonIds": [
+        "sa-g1-u2-l5"
+      ],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u3-l1",
+      "unitId": 3,
+      "order": 13,
+      "previousLessonId": "sa-g1-u2-l6",
+      "kind": "letter-learning",
+      "letter": "أ",
+      "prerequisiteLessonIds": [
+        "sa-g1-u2-l6"
+      ],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u3-l2",
+      "unitId": 3,
+      "order": 14,
+      "previousLessonId": "sa-g1-u3-l1",
+      "kind": "letter-learning",
+      "letter": "ط",
+      "prerequisiteLessonIds": [
+        "sa-g1-u3-l1"
+      ],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u3-l3",
+      "unitId": 3,
+      "order": 15,
+      "previousLessonId": "sa-g1-u3-l2",
+      "kind": "letter-learning",
+      "letter": "ز",
+      "prerequisiteLessonIds": [
+        "sa-g1-u3-l2"
+      ],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u3-l4",
+      "unitId": 3,
+      "order": 16,
+      "previousLessonId": "sa-g1-u3-l3",
+      "kind": "letter-learning",
+      "letter": "و",
+      "prerequisiteLessonIds": [
+        "sa-g1-u3-l3"
+      ],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u3-l5",
+      "unitId": 3,
+      "order": 17,
+      "previousLessonId": "sa-g1-u3-l4",
+      "kind": "letter-learning",
+      "letter": "ج",
+      "prerequisiteLessonIds": [
+        "sa-g1-u3-l4"
+      ],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u3-l6",
+      "unitId": 3,
+      "order": 18,
+      "previousLessonId": "sa-g1-u3-l5",
+      "kind": "letter-learning",
+      "letter": "ش",
+      "prerequisiteLessonIds": [
+        "sa-g1-u3-l5"
+      ],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u4-l1",
+      "unitId": 4,
+      "order": 19,
+      "previousLessonId": "sa-g1-u3-l6",
+      "kind": "letter-learning",
+      "letter": "ض",
+      "prerequisiteLessonIds": [
+        "sa-g1-u3-l6"
+      ],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u4-l2",
+      "unitId": 4,
+      "order": 20,
+      "previousLessonId": "sa-g1-u4-l1",
+      "kind": "letter-learning",
+      "letter": "ع",
+      "prerequisiteLessonIds": [
+        "sa-g1-u4-l1"
+      ],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u4-l3",
+      "unitId": 4,
+      "order": 21,
+      "previousLessonId": "sa-g1-u4-l2",
+      "kind": "letter-learning",
+      "letter": "ك",
+      "prerequisiteLessonIds": [
+        "sa-g1-u4-l2"
+      ],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u4-l4",
+      "unitId": 4,
+      "order": 22,
+      "previousLessonId": "sa-g1-u4-l3",
+      "kind": "letter-learning",
+      "letter": "خ",
+      "prerequisiteLessonIds": [
+        "sa-g1-u4-l3"
+      ],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u4-l5",
+      "unitId": 4,
+      "order": 23,
+      "previousLessonId": "sa-g1-u4-l4",
+      "kind": "letter-learning",
+      "letter": "ي",
+      "prerequisiteLessonIds": [
+        "sa-g1-u4-l4"
+      ],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u4-l6",
+      "unitId": 4,
+      "order": 24,
+      "previousLessonId": "sa-g1-u4-l5",
+      "kind": "letter-learning",
+      "letter": "ذ",
+      "prerequisiteLessonIds": [
+        "sa-g1-u4-l5"
+      ],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u5-l1",
+      "unitId": 5,
+      "order": 25,
+      "previousLessonId": "sa-g1-u4-l6",
+      "kind": "letter-learning",
+      "letter": "ه",
+      "prerequisiteLessonIds": [
+        "sa-g1-u4-l6"
+      ],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u5-l2",
+      "unitId": 5,
+      "order": 26,
+      "previousLessonId": "sa-g1-u5-l1",
+      "kind": "letter-learning",
+      "letter": "ث",
+      "prerequisiteLessonIds": [
+        "sa-g1-u5-l1"
+      ],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u5-l3",
+      "unitId": 5,
+      "order": 27,
+      "previousLessonId": "sa-g1-u5-l2",
+      "kind": "letter-learning",
+      "letter": "غ",
+      "prerequisiteLessonIds": [
+        "sa-g1-u5-l2"
+      ],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u5-l4",
+      "unitId": 5,
+      "order": 28,
+      "previousLessonId": "sa-g1-u5-l3",
+      "kind": "letter-learning",
+      "letter": "ظ",
+      "prerequisiteLessonIds": [
+        "sa-g1-u5-l3"
+      ],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u6-l1",
+      "unitId": 6,
+      "order": 29,
+      "previousLessonId": "sa-g1-u5-l4",
+      "kind": "reading-application",
+      "letter": null,
+      "prerequisiteLessonIds": [
+        "sa-g1-u5-l4"
+      ],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u6-l2",
+      "unitId": 6,
+      "order": 30,
+      "previousLessonId": "sa-g1-u6-l1",
+      "kind": "reading-application",
+      "letter": null,
+      "prerequisiteLessonIds": [
+        "sa-g1-u6-l1"
+      ],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u6-l3",
+      "unitId": 6,
+      "order": 31,
+      "previousLessonId": "sa-g1-u6-l2",
+      "kind": "reading-application",
+      "letter": null,
+      "prerequisiteLessonIds": [
+        "sa-g1-u6-l2"
+      ],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u6-l4",
+      "unitId": 6,
+      "order": 32,
+      "previousLessonId": "sa-g1-u6-l3",
+      "kind": "reading-application",
+      "letter": null,
+      "prerequisiteLessonIds": [
+        "sa-g1-u6-l3"
+      ],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u7-l1",
+      "unitId": 7,
+      "order": 33,
+      "previousLessonId": "sa-g1-u6-l4",
+      "kind": "reading-application",
+      "letter": null,
+      "prerequisiteLessonIds": [
+        "sa-g1-u6-l4"
+      ],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u7-l2",
+      "unitId": 7,
+      "order": 34,
+      "previousLessonId": "sa-g1-u7-l1",
+      "kind": "reading-application",
+      "letter": null,
+      "prerequisiteLessonIds": [
+        "sa-g1-u7-l1"
+      ],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u7-l3",
+      "unitId": 7,
+      "order": 35,
+      "previousLessonId": "sa-g1-u7-l2",
+      "kind": "reading-application",
+      "letter": null,
+      "prerequisiteLessonIds": [
+        "sa-g1-u7-l2"
+      ],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u7-l4",
+      "unitId": 7,
+      "order": 36,
+      "previousLessonId": "sa-g1-u7-l3",
+      "kind": "reading-application",
+      "letter": null,
+      "prerequisiteLessonIds": [
+        "sa-g1-u7-l3"
+      ],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u8-l1",
+      "unitId": 8,
+      "order": 37,
+      "previousLessonId": "sa-g1-u7-l4",
+      "kind": "reading-application",
+      "letter": null,
+      "prerequisiteLessonIds": [
+        "sa-g1-u7-l4"
+      ],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u8-l2",
+      "unitId": 8,
+      "order": 38,
+      "previousLessonId": "sa-g1-u8-l1",
+      "kind": "reading-application",
+      "letter": null,
+      "prerequisiteLessonIds": [
+        "sa-g1-u8-l1"
+      ],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u8-l3",
+      "unitId": 8,
+      "order": 39,
+      "previousLessonId": "sa-g1-u8-l2",
+      "kind": "reading-application",
+      "letter": null,
+      "prerequisiteLessonIds": [
+        "sa-g1-u8-l2"
+      ],
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u8-l4",
+      "unitId": 8,
+      "order": 40,
+      "previousLessonId": "sa-g1-u8-l3",
+      "kind": "reading-application",
+      "letter": null,
+      "prerequisiteLessonIds": [
+        "sa-g1-u8-l3"
+      ],
+      "runtimeEnabled": false
+    }
+  ]
+}
