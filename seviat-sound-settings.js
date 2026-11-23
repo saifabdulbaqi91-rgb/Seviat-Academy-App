@@ -17,7 +17,37 @@ function isEnabled(){return settings.buttons||settings.feedback;}
 window.SeviatSound={play,settings:()=>({...settings}),set,stop:stopVoice};
 // Preserve the existing sound interface used by earlier lessons and games.
 window.SeviatEffects={play,stop:stopVoice,isEnabled,setEnabled(value){set('buttons',value);set('feedback',value);}};
-function render(){const side=document.getElementById('seviat-sidebar');if(!side||document.getElementById('seviat-sound-panel'))return;const panel=document.createElement('section');panel.id='seviat-sound-panel';panel.dir='rtl';panel.style.cssText='margin-top:18px;padding:14px;border:1px solid #7794b2;border-radius:14px;color:#fff;background:#1b3853';const heading=document.createElement('h3');heading.textContent='🔊 إعدادات الصوت';heading.style.margin='0 0 12px';panel.append(heading);[['buttons','المؤثرات القصيرة للإجابات والأزرار'],['feedback','التشجيع المنطوق عند إنجاز جلسة']].forEach(([key,label])=>{const row=document.createElement('label');row.style.cssText='display:flex;gap:12px;align-items:center;padding:10px 0;font-size:16px;cursor:pointer';const input=document.createElement('input');input.type='checkbox';input.checked=settings[key];input.style.cssText='width:23px;height:23px;flex-shrink:0';input.addEventListener('change',()=>set(key,input.checked));row.append(input,document.createTextNode(label));panel.append(row);});const demo=document.createElement('button');demo.type='button';demo.textContent='▶ تجربة صوت النجاح';demo.style.cssText='padding:12px;border:1px solid #9bc1e4;border-radius:10px;background:#1769aa;color:white;cursor:pointer';demo.addEventListener('click',()=>play('complete'));panel.append(demo);side.append(panel);
+function render(){const side=document.getElementById('seviat-sidebar');if(!side||document.getElementById('seviat-sound-panel'))return;const panel=document.createElement('section');panel.id='seviat-sound-panel';panel.dir='rtl';panel.style.cssText='margin-top:18px;padding:14px;border:1px solid #7794b2;border-radius:14px;color:#fff;background:#1b3853';const heading=document.createElement('h3');heading.textContent='🔊 إعدادات الصوت';heading.style.margin='0 0 12px';panel.append(heading);[['buttons','المؤثرات القصيرة للإجابات والأزرار'],['feedback','التشجيع المنطوق عند إنجاز جلسة']].forEach(([key,label])=>{const row=document.createElement('label');row.style.cssText='display:flex;gap:12px;align-items:center;padding:10px 0;font-size:16px;cursor:pointer';const input=document.createElement('input');input.type='checkbox';input.checked=settings[key];input.style.cssText='width:23px;height:23px;flex-shrink:0';input.addEventListener('change',()=>set(key,input.checked));row.append(input,document.createTextNode(label));panel.append(row);});const demo=document.createElement('button');demo.type='button';demo.textContent='▶ تجربة صوت النجاح';demo.style.cssText='padding:12px;border:1px solid #9bc1e4;border-radius:10px;background:#1769aa;color:white;cursor:pointer';demo.addEventListener('click',()=>play('complete'));panel.append(demo);
+const speedRow=document.createElement('div');
+speedRow.style.cssText='display:flex;flex-direction:column;gap:8px;padding:12px 0';
+const speedLabel=document.createElement('label');
+speedLabel.textContent='\u0633\u0631\u0639\u0629 \u062a\u0634\u063a\u064a\u0644 \u0627\u0644\u062a\u0633\u062c\u064a\u0644\u0627\u062a \u0627\u0644\u062a\u0639\u0644\u064a\u0645\u064a\u0629';
+const speedSelect=document.createElement('select');
+speedSelect.style.cssText='padding:10px;border-radius:8px;font-size:16px;max-width:240px';
+const speedOptions=[
+  ['0.75','\u0628\u0637\u064a\u0621 (0.75\u00d7)'],
+  ['0.9','\u0645\u062a\u0648\u0633\u0637 (0.90\u00d7)'],
+  ['1','\u0637\u0628\u064a\u0639\u064a (1.00\u00d7)']
+];
+speedOptions.forEach(([value,label])=>{
+  const option=document.createElement('option');
+  option.value=value;
+  option.textContent=label;
+  speedSelect.append(option);
+});
+const speedKey='afaq-student-audio-speed-v1';
+try{
+  const saved=Number(localStorage.getItem(speedKey));
+  speedSelect.value=[0.75,0.9,1].includes(saved)?String(saved):'1';
+}catch{
+  speedSelect.value='1';
+}
+speedSelect.addEventListener('change',()=>{
+  try{localStorage.setItem(speedKey,speedSelect.value);}catch{}
+});
+speedRow.append(speedLabel,speedSelect);
+panel.append(speedRow);
+side.append(panel);
 const toggle=document.getElementById('soundToggle');if(toggle){const sync=()=>{toggle.textContent=isEnabled()?'🔊 الصوت':'🔇 الصوت';};toggle.addEventListener('click',e=>{e.preventDefault();e.stopImmediatePropagation();const value=!isEnabled();set('buttons',value);set('feedback',value);sync();},true);window.addEventListener('seviat-sound-settings-changed',sync);sync();}
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',render,{once:true});else render();

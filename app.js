@@ -350,6 +350,10 @@ function renderLetterPicker() {
 }
 
 function openLetterActivity() {
+  if (['ص','ف','س','ق','ت','ح'].includes(currentLetter) && window.SeviatUnit2?.openLetter) {
+    window.SeviatUnit2.openLetter(currentLetter);
+    return;
+  }
   const area = createActivityArea();
   area.innerHTML = `
     <h2>حرف ${currentLetter}</h2>

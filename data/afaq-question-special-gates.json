@@ -1,0 +1,3046 @@
+{
+  "version": 1,
+  "purpose": "Special question eligibility and review gates",
+  "runtimeEnabled": false,
+  "entries": [
+    {
+      "questionId": "afaq-qb1-sa-g1-u1-l1-length-alif",
+      "lessonId": "sa-g1-u1-l1",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "أ"
+      ],
+      "futurePrerequisiteLetters": [
+        "أ"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [
+        "alif-madd"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u1-l1-length-waw",
+      "lessonId": "sa-g1-u1-l1",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "و"
+      ],
+      "futurePrerequisiteLetters": [
+        "و"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u1-l1-length-ya",
+      "lessonId": "sa-g1-u1-l1",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ي"
+      ],
+      "futurePrerequisiteLetters": [
+        "ي"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u1-l1-meaning",
+      "lessonId": "sa-g1-u1-l1",
+      "skill": "comprehension",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ن"
+      ],
+      "futurePrerequisiteLetters": [
+        "ن"
+      ],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u1-l1-dictation",
+      "lessonId": "sa-g1-u1-l1",
+      "skill": "dictation",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ن"
+      ],
+      "futurePrerequisiteLetters": [
+        "ن"
+      ],
+      "prerequisiteSkills": [
+        "word-reading",
+        "letter-writing"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u1-l1-fluency",
+      "lessonId": "sa-g1-u1-l1",
+      "skill": "reading-fluency",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ن"
+      ],
+      "futurePrerequisiteLetters": [
+        "ن"
+      ],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u1-l2-length-alif",
+      "lessonId": "sa-g1-u1-l2",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "أ"
+      ],
+      "futurePrerequisiteLetters": [
+        "أ"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [
+        "alif-madd"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u1-l2-length-waw",
+      "lessonId": "sa-g1-u1-l2",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "و"
+      ],
+      "futurePrerequisiteLetters": [
+        "و"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u1-l2-length-ya",
+      "lessonId": "sa-g1-u1-l2",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ي"
+      ],
+      "futurePrerequisiteLetters": [
+        "ي"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u1-l2-meaning",
+      "lessonId": "sa-g1-u1-l2",
+      "skill": "comprehension",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ر"
+      ],
+      "futurePrerequisiteLetters": [
+        "ر"
+      ],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "shaddah",
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u1-l2-dictation",
+      "lessonId": "sa-g1-u1-l2",
+      "skill": "dictation",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ر"
+      ],
+      "futurePrerequisiteLetters": [
+        "ر"
+      ],
+      "prerequisiteSkills": [
+        "word-reading",
+        "letter-writing"
+      ],
+      "orthographicPrerequisites": [
+        "shaddah",
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u1-l2-fluency",
+      "lessonId": "sa-g1-u1-l2",
+      "skill": "reading-fluency",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ر"
+      ],
+      "futurePrerequisiteLetters": [
+        "ر"
+      ],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "shaddah",
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u1-l3-length-alif",
+      "lessonId": "sa-g1-u1-l3",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "أ"
+      ],
+      "futurePrerequisiteLetters": [
+        "أ"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [
+        "alif-madd"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u1-l3-length-waw",
+      "lessonId": "sa-g1-u1-l3",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "و"
+      ],
+      "futurePrerequisiteLetters": [
+        "و"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u1-l3-length-ya",
+      "lessonId": "sa-g1-u1-l3",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ي"
+      ],
+      "futurePrerequisiteLetters": [
+        "ي"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u1-l3-meaning",
+      "lessonId": "sa-g1-u1-l3",
+      "skill": "comprehension",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ن"
+      ],
+      "futurePrerequisiteLetters": [
+        "ن"
+      ],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u1-l3-dictation",
+      "lessonId": "sa-g1-u1-l3",
+      "skill": "dictation",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ن"
+      ],
+      "futurePrerequisiteLetters": [
+        "ن"
+      ],
+      "prerequisiteSkills": [
+        "word-reading",
+        "letter-writing"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u1-l3-fluency",
+      "lessonId": "sa-g1-u1-l3",
+      "skill": "reading-fluency",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ن"
+      ],
+      "futurePrerequisiteLetters": [
+        "ن"
+      ],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u1-l4-length-alif",
+      "lessonId": "sa-g1-u1-l4",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "أ"
+      ],
+      "futurePrerequisiteLetters": [
+        "أ"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [
+        "alif-madd"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u1-l4-length-waw",
+      "lessonId": "sa-g1-u1-l4",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "و"
+      ],
+      "futurePrerequisiteLetters": [
+        "و"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u1-l4-length-ya",
+      "lessonId": "sa-g1-u1-l4",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ي"
+      ],
+      "futurePrerequisiteLetters": [
+        "ي"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u1-l4-meaning",
+      "lessonId": "sa-g1-u1-l4",
+      "skill": "comprehension",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ر"
+      ],
+      "futurePrerequisiteLetters": [
+        "ر"
+      ],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u1-l4-dictation",
+      "lessonId": "sa-g1-u1-l4",
+      "skill": "dictation",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ر"
+      ],
+      "futurePrerequisiteLetters": [
+        "ر"
+      ],
+      "prerequisiteSkills": [
+        "word-reading",
+        "letter-writing"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u1-l4-fluency",
+      "lessonId": "sa-g1-u1-l4",
+      "skill": "reading-fluency",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ر"
+      ],
+      "futurePrerequisiteLetters": [
+        "ر"
+      ],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u1-l5-length-alif",
+      "lessonId": "sa-g1-u1-l5",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "أ"
+      ],
+      "futurePrerequisiteLetters": [
+        "أ"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [
+        "alif-madd"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u1-l5-length-waw",
+      "lessonId": "sa-g1-u1-l5",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "و"
+      ],
+      "futurePrerequisiteLetters": [
+        "و"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u1-l5-length-ya",
+      "lessonId": "sa-g1-u1-l5",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ي"
+      ],
+      "futurePrerequisiteLetters": [
+        "ي"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u1-l5-meaning",
+      "lessonId": "sa-g1-u1-l5",
+      "skill": "comprehension",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u1-l5-dictation",
+      "lessonId": "sa-g1-u1-l5",
+      "skill": "dictation",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading",
+        "letter-writing"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u1-l5-fluency",
+      "lessonId": "sa-g1-u1-l5",
+      "skill": "reading-fluency",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u1-l6-length-alif",
+      "lessonId": "sa-g1-u1-l6",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "أ"
+      ],
+      "futurePrerequisiteLetters": [
+        "أ"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [
+        "alif-madd"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u1-l6-length-waw",
+      "lessonId": "sa-g1-u1-l6",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "و"
+      ],
+      "futurePrerequisiteLetters": [
+        "و"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u1-l6-length-ya",
+      "lessonId": "sa-g1-u1-l6",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ي"
+      ],
+      "futurePrerequisiteLetters": [
+        "ي"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u1-l6-meaning",
+      "lessonId": "sa-g1-u1-l6",
+      "skill": "comprehension",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u1-l6-dictation",
+      "lessonId": "sa-g1-u1-l6",
+      "skill": "dictation",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading",
+        "letter-writing"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u1-l6-fluency",
+      "lessonId": "sa-g1-u1-l6",
+      "skill": "reading-fluency",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u2-l1-length-alif",
+      "lessonId": "sa-g1-u2-l1",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "أ"
+      ],
+      "futurePrerequisiteLetters": [
+        "أ"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [
+        "alif-madd"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u2-l1-length-waw",
+      "lessonId": "sa-g1-u2-l1",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "و"
+      ],
+      "futurePrerequisiteLetters": [
+        "و"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u2-l1-length-ya",
+      "lessonId": "sa-g1-u2-l1",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ي"
+      ],
+      "futurePrerequisiteLetters": [
+        "ي"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u2-l1-meaning",
+      "lessonId": "sa-g1-u2-l1",
+      "skill": "comprehension",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u2-l1-dictation",
+      "lessonId": "sa-g1-u2-l1",
+      "skill": "dictation",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading",
+        "letter-writing"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u2-l1-fluency",
+      "lessonId": "sa-g1-u2-l1",
+      "skill": "reading-fluency",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u2-l2-length-alif",
+      "lessonId": "sa-g1-u2-l2",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "أ"
+      ],
+      "futurePrerequisiteLetters": [
+        "أ"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [
+        "alif-madd"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u2-l2-length-waw",
+      "lessonId": "sa-g1-u2-l2",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "و"
+      ],
+      "futurePrerequisiteLetters": [
+        "و"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u2-l2-length-ya",
+      "lessonId": "sa-g1-u2-l2",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ي"
+      ],
+      "futurePrerequisiteLetters": [
+        "ي"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u2-l2-meaning",
+      "lessonId": "sa-g1-u2-l2",
+      "skill": "comprehension",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u2-l2-dictation",
+      "lessonId": "sa-g1-u2-l2",
+      "skill": "dictation",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading",
+        "letter-writing"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u2-l2-fluency",
+      "lessonId": "sa-g1-u2-l2",
+      "skill": "reading-fluency",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u2-l3-length-alif",
+      "lessonId": "sa-g1-u2-l3",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "أ"
+      ],
+      "futurePrerequisiteLetters": [
+        "أ"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [
+        "alif-madd"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u2-l3-length-waw",
+      "lessonId": "sa-g1-u2-l3",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "و"
+      ],
+      "futurePrerequisiteLetters": [
+        "و"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u2-l3-length-ya",
+      "lessonId": "sa-g1-u2-l3",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ي"
+      ],
+      "futurePrerequisiteLetters": [
+        "ي"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u2-l3-meaning",
+      "lessonId": "sa-g1-u2-l3",
+      "skill": "comprehension",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u2-l3-dictation",
+      "lessonId": "sa-g1-u2-l3",
+      "skill": "dictation",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading",
+        "letter-writing"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u2-l3-fluency",
+      "lessonId": "sa-g1-u2-l3",
+      "skill": "reading-fluency",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u2-l4-length-alif",
+      "lessonId": "sa-g1-u2-l4",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "أ"
+      ],
+      "futurePrerequisiteLetters": [
+        "أ"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [
+        "alif-madd"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u2-l4-length-waw",
+      "lessonId": "sa-g1-u2-l4",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "و"
+      ],
+      "futurePrerequisiteLetters": [
+        "و"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u2-l4-length-ya",
+      "lessonId": "sa-g1-u2-l4",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ي"
+      ],
+      "futurePrerequisiteLetters": [
+        "ي"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u2-l4-meaning",
+      "lessonId": "sa-g1-u2-l4",
+      "skill": "comprehension",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u2-l4-dictation",
+      "lessonId": "sa-g1-u2-l4",
+      "skill": "dictation",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading",
+        "letter-writing"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u2-l4-fluency",
+      "lessonId": "sa-g1-u2-l4",
+      "skill": "reading-fluency",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u2-l5-length-alif",
+      "lessonId": "sa-g1-u2-l5",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "أ"
+      ],
+      "futurePrerequisiteLetters": [
+        "أ"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [
+        "alif-madd"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u2-l5-length-waw",
+      "lessonId": "sa-g1-u2-l5",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "و"
+      ],
+      "futurePrerequisiteLetters": [
+        "و"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u2-l5-length-ya",
+      "lessonId": "sa-g1-u2-l5",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ي"
+      ],
+      "futurePrerequisiteLetters": [
+        "ي"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u2-l5-meaning",
+      "lessonId": "sa-g1-u2-l5",
+      "skill": "comprehension",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u2-l5-dictation",
+      "lessonId": "sa-g1-u2-l5",
+      "skill": "dictation",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading",
+        "letter-writing"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u2-l5-fluency",
+      "lessonId": "sa-g1-u2-l5",
+      "skill": "reading-fluency",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u2-l6-length-alif",
+      "lessonId": "sa-g1-u2-l6",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "أ"
+      ],
+      "futurePrerequisiteLetters": [
+        "أ"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [
+        "alif-madd"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u2-l6-length-waw",
+      "lessonId": "sa-g1-u2-l6",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "و"
+      ],
+      "futurePrerequisiteLetters": [
+        "و"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u2-l6-length-ya",
+      "lessonId": "sa-g1-u2-l6",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ي"
+      ],
+      "futurePrerequisiteLetters": [
+        "ي"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u2-l6-meaning",
+      "lessonId": "sa-g1-u2-l6",
+      "skill": "comprehension",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u2-l6-dictation",
+      "lessonId": "sa-g1-u2-l6",
+      "skill": "dictation",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading",
+        "letter-writing"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u2-l6-fluency",
+      "lessonId": "sa-g1-u2-l6",
+      "skill": "reading-fluency",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u3-l1-length-alif",
+      "lessonId": "sa-g1-u3-l1",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [
+        "alif-madda"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u3-l1-length-waw",
+      "lessonId": "sa-g1-u3-l1",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "و"
+      ],
+      "futurePrerequisiteLetters": [
+        "و"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u3-l1-length-ya",
+      "lessonId": "sa-g1-u3-l1",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ي"
+      ],
+      "futurePrerequisiteLetters": [
+        "ي"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [
+        "hamza-below"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u3-l1-meaning",
+      "lessonId": "sa-g1-u3-l1",
+      "skill": "comprehension",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u3-l1-dictation",
+      "lessonId": "sa-g1-u3-l1",
+      "skill": "dictation",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading",
+        "letter-writing"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u3-l1-fluency",
+      "lessonId": "sa-g1-u3-l1",
+      "skill": "reading-fluency",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u3-l2-length-alif",
+      "lessonId": "sa-g1-u3-l2",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [
+        "alif-madd"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u3-l2-length-waw",
+      "lessonId": "sa-g1-u3-l2",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "و"
+      ],
+      "futurePrerequisiteLetters": [
+        "و"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u3-l2-length-ya",
+      "lessonId": "sa-g1-u3-l2",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ي"
+      ],
+      "futurePrerequisiteLetters": [
+        "ي"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u3-l2-meaning",
+      "lessonId": "sa-g1-u3-l2",
+      "skill": "comprehension",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u3-l2-dictation",
+      "lessonId": "sa-g1-u3-l2",
+      "skill": "dictation",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading",
+        "letter-writing"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u3-l2-fluency",
+      "lessonId": "sa-g1-u3-l2",
+      "skill": "reading-fluency",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u3-l3-length-alif",
+      "lessonId": "sa-g1-u3-l3",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [
+        "alif-madd"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u3-l3-length-waw",
+      "lessonId": "sa-g1-u3-l3",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "و"
+      ],
+      "futurePrerequisiteLetters": [
+        "و"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u3-l3-length-ya",
+      "lessonId": "sa-g1-u3-l3",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ي"
+      ],
+      "futurePrerequisiteLetters": [
+        "ي"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u3-l3-meaning",
+      "lessonId": "sa-g1-u3-l3",
+      "skill": "comprehension",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ع"
+      ],
+      "futurePrerequisiteLetters": [
+        "ع"
+      ],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u3-l3-dictation",
+      "lessonId": "sa-g1-u3-l3",
+      "skill": "dictation",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ع"
+      ],
+      "futurePrerequisiteLetters": [
+        "ع"
+      ],
+      "prerequisiteSkills": [
+        "word-reading",
+        "letter-writing"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u3-l3-fluency",
+      "lessonId": "sa-g1-u3-l3",
+      "skill": "reading-fluency",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ع"
+      ],
+      "futurePrerequisiteLetters": [
+        "ع"
+      ],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u3-l4-length-alif",
+      "lessonId": "sa-g1-u3-l4",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [
+        "alif-madd"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u3-l4-length-waw",
+      "lessonId": "sa-g1-u3-l4",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u3-l4-length-ya",
+      "lessonId": "sa-g1-u3-l4",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ي"
+      ],
+      "futurePrerequisiteLetters": [
+        "ي"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u3-l4-meaning",
+      "lessonId": "sa-g1-u3-l4",
+      "skill": "comprehension",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u3-l4-dictation",
+      "lessonId": "sa-g1-u3-l4",
+      "skill": "dictation",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading",
+        "letter-writing"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u3-l4-fluency",
+      "lessonId": "sa-g1-u3-l4",
+      "skill": "reading-fluency",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u3-l5-length-alif",
+      "lessonId": "sa-g1-u3-l5",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [
+        "alif-madd"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u3-l5-length-waw",
+      "lessonId": "sa-g1-u3-l5",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u3-l5-length-ya",
+      "lessonId": "sa-g1-u3-l5",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ي"
+      ],
+      "futurePrerequisiteLetters": [
+        "ي"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u3-l5-meaning",
+      "lessonId": "sa-g1-u3-l5",
+      "skill": "comprehension",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u3-l5-dictation",
+      "lessonId": "sa-g1-u3-l5",
+      "skill": "dictation",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading",
+        "letter-writing"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u3-l5-fluency",
+      "lessonId": "sa-g1-u3-l5",
+      "skill": "reading-fluency",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u3-l6-length-alif",
+      "lessonId": "sa-g1-u3-l6",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [
+        "alif-madd"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u3-l6-length-waw",
+      "lessonId": "sa-g1-u3-l6",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u3-l6-length-ya",
+      "lessonId": "sa-g1-u3-l6",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ي"
+      ],
+      "futurePrerequisiteLetters": [
+        "ي"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u3-l6-meaning",
+      "lessonId": "sa-g1-u3-l6",
+      "skill": "comprehension",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u3-l6-dictation",
+      "lessonId": "sa-g1-u3-l6",
+      "skill": "dictation",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading",
+        "letter-writing"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u3-l6-fluency",
+      "lessonId": "sa-g1-u3-l6",
+      "skill": "reading-fluency",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u4-l1-length-alif",
+      "lessonId": "sa-g1-u4-l1",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [
+        "alif-madd"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u4-l1-length-waw",
+      "lessonId": "sa-g1-u4-l1",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u4-l1-length-ya",
+      "lessonId": "sa-g1-u4-l1",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ي"
+      ],
+      "futurePrerequisiteLetters": [
+        "ي"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u4-l1-meaning",
+      "lessonId": "sa-g1-u4-l1",
+      "skill": "comprehension",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u4-l1-dictation",
+      "lessonId": "sa-g1-u4-l1",
+      "skill": "dictation",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading",
+        "letter-writing"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u4-l1-fluency",
+      "lessonId": "sa-g1-u4-l1",
+      "skill": "reading-fluency",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u4-l2-length-alif",
+      "lessonId": "sa-g1-u4-l2",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [
+        "alif-madd"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u4-l2-length-waw",
+      "lessonId": "sa-g1-u4-l2",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u4-l2-length-ya",
+      "lessonId": "sa-g1-u4-l2",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ي"
+      ],
+      "futurePrerequisiteLetters": [
+        "ي"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u4-l2-meaning",
+      "lessonId": "sa-g1-u4-l2",
+      "skill": "comprehension",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u4-l2-dictation",
+      "lessonId": "sa-g1-u4-l2",
+      "skill": "dictation",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading",
+        "letter-writing"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u4-l2-fluency",
+      "lessonId": "sa-g1-u4-l2",
+      "skill": "reading-fluency",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u4-l3-length-alif",
+      "lessonId": "sa-g1-u4-l3",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [
+        "alif-madd"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u4-l3-length-waw",
+      "lessonId": "sa-g1-u4-l3",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u4-l3-length-ya",
+      "lessonId": "sa-g1-u4-l3",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ي"
+      ],
+      "futurePrerequisiteLetters": [
+        "ي"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u4-l3-meaning",
+      "lessonId": "sa-g1-u4-l3",
+      "skill": "comprehension",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u4-l3-dictation",
+      "lessonId": "sa-g1-u4-l3",
+      "skill": "dictation",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading",
+        "letter-writing"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u4-l3-fluency",
+      "lessonId": "sa-g1-u4-l3",
+      "skill": "reading-fluency",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u4-l4-length-alif",
+      "lessonId": "sa-g1-u4-l4",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [
+        "alif-madd"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u4-l4-length-waw",
+      "lessonId": "sa-g1-u4-l4",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u4-l4-length-ya",
+      "lessonId": "sa-g1-u4-l4",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ي"
+      ],
+      "futurePrerequisiteLetters": [
+        "ي"
+      ],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u4-l4-meaning",
+      "lessonId": "sa-g1-u4-l4",
+      "skill": "comprehension",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u4-l4-dictation",
+      "lessonId": "sa-g1-u4-l4",
+      "skill": "dictation",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading",
+        "letter-writing"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u4-l4-fluency",
+      "lessonId": "sa-g1-u4-l4",
+      "skill": "reading-fluency",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u4-l5-length-alif",
+      "lessonId": "sa-g1-u4-l5",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [
+        "alif-madd"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u4-l5-length-waw",
+      "lessonId": "sa-g1-u4-l5",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u4-l5-length-ya",
+      "lessonId": "sa-g1-u4-l5",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u4-l5-meaning",
+      "lessonId": "sa-g1-u4-l5",
+      "skill": "comprehension",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u4-l5-dictation",
+      "lessonId": "sa-g1-u4-l5",
+      "skill": "dictation",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading",
+        "letter-writing"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u4-l5-fluency",
+      "lessonId": "sa-g1-u4-l5",
+      "skill": "reading-fluency",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u4-l6-length-alif",
+      "lessonId": "sa-g1-u4-l6",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [
+        "alif-madd"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u4-l6-length-waw",
+      "lessonId": "sa-g1-u4-l6",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u4-l6-length-ya",
+      "lessonId": "sa-g1-u4-l6",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u4-l6-meaning",
+      "lessonId": "sa-g1-u4-l6",
+      "skill": "comprehension",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ه"
+      ],
+      "futurePrerequisiteLetters": [
+        "ه"
+      ],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u4-l6-dictation",
+      "lessonId": "sa-g1-u4-l6",
+      "skill": "dictation",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ه"
+      ],
+      "futurePrerequisiteLetters": [
+        "ه"
+      ],
+      "prerequisiteSkills": [
+        "word-reading",
+        "letter-writing"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u4-l6-fluency",
+      "lessonId": "sa-g1-u4-l6",
+      "skill": "reading-fluency",
+      "contentSafeAtLesson": false,
+      "unknownLetters": [
+        "ه"
+      ],
+      "futurePrerequisiteLetters": [
+        "ه"
+      ],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u5-l1-length-alif",
+      "lessonId": "sa-g1-u5-l1",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [
+        "alif-madd"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u5-l1-length-waw",
+      "lessonId": "sa-g1-u5-l1",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u5-l1-length-ya",
+      "lessonId": "sa-g1-u5-l1",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u5-l1-meaning",
+      "lessonId": "sa-g1-u5-l1",
+      "skill": "comprehension",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u5-l1-dictation",
+      "lessonId": "sa-g1-u5-l1",
+      "skill": "dictation",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading",
+        "letter-writing"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u5-l1-fluency",
+      "lessonId": "sa-g1-u5-l1",
+      "skill": "reading-fluency",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u5-l2-length-alif",
+      "lessonId": "sa-g1-u5-l2",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [
+        "alif-madd"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u5-l2-length-waw",
+      "lessonId": "sa-g1-u5-l2",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u5-l2-length-ya",
+      "lessonId": "sa-g1-u5-l2",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u5-l2-meaning",
+      "lessonId": "sa-g1-u5-l2",
+      "skill": "comprehension",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u5-l2-dictation",
+      "lessonId": "sa-g1-u5-l2",
+      "skill": "dictation",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading",
+        "letter-writing"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u5-l2-fluency",
+      "lessonId": "sa-g1-u5-l2",
+      "skill": "reading-fluency",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u5-l3-length-alif",
+      "lessonId": "sa-g1-u5-l3",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [
+        "alif-madd"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u5-l3-length-waw",
+      "lessonId": "sa-g1-u5-l3",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u5-l3-length-ya",
+      "lessonId": "sa-g1-u5-l3",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u5-l3-meaning",
+      "lessonId": "sa-g1-u5-l3",
+      "skill": "comprehension",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u5-l3-dictation",
+      "lessonId": "sa-g1-u5-l3",
+      "skill": "dictation",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading",
+        "letter-writing"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u5-l3-fluency",
+      "lessonId": "sa-g1-u5-l3",
+      "skill": "reading-fluency",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u5-l4-length-alif",
+      "lessonId": "sa-g1-u5-l4",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [
+        "alif-madd"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u5-l4-length-waw",
+      "lessonId": "sa-g1-u5-l4",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u5-l4-length-ya",
+      "lessonId": "sa-g1-u5-l4",
+      "skill": "vowel-length",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "long-vowels"
+      ],
+      "orthographicPrerequisites": [],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u5-l4-meaning",
+      "lessonId": "sa-g1-u5-l4",
+      "skill": "comprehension",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u5-l4-dictation",
+      "lessonId": "sa-g1-u5-l4",
+      "skill": "dictation",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading",
+        "letter-writing"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    },
+    {
+      "questionId": "afaq-qb1-sa-g1-u5-l4-fluency",
+      "lessonId": "sa-g1-u5-l4",
+      "skill": "reading-fluency",
+      "contentSafeAtLesson": true,
+      "unknownLetters": [],
+      "futurePrerequisiteLetters": [],
+      "prerequisiteSkills": [
+        "word-reading"
+      ],
+      "orthographicPrerequisites": [
+        "tanwin"
+      ],
+      "reviewStatus": "pending-teacher-review",
+      "runtimeEnabled": false,
+      "automaticMastery": false
+    }
+  ]
+}

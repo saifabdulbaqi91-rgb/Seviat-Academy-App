@@ -83,3 +83,46 @@ html[data-seviat-theme="dark"] #activityArea .answer-option {
 #journey .journey-options svg{max-width:100%;height:auto}
 
 #journey .journey-options[data-family="attention"] button,#journey .journey-options[data-family="observation"] button{padding-block:6px!important;margin:0}
+
+/* Student session menu */
+#journey:has(.journey-session-menu){position:relative}
+#journey .journey-session-menu{
+  position:relative;
+  z-index:20;
+  width:max-content;
+  margin:0 0 12px auto;
+  font-family:'Tajawal',sans-serif;
+}
+#journey .journey-session-menu>summary{
+  display:grid;
+  place-items:center;
+  width:48px;
+  height:48px;
+  border:1px solid #d5ac62;
+  border-radius:14px;
+  background:#eaf4ff;
+  color:#173b70;
+  font-size:28px;
+  cursor:pointer;
+  list-style:none;
+}
+#journey .journey-session-menu>summary::-webkit-details-marker{display:none}
+#journey .journey-session-menu-items{
+  position:absolute;
+  top:54px;
+  right:0;
+  width:min(260px,80vw);
+  padding:12px;
+  border:1px solid #dce5f0;
+  border-radius:16px;
+  background:#fff;
+  box-shadow:0 12px 28px #173b7026;
+  display:grid;
+  gap:8px;
+}
+#journey .journey-session-menu:not([open]) .journey-session-menu-items{display:none}
+#journey .journey-session-menu-items button{
+  width:100%;
+  font-family:'Tajawal',sans-serif;
+  font-size:16px;
+}

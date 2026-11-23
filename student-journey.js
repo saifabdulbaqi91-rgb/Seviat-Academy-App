@@ -3,11 +3,11 @@
 const R=SeviatJourneyRules,E=window.SeviatAdaptive,KEY='seviat-guided-journey-v1';
 const titles={'letter-shape':'شكل الحرف','short-vowels':'الحركات','sukoon':'السكون','long-vowels':'المدود','letter-positions':'أشكال الحرف','letter-detection':'أبحث عن الحرف','sound-analysis':'الأصوات','syllable-building':'المقاطع','letter-name':'اسم الحرف','letter-sound':'صوت الحرف','letter-writing':'كتابة الحرف','word-writing':'كتابة الكلمات','word-reading':'قراءة الكلمات','word-building':'تركيب الكلمات'};
 let store,broken=false,run=null,timer=null,epoch=0,lastSavedRaw=null;
-let latestRecommendation=null,curriculumFailed=false,questionFlow=null;
+let latestRecommendation=null,curriculumFailed=false,questionFlow=null,modalWatch=null;
 const Interactive=window.SeviatInteractions,companion=window.SeviatCompanion.create(),PREFS='seviat-interaction-preferences-v1';let preferenceBroken=false,preferences={version:1,autoAdvance:true,animations:true};
 try{const raw=localStorage.getItem(PREFS);if(raw!==null){const value=JSON.parse(raw);if(value.version!==1||typeof value.autoAdvance!=='boolean'||typeof value.animations!=='boolean')throw Error('preferences');preferences={...value};}}catch{preferenceBroken=true;preferences={version:1,autoAdvance:false,animations:false};}
 companion.setAnimations(preferences.animations);
-function setPreferences(patch){if(preferenceBroken)throw Error('الإعدادات الأصلية محفوظة وغير قابلة للقراءة.');const raw=localStorage.getItem(PREFS);const current=raw===null?preferences:JSON.parse(raw);if(current.version!==1||typeof current.autoAdvance!=='boolean'||typeof current.animations!=='boolean')throw Error('الإعدادات الأصلية محفوظة وغير قابلة للقراءة.');const next={...current,...patch,version:1};if(typeof next.autoAdvance!=='boolean'||typeof next.animations!=='boolean')throw Error('Invalid settings');localStorage.setItem(PREFS,JSON.stringify(next));preferences=next;companion.setAnimations(next.animations);if(questionFlow&&run?.pending)questionFlow.setAutomatic(next.autoAdvance&&run.pending.correct&&Interactive.automatic(run.node,run.questions[run.index]));}
+function setPreferences(patch){if(preferenceBroken)throw Error('الإعدادات الأصلية محفوظة وغير قابلة للقراءة.');const raw=localStorage.getItem(PREFS);const current=raw===null?preferences:JSON.parse(raw);if(current.version!==1||typeof current.autoAdvance!=='boolean'||typeof current.animations!=='boolean')throw Error('الإعدادات الأصلية محفوظة وغير قابلة للقراءة.');const next={...current,...patch,version:1};if(typeof next.autoAdvance!=='boolean'||typeof next.animations!=='boolean')throw Error('Invalid settings');localStorage.setItem(PREFS,JSON.stringify(next));preferences=next;companion.setAnimations(next.animations);if(questionFlow&&run?.pending)questionFlow.setAutomatic(next.autoAdvance&&(run.pending.correct||Interactive.retrySolved(run.pending))&&Interactive.automatic(run.node,run.questions[run.index]));}
 function comfort(parent=root){const details=el('details',undefined,parent);details.id=parent===hub?'teacher-comfort':'journey-comfort';el('summary','راحتي أثناء التعلم',details);for(const [key,title]of [['autoAdvance','انتقال تلقائي بعد الإجابة الصحيحة'],['animations','حركة رفيق التعلم']]){const label=el('label',undefined,details);const input=el('input',undefined,label);input.type='checkbox';input.checked=preferences[key];input.disabled=preferenceBroken;input.dataset.preference=key;input.onchange=()=>{try{setPreferences({[key]:input.checked});}catch{input.checked=preferences[key];el('p','تعذر حفظ الإعداد. بقي اختيارك السابق.',details);}};el('span',title,label);}}
 function rewardSummary(parent=root,teacherMode=false){const summary=Interactive.rewards(state(),R);const section=el('section',undefined,parent);section.className='journey-rewards';section.id=teacherMode?'teacher-rewards':'journey-rewards';el('p','★ '+summary.stars+' نجوم للمشاركة والتدريب',section);if(teacherMode){el('p','المشاركة: '+summary.participation+' جلسات — مشاركة الألعاب: '+summary.gameSessions+' — نجوم الإنجاز: '+summary.achievementStars,section);el('p','النجوم والشارات للتشجيع فقط. دليل المهارة والإتقان والتجاوزات تظهر منفصلة في جدول التعلم، ولا تفتح المكافآت أي مستوى.',section);}for(const badge of summary.badges)el('span','✦ '+badge.title,section);return summary;}
 function persistDraft(active){if(active.preview)return true;const previous=state().interactiveV1;const journal=Interactive.journal(state());const draft={version:1,id:active.id,nodeId:active.node.id,plan:active.plan,questions:active.questions,results:active.results,index:active.index,phase:active.phase,guided:!!active.guided,pending:active.pending||null,challengeDay:active.challengeDay||null};if(!Interactive.validateDraft(draft))throw Error('Invalid draft');state().interactiveV1={...journal,sessions:{...journal.sessions,[active.id]:structuredClone(draft)},activeId:active.id};try{save();return true;}catch(error){if(previous===undefined)delete state().interactiveV1;else state().interactiveV1=previous;throw error;}}
@@ -20,6 +20,106 @@ const Path=window.SeviatArabicPath;let catalog=null;
 try{if(Path)catalog=Path.createCatalog(R);}catch(error){console.error('تعذر بناء خريطة التعلم',error);}
 function learningState(){if(store.active!=='default')return state();try{return E.legacyView(state(),JSON.parse(localStorage.getItem('seviat-unit1-learning-v2')||'{}'),window.Unit1Rules,R);}catch{return state();}}
 function pathView(){return catalog?Path.view(catalog,learningState(),R,E,{recommendation:recommendation(),excludedActivities:activityExclusions(false)}):null;}
+
+
+
+function bankEligibleForStudent(lessonId, currentLessonId, allowedLetters, progression) {
+  const bridge = window.AfaqQuestionBankBridge;
+  const profile = learningState();
+
+  if (!bridge ||
+      typeof bridge.verifiedQuestionsForLesson !== 'function' ||
+      !Array.isArray(progression) ||
+      !Array.isArray(allowedLetters) ||
+      !currentLessonId ||
+      !profile) {
+    return [];
+  }
+
+  return bridge.verifiedQuestionsForLesson(lessonId, {
+    rules: R,
+    profile,
+    progression,
+    currentLessonId,
+    allowedLetters
+  });
+}
+
+async function openBankPractice(node){
+ const bridge=window.AfaqQuestionBankBridge;
+ const activities=window.AfaqQuestionBankActivities;
+
+ if(!bridge||!activities){
+  screen('تعذر فتح التدريبات');
+  el('p','خدمة بنك الأسئلة غير متاحة.');
+  button('العودة',home);
+  return;
+ }
+
+ if(!R.available(learningState(),node)){
+  home();
+  return;
+ }
+
+ screen('تدريبات إضافية');
+ el('p','هذه التدريبات مخصصة للأسئلة المعتمدة.');
+
+ const loading=el('p','جاري التحميل...');
+
+ try{
+  await bridge.load();
+
+  if(!R.available(learningState(),node)){
+   home();
+   return;
+  }
+
+  // Do not expose bank questions until real prerequisites are connected.
+  const context = bridge.contextForNode(node,R,learningState());
+  const matches = context ? bankEligibleForStudent(
+    context.lessonId,
+    context.currentLessonId,
+    context.allowedLetters,
+    context.progression
+  ) : [];
+  loading.remove();
+
+  if(!matches.length){
+   el('p','لا توجد أسئلة معتمدة متاحة.');
+   button('العودة إلى الرحلة',home);
+   return;
+  }
+
+  let index=0;
+  const area=el('div');
+
+  function show(){
+   if(index>=matches.length){
+    area.replaceChildren();
+    el('h3','اكتملت التدريبات',area);
+    el('p','أحسنت! لقد أنهيت التدريبات.',area);
+    button('العودة إلى الرحلة',home,area);
+    return;
+   }
+
+   const q=matches[index];
+   activities.mount(area,q,()=>{
+    index++;
+    show();
+   });
+  }
+
+  show();
+  button('العودة إلى الرحلة',home);
+
+ }catch(error){
+  loading.remove();
+  el('p','تعذر تحميل التدريبات.');
+  console.error(error);
+  button('العودة',home);
+ }
+}
+
 function renderPath(view){
  if(!view)return;
  const current=view.worlds.find(w=>w.id===view.currentWorldId),summary=el('section');summary.className='path-current';summary.id='learning-path-current';
@@ -35,6 +135,14 @@ function renderPath(view){
   const list=el('ol',undefined,levels);let index=0;
   for(const level of view.levels.filter(l=>l.worldId===worldId)){index++;const row=el('li',undefined,list);row.dataset.levelId=level.id;row.dataset.status=level.status;row.className='path-level';
    const title=level.status==='locked'?'خطوة '+index:level.title;const b=button(title,()=>begin(level.sourceActivityId),row);b.disabled=!window.Unit1Learning?.ready||!['available','completed'].includes(level.status);b.dataset.lessonId=level.lessonId||'';b.className='path-level-action';
+   if(['available','completed'].includes(level.status) && level.sourceActivityId){
+    const activityNode=R.nodes.find(n=>n.id===level.sourceActivityId);
+    if(activityNode?.letter && window.AfaqQuestionBankBridge && window.AfaqQuestionBankActivities){
+     const practice=button('\u0628\u0646\u0643 \u0627\u0644\u0623\u0633\u0626\u0644\u0629',()=>openBankPractice(activityNode),row);
+     practice.className='path-bank-practice';
+     practice.disabled=!window.Unit1Learning?.ready;
+    }
+   }
    el('span',labels[level.status],row);if(level.evidenceComplete&&level.status!=='completed')el('span','تقدمك السابق محفوظ',row);if(level.confirmed)el('span','✓ راجعته',row);else if(level.teacherOverride&&level.status==='available')el('span','اختارها لك المعلم',row);
   }
  };
@@ -46,9 +154,9 @@ const root=document.createElement('section');root.id='journey';root.setAttribute
 const hub=document.createElement('section');hub.id='teacherHub';hub.hidden=true;document.querySelector('main').prepend(hub);
 const entry=document.createElement('button');entry.id='modeEntry';entry.textContent='المعلم وولي الأمر';document.body.append(entry);entry.onclick=()=>window.AfaqAdult.require(teacher);
 function el(tag,text,parent=root){const e=document.createElement(tag);if(text!==undefined)e.textContent=text;parent.append(e);return e;}
-function button(text,fn,parent=root,id){const b=el('button',text,parent);b.type='button';b.className='primary-button';if(id)b.id=id;const adult=parent===hub||hub.contains(parent);b.onclick=()=>{try{if(adult)window.AfaqAdult.assert();fn();}catch(error){const note=el('p','تعذر حفظ التغيير. لم تُمسح بياناتك.',document.body.dataset.mode==='teacher'?hub:root);note.setAttribute('role','alert');}};return b;}
-function stop(){window.AfaqSpeech?.dispose();window.AfaqActivity?.reset();window.SeviatGuidedAudio?.stop();window.SeviatStudentVoice?.dispose();window.SeviatChildUI?.cleanup();epoch++;questionFlow?.dispose();questionFlow=null;clearTimeout(timer);window.SeviatAudioQuestions?.stop();run=null;}
-function screen(title){window.AfaqActivity?.close();root.classList.remove('speaking-view');window.SeviatGuidedAudio?.stop();window.SeviatStudentVoice?.dispose();root.replaceChildren();const h=el('h2',title);h.tabIndex=-1;h.focus({preventScroll:true});root.append(companion.element);companion.setState('idle');}
+function button(text,fn,parent=root,id){const b=el('button',text,parent);b.type='button';b.className='primary-button';if(id)b.id=id;const adult=parent===hub||hub.contains(parent);b.onclick=()=>{const report=error=>{console.error('AFAQ journey action failed',id||text,error);if(!b.isConnected)return;const target=document.body.dataset.mode==='teacher'?hub:root;let note=target.querySelector('.journey-action-error');if(!note){note=el('p','تعذر إكمال الخطوة. حاول مجددًا أو اطلب مساعدة المعلم. بياناتك محفوظة.',target);note.className='journey-action-error';note.setAttribute('role','alert');}};try{if(adult)window.AfaqAdult.assert();Promise.resolve(fn()).catch(report);}catch(error){report(error);}};return b;}
+function stop(){modalWatch?.();modalWatch=null;window.AfaqSpeech?.dispose();window.AfaqActivity?.reset();window.SeviatGuidedAudio?.stop();window.SeviatStudentVoice?.dispose();window.SeviatChildUI?.cleanup();epoch++;questionFlow?.dispose();questionFlow=null;clearTimeout(timer);window.SeviatAudioQuestions?.stop();run=null;}
+function screen(title){modalWatch?.();modalWatch=null;window.AfaqActivity?.close();root.classList.remove('speaking-view');window.SeviatGuidedAudio?.stop();window.SeviatStudentVoice?.dispose();root.replaceChildren();const h=el('h2',title);h.tabIndex=-1;h.focus({preventScroll:true});root.append(companion.element);companion.setState('idle');}
 function feedback(correct){window.SeviatEffects?.play(correct?'correct':'wrong');}
 function home(){window.AfaqAdult.lock();root.classList.remove('diagnostic-view','speaking-view');if(run?.node.optional&&!run.preview&&state().homework!==run.node.id)skippedOptional.add(run.node.id);stop();delete root.dataset.questionId;document.body.dataset.mode='student';hub.hidden=true;entry.hidden=false;document.getElementById('activityArea')?.remove();screen('كل خطوة اكتشاف جديد');el('p','نتعلم قليلًا ونفرح بما نكتشفه.');
  const view=pathView();const done=view?view.progress.completed:R.nodes.filter(n=>!n.optional&&R.evidence(learningState(),n.id)).length;const p=el('progress');p.max=view?view.progress.total:R.nodes.filter(n=>!n.optional).length;p.value=done;p.setAttribute('aria-label','تقدم الرحلة بأدلة التعلم');
@@ -57,9 +165,9 @@ function home(){window.AfaqAdult.lock();root.classList.remove('diagnostic-view',
 // Keep helpers DOM-only; no legacy assessment or progress records are rewritten.
 
 function model(q){const m=el('div',q.stimulus||run?.node.letter||q.answer);m.className='journey-model';if(q.visual)m.innerHTML=q.visual.target||'';return m;}
-function preparationPool(node){const items=[];for(let i=0;i<5;i++){
+function preparationPool(node){const items=[];const visualBank=node.family==='visual'?SeviatVisualQuestions.makeQuestions(node.level):null;for(let i=0;i<5;i++){
  let q={id:node.id+'-'+i};const family=node.family;
- if(family==='visual'){const v=SeviatVisualQuestions.makeQuestions(node.level)[i];const svg=x=>SeviatVisualQuestions.shapeSVG(x.shape,x.color,x.size,x.direction);q={...q,prompt:v.prompt,answer:String(v.options.findIndex(x=>x.correct)),options:v.options.map((_,j)=>String(j)),visual:{target:v.target?svg(v.target):'',options:v.options.map(svg)},memory:v.memory};}
+ if(family==='visual'){const v=visualBank[i];const svg=x=>SeviatVisualQuestions.shapeSVG(x.shape,x.color,x.size,x.direction);q={...q,prompt:v.prompt,answer:String(v.options.findIndex(x=>x.correct)),options:v.options.map((_,j)=>String(j)),visual:{target:v.target?svg(v.target):'',options:v.options.map(svg)},memory:v.memory};}
  else if(family==='auditory'){const a=SeviatAudioQuestions.createQuestion(node.level);if(a.sequence){const labels=['منخفض','متوسط','مرتفع'];const right=a.answer.join(' ← ');q={...q,prompt:a.instruction,sounds:a.sounds,answer:right,options:[right,[...a.answer].reverse().join(' ← '),a.answer.map(x=>labels[(labels.indexOf(x)+1)%3]).join(' ← ')]};q.options=[...new Set(q.options)];}else q={...q,prompt:a.instruction,sounds:a.sounds,answer:a.answer,options:a.options};}
  else if(family==='attention'||family==='observation'){const a=SeviatExtraGames.makeQuestion(family,node.level);q={...q,prompt:a.instruction,stimulus:a.target||'',answer:String(a.answer),options:a.items.map((_,j)=>String(j)),visual:{target:a.target||'',options:a.items}};}
  else if(family==='extended'){const group=SeviatUnit2.prepLevels[node.group],a=group.items[node.level];q={...q,prompt:'اختر النموذج المطابق',stimulus:a.target,answer:a.target,options:a.choices,memory:group.type==='memory',duration:a.duration,teacherReview:true};}
@@ -83,7 +191,7 @@ function activityCapable(node){
  if(node.kind==='word-game')return activityPolicy(node,'practice')&&wordGamePool(node,false).length>=5;
  const mode=activityMode(node);return safePool([...pool(node,false),...SeviatAdaptiveActivities.questions(node)],node).filter(q=>activityPolicy(node,mode,q)).length>=3;
 }
-function activityExclusions(includeSkipped=true){return R.nodes.filter(node=>(includeSkipped&&skippedOptional.has(node.id))||!activityCapable(node)||(node.kind==='word-game'&&wordGamePool(node,false).length<5)||(node.family==='auditory'&&window.SeviatEffects?.isEnabled()===false)||(node.optional&&node.kind==='preparation'&&!SeviatAccessGuard.coarseAllowed('preparation'))).map(node=>node.id);}
+function activityExclusions(includeSkipped=true){return R.nodes.filter(node=>(includeSkipped&&skippedOptional.has(node.id))||!activityCapable(node)||(node.kind==='word-game'&&wordGamePool(node,false).length<5)||(node.family==='auditory'&&window.AfaqWorkspace?.audioGain()===0)||(node.optional&&node.kind==='preparation'&&!SeviatAccessGuard.coarseAllowed('preparation'))).map(node=>node.id);}
 function baseRecommendation(){const excluded=activityExclusions();const base=catalog?E.recommendLesson(learningState(),catalog,R,Path,Date.now(),excluded):E.recommend(learningState(),R,Date.now(),excluded);const proposed=window.SeviatDiagnosticUI?.preferred(base)||base;if(proposed.nodeId!==base.nodeId){if(excluded.includes(proposed.nodeId))return base;const lesson=catalog&&Path.lessonFor(catalog,proposed.nodeId);return {...proposed,difficulty:E.difficulty(learningState(),proposed.nodeId),lessonId:lesson?.id||null,levelId:lesson?.levelId||null,worldId:lesson?.worldId||null};}return base;}
 function recommendation(){const base=baseRecommendation();try{return window.AfaqPersonalizedUI?.recommend(base,activityExclusions())||base;}catch{return base;}}
 function learnedLetters(node){
@@ -187,12 +295,39 @@ function begin(id,preview=false,challengeDay=null,practiceOnly=false){
  if(store.active==='default'){try{const old=JSON.parse(localStorage.getItem('seviat-unit1-learning-v2')||'{}');state().legacyEvidence={};for(const n of R.nodes)if(n.unit===1&&Unit1Rules.mastered(old,n.letter,n.skill))state().legacyEvidence[n.id]=true;}catch{}}
  stop();document.body.dataset.mode=preview?'adult-preview':'student';hub.hidden=true;entry.hidden=false;let resumed=null;if(!preview&&!challengeDay&&!practiceOnly){try{resumed=resumeDraft(id||state().homework);}catch(error){screen('سجلك محفوظ');el('p',error.message);button('العودة',home);return;}}if(resumed){run=resumed;if(run.phase==='intro')intro();else question(run.guided,true);return;}latestRecommendation=recommendation();const node=id?R.nodes.find(n=>n.id===id):R.nodes.find(n=>n.id===latestRecommendation.nodeId);
  if(!node){screen('أحسنت!');el('p',R.nodes.filter(n=>!n.optional).every(n=>R.complete(state(),n.id))?'أكملت رحلتك. يمكنك الاستكشاف مع المعلم.':'حان وقت الاستراحة. اطلب مساعدة المعلم لخطوتك التالية.');button('العودة',home);return;}
+
+ if(!preview && node.id !== state().homework && !challengeDay && !practiceOnly) {
+  const progression = window.AfaqTeachingProgression;
+  const current = learningState();
+  const skill = node.skill;
+  const gatedSkills = [
+   'short-vowels','sukoon','long-vowels',
+   'letter-positions','letter-detection',
+   'sound-analysis','syllable-building'
+  ];
+
+  if(progression && node.letter && gatedSkills.includes(skill)) {
+   const required = progression.nextTeachingStep(current,R,node.letter);
+   const requiredNode = R.nodes.find(n=>n.id===required);
+
+   if(requiredNode &&
+      requiredNode.letter===node.letter &&
+      current.overrides?.[required]!=='lock' &&
+      !activityExclusions(false).includes(required)) {
+    screen('نتعلم بالترتيب');
+    el('p','قبل هذه الخطوة نتعلم اسم الحرف وصوته.');
+    button('ابدأ الخطوة المطلوبة',()=>begin(required),root,'journey-next');
+    button('العودة إلى رحلتي',home,root);
+    return;
+   }
+  }
+ }
  if(!preview&&node.id!==state().homework&&!R.available(state(),node)){home();return;}
  if(['prep','preparation'].includes(node.kind)&&!preview&&!SeviatAccessGuard.coarseAllowed('preparation')){screen('نستريح قليلًا');el('p','اطلب مساعدة المعلم للمتابعة.');button('العودة',home);return;}
  if(node.skill?.includes('writing')){if(!preview&&!activityPolicy(node,'practice')){screen('اطلب مساعدة المعلم');button('العودة',home);return;}screen('هيا نكتب');const target=writingTarget(node);if(!preview&&!contentAllowed(target,node)){el('p','نتعلم هذه الخطوة مع المعلم.');button('العودة',home);return;}SeviatWritingActivity(target,root);const writingGuide=window.SeviatGuidedAudio?.mount(root,'writing',{key:store.active+':writing:'+node.id+':'+epoch});if(writingGuide)root.insertBefore(writingGuide,root.children[2]||null);button('انتهيت',()=>{if(!preview&&state().homework===node.id){const undo=submitForReview(node);try{save();}catch(error){undo();throw error;}}home();});return;}
  const intent=!id&&!preview&&!challengeDay&&!practiceOnly&&latestRecommendation.phase6RequestedMode;const requestedMode=intent==='assessment'&&!activityPolicy(node,'assessment')?null:intent;
  let qs=[...pool(node,preview),...window.SeviatAdaptiveActivities.questions(node)];if(!preview)qs=safePool(qs,node).filter(q=>activityPolicy(node,requestedMode?(requestedMode==='assessment'?'assessment':'practice'):activityMode(node),q));
- const verifiedPool=qs.filter(q=>!q.teacherReview&&!q.scaffold);if(!preview&&verifiedPool.length>=5)qs=verifiedPool;if(qs.length<5&&qs.length){const originals=[...qs];for(const q of originals){if(qs.length>=5)break;qs.push({id:q.id+'-visual',prompt:'اختر النموذج المطابق: '+q.answer,stimulus:q.answer,answer:q.answer,options:[...q.options],teacherReview:true,scaffold:true});}}if(qs.length<5){screen('لنتعلم معًا');el('p','هذه الخطوة تحتاج مساعدة المعلم.');button('العودة',home);return;}
+ const verifiedPool=qs.filter(q=>!q.teacherReview&&!q.scaffold);if(!preview&&verifiedPool.length>=5)qs=verifiedPool;if(qs.length<5){screen('لنتعلم معًا');el('p','هذه الخطوة تحتاج مساعدة المعلم.');button('العودة',home);return;}
  const sessionId=crypto.randomUUID(),plan=preview?{mode:'preview',count:5,difficulty:'standard'}:{...E.planSession(state(),node),...(requestedMode?{mode:requestedMode}:{}),...(challengeDay||practiceOnly?{mode:'practice'}:{})};
  const ordered=E.selectQuestions(state(),node.id,qs,{count:plan.count,difficulty:plan.difficulty,seed:sessionId});
  if(!ordered.length){screen('لنتعلم معًا');button('العودة',home);return;}
@@ -200,26 +335,110 @@ function begin(id,preview=false,challengeDay=null,practiceOnly=false){
  run={node,preview,plan,questions:prepared,results:[],index:0,phase:'intro',id:sessionId,challengeDay};try{persistDraft(run);}catch(error){screen('نستريح قليلًا');el('p','تعذر حفظ تقدمك. اطلب مساعدة المعلم.');button('العودة',home);return;}intro();
 }
 function voicePanel(node,preview=false){if(!preview&&node.supervised&&['letter-name','letter-sound','word-reading'].includes(node.skill))window.SeviatStudentVoice?.mount(root,{studentId:store.active,nodeId:node.id,skillId:node.skill,retentionDays:window.SeviatChildUI?.settings().retentionDays||7});}
-function intro(){run.phase='intro';screen(run.plan.mode==='diagnostic'?'لنكتشف ما تعرفه':'هيا نكتشف');companion.setState('welcome');const q=run.questions[0];el('p',run.node.id.startsWith('prep:')?'انظر إلى الشكل واختر ما يشبهه.':run.node.kind==='word-game'?'نركّب كلمات تعلمناها.':'نكتشف الحرف '+run.node.letter+' خطوة بخطوة.');q.sounds?el('p','استمع جيدًا ثم اختر.'):model(q);el('p',q.prompt);window.SeviatGuidedAudio?.mount(root,window.SeviatChildUI?.instructionKind(run.node,q),{automatic:false,key:run.id+':'+q.id,prompt:q.prompt,skill:run.node.skill,example:!['assessment','diagnostic'].includes(run.plan.mode)&&!q.sounds&&!q.memory?q.stimulus:null});voicePanel(run.node,run.preview);button('هيا نجرب',()=>question(!['assessment','diagnostic'].includes(run.plan.mode)),root,'journey-next');button('العودة إلى مساري',home,root,'journey-home');}
+// The name supports visual recognition even at first entry. Sound models stay
+// in teaching; listening tasks expose only their audio stimulus, never a model.
+function lessonQuestion(active,q){return window.SeviatGuidedAudioCore.studentContext(q,active.node);}
+function lessonAudioContext(active,q,teaching){const view=lessonQuestion(active,q);return view?{...view,lessonLetter:active.node.letter,teaching:(teaching||active.node.skill==='letter-shape')&&!view.listeningTarget&&!q.sounds&&!q.memory}:{};}
+function intro(){run.phase='intro';screen(run.plan.mode==='diagnostic'?'لنكتشف ما تعرفه':'هيا نكتشف');companion.setState('welcome');const q=run.questions[0],spoken=lessonQuestion(run,q);el('p',lessonAudioContext(run,q,false).listeningTarget?'استمع إلى الصوت، ثم اختر البطاقة المناسبة.':run.node.id.startsWith('prep:')?'انظر إلى الشكل واختر ما يشبهه.':run.node.kind==='word-game'?'نركّب كلمات تعلمناها.':'نكتشف الحرف '+run.node.letter+' خطوة بخطوة.');q.sounds||spoken?.hideModel?el('p','استمع جيدًا ثم اختر.'):model(q);el('p',spoken?.displayPrompt||q.prompt);window.SeviatGuidedAudio?.mount(root,window.SeviatChildUI?.instructionKind(run.node,q),{...lessonAudioContext(run,q,!['assessment','diagnostic'].includes(run.plan.mode)),automatic:false,questionKey:q.id,key:run.id+':'+q.id,prompt:spoken?.spokenPrompt||q.prompt,skill:run.node.skill,example:!['assessment','diagnostic'].includes(run.plan.mode)&&!q.sounds&&!q.memory&&!q.audioText?q.stimulus:null});voicePanel(run.node,run.preview);button('هيا نجرب',()=>question(!['assessment','diagnostic'].includes(run.plan.mode)),root,'journey-next');button('العودة إلى مساري',home,root,'journey-home');}
 function question(guided=false,restored=false){
- questionFlow?.dispose();const active=run;active.guided=guided;if(!restored){active.phase='question';active.pending=null;}screen(guided?'نجرب معًا':active.index<active.questions.length-1?'دورك الآن':'خطوة أخيرة');if(guided)companion.setState('hint');
- const q=active.questions[active.index];root.dataset.questionId=q.id;const progress=el('progress');progress.max=active.questions.length;progress.value=active.index;progress.setAttribute('aria-label','تقدم الجلسة');el('h3',q.prompt);
- if(q.type==='teacher-listening')el('p',active.preview?'للمعلم: '+(q.audioText||''):'استمع إلى المعلم، ثم جرّب.');let memoryModel=null;if(q.stimulus||q.visual)memoryModel=model(q);
- const narration=window.SeviatGuidedAudio?.mount(root,window.SeviatChildUI?.instructionKind(active.node,q),{key:active.id+':'+q.id,questionNarration:q.questionNarration===true,prompt:q.prompt,skill:active.node.skill,example:guided&&!q.sounds&&!q.memory?q.stimulus:null});voicePanel(active.node,active.preview);if(guided&&!q.sounds&&!q.visual)el('p','ابحث عن: '+q.answer);const options=el('div');options.className='journey-options';options.dataset.family=active.node.family||'';const status=el('p','');status.setAttribute('role','status');let ready=!!active.pending||!q.sounds&&!q.memory;
- let memoryPaused=false,memoryDeadline=0,memoryRemaining=q.duration||2500,memoryPrepared=false;const startMemory=()=>{if(!q.memory||active.pending||ready||memoryPaused||!memoryPrepared)return;const token=epoch;memoryDeadline=Date.now()+memoryRemaining;timer=setTimeout(()=>{if(token===epoch&&run===active){memoryModel.textContent='؟';ready=true;status.textContent='اختر ما تتذكره.';for(const b of options.children)b.disabled=false;}},memoryRemaining);};if(q.memory&&!active.pending){status.textContent='انظر واحفظ؛ انتظر حتى تختفي الصورة.';const token=epoch;Promise.resolve(narration?.settled).then(()=>{if(token!==epoch||run!==active||!memoryModel?.isConnected)return;memoryPrepared=true;startMemory();});}if(q.sounds&&!active.pending)status.textContent='اضغط استمع أولًا، ثم اختر بعد انتهاء الصوت.';
- if(q.sounds&&!active.pending){const play=button('استمع',async()=>{window.SeviatGuidedAudio?.stop();ready=false;play.disabled=true;const token=epoch;try{ready=await SeviatAudioQuestions.playNotes(q.sounds,root)===true&&token===epoch;}catch{status.textContent='شغّل الصوت ثم حاول مجددًا.';}finally{if(token===epoch){play.disabled=false;for(const b of options.children)b.disabled=!ready;if(!ready)status.textContent='تعذر سماع النمط. اضغط استمع للمحاولة مجددًا.';else status.textContent='اختر النمط الذي سمعته.';}}},root,'journey-listen');}
- const showFeedback=(correct,playSound=true)=>{window.SeviatGuidedAudio?.stop();if(playSound)feedback(correct);companion.setState(correct?'success':'retry');for(const b of options.children){b.disabled=true;if(b.dataset.value===q.answer){b.style.borderColor='#23856d';b.setAttribute('aria-label',(b.getAttribute('aria-label')||b.textContent)+' — الإجابة الصحيحة');}}const listen=root.querySelector('#journey-listen');if(listen)listen.disabled=true;status.textContent=correct?'✓ أحسنت!':q.visual?'لننظر إلى النموذج مرة أخرى.':'لنحاول معًا. الإجابة: '+q.answer;
-  button('تابع',()=>flow.next(),root,'journey-next');if(!correct){button('جرب مرة أخرى',()=>practiceRetry(active,q),root,'journey-retry');button('أرني تلميحًا',()=>{recordInteraction(active,{feedbackHints:(active.pending.feedbackHints||0)+1});companion.setState('hint',q.visual?'انظر إلى النموذج، ثم إلى الإطار الأخضر.':'ابحث عن: '+q.answer);},root,'journey-hint');}};
- const flow=Interactive.createFlow({automatic:preferences.autoAdvance&&Interactive.automatic(active.node,q),commit(value,correct){if(!ready||run!==active)return false;const oldResults=[...active.results],oldPending=active.pending;active.pending={answer:value,correct,guided};active.phase='feedback';if(!guided)active.results.push({id:q.id,answer:value,correct,taskKey:q.taskKey,subskill:q.subskill||((q.skill==='short-vowels'||q.skill==='long-vowels')?SeviatAccessGuard.subskill(q):'all'),verified:!q.teacherReview&&!q.scaffold,evidenceEligible:!q.teacherReview&&!q.scaffold,evidenceScope:q.evidenceScope||(q.sounds?'auditory-pattern':'visual-recognition'),feedbackHints:0,practiceRetries:[],assisted:planAssisted(active)||q.teacherReview===true||q.scaffold===true});
+ modalWatch?.();modalWatch=null;questionFlow?.dispose();const active=run;active.guided=guided;if(!restored){active.phase='question';active.pending=null;}screen(guided?'نجرب معًا':active.index<active.questions.length-1?'دورك الآن':'خطوة أخيرة');if(guided)companion.setState('hint');
+ const q=active.questions[active.index],spoken=lessonQuestion(active,q);root.dataset.questionId=q.id;const menu=el('details');
+ menu.className='journey-session-menu';
+ const menuTitle=el('summary','\u2630',menu);
+ menuTitle.setAttribute('aria-label','\u062e\u064a\u0627\u0631\u0627\u062a \u0627\u0644\u062c\u0644\u0633\u0629');
+ const menuItems=el('div',undefined,menu);
+ menuItems.className='journey-session-menu-items';
+ button('\u0623\u0643\u0645\u0644 \u0644\u0627\u062d\u0642\u064b\u0627',home,menuItems,'journey-pause');
+ button('\u0627\u0644\u0639\u0648\u062f\u0629 \u0625\u0644\u0649 \u0645\u0633\u0627\u0631\u064a',home,menuItems,'journey-home');
+ const progress=el('progress');progress.max=active.questions.length;progress.value=active.index;progress.setAttribute('aria-label','تقدم الجلسة');el('h3',spoken?.displayPrompt||q.prompt);
+ const lessonListening=!active.pending&&!q.sounds&&!q.memory;if(q.type==='teacher-listening'&&!lessonListening)el('p',active.preview?'للمعلم: '+(q.audioText||''):'استمع إلى المعلم، ثم جرّب.');let memoryModel=null;if(!spoken?.hideModel&&(q.stimulus||q.visual))memoryModel=model(q);if(q.memory&&active.pending&&memoryModel)memoryModel.textContent='؟';
+ const narration=window.SeviatGuidedAudio?.mount(root,window.SeviatChildUI?.instructionKind(active.node,q),{...lessonAudioContext(active,q,guided&&!['assessment','diagnostic'].includes(active.plan.mode)),questionKey:q.id,key:active.id+':'+q.id,automatic:!active.pending,questionNarration:!active.pending&&!spoken?.audioFirst&&!q.sounds&&!q.memory,prompt:spoken?.spokenPrompt||q.prompt,skill:active.node.skill,example:guided&&!q.sounds&&!q.memory&&!q.audioText?q.stimulus:null});voicePanel(active.node,active.preview);const options=el('div');options.className='journey-options';options.dataset.family=active.node.family||'';const status=el('p','');status.setAttribute('role','status');let ready=!!active.pending||!lessonListening&&!q.sounds&&!q.memory;
+ if(lessonListening&&!active.pending){
+ status.textContent='استمع إلى السؤال ثم اختر الإجابة.';
+ narration?.addEventListener('afaq-lesson-listening',event=>{if(run!==active||active.pending)return;
+  ready=ready||!!event.detail;
+  for(const b of options.children)b.disabled=!ready;
+  status.textContent=ready?'اختر الإجابة الصحيحة.':'استمع إلى الصوت كاملا قبل الاختيار.';
+ });
+ narration?.addEventListener('afaq-lesson-audio-failed',event=>{
+  if(run!==active||active.pending||event.detail?.teacherRequired)return;
+  ready=true;
+  for(const b of options.children)b.disabled=false;
+  status.textContent='تعذر تشغيل الصوت. اقرأ السؤال أو استعن بالمعلم ثم اختر الإجابة.';
+ });
+}
+
+let memoryPaused=false,memoryDeadline=0,memoryRemaining=q.duration||2500,memoryPrepared=false;const startMemory=()=>{if(!q.memory||active.pending||ready||memoryPaused||!memoryPrepared)return;const token=epoch;memoryDeadline=Date.now()+memoryRemaining;timer=setTimeout(()=>{if(token===epoch&&run===active){memoryModel.textContent='؟';ready=true;status.textContent='اختر ما تتذكره.';for(const b of options.children)b.disabled=false;}},memoryRemaining);};if(q.memory&&!active.pending){status.textContent='انظر واحفظ؛ انتظر حتى تختفي الصورة.';const token=epoch;Promise.resolve(narration?.settled).then(()=>{if(token!==epoch||run!==active||!memoryModel?.isConnected)return;memoryPrepared=true;startMemory();});}if(q.sounds&&!active.pending)status.textContent='اضغط استمع أولًا، ثم اختر بعد انتهاء الصوت.';
+ if(q.sounds&&(!active.pending||Interactive.canRetry(active.plan.mode)&&!active.pending.correct)){const play=button('استمع',async()=>{window.SeviatGuidedAudio?.stop();ready=false;play.disabled=true;const token=epoch;for(const b of root.querySelectorAll('.journey-options button,.journey-retry-options button'))b.disabled=true;try{ready=await SeviatAudioQuestions.playNotes(q.sounds,root)===true&&token===epoch&&run===active;}catch(error){console.error('AFAQ journey listening failed',q.id,error);}finally{if(token===epoch&&run===active&&play.isConnected){play.disabled=!!active.pending&&(active.pending.correct||Interactive.retrySolved(active.pending));for(const b of options.children)b.disabled=!!active.pending||!ready;for(const b of root.querySelectorAll('.journey-retry-options button'))b.disabled=!ready||Interactive.retrySolved(active.pending);if(!ready)status.textContent='تعذر سماع النمط. اضغط استمع للمحاولة مجددًا.';else status.textContent='اختر النمط الذي سمعته.';}}},root,'journey-listen');}
+ const openRetry=()=>practiceRetry(active,q,flow,()=>ready);
+ const showFeedback=(correct,playSound=true)=>{window.SeviatGuidedAudio?.stop();if(playSound){feedback(correct);narration?.feedback?.(correct)?.catch(error=>console.error('AFAQ journey feedback audio failed',q.id,error));}companion.setState(correct?'success':'retry');for(const b of options.children){b.disabled=true;if(correct&&Interactive.canRetry(active.plan.mode)&&b.dataset.value===q.answer){b.style.borderColor='#23856d';b.setAttribute('aria-label',(b.getAttribute('aria-label')||b.textContent)+' — الإجابة الصحيحة');}}const listen=root.querySelector('#journey-listen');if(listen)listen.disabled=correct||!Interactive.canRetry(active.plan.mode);status.textContent=correct?'أحسنت! إجابتك صحيحة.':'لم تصب هذه المرة.';
+  button('تابع',()=>flow.next(),root,'journey-next');if(!correct&&Interactive.canRetry(active.plan.mode)){button('جرب مرة أخرى',openRetry,root,'journey-retry');button('أرني تلميحًا',()=>{recordInteraction(active,{feedbackHints:(active.pending.feedbackHints||0)+1});companion.setState('hint',q.visual?'تأمل الأشكال وقارن بينها.':'استمع إلى السؤال مرة أخرى، ثم فكر في اختيارك.');},root,'journey-hint');}};
+ const flow=Interactive.createFlow({automatic:preferences.autoAdvance&&Interactive.automatic(active.node,q),commit(value,correct){if(!ready||run!==active)return false;const oldResults=[...active.results],oldPending=active.pending;active.pending={answer:value,correct,guided};active.phase='feedback';if(!guided)active.results.push({id:q.id,answer:value,correct,taskKey:q.taskKey,subskill:q.subskill||((q.skill==='short-vowels'||q.skill==='long-vowels')?SeviatAccessGuard.subskill(q):'all'),verified:!q.teacherReview&&!q.scaffold,evidenceEligible:!q.teacherReview&&!q.scaffold,evidenceScope:spoken?.pronounce?'audio-prompted-choice':q.evidenceScope||(q.sounds?'auditory-pattern':'visual-recognition'),feedbackHints:0,practiceRetries:[],assisted:planAssisted(active)||q.teacherReview===true||q.scaffold===true});
    try{persistDraft(active);return true;}catch{active.results=oldResults;active.pending=oldPending;active.phase='question';status.textContent='تعذر حفظ تقدمك. حاول مرة أخرى أو اطلب مساعدة المعلم.';return false;}},advance(){if(run!==active||!activityPolicy(active.node,active.plan.mode==='assessment'?'assessment':'practice',q)){home();return false;}const previous={index:active.index,pending:active.pending,phase:active.phase,guided:active.guided};if(guided)active.guided=false;else active.index++;active.pending=null;active.phase='question';
    if(active.index===active.questions.length){finish();return true;}try{persistDraft(active);}catch{Object.assign(active,previous);status.textContent='تعذر حفظ تقدمك. حاول المتابعة مرة أخرى.';return false;}question(false);return true;}});
  questionFlow=flow;for(const value of [...q.options].sort(()=>Math.random()-.5)){const choice=button(q.visual?'':value,()=>{if(flow.submit(value,value===q.answer))showFeedback(value===q.answer);},options);choice.dataset.value=value;choice.disabled=!ready;if(q.visual){choice.innerHTML=q.visual.options[Number(value)];choice.setAttribute('aria-label','الشكل '+(Number(value)+1));}}
- if(restored&&active.pending){flow.restore(active.pending.correct);showFeedback(active.pending.correct,false);}
- button('العودة إلى مساري',home,root,'journey-home');
- window.AfaqActivity?.mount(root,{kind:window.SeviatChildUI?.instructionKind(active.node,q),node:active.node,count:q.options.length,allowed:()=>run===active&&R.available(learningState(),active.node),pause:()=>{flow.setAutomatic(false);if(q.memory&&!ready){memoryPaused=true;clearTimeout(timer);if(memoryDeadline)memoryRemaining=Math.max(0,memoryDeadline-Date.now());}},resume:()=>{if(run===active){flow.setAutomatic(preferences.autoAdvance&&Interactive.automatic(active.node,q));memoryPaused=false;startMemory();}},restart:()=>{if(run===active&&R.available(learningState(),active.node))begin(active.node.id,false,null,true);}});
+ if(restored&&active.pending){flow.restore(active.pending.correct||Interactive.retrySolved(active.pending));showFeedback(active.pending.correct,false);if(Interactive.canRetry(active.plan.mode)&&(active.pending.retryOpen||active.pending.practiceRetries?.length))openRetry();}
+ const pauseQuestion=()=>{flow.setAutomatic(false);if(q.memory&&!ready){memoryPaused=true;clearTimeout(timer);if(memoryDeadline)memoryRemaining=Math.max(0,memoryDeadline-Date.now());}};const resumeQuestion=()=>{if(run===active&&!document.querySelector('dialog[open]')){flow.setAutomatic(preferences.autoAdvance&&Interactive.automatic(active.node,q));memoryPaused=false;startMemory();}};modalWatch=window.SeviatGuidedAudio?.watchModals({pause:pauseQuestion,resume:resumeQuestion});
+ window.AfaqActivity?.mount(root,{kind:window.SeviatChildUI?.instructionKind(active.node,q),node:active.node,concealTarget:!!spoken?.listeningTarget,count:q.options.length,allowed:()=>run===active&&R.available(learningState(),active.node),pause:pauseQuestion,resume:resumeQuestion,restart:()=>{if(run===active&&R.available(learningState(),active.node))begin(active.node.id,false,null,true);}});
 }
 function recordInteraction(active,patch){if(run!==active||active.finished||!active.pending)throw Error('Inactive response');const previous={results:structuredClone(active.results),pending:structuredClone(active.pending)};active.pending={...active.pending,...patch};const index=active.results.findLastIndex(r=>r.id===active.questions[active.index].id);if(index>=0)active.results[index]={...active.results[index],...patch};try{persistDraft(active);}catch(e){active.results=previous.results;active.pending=previous.pending;throw e;}}
-function practiceRetry(active,q){if(run!==active||root.querySelector('.journey-retry-options'))return;const box=el('section');box.className='journey-retry-options';el('p','نجرب مرة أخرى. محاولتك الأولى تبقى محفوظة.',box);for(const value of q.options){const b=button(q.visual?'':value,()=>{if(run!==active)return;const retries=active.pending.practiceRetries||[];if(!Array.isArray(retries))throw Error('Unreadable retry history');recordInteraction(active,{practiceRetries:[...retries,{answer:value,correct:value===q.answer,timestamp:Date.now(),credit:'practice-only'}]});for(const choice of box.querySelectorAll('button'))choice.disabled=true;feedback(value===q.answer);companion.setState(value===q.answer?'success':'hint');el('p',value===q.answer?'أحسنت على المحاولة الجديدة.':'انظر إلى الإجابة الصحيحة، ثم تابع.',box);},box);b.dataset.value=value;if(q.visual){b.innerHTML=q.visual.options[Number(value)];b.setAttribute('aria-label','الشكل '+(Number(value)+1));}}}
+
+function practiceRetry(active,q,flow,isReady){
+ if(run!==active||!active.pending||active.pending.correct||
+    !Interactive.canRetry(active.plan.mode)||
+    root.querySelector('.journey-retry-options'))return;
+
+ if(!active.pending.retryOpen)recordInteraction(active,{retryOpen:true});
+ const box=el('section');
+ box.className='journey-retry-options';
+ el('p','حاول مرة أخرى. هذه المحاولة للتدريب فقط.',box);
+
+ let solved=Interactive.retrySolved(active.pending);
+ const note=el('p',solved?'أحسنت! نجحت في المحاولة التدريبية.':'اختر إجابتك بعد التفكير أو الاستماع مجددًا.',box);
+ note.className='journey-retry-message';note.setAttribute('role','status');
+ const syncSolved=()=>{for(const id of ['journey-retry','journey-hint','journey-listen']){const control=root.querySelector('#'+id);if(control)control.disabled=solved;}};
+ syncSolved();
+
+ for(const value of q.options){
+  const b=button(q.visual?'':value,()=>{
+   if(run!==active||solved||!active.pending||!isReady()||!flow.pending)return;
+
+   const correct=value===q.answer;
+   const retries=active.pending.practiceRetries||[];
+   if(!Array.isArray(retries))return;
+
+   recordInteraction(active,{
+     practiceRetries:[
+      ...retries,
+      {answer:value,correct,timestamp:Date.now(),credit:'practice-only'}
+     ]
+    });
+
+   feedback(correct);
+   companion.setState(correct?'success':'retry');
+
+   if(correct){
+    solved=true;
+    note.textContent='أحسنت! نجحت في المحاولة التدريبية.';
+    for(const choice of box.querySelectorAll('button'))choice.disabled=true;
+
+    syncSolved();
+    flow.practiceSucceeded();
+   }else{
+    note.textContent='لم تصب بعد. فكر أو استمع مجددًا، ثم حاول مرة أخرى.';
+   }
+  },box);
+
+  b.dataset.value=value;
+  b.disabled=solved||!isReady();
+
+  if(q.visual){
+   b.innerHTML=q.visual.options[Number(value)];
+   b.setAttribute('aria-label','الشكل '+(Number(value)+1));
+  }
+ }
+}
+
 function planAssisted(active){return active.plan.difficulty==='supported'||active.node.supervised===true;}
 function reviewNode(node){const family=node.skill==='letter-shape'?'visual':node.skill==='short-vowels'?'memory':'attention';return R.nodes.find(n=>n.family===family&&E.autoAvailable(state(),n,R)&&!R.complete(state(),n.id))||R.nodes[0];}
 function submitForReview(node,runId){
@@ -232,7 +451,7 @@ function submitForReview(node,runId){
 function finish(){const active=run;if(!active||active.finished)return;questionFlow?.dispose();const previouslyReady=E.progressReady(state(),active.node.id);const record={id:active.id,node:active.node.id,independent:!active.preview&&!planAssisted(active)&&active.questions.some(q=>!q.teacherReview&&!q.scaffold),evidenceVersion:2,mode:active.plan.mode,difficulty:active.plan.difficulty,completedAt:Date.now(),results:active.results,activity:Interactive.descriptor(active.node,catalog),...(active.challengeDay?{challengeDay:active.challengeDay}:{})};
  if(!active.preview){const previous=structuredClone(state());try{if(!state().runs.some(r=>r.id===record.id))state().runs.push(record);if(E.progressReady(state(),active.node.id)&&state().homework===active.node.id)delete state().homework;if(state().homework===active.node.id&&(active.node.supervised||active.node.family==='extended'))submitForReview(active.node,active.id);const journal=Interactive.journal(state());const sessions={...journal.sessions};delete sessions[active.id];state().interactiveV1={...journal,sessions,activeId:journal.activeId===active.id?null:journal.activeId};save();}catch(error){store.profiles[store.active]=previous;screen('نستريح قليلًا');el('p','تعذر حفظ تقدمك. الإجابات السابقة محفوظة.');button('إعادة حفظ الجلسة',finish,root,'journey-retry-save');button('العودة',home);return;}}
  active.finished=true;
- const correct=record.results.filter(x=>x.correct).length,sessionPassed=correct/record.results.length>=Math.max(.8,Math.min(1,(state().criteria?.correct||4)/5));screen('أحسنت على المحاولة!');companion.setState(!previouslyReady&&E.progressReady(state(),active.node.id)?'level-completion':sessionPassed?'celebration':'retry');if(!active.preview)rewardSummary();el('p','أنجزت '+record.results.length+' خطوات. '+(!sessionPassed?'نراجع قليلًا ثم نحاول من جديد.':'كل محاولة تقوّيك.'));if(!active.preview&&sessionPassed)window.SeviatEffects?.play('complete');const completed=E.progressReady(state(),active.node.id)||state().overrides?.[active.node.id]==='allow';if(!active.preview)button(!sessionPassed?'تدريب يساعدني':'تدريب إضافي قصير',()=>begin(active.node.id),root);if(active.preview)el('p','معاينة المعلم — لم يُسجل تقدم للطالب.');if(active.questions.some(q=>q.teacherReview))el('p','نتعلم هذه الخطوة مع المعلم.');const continueActivity=()=>{if(active.preview){teacher();return;}if((active.node.optional&&state().homework!==active.node.id)||completed||active.plan.mode==='diagnostic'||recommendation().reason==='varied-practice')begin();else begin(active.node.id);};button(!sessionPassed?'نراجع معًا':'تابع',continueActivity,root,'journey-next');button('استراحة',home);if(!active.preview&&sessionPassed&&!active.node.supervised&&active.questions.every(q=>!q.teacherReview&&!q.scaffold)&&preferences.autoAdvance&&window.SeviatChildUI?.settings().autoContinue){const token=epoch;timer=setTimeout(()=>{if(epoch===token&&run===active)continueActivity();},2000);}delete root.dataset.questionId;
+ const correct=record.results.filter(x=>x.correct).length,sessionPassed=correct/record.results.length>=Math.max(.8,Math.min(1,(state().criteria?.correct||4)/5));screen('أحسنت على المحاولة!');companion.setState(!previouslyReady&&E.progressReady(state(),active.node.id)?'level-completion':sessionPassed?'celebration':'retry');if(!active.preview)rewardSummary();el('p','أنجزت '+record.results.length+' خطوات. '+(!sessionPassed?'نراجع قليلًا ثم نحاول من جديد.':'كل محاولة تقوّيك.'));if(!active.preview&&sessionPassed)window.SeviatEffects?.play('complete');const completed=E.progressReady(state(),active.node.id)||state().overrides?.[active.node.id]==='allow';if(!active.preview)button(!sessionPassed?'تدريب يساعدني':'تدريب إضافي قصير',()=>begin(active.node.id),root);if(active.preview)el('p','معاينة المعلم — لم يُسجل تقدم للطالب.');if(active.questions.some(q=>q.teacherReview))el('p','نتعلم هذه الخطوة مع المعلم.');const continueActivity=()=>{if(active.preview){teacher();return;}if((active.node.optional&&state().homework!==active.node.id)||completed||active.plan.mode==='diagnostic'||recommendation().reason==='varied-practice')begin();else begin(active.node.id);};button(!sessionPassed?'نراجع معًا':'تابع',continueActivity,root,'journey-next');button('استراحة',home);if(!active.preview&&(sessionPassed||(Interactive.canRetry(active.plan.mode)&&record.results.length>0&&record.results.every(result=>result.correct||Interactive.retrySolved(result))))&&!active.node.supervised&&active.questions.every(q=>!q.teacherReview&&!q.scaffold)&&preferences.autoAdvance&&window.SeviatChildUI?.settings().autoContinue){const token=epoch;timer=setTimeout(()=>{if(epoch===token&&run===active)continueActivity();},2000);}delete root.dataset.questionId;
 }
 function select(parent,label,items){const l=el('label',label,parent),s=el('select',undefined,l);for(const [value,title] of items){const o=el('option',title,s);o.value=value;}return s;}
 function createLocalProfile(name=''){window.AfaqAdult.assert();if(broken)throw Error('السجل الأصلي غير قابل للقراءة؛ لم يُستبدل.');const id=crypto.randomUUID(),previous=store.active;store.profiles[id]={name:String(name).trim().slice(0,60)||'متعلم '+(Object.keys(store.profiles).length+1),runs:[],overrides:{},phase6Registration:{version:1,guardianManaged:true,placementRequired:true,createdAt:Date.now()}};store.active=id;try{save();}catch(error){delete store.profiles[id];store.active=previous;throw error;}return id;}
@@ -266,8 +485,8 @@ function openSpeaking(id){window.AfaqAdult.lock();if(!routeActivity({kind:'speak
 window.SeviatJourney={home,teacher,begin,routeActivity,routingRecovery,hasDeferredEntry:()=>{try{return !!deferredEntry();}catch{return true;}},createLocalProfile,getBaseRecommendation:baseRecommendation,getExcludedActivities:()=>[...activityExclusions()],openSpeaking,getExperienceContext:experienceContext,getDiagnosticContext:diagnosticContext,openDiagnosticScreen:(title,state,adultPreview=false)=>{if(adultPreview)window.AfaqAdult.assert();else window.AfaqAdult.lock();stop();document.body.dataset.mode=adultPreview?'adult-preview':'student';hub.hidden=true;entry.hidden=false;document.getElementById('activityArea')?.remove();screen(title);companion.setState(state);},diagnosticReaction:state=>companion.setState(state),recommend:()=>recommendation(),getState:()=>structuredClone(state()),getPath:()=>structuredClone(pathView()),setPreferences,getInteraction:()=>({preferences:{...preferences},companion:companion.state,rewards:Interactive.rewards(state(),R),activeId:run?.id||null})};
 window.addEventListener('seviat-access-changed',()=>{if(document.body.dataset.mode==='student')home();});
 document.addEventListener('click',event=>{if(event.target.closest('#startButton')){event.preventDefault();event.stopImmediatePropagation();home();window.SeviatChildUI?SeviatChildUI.primary():begin();}},true);
-window.addEventListener('hashchange',()=>{if(document.body.dataset.mode==='student'&&location.hash)teacher();});
+window.addEventListener('hashchange',()=>{if(document.body.dataset.mode==='student'&&location.hash)home();});
 window.addEventListener('seviat-curriculum-ready',()=>{curriculumFailed=false;if(document.body.dataset.mode==='student'&&!run)home();});
 window.addEventListener('seviat-curriculum-error',()=>{curriculumFailed=true;if(document.body.dataset.mode==='student'&&!run)home();});
-home();if(location.hash)teacher();
+home();
 })();

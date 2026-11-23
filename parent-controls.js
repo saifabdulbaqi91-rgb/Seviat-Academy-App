@@ -8,7 +8,8 @@ menu.onclick=()=>toggle(true);document.getElementById('seviat-menu-close').oncli
 const dialog=document.createElement('dialog');dialog.id='seviat-parent-panel';dialog.dir='rtl';dialog.style.cssText='width:min(580px,90vw);max-height:85vh;overflow:auto;border:1px solid #7995af;border-radius:16px;padding:20px';dialog.setAttribute('aria-label','إعدادات المعلم وولي الأمر');document.body.append(dialog);
 function el(tag,text,parent=dialog){const n=document.createElement(tag);if(text)n.textContent=text;parent.append(n);return n;}
 function btn(text,action,id){const b=el('button',text);b.type='button';b.className='primary-button';b.style.cssText='margin:6px;min-height:44px';if(id)b.id=id;b.onclick=action;return b;}
-function close(){dialog.close();returnFocus?.focus();}
+function close(){if(dialog.open)dialog.close();const target=returnFocus;returnFocus=null;if(target?.isConnected)target.focus({preventScroll:true});}
+dialog.oncancel=event=>{event.preventDefault();close();};
 function requireTeacher(action){if(isAuthenticated()){action();return;}openLogin(action);}
 function openLogin(action){
  returnFocus=document.activeElement;toggle(false);dialog.replaceChildren();if(!dialog.open)dialog.showModal();

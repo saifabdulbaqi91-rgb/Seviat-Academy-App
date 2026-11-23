@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
   "use strict";
 
   const SOURCES = [
@@ -40,13 +40,14 @@
 
     const letter = question.letter || "";
 
-    add(question.prompt, "تعليمات الأسئلة", letter, source);
-    add(question.stimulus, "المحتوى التعليمي", letter, source);
+    add(question.prompt, "??????? ???????", letter, source);
+    add(question.stimulus, "??????? ????????", letter, source);
+    add(question.target, "????? ???????", letter, source);
 
     if (Array.isArray(question.options)) {
       question.options.forEach(option => {
         if (typeof option === "string") {
-          add(option, "الاختيارات", letter, source);
+          add(option, "??????????", letter, source);
         }
       });
     }
@@ -75,6 +76,24 @@
 
       if (Array.isArray(data.questions)) {
         data.questions.forEach(q => collect(q, source));
+      }
+
+      if (Array.isArray(data.letters)) {
+        data.letters.forEach(letter =>
+          add(letter, "???? ??????", letter, source)
+        );
+      }
+
+      if (Array.isArray(data.wordGlossary)) {
+        data.wordGlossary.forEach(word =>
+          add(word, "???????", "", source)
+        );
+      }
+
+      if (Array.isArray(data.writingActivities)) {
+        data.writingActivities.forEach(activity =>
+          collect(activity, source)
+        );
       }
     });
 

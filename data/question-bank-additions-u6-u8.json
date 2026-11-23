@@ -1,0 +1,3631 @@
+{
+  "schemaVersion": 1,
+  "runtimeEnabled": false,
+  "reviewStatus": "teacher-review-required",
+  "questions": [
+    {
+      "id": "afaq-qb1-sa-g1-u6-l1-comprehension-extra",
+      "unitId": 6,
+      "lessonId": "sa-g1-u6-l1",
+      "letter": null,
+      "skill": "comprehension",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "single-choice",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 6,
+        "lesson": 1
+      },
+      "prerequisiteLetters": [
+        "غ",
+        "س",
+        "ل",
+        "ح",
+        "م",
+        "د",
+        "ت",
+        "ر",
+        "أ",
+        "ك"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u6-l1",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "من غسل التمر",
+      "spokenPrompt": "من غسل التمر",
+      "stimulus": {
+        "text": "غَسَلَ حَامِدٌ تَمْرًا. أَكَلَ حَامِدٌ تَمْرًا.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [
+        "حامد",
+        "سالم",
+        "خالد"
+      ],
+      "correctAnswer": "حامد",
+      "rubric": null,
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u6-l1",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "recognition-only"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": true,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u6-l1-event-order",
+      "unitId": 6,
+      "lessonId": "sa-g1-u6-l1",
+      "letter": null,
+      "skill": "sentence-analysis",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "oral-response",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 6,
+        "lesson": 1
+      },
+      "prerequisiteLetters": [
+        "غ",
+        "س",
+        "ل",
+        "ح",
+        "م",
+        "د",
+        "ت",
+        "ر",
+        "أ",
+        "ك"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u6-l1",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "احك ما حدث في النص بالترتيب.",
+      "spokenPrompt": "احك ما حدث في النص بالترتيب.",
+      "stimulus": {
+        "text": "غَسَلَ حَامِدٌ تَمْرًا. أَكَلَ حَامِدٌ تَمْرًا.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": [
+        "يفهم النص",
+        "يجيب بصورة مستقلة",
+        "يعبر بوضوح"
+      ],
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u6-l1",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "observed-performance"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u6-l1-word-recognition",
+      "unitId": 6,
+      "lessonId": "sa-g1-u6-l1",
+      "letter": null,
+      "skill": "word-reading",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "single-choice",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 6,
+        "lesson": 1
+      },
+      "prerequisiteLetters": [
+        "غ",
+        "س",
+        "ل",
+        "ح",
+        "م",
+        "د",
+        "ت",
+        "ر",
+        "أ",
+        "ك"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u6-l1",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "اختر الكلمة التي وردت في النص.",
+      "spokenPrompt": "اختر الكلمة التي وردت في النص.",
+      "stimulus": {
+        "text": "غَسَلَ حَامِدٌ تَمْرًا. أَكَلَ حَامِدٌ تَمْرًا.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [
+        "غَسَلَ",
+        "قلم",
+        "غصن"
+      ],
+      "correctAnswer": "غَسَلَ",
+      "rubric": null,
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u6-l1",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "recognition-only"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": true,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u6-l1-oral-expression-extra",
+      "unitId": 6,
+      "lessonId": "sa-g1-u6-l1",
+      "letter": null,
+      "skill": "oral-expression",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "oral-response",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 6,
+        "lesson": 1
+      },
+      "prerequisiteLetters": [
+        "غ",
+        "س",
+        "ل",
+        "ح",
+        "م",
+        "د",
+        "ت",
+        "ر",
+        "أ",
+        "ك"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u6-l1",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "تحدث عما فهمته من النص.",
+      "spokenPrompt": "تحدث عما فهمته من النص.",
+      "stimulus": {
+        "text": "غَسَلَ حَامِدٌ تَمْرًا. أَكَلَ حَامِدٌ تَمْرًا.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": [
+        "يفهم النص",
+        "يجيب بصورة مستقلة",
+        "يعبر بوضوح"
+      ],
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u6-l1",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "observed-performance"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u6-l2-comprehension-extra",
+      "unitId": 6,
+      "lessonId": "sa-g1-u6-l2",
+      "letter": null,
+      "skill": "comprehension",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "single-choice",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 6,
+        "lesson": 2
+      },
+      "prerequisiteLetters": [
+        "ش",
+        "ر",
+        "ب",
+        "س",
+        "ل",
+        "م",
+        "ع",
+        "أ"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u6-l2",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "من شرب",
+      "spokenPrompt": "من شرب",
+      "stimulus": {
+        "text": "شَرِبَ سَالِمٌ عَسَلًا مَعَ مَاءٍ.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [
+        "سالم",
+        "حامد",
+        "خالد"
+      ],
+      "correctAnswer": "سالم",
+      "rubric": null,
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u6-l2",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "recognition-only"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": true,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "standalone-hamza",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u6-l2-event-order",
+      "unitId": 6,
+      "lessonId": "sa-g1-u6-l2",
+      "letter": null,
+      "skill": "sentence-analysis",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "oral-response",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 6,
+        "lesson": 2
+      },
+      "prerequisiteLetters": [
+        "ش",
+        "ر",
+        "ب",
+        "س",
+        "ل",
+        "م",
+        "ع",
+        "أ"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u6-l2",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "احك ما حدث في النص بالترتيب.",
+      "spokenPrompt": "احك ما حدث في النص بالترتيب.",
+      "stimulus": {
+        "text": "شَرِبَ سَالِمٌ عَسَلًا مَعَ مَاءٍ.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": [
+        "يفهم النص",
+        "يجيب بصورة مستقلة",
+        "يعبر بوضوح"
+      ],
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u6-l2",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "observed-performance"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "standalone-hamza",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u6-l2-word-recognition",
+      "unitId": 6,
+      "lessonId": "sa-g1-u6-l2",
+      "letter": null,
+      "skill": "word-reading",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "single-choice",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 6,
+        "lesson": 2
+      },
+      "prerequisiteLetters": [
+        "ش",
+        "ر",
+        "ب",
+        "س",
+        "ل",
+        "م",
+        "ع",
+        "أ"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u6-l2",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "اختر الكلمة التي وردت في النص.",
+      "spokenPrompt": "اختر الكلمة التي وردت في النص.",
+      "stimulus": {
+        "text": "شَرِبَ سَالِمٌ عَسَلًا مَعَ مَاءٍ.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [
+        "شَرِبَ",
+        "قلم",
+        "غصن"
+      ],
+      "correctAnswer": "شَرِبَ",
+      "rubric": null,
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u6-l2",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "recognition-only"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": true,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "standalone-hamza",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u6-l2-oral-expression-extra",
+      "unitId": 6,
+      "lessonId": "sa-g1-u6-l2",
+      "letter": null,
+      "skill": "oral-expression",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "oral-response",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 6,
+        "lesson": 2
+      },
+      "prerequisiteLetters": [
+        "ش",
+        "ر",
+        "ب",
+        "س",
+        "ل",
+        "م",
+        "ع",
+        "أ"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u6-l2",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "تحدث عما فهمته من النص.",
+      "spokenPrompt": "تحدث عما فهمته من النص.",
+      "stimulus": {
+        "text": "شَرِبَ سَالِمٌ عَسَلًا مَعَ مَاءٍ.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": [
+        "يفهم النص",
+        "يجيب بصورة مستقلة",
+        "يعبر بوضوح"
+      ],
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u6-l2",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "observed-performance"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "standalone-hamza",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u6-l3-comprehension-extra",
+      "unitId": 6,
+      "lessonId": "sa-g1-u6-l3",
+      "letter": null,
+      "skill": "comprehension",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "single-choice",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 6,
+        "lesson": 3
+      },
+      "prerequisiteLetters": [
+        "ز",
+        "ر",
+        "خ",
+        "ل",
+        "د",
+        "س",
+        "م",
+        "أ",
+        "ض"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u6-l3",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "من زار سالما",
+      "spokenPrompt": "من زار سالما",
+      "stimulus": {
+        "text": "زَارَ خَالِدٌ سَالِمًا. سَالِمٌ مَرِيضٌ.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [
+        "خالد",
+        "حامد",
+        "سالم"
+      ],
+      "correctAnswer": "خالد",
+      "rubric": null,
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u6-l3",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "recognition-only"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": true,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u6-l3-event-order",
+      "unitId": 6,
+      "lessonId": "sa-g1-u6-l3",
+      "letter": null,
+      "skill": "sentence-analysis",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "oral-response",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 6,
+        "lesson": 3
+      },
+      "prerequisiteLetters": [
+        "ز",
+        "ر",
+        "خ",
+        "ل",
+        "د",
+        "س",
+        "م",
+        "أ",
+        "ض"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u6-l3",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "احك ما حدث في النص بالترتيب.",
+      "spokenPrompt": "احك ما حدث في النص بالترتيب.",
+      "stimulus": {
+        "text": "زَارَ خَالِدٌ سَالِمًا. سَالِمٌ مَرِيضٌ.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": [
+        "يفهم النص",
+        "يجيب بصورة مستقلة",
+        "يعبر بوضوح"
+      ],
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u6-l3",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "observed-performance"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u6-l3-word-recognition",
+      "unitId": 6,
+      "lessonId": "sa-g1-u6-l3",
+      "letter": null,
+      "skill": "word-reading",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "single-choice",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 6,
+        "lesson": 3
+      },
+      "prerequisiteLetters": [
+        "ز",
+        "ر",
+        "خ",
+        "ل",
+        "د",
+        "س",
+        "م",
+        "أ",
+        "ض"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u6-l3",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "اختر الكلمة التي وردت في النص.",
+      "spokenPrompt": "اختر الكلمة التي وردت في النص.",
+      "stimulus": {
+        "text": "زَارَ خَالِدٌ سَالِمًا. سَالِمٌ مَرِيضٌ.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [
+        "زَارَ",
+        "قلم",
+        "غصن"
+      ],
+      "correctAnswer": "زَارَ",
+      "rubric": null,
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u6-l3",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "recognition-only"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": true,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u6-l3-oral-expression-extra",
+      "unitId": 6,
+      "lessonId": "sa-g1-u6-l3",
+      "letter": null,
+      "skill": "oral-expression",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "oral-response",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 6,
+        "lesson": 3
+      },
+      "prerequisiteLetters": [
+        "ز",
+        "ر",
+        "خ",
+        "ل",
+        "د",
+        "س",
+        "م",
+        "أ",
+        "ض"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u6-l3",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "تحدث عما فهمته من النص.",
+      "spokenPrompt": "تحدث عما فهمته من النص.",
+      "stimulus": {
+        "text": "زَارَ خَالِدٌ سَالِمًا. سَالِمٌ مَرِيضٌ.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": [
+        "يفهم النص",
+        "يجيب بصورة مستقلة",
+        "يعبر بوضوح"
+      ],
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u6-l3",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "observed-performance"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u6-l4-comprehension-extra",
+      "unitId": 6,
+      "lessonId": "sa-g1-u6-l4",
+      "letter": null,
+      "skill": "comprehension",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "single-choice",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 6,
+        "lesson": 4
+      },
+      "prerequisiteLetters": [
+        "ر",
+        "ف",
+        "ع",
+        "ح",
+        "م",
+        "د",
+        "ي",
+        "أ",
+        "ث",
+        "خ",
+        "ض"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u6-l4",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "من رفع يدا",
+      "spokenPrompt": "من رفع يدا",
+      "stimulus": {
+        "text": "رَفَعَ حَامِدٌ يَدًا. ثُمَّ خَفَضَ يَدًا.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [
+        "حامد",
+        "سالم",
+        "خالد"
+      ],
+      "correctAnswer": "حامد",
+      "rubric": null,
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u6-l4",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "recognition-only"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": true,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "shaddah",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u6-l4-event-order",
+      "unitId": 6,
+      "lessonId": "sa-g1-u6-l4",
+      "letter": null,
+      "skill": "sentence-analysis",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "oral-response",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 6,
+        "lesson": 4
+      },
+      "prerequisiteLetters": [
+        "ر",
+        "ف",
+        "ع",
+        "ح",
+        "م",
+        "د",
+        "ي",
+        "أ",
+        "ث",
+        "خ",
+        "ض"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u6-l4",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "احك ما حدث في النص بالترتيب.",
+      "spokenPrompt": "احك ما حدث في النص بالترتيب.",
+      "stimulus": {
+        "text": "رَفَعَ حَامِدٌ يَدًا. ثُمَّ خَفَضَ يَدًا.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": [
+        "يفهم النص",
+        "يجيب بصورة مستقلة",
+        "يعبر بوضوح"
+      ],
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u6-l4",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "observed-performance"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "shaddah",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u6-l4-word-recognition",
+      "unitId": 6,
+      "lessonId": "sa-g1-u6-l4",
+      "letter": null,
+      "skill": "word-reading",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "single-choice",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 6,
+        "lesson": 4
+      },
+      "prerequisiteLetters": [
+        "ر",
+        "ف",
+        "ع",
+        "ح",
+        "م",
+        "د",
+        "ي",
+        "أ",
+        "ث",
+        "خ",
+        "ض"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u6-l4",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "اختر الكلمة التي وردت في النص.",
+      "spokenPrompt": "اختر الكلمة التي وردت في النص.",
+      "stimulus": {
+        "text": "رَفَعَ حَامِدٌ يَدًا. ثُمَّ خَفَضَ يَدًا.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [
+        "رَفَعَ",
+        "قلم",
+        "غصن"
+      ],
+      "correctAnswer": "رَفَعَ",
+      "rubric": null,
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u6-l4",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "recognition-only"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": true,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "shaddah",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u6-l4-oral-expression-extra",
+      "unitId": 6,
+      "lessonId": "sa-g1-u6-l4",
+      "letter": null,
+      "skill": "oral-expression",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "oral-response",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 6,
+        "lesson": 4
+      },
+      "prerequisiteLetters": [
+        "ر",
+        "ف",
+        "ع",
+        "ح",
+        "م",
+        "د",
+        "ي",
+        "أ",
+        "ث",
+        "خ",
+        "ض"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u6-l4",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "تحدث عما فهمته من النص.",
+      "spokenPrompt": "تحدث عما فهمته من النص.",
+      "stimulus": {
+        "text": "رَفَعَ حَامِدٌ يَدًا. ثُمَّ خَفَضَ يَدًا.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": [
+        "يفهم النص",
+        "يجيب بصورة مستقلة",
+        "يعبر بوضوح"
+      ],
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u6-l4",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "observed-performance"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "shaddah",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u7-l1-comprehension-extra",
+      "unitId": 7,
+      "lessonId": "sa-g1-u7-l1",
+      "letter": null,
+      "skill": "comprehension",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "single-choice",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 7,
+        "lesson": 1
+      },
+      "prerequisiteLetters": [
+        "ح",
+        "م",
+        "ل",
+        "د",
+        "ط",
+        "ب",
+        "أ",
+        "س",
+        "ع"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u7-l1",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "من حمل حطبا",
+      "spokenPrompt": "من حمل حطبا",
+      "stimulus": {
+        "text": "حَمَلَ حَامِدٌ حَطَبًا. سَاعَدَ سَالِمٌ حَامِدًا.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [
+        "حامد",
+        "سالم",
+        "خالد"
+      ],
+      "correctAnswer": "حامد",
+      "rubric": null,
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u7-l1",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "recognition-only"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": true,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u7-l1-event-order",
+      "unitId": 7,
+      "lessonId": "sa-g1-u7-l1",
+      "letter": null,
+      "skill": "sentence-analysis",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "oral-response",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 7,
+        "lesson": 1
+      },
+      "prerequisiteLetters": [
+        "ح",
+        "م",
+        "ل",
+        "د",
+        "ط",
+        "ب",
+        "أ",
+        "س",
+        "ع"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u7-l1",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "احك ما حدث في النص بالترتيب.",
+      "spokenPrompt": "احك ما حدث في النص بالترتيب.",
+      "stimulus": {
+        "text": "حَمَلَ حَامِدٌ حَطَبًا. سَاعَدَ سَالِمٌ حَامِدًا.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": [
+        "يفهم النص",
+        "يجيب بصورة مستقلة",
+        "يعبر بوضوح"
+      ],
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u7-l1",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "observed-performance"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u7-l1-word-recognition",
+      "unitId": 7,
+      "lessonId": "sa-g1-u7-l1",
+      "letter": null,
+      "skill": "word-reading",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "single-choice",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 7,
+        "lesson": 1
+      },
+      "prerequisiteLetters": [
+        "ح",
+        "م",
+        "ل",
+        "د",
+        "ط",
+        "ب",
+        "أ",
+        "س",
+        "ع"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u7-l1",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "اختر الكلمة التي وردت في النص.",
+      "spokenPrompt": "اختر الكلمة التي وردت في النص.",
+      "stimulus": {
+        "text": "حَمَلَ حَامِدٌ حَطَبًا. سَاعَدَ سَالِمٌ حَامِدًا.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [
+        "حَمَلَ",
+        "قلم",
+        "غصن"
+      ],
+      "correctAnswer": "حَمَلَ",
+      "rubric": null,
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u7-l1",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "recognition-only"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": true,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u7-l1-oral-expression-extra",
+      "unitId": 7,
+      "lessonId": "sa-g1-u7-l1",
+      "letter": null,
+      "skill": "oral-expression",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "oral-response",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 7,
+        "lesson": 1
+      },
+      "prerequisiteLetters": [
+        "ح",
+        "م",
+        "ل",
+        "د",
+        "ط",
+        "ب",
+        "أ",
+        "س",
+        "ع"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u7-l1",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "تحدث عما فهمته من النص.",
+      "spokenPrompt": "تحدث عما فهمته من النص.",
+      "stimulus": {
+        "text": "حَمَلَ حَامِدٌ حَطَبًا. سَاعَدَ سَالِمٌ حَامِدًا.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": [
+        "يفهم النص",
+        "يجيب بصورة مستقلة",
+        "يعبر بوضوح"
+      ],
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u7-l1",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "observed-performance"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u7-l2-comprehension-extra",
+      "unitId": 7,
+      "lessonId": "sa-g1-u7-l2",
+      "letter": null,
+      "skill": "comprehension",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "single-choice",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 7,
+        "lesson": 2
+      },
+      "prerequisiteLetters": [
+        "ر",
+        "أ",
+        "ي",
+        "خ",
+        "ف",
+        "ذ",
+        "ب",
+        "ه"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u7-l2",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "ماذا رأى الخروف",
+      "spokenPrompt": "ماذا رأى الخروف",
+      "stimulus": {
+        "text": "رَأَى خَرُوفٌ ذِئْبًا. هَرَبَ خَرُوفٌ.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [
+        "ذئبا",
+        "قلما",
+        "حطبا"
+      ],
+      "correctAnswer": "ذئبا",
+      "rubric": null,
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u7-l2",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "recognition-only"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": true,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-maqsura",
+        "hamza-on-ya",
+        "alif-madd",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u7-l2-event-order",
+      "unitId": 7,
+      "lessonId": "sa-g1-u7-l2",
+      "letter": null,
+      "skill": "sentence-analysis",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "oral-response",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 7,
+        "lesson": 2
+      },
+      "prerequisiteLetters": [
+        "ر",
+        "أ",
+        "ي",
+        "خ",
+        "ف",
+        "ذ",
+        "ب",
+        "ه"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u7-l2",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "احك ما حدث في النص بالترتيب.",
+      "spokenPrompt": "احك ما حدث في النص بالترتيب.",
+      "stimulus": {
+        "text": "رَأَى خَرُوفٌ ذِئْبًا. هَرَبَ خَرُوفٌ.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": [
+        "يفهم النص",
+        "يجيب بصورة مستقلة",
+        "يعبر بوضوح"
+      ],
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u7-l2",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "observed-performance"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-maqsura",
+        "hamza-on-ya",
+        "alif-madd",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u7-l2-word-recognition",
+      "unitId": 7,
+      "lessonId": "sa-g1-u7-l2",
+      "letter": null,
+      "skill": "word-reading",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "single-choice",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 7,
+        "lesson": 2
+      },
+      "prerequisiteLetters": [
+        "ر",
+        "أ",
+        "ي",
+        "خ",
+        "ف",
+        "ذ",
+        "ب",
+        "ه"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u7-l2",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "اختر الكلمة التي وردت في النص.",
+      "spokenPrompt": "اختر الكلمة التي وردت في النص.",
+      "stimulus": {
+        "text": "رَأَى خَرُوفٌ ذِئْبًا. هَرَبَ خَرُوفٌ.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [
+        "رَأَى",
+        "قلم",
+        "غصن"
+      ],
+      "correctAnswer": "رَأَى",
+      "rubric": null,
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u7-l2",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "recognition-only"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": true,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-maqsura",
+        "hamza-on-ya",
+        "alif-madd",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u7-l2-oral-expression-extra",
+      "unitId": 7,
+      "lessonId": "sa-g1-u7-l2",
+      "letter": null,
+      "skill": "oral-expression",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "oral-response",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 7,
+        "lesson": 2
+      },
+      "prerequisiteLetters": [
+        "ر",
+        "أ",
+        "ي",
+        "خ",
+        "ف",
+        "ذ",
+        "ب",
+        "ه"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u7-l2",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "تحدث عما فهمته من النص.",
+      "spokenPrompt": "تحدث عما فهمته من النص.",
+      "stimulus": {
+        "text": "رَأَى خَرُوفٌ ذِئْبًا. هَرَبَ خَرُوفٌ.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": [
+        "يفهم النص",
+        "يجيب بصورة مستقلة",
+        "يعبر بوضوح"
+      ],
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u7-l2",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "observed-performance"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-maqsura",
+        "hamza-on-ya",
+        "alif-madd",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u7-l3-comprehension-extra",
+      "unitId": 7,
+      "lessonId": "sa-g1-u7-l3",
+      "letter": null,
+      "skill": "comprehension",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "single-choice",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 7,
+        "lesson": 3
+      },
+      "prerequisiteLetters": [
+        "س",
+        "ق",
+        "ط",
+        "ل",
+        "م",
+        "ر",
+        "ف",
+        "ع",
+        "أ"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u7-l3",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "ماذا سقط",
+      "spokenPrompt": "ماذا سقط",
+      "stimulus": {
+        "text": "سَقَطَ قَلَمٌ. رَفَعَ سَالِمٌ قَلَمًا.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [
+        "قلم",
+        "غصن",
+        "حطب"
+      ],
+      "correctAnswer": "قلم",
+      "rubric": null,
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u7-l3",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "recognition-only"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": true,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u7-l3-event-order",
+      "unitId": 7,
+      "lessonId": "sa-g1-u7-l3",
+      "letter": null,
+      "skill": "sentence-analysis",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "oral-response",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 7,
+        "lesson": 3
+      },
+      "prerequisiteLetters": [
+        "س",
+        "ق",
+        "ط",
+        "ل",
+        "م",
+        "ر",
+        "ف",
+        "ع",
+        "أ"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u7-l3",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "احك ما حدث في النص بالترتيب.",
+      "spokenPrompt": "احك ما حدث في النص بالترتيب.",
+      "stimulus": {
+        "text": "سَقَطَ قَلَمٌ. رَفَعَ سَالِمٌ قَلَمًا.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": [
+        "يفهم النص",
+        "يجيب بصورة مستقلة",
+        "يعبر بوضوح"
+      ],
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u7-l3",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "observed-performance"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u7-l3-word-recognition",
+      "unitId": 7,
+      "lessonId": "sa-g1-u7-l3",
+      "letter": null,
+      "skill": "word-reading",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "single-choice",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 7,
+        "lesson": 3
+      },
+      "prerequisiteLetters": [
+        "س",
+        "ق",
+        "ط",
+        "ل",
+        "م",
+        "ر",
+        "ف",
+        "ع",
+        "أ"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u7-l3",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "اختر الكلمة التي وردت في النص.",
+      "spokenPrompt": "اختر الكلمة التي وردت في النص.",
+      "stimulus": {
+        "text": "سَقَطَ قَلَمٌ. رَفَعَ سَالِمٌ قَلَمًا.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [
+        "سَقَطَ",
+        "غصن",
+        "حطب"
+      ],
+      "correctAnswer": "سَقَطَ",
+      "rubric": null,
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u7-l3",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "recognition-only"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": true,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u7-l3-oral-expression-extra",
+      "unitId": 7,
+      "lessonId": "sa-g1-u7-l3",
+      "letter": null,
+      "skill": "oral-expression",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "oral-response",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 7,
+        "lesson": 3
+      },
+      "prerequisiteLetters": [
+        "س",
+        "ق",
+        "ط",
+        "ل",
+        "م",
+        "ر",
+        "ف",
+        "ع",
+        "أ"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u7-l3",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "تحدث عما فهمته من النص.",
+      "spokenPrompt": "تحدث عما فهمته من النص.",
+      "stimulus": {
+        "text": "سَقَطَ قَلَمٌ. رَفَعَ سَالِمٌ قَلَمًا.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": [
+        "يفهم النص",
+        "يجيب بصورة مستقلة",
+        "يعبر بوضوح"
+      ],
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u7-l3",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "observed-performance"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u7-l4-comprehension-extra",
+      "unitId": 7,
+      "lessonId": "sa-g1-u7-l4",
+      "letter": null,
+      "skill": "comprehension",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "single-choice",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 7,
+        "lesson": 4
+      },
+      "prerequisiteLetters": [
+        "و",
+        "ق",
+        "ف",
+        "ث",
+        "ع",
+        "ل",
+        "ب",
+        "ط",
+        "ر",
+        "ص"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u7-l4",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "من طار",
+      "spokenPrompt": "من طار",
+      "stimulus": {
+        "text": "وَقَفَ ثَعْلَبٌ. طَارَ عُصْفُورٌ.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [
+        "عصفور",
+        "ثعلب",
+        "خروف"
+      ],
+      "correctAnswer": "عصفور",
+      "rubric": null,
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u7-l4",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "recognition-only"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": true,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u7-l4-event-order",
+      "unitId": 7,
+      "lessonId": "sa-g1-u7-l4",
+      "letter": null,
+      "skill": "sentence-analysis",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "oral-response",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 7,
+        "lesson": 4
+      },
+      "prerequisiteLetters": [
+        "و",
+        "ق",
+        "ف",
+        "ث",
+        "ع",
+        "ل",
+        "ب",
+        "ط",
+        "ر",
+        "ص"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u7-l4",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "احك ما حدث في النص بالترتيب.",
+      "spokenPrompt": "احك ما حدث في النص بالترتيب.",
+      "stimulus": {
+        "text": "وَقَفَ ثَعْلَبٌ. طَارَ عُصْفُورٌ.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": [
+        "يفهم النص",
+        "يجيب بصورة مستقلة",
+        "يعبر بوضوح"
+      ],
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u7-l4",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "observed-performance"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u7-l4-word-recognition",
+      "unitId": 7,
+      "lessonId": "sa-g1-u7-l4",
+      "letter": null,
+      "skill": "word-reading",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "single-choice",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 7,
+        "lesson": 4
+      },
+      "prerequisiteLetters": [
+        "و",
+        "ق",
+        "ف",
+        "ث",
+        "ع",
+        "ل",
+        "ب",
+        "ط",
+        "ر",
+        "ص"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u7-l4",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "اختر الكلمة التي وردت في النص.",
+      "spokenPrompt": "اختر الكلمة التي وردت في النص.",
+      "stimulus": {
+        "text": "وَقَفَ ثَعْلَبٌ. طَارَ عُصْفُورٌ.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [
+        "وَقَفَ",
+        "قلم",
+        "غصن"
+      ],
+      "correctAnswer": "وَقَفَ",
+      "rubric": null,
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u7-l4",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "recognition-only"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": true,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u7-l4-oral-expression-extra",
+      "unitId": 7,
+      "lessonId": "sa-g1-u7-l4",
+      "letter": null,
+      "skill": "oral-expression",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "oral-response",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 7,
+        "lesson": 4
+      },
+      "prerequisiteLetters": [
+        "و",
+        "ق",
+        "ف",
+        "ث",
+        "ع",
+        "ل",
+        "ب",
+        "ط",
+        "ر",
+        "ص"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u7-l4",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "تحدث عما فهمته من النص.",
+      "spokenPrompt": "تحدث عما فهمته من النص.",
+      "stimulus": {
+        "text": "وَقَفَ ثَعْلَبٌ. طَارَ عُصْفُورٌ.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": [
+        "يفهم النص",
+        "يجيب بصورة مستقلة",
+        "يعبر بوضوح"
+      ],
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u7-l4",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "observed-performance"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u8-l1-comprehension-extra",
+      "unitId": 8,
+      "lessonId": "sa-g1-u8-l1",
+      "letter": null,
+      "skill": "comprehension",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "single-choice",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 8,
+        "lesson": 1
+      },
+      "prerequisiteLetters": [
+        "ص",
+        "م",
+        "ح",
+        "د",
+        "أ",
+        "ف",
+        "ط",
+        "ر",
+        "ع",
+        "ب"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u8-l1",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "من صام",
+      "spokenPrompt": "من صام",
+      "stimulus": {
+        "text": "صَامَ حَامِدٌ. أَفْطَرَ حَامِدٌ مَعَ أَبٍ.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [
+        "حامد",
+        "سالم",
+        "خالد"
+      ],
+      "correctAnswer": "حامد",
+      "rubric": null,
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u8-l1",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "recognition-only"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": true,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u8-l1-event-order",
+      "unitId": 8,
+      "lessonId": "sa-g1-u8-l1",
+      "letter": null,
+      "skill": "sentence-analysis",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "oral-response",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 8,
+        "lesson": 1
+      },
+      "prerequisiteLetters": [
+        "ص",
+        "م",
+        "ح",
+        "د",
+        "أ",
+        "ف",
+        "ط",
+        "ر",
+        "ع",
+        "ب"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u8-l1",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "احك ما حدث في النص بالترتيب.",
+      "spokenPrompt": "احك ما حدث في النص بالترتيب.",
+      "stimulus": {
+        "text": "صَامَ حَامِدٌ. أَفْطَرَ حَامِدٌ مَعَ أَبٍ.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": [
+        "يفهم النص",
+        "يجيب بصورة مستقلة",
+        "يعبر بوضوح"
+      ],
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u8-l1",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "observed-performance"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u8-l1-word-recognition",
+      "unitId": 8,
+      "lessonId": "sa-g1-u8-l1",
+      "letter": null,
+      "skill": "word-reading",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "single-choice",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 8,
+        "lesson": 1
+      },
+      "prerequisiteLetters": [
+        "ص",
+        "م",
+        "ح",
+        "د",
+        "أ",
+        "ف",
+        "ط",
+        "ر",
+        "ع",
+        "ب"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u8-l1",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "اختر الكلمة التي وردت في النص.",
+      "spokenPrompt": "اختر الكلمة التي وردت في النص.",
+      "stimulus": {
+        "text": "صَامَ حَامِدٌ. أَفْطَرَ حَامِدٌ مَعَ أَبٍ.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [
+        "صَامَ",
+        "قلم",
+        "غصن"
+      ],
+      "correctAnswer": "صَامَ",
+      "rubric": null,
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u8-l1",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "recognition-only"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": true,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u8-l1-oral-expression-extra",
+      "unitId": 8,
+      "lessonId": "sa-g1-u8-l1",
+      "letter": null,
+      "skill": "oral-expression",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "oral-response",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 8,
+        "lesson": 1
+      },
+      "prerequisiteLetters": [
+        "ص",
+        "م",
+        "ح",
+        "د",
+        "أ",
+        "ف",
+        "ط",
+        "ر",
+        "ع",
+        "ب"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u8-l1",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "تحدث عما فهمته من النص.",
+      "spokenPrompt": "تحدث عما فهمته من النص.",
+      "stimulus": {
+        "text": "صَامَ حَامِدٌ. أَفْطَرَ حَامِدٌ مَعَ أَبٍ.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": [
+        "يفهم النص",
+        "يجيب بصورة مستقلة",
+        "يعبر بوضوح"
+      ],
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u8-l1",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "observed-performance"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u8-l2-comprehension-extra",
+      "unitId": 8,
+      "lessonId": "sa-g1-u8-l2",
+      "letter": null,
+      "skill": "comprehension",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "single-choice",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 8,
+        "lesson": 2
+      },
+      "prerequisiteLetters": [
+        "ز",
+        "ر",
+        "ض",
+        "ي",
+        "ف",
+        "س",
+        "ل",
+        "م",
+        "أ",
+        "ح",
+        "ب"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u8-l2",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "من رحب بالضيف",
+      "spokenPrompt": "من رحب بالضيف",
+      "stimulus": {
+        "text": "زَارَ ضَيْفٌ سَالِمًا. رَحَّبَ سَالِمٌ بِضَيْفٍ.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [
+        "سالم",
+        "حامد",
+        "خالد"
+      ],
+      "correctAnswer": "سالم",
+      "rubric": null,
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u8-l2",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "recognition-only"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": true,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "shaddah",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u8-l2-event-order",
+      "unitId": 8,
+      "lessonId": "sa-g1-u8-l2",
+      "letter": null,
+      "skill": "sentence-analysis",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "oral-response",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 8,
+        "lesson": 2
+      },
+      "prerequisiteLetters": [
+        "ز",
+        "ر",
+        "ض",
+        "ي",
+        "ف",
+        "س",
+        "ل",
+        "م",
+        "أ",
+        "ح",
+        "ب"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u8-l2",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "احك ما حدث في النص بالترتيب.",
+      "spokenPrompt": "احك ما حدث في النص بالترتيب.",
+      "stimulus": {
+        "text": "زَارَ ضَيْفٌ سَالِمًا. رَحَّبَ سَالِمٌ بِضَيْفٍ.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": [
+        "يفهم النص",
+        "يجيب بصورة مستقلة",
+        "يعبر بوضوح"
+      ],
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u8-l2",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "observed-performance"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "shaddah",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u8-l2-word-recognition",
+      "unitId": 8,
+      "lessonId": "sa-g1-u8-l2",
+      "letter": null,
+      "skill": "word-reading",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "single-choice",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 8,
+        "lesson": 2
+      },
+      "prerequisiteLetters": [
+        "ز",
+        "ر",
+        "ض",
+        "ي",
+        "ف",
+        "س",
+        "ل",
+        "م",
+        "أ",
+        "ح",
+        "ب"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u8-l2",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "اختر الكلمة التي وردت في النص.",
+      "spokenPrompt": "اختر الكلمة التي وردت في النص.",
+      "stimulus": {
+        "text": "زَارَ ضَيْفٌ سَالِمًا. رَحَّبَ سَالِمٌ بِضَيْفٍ.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [
+        "زَارَ",
+        "قلم",
+        "غصن"
+      ],
+      "correctAnswer": "زَارَ",
+      "rubric": null,
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u8-l2",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "recognition-only"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": true,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "shaddah",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u8-l2-oral-expression-extra",
+      "unitId": 8,
+      "lessonId": "sa-g1-u8-l2",
+      "letter": null,
+      "skill": "oral-expression",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "oral-response",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 8,
+        "lesson": 2
+      },
+      "prerequisiteLetters": [
+        "ز",
+        "ر",
+        "ض",
+        "ي",
+        "ف",
+        "س",
+        "ل",
+        "م",
+        "أ",
+        "ح",
+        "ب"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u8-l2",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "تحدث عما فهمته من النص.",
+      "spokenPrompt": "تحدث عما فهمته من النص.",
+      "stimulus": {
+        "text": "زَارَ ضَيْفٌ سَالِمًا. رَحَّبَ سَالِمٌ بِضَيْفٍ.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": [
+        "يفهم النص",
+        "يجيب بصورة مستقلة",
+        "يعبر بوضوح"
+      ],
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u8-l2",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "observed-performance"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "shaddah",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u8-l3-comprehension-extra",
+      "unitId": 8,
+      "lessonId": "sa-g1-u8-l3",
+      "letter": null,
+      "skill": "comprehension",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "single-choice",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 8,
+        "lesson": 3
+      },
+      "prerequisiteLetters": [
+        "ج",
+        "ف",
+        "غ",
+        "ص",
+        "ن",
+        "س",
+        "ق",
+        "ي",
+        "ل",
+        "م",
+        "أ"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u8-l3",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "من سقى الغصن",
+      "spokenPrompt": "من سقى الغصن",
+      "stimulus": {
+        "text": "جَفَّ غُصْنٌ. سَقَى سَالِمٌ غُصْنًا.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [
+        "سالم",
+        "حامد",
+        "خالد"
+      ],
+      "correctAnswer": "سالم",
+      "rubric": null,
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u8-l3",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "recognition-only"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": true,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-maqsura",
+        "alif-madd",
+        "shaddah",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u8-l3-event-order",
+      "unitId": 8,
+      "lessonId": "sa-g1-u8-l3",
+      "letter": null,
+      "skill": "sentence-analysis",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "oral-response",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 8,
+        "lesson": 3
+      },
+      "prerequisiteLetters": [
+        "ج",
+        "ف",
+        "غ",
+        "ص",
+        "ن",
+        "س",
+        "ق",
+        "ي",
+        "ل",
+        "م",
+        "أ"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u8-l3",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "احك ما حدث في النص بالترتيب.",
+      "spokenPrompt": "احك ما حدث في النص بالترتيب.",
+      "stimulus": {
+        "text": "جَفَّ غُصْنٌ. سَقَى سَالِمٌ غُصْنًا.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": [
+        "يفهم النص",
+        "يجيب بصورة مستقلة",
+        "يعبر بوضوح"
+      ],
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u8-l3",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "observed-performance"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-maqsura",
+        "alif-madd",
+        "shaddah",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u8-l3-word-recognition",
+      "unitId": 8,
+      "lessonId": "sa-g1-u8-l3",
+      "letter": null,
+      "skill": "word-reading",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "single-choice",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 8,
+        "lesson": 3
+      },
+      "prerequisiteLetters": [
+        "ج",
+        "ف",
+        "غ",
+        "ص",
+        "ن",
+        "س",
+        "ق",
+        "ي",
+        "ل",
+        "م",
+        "أ"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u8-l3",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "اختر الكلمة التي وردت في النص.",
+      "spokenPrompt": "اختر الكلمة التي وردت في النص.",
+      "stimulus": {
+        "text": "جَفَّ غُصْنٌ. سَقَى سَالِمٌ غُصْنًا.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [
+        "غُصْنٌ",
+        "قلم",
+        "حطب"
+      ],
+      "correctAnswer": "غُصْنٌ",
+      "rubric": null,
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u8-l3",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "recognition-only"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": true,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-maqsura",
+        "alif-madd",
+        "shaddah",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u8-l3-oral-expression-extra",
+      "unitId": 8,
+      "lessonId": "sa-g1-u8-l3",
+      "letter": null,
+      "skill": "oral-expression",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "oral-response",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 8,
+        "lesson": 3
+      },
+      "prerequisiteLetters": [
+        "ج",
+        "ف",
+        "غ",
+        "ص",
+        "ن",
+        "س",
+        "ق",
+        "ي",
+        "ل",
+        "م",
+        "أ"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u8-l3",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "تحدث عما فهمته من النص.",
+      "spokenPrompt": "تحدث عما فهمته من النص.",
+      "stimulus": {
+        "text": "جَفَّ غُصْنٌ. سَقَى سَالِمٌ غُصْنًا.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": [
+        "يفهم النص",
+        "يجيب بصورة مستقلة",
+        "يعبر بوضوح"
+      ],
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u8-l3",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "observed-performance"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-maqsura",
+        "alif-madd",
+        "shaddah",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u8-l4-comprehension-extra",
+      "unitId": 8,
+      "lessonId": "sa-g1-u8-l4",
+      "letter": null,
+      "skill": "comprehension",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "single-choice",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 8,
+        "lesson": 4
+      },
+      "prerequisiteLetters": [
+        "غ",
+        "ر",
+        "س",
+        "ح",
+        "م",
+        "د",
+        "أ",
+        "ف",
+        "ظ",
+        "ل",
+        "ع",
+        "ي"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u8-l4",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "من غرس غرسا",
+      "spokenPrompt": "من غرس غرسا",
+      "stimulus": {
+        "text": "غَرَسَ حَامِدٌ غَرْسًا. حَافَظَ سَالِمٌ عَلَى غَرْسٍ.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [
+        "حامد",
+        "سالم",
+        "خالد"
+      ],
+      "correctAnswer": "حامد",
+      "rubric": null,
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u8-l4",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "recognition-only"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": true,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "alif-maqsura",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u8-l4-event-order",
+      "unitId": 8,
+      "lessonId": "sa-g1-u8-l4",
+      "letter": null,
+      "skill": "sentence-analysis",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "oral-response",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 8,
+        "lesson": 4
+      },
+      "prerequisiteLetters": [
+        "غ",
+        "ر",
+        "س",
+        "ح",
+        "م",
+        "د",
+        "أ",
+        "ف",
+        "ظ",
+        "ل",
+        "ع",
+        "ي"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u8-l4",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "احك ما حدث في النص بالترتيب.",
+      "spokenPrompt": "احك ما حدث في النص بالترتيب.",
+      "stimulus": {
+        "text": "غَرَسَ حَامِدٌ غَرْسًا. حَافَظَ سَالِمٌ عَلَى غَرْسٍ.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": [
+        "يفهم النص",
+        "يجيب بصورة مستقلة",
+        "يعبر بوضوح"
+      ],
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u8-l4",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "observed-performance"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "alif-maqsura",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u8-l4-word-recognition",
+      "unitId": 8,
+      "lessonId": "sa-g1-u8-l4",
+      "letter": null,
+      "skill": "word-reading",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "single-choice",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 8,
+        "lesson": 4
+      },
+      "prerequisiteLetters": [
+        "غ",
+        "ر",
+        "س",
+        "ح",
+        "م",
+        "د",
+        "أ",
+        "ف",
+        "ظ",
+        "ل",
+        "ع",
+        "ي"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u8-l4",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "اختر الكلمة التي وردت في النص.",
+      "spokenPrompt": "اختر الكلمة التي وردت في النص.",
+      "stimulus": {
+        "text": "غَرَسَ حَامِدٌ غَرْسًا. حَافَظَ سَالِمٌ عَلَى غَرْسٍ.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [
+        "غَرَسَ",
+        "قلم",
+        "غصن"
+      ],
+      "correctAnswer": "غَرَسَ",
+      "rubric": null,
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u8-l4",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "recognition-only"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": true,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "alif-maqsura",
+        "tanwin"
+      ]
+    },
+    {
+      "id": "afaq-qb1-sa-g1-u8-l4-oral-expression-extra",
+      "unitId": 8,
+      "lessonId": "sa-g1-u8-l4",
+      "letter": null,
+      "skill": "oral-expression",
+      "objective": "تدريب إضافي مرتبط بنص الدرس",
+      "type": "oral-response",
+      "difficulty": 4,
+      "curriculumPosition": {
+        "unit": 8,
+        "lesson": 4
+      },
+      "prerequisiteLetters": [
+        "غ",
+        "ر",
+        "س",
+        "ح",
+        "م",
+        "د",
+        "أ",
+        "ف",
+        "ظ",
+        "ل",
+        "ع",
+        "ي"
+      ],
+      "prerequisiteSkills": [
+        "sentence-reading"
+      ],
+      "availability": {
+        "lessonId": "sa-g1-u8-l4",
+        "reason": "Owner lesson after prerequisite skills"
+      },
+      "visiblePrompt": "تحدث عما فهمته من النص.",
+      "spokenPrompt": "تحدث عما فهمته من النص.",
+      "stimulus": {
+        "text": "غَرَسَ حَامِدٌ غَرْسًا. حَافَظَ سَالِمٌ عَلَى غَرْسٍ.",
+        "visibility": "visible",
+        "kind": "reading"
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": [
+        "يفهم النص",
+        "يجيب بصورة مستقلة",
+        "يعبر بوضوح"
+      ],
+      "feedback": {
+        "correct": "أحسنت!",
+        "retry": "حاول مرة أخرى."
+      },
+      "source": {
+        "kind": "AFAQ-authored",
+        "curriculumReference": "sa-g1-u8-l4",
+        "textbookExerciseVerified": false
+      },
+      "reviewStatus": "qualified-Arabic-teacher-review-required",
+      "assessmentEligibility": {
+        "practice": true,
+        "formative": true,
+        "independentMastery": false,
+        "teacherVerificationRequired": true,
+        "evidenceScope": "observed-performance"
+      },
+      "instructionDelivery": "teacher-or-approved-audio",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "orthographicPrerequisites": [
+        "alif-madd",
+        "alif-maqsura",
+        "tanwin"
+      ]
+    }
+  ]
+}

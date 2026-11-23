@@ -24,13 +24,21 @@
   }
 
   let stopPlayback = () => {};
+  let playbackGeneration = 0;
+  function stopNotes() { playbackGeneration++; stopPlayback(); }
   async function playNotes(notes, owner) {
-    stopPlayback();
-    if (window.SeviatEffects?.isEnabled() === false || window.AfaqWorkspace?.audioGain()===0) throw Error("شغّل الصوت أولًا.");
+    stopNotes();
+    if (window.AfaqWorkspace?.audioGain()===0) throw Error("شغّل الصوت أولًا.");
+    window.SeviatGuidedAudio?.stop();
+    window.AfaqSpeech?.stop();
+    window.AfaqVowelAudio?.stop();
+    window.SeviatSound?.stop();
+    window.SeviatEffects?.stop();
+    const token = playbackGeneration;
     const ctx = getContext();
     if (!ctx) throw Error("المتصفح لا يدعم تشغيل الأصوات.");
     await ctx.resume();
-    if (owner && !owner.isConnected) return false;
+    if (token !== playbackGeneration || (owner && !owner.isConnected) || window.AfaqWorkspace?.audioGain()===0) return false;
     return new Promise((resolve, reject) => {
       const oscillators = [];
       let ended = 0, settled = false, watch = null;
@@ -39,12 +47,12 @@
         settled = true;
         clearInterval(watch);
         oscillators.forEach(o => { o.onended = null; try { o.stop(); o.disconnect(); } catch {} });
-        stopPlayback = () => {};
+        if (token === playbackGeneration) stopPlayback = () => {};
         resolve(completed);
       }
       stopPlayback = () => finish(false);
       watch = setInterval(() => {
-        if ((owner && !owner.isConnected) || window.SeviatEffects?.isEnabled() === false) finish(false);
+        if (token !== playbackGeneration || (owner && !owner.isConnected) || window.AfaqWorkspace?.audioGain()===0) finish(false);
       }, 50);
       let offset = 0;
       const start = ctx.currentTime + 0.08;
@@ -67,7 +75,7 @@
       } catch (error) { finish(false); }
     });
   }
-  window.addEventListener('seviat-access-changed', () => { session++; stopPlayback(); });
+  window.addEventListener('seviat-access-changed', () => { session++; stopNotes(); });
 
   function note(frequency, duration = 0.3, gap = 0.3) {
     return { frequency, duration, gap };
@@ -176,7 +184,7 @@
   function openAuditoryLevels() {
     if(window.SeviatAccessGuard&&!window.SeviatAccessGuard.coarseAllowed('preparation'))return;
     session++;
-    stopPlayback();
+    stopNotes();
     const area = createActivityArea();
 
     area.innerHTML = `
@@ -223,7 +231,7 @@
 
   function startAuditory(level, mode) {
     if(window.SeviatAccessGuard&&!window.SeviatAccessGuard.coarseAllowed('preparation'))return;
-    stopPlayback();
+    stopNotes();
     const mySession = ++session;
     const total = mode === "assessment" ? 5 : 3;
     let round = 0;
@@ -404,6 +412,6 @@
     render();
   }
 
-  window.SeviatAudioQuestions={createQuestion,playNotes,stop:()=>stopPlayback()};
+  window.SeviatAudioQuestions={createQuestion,playNotes,stop:stopNotes};
   window.openAuditoryLevels = openAuditoryLevels;
 })();

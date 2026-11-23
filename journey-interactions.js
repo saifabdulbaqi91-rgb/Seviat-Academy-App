@@ -15,12 +15,14 @@ function descriptor(node,catalog){
 }
 function automatic(node,q){return !node.supervised&&!q.teacherReview&&!q.scaffold&&q.type!=='teacher-listening'&&!node.skill?.includes('writing');}
 function createFlow({commit,advance,schedule=setTimeout,cancel=clearTimeout,delay=1000,automatic=true}){
- let submitted=false,advanced=false,correct=false,job=null,disposed=false;
- const stop=()=>{if(job!==null){cancel(job);job=null;}};
+ let submitted=false,advanced=false,correct=false,job=null,disposed=false,generation=0;
+ const stop=()=>{generation++;if(job!==null){cancel(job);job=null;}};
  const next=()=>{if(disposed||!submitted||advanced)return false;stop();advanced=true;if(advance()===false){advanced=false;return false;}return true;};
- const arm=()=>{stop();if(automatic&&submitted&&correct&&!advanced&&!disposed)job=schedule(next,delay);};
- return {submit(answer,isCorrect){if(disposed||submitted)return false;if(commit(answer,isCorrect)===false)return false;submitted=true;correct=isCorrect;arm();return true;},restore(isCorrect){submitted=true;correct=isCorrect;},next,setAutomatic(value){automatic=!!value;arm();},dispose(){disposed=true;stop();},get pending(){return submitted&&!advanced;}};
+ const arm=()=>{stop();const token=generation;if(automatic&&submitted&&correct&&!advanced&&!disposed)job=schedule(()=>{if(token===generation)next();},delay);};
+ return {submit(answer,isCorrect){if(disposed||submitted)return false;if(commit(answer,isCorrect)===false)return false;submitted=true;correct=isCorrect;arm();return true;},practiceSucceeded(){if(disposed||!submitted||advanced||correct)return false;correct=true;arm();return true;},restore(isCorrect){submitted=true;correct=isCorrect;},next,setAutomatic(value){automatic=!!value;arm();},dispose(){disposed=true;stop();},get pending(){return submitted&&!advanced;}};
 }
+function canRetry(mode){return ['practice','guided-practice'].includes(mode);}
+function retrySolved(pending){return pending?.practiceRetries?.at(-1)?.correct===true;}
 function journal(profile){
  const value=profile.interactiveV1;if(value===undefined)return {version:1,sessions:{},activeId:null};
  if(!value||value.version!==1||!value.sessions||typeof value.sessions!=='object'||Array.isArray(value.sessions)||value.activeId!=null&&typeof value.activeId!=='string')throw Error('سجل الجلسة المحفوظة غير قابل للقراءة؛ لم يُستبدل.');
@@ -33,7 +35,9 @@ function validateDraft(draft){
  if(draft.phase==='intro'&&(draft.index!==0||draft.results.length))return false;
  if(draft.phase==='question'&&draft.results.length!==draft.index)return false;
  if(draft.phase==='feedback'&&(!draft.pending||typeof draft.pending.correct!=='boolean'||!draft.questions[draft.index].options.includes(draft.pending.answer)||draft.pending.correct!==(draft.pending.answer===draft.questions[draft.index].answer)||draft.results.length!==draft.index+Number(!draft.guided)))return false;
- const ids=new Set();return draft.results.every((r,index)=>r&&r.id===draft.questions[index]?.id&&typeof r.id==='string'&&!ids.has(r.id)&&ids.add(r.id)&&typeof r.correct==='boolean'&&draft.questions.some(q=>q.id===r.id&&q.options.includes(r.answer)&&r.correct===(r.answer===q.answer)));
+ const validRetries=(r,q)=>r.practiceRetries===undefined||Array.isArray(r.practiceRetries)&&(!r.practiceRetries.length||canRetry(draft.plan.mode))&&r.practiceRetries.every((a,i,list)=>a&&q.options.includes(a.answer)&&typeof a.correct==='boolean'&&a.correct===(a.answer===q.answer)&&a.credit==='practice-only'&&Number.isFinite(a.timestamp)&&!list.slice(0,i).some(p=>p.correct));
+ if(draft.pending&&!validRetries(draft.pending,draft.questions[draft.index]))return false;
+ const ids=new Set();return draft.results.every((r,index)=>r&&r.id===draft.questions[index]?.id&&typeof r.id==='string'&&!ids.has(r.id)&&ids.add(r.id)&&typeof r.correct==='boolean'&&draft.questions.some(q=>q.id===r.id&&q.options.includes(r.answer)&&r.correct===(r.answer===q.answer)&&validRetries(r,q)));
 }
 function rewards(profile,rules,now=Date.now()){
  const seen=new Set(),runs=[];
@@ -44,5 +48,5 @@ function rewards(profile,rules,now=Date.now()){
  const badges=[];if(entries.length)badges.push({id:'first-session',title:'خطوتي الأولى'});if(uniqueNodes.size>=3)badges.push({id:'variety',title:'أكتشف أنشطة متنوعة'});if(challengeCompleted)badges.push({id:'daily-choice',title:'تحدٍّ اختياري أنجزته'});
  return {version:1,stars:entries.reduce((n,e)=>n+e.stars,0),participation:entries.length,achievementStars:entries.reduce((n,e)=>n+e.achievement,0),gameSessions:entries.filter(e=>e.game).length,badges,challengeCompleted,entries};
 }
-const api={version:1,dayKey,descriptor,automatic,createFlow,journal,validateDraft,rewards};if(typeof module!=='undefined')module.exports=api;else host.SeviatInteractions=api;
+const api={version:1,dayKey,descriptor,automatic,createFlow,canRetry,retrySolved,journal,validateDraft,rewards};if(typeof module!=='undefined')module.exports=api;else host.SeviatInteractions=api;
 })(typeof window==='undefined'?globalThis:window);

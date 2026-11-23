@@ -46,8 +46,131 @@ function questions(l,skill){
  }
  return list;
 }
-function practice(l,skill){if(skill==='writing'){window.openIndependentWriting?.();setTimeout(()=>{const sel=document.querySelector('.sw-settings select');if(sel){sel.value=l;sel.dispatchEvent(new Event('change',{bubbles:true}));}},0);return;}const bank=questions(l,skill);if(!bank.length)return;let n=0,score=0;const a=area('حرف '+l+' — '+skills.find(x=>x[0]===skill)[1],'تدريب مفتوح. النتيجة للتغذية الراجعة وليست اعتماد إتقان.');if(!a)return;
-const prompt=$('div','','sv2-prompt'),hint=$('p','','sv2-hint'),opts=$('div','','sv2-options'),feed=$('p','','sv2-feedback');a.append(prompt,hint,opts,feed);const next=button(a,'التالي',()=>{n++;show();});next.hidden=true;function show(){if(n>=bank.length){save(l,skill,score,bank.length);a.replaceChildren($('h2','انتهى التدريب'),$('p','إجابات صحيحة: '+score+' من '+bank.length),$('p','هذه نتيجة تدريب فقط؛ النطق والكتابة يحتاجان ملاحظة المعلم.'));button(a,'إعادة التدريب',()=>practice(l,skill));button(a,'العودة إلى المهارات',()=>openLetter(l));return;}let q=bank[n];prompt.textContent=(n+1)+' / '+bank.length+' — '+q.prompt;hint.textContent=q.hint;opts.replaceChildren();feed.textContent='';next.hidden=true;q.options.forEach(o=>button(opts,o,()=>{const ok=o===q.answer;if(ok)score++;sound(ok?'correct':'wrong');feed.textContent=ok?'✓ إجابة صحيحة':'✗ الإجابة الصحيحة: '+q.answer;[...opts.children].forEach(b=>b.disabled=true);next.hidden=false;}));}show();}
+function practice(l,skill) {
+  if (skill === 'writing') {
+    window.openIndependentWriting?.();
+    setTimeout(() => {
+      const sel = document.querySelector('.sw-settings select');
+      if (sel) {
+        sel.value = l;
+        sel.dispatchEvent(new Event('change', {bubbles:true}));
+      }
+    }, 0);
+    return;
+  }
+
+  const bank = questions(l,skill);
+  if (!bank.length) return;
+
+  let n = 0;
+  let score = 0;
+  let timer = null;
+
+  const a = area(
+    'حرف ' + l + ' — ' + skills.find(x => x[0] === skill)[1],
+    'استمع إلى السؤال ثم اختر الإجابة الصحيحة.'
+  );
+  if (!a) return;
+
+  const prompt = $('div','','sv2-prompt');
+  const hint = $('p','','sv2-hint');
+  const opts = $('div','','sv2-options');
+  const feed = $('p','','sv2-feedback');
+
+  a.append(prompt,hint,opts,feed);
+
+  function speak(text) {
+    if (!window.AfaqAudioLibrary?.play) return;
+    Promise.resolve(window.AfaqAudioLibrary.play(text))
+      .catch(error => console.warn('Unit 2 audio:',error));
+  }
+
+  const next = button(a,'التالي',() => {
+    clearTimeout(timer);
+    window.AfaqAudioLibrary?.stop?.();
+    n++;
+    show();
+  });
+
+  next.hidden = true;
+
+  function show() {
+    clearTimeout(timer);
+
+    if (n >= bank.length) {
+      window.AfaqAudioLibrary?.stop?.();
+      save(l,skill,score,bank.length);
+
+      a.replaceChildren(
+        $('h2','انتهى التدريب'),
+        $('p','إجابات صحيحة: '+score+' من '+bank.length),
+        $('p','هذه نتيجة تدريب وليست اعتماد إتقان.')
+      );
+
+      button(a,'إعادة التدريب',()=>practice(l,skill));
+      button(a,'العودة إلى المهارات',()=>openLetter(l));
+      return;
+    }
+
+    const q = bank[n];
+
+    prompt.textContent =
+      (n+1)+' / '+bank.length+' — '+q.prompt;
+
+    hint.textContent = q.hint;
+    opts.replaceChildren();
+    feed.textContent = '';
+    next.hidden = true;
+
+    q.options.forEach(o => {
+      const row = document.createElement('div');
+      row.style.cssText =
+        'display:flex;align-items:center;gap:8px;margin:6px 0';
+
+      opts.appendChild(row);
+
+      const listen = document.createElement('button');
+      listen.type = 'button';
+      listen.textContent = '🔊';
+      listen.title = 'استمع إلى الاختيار';
+      listen.setAttribute('aria-label','استمع إلى '+o);
+
+      listen.addEventListener('click',() => speak(o));
+      row.appendChild(listen);
+
+      const choice = button(row,o,() => {
+        if (!next.hidden) return;
+
+        const ok = o === q.answer;
+        if (ok) score++;
+
+        window.AfaqAudioLibrary?.stop?.();
+        sound(ok ? 'correct' : 'wrong');
+
+        feed.textContent = ok
+          ? '✓ إجابة صحيحة'
+          : '✗ الإجابة الصحيحة: '+q.answer;
+
+        [...opts.querySelectorAll('button')]
+          .forEach(b => b.disabled = true);
+
+        next.hidden = false;
+
+        timer = setTimeout(() => {
+          if (a.isConnected && next.isConnected && !next.hidden) {
+            next.click();
+          }
+        }, 1800);
+      });
+
+      choice.style.flex = '1';
+    });
+
+    speak(q.prompt);
+  }
+
+  show();
+}
 function openLetter(l){let a=area('الوحدة الثانية — حرف '+l,'اختر المهارة. التدريب متاح دون اشتراط اجتياز حرف سابق.');if(!a)return;skills.forEach(([s,title])=>button(a,title,()=>practice(l,s)));button(a,'العودة إلى حروف الوحدة',openUnit2);}
 function openUnit2(){let a=area('الوحدة الثانية — مدرستي','الحروف حسب ترتيب منهج لغتي: ص، ف، س، ق، ت، ح. هذه تدريبات تأسيسية، وليست تقييمات إتقان معتمدة.');if(!a)return;letters.forEach((l,i)=>button(a,l+' — '+names[i],()=>openLetter(l)));button(a,'سجل التدريبات',()=>{let b=area('سجل تدريبات الوحدة الثانية','يُحفظ في المتصفح الحالي فقط.');let d=storage();Object.keys(d).sort().forEach(k=>b.append($('p',k+' — '+d[k].correct+' / '+d[k].total+' صحيحة، '+d[k].attempts+' محاولات')));button(b,'عودة',openUnit2);});}
 const prepLevels=[
@@ -107,12 +230,11 @@ function integrate(){
  host.addEventListener('click',function(e){
    const card=e.target.closest('[data-stage]');if(!card)return;
    const stage=card.dataset.stage;
-   if(stage!=='letters'&&stage!=='preparation')return;
+   if(stage!=='preparation')return;
    e.preventDefault();e.stopImmediatePropagation();e.stopPropagation();sound('click');
    if(stage==='letters'){
      if(typeof renderLetterPicker==='function')renderLetterPicker();
      const area=document.getElementById('activityArea');
-     if(area){const b=button(area,'🏫 الوحدة الثانية — مدرستي (ص، ف، س، ق، ت، ح)',openUnit2);b.classList.add('sv2-integrated-entry');}
    }else{
      window.openPreparation?.();
      const area=document.getElementById('activityArea');

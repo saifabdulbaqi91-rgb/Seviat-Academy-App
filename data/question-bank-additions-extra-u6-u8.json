@@ -1,0 +1,870 @@
+{
+  "version": 1,
+  "runtimeEnabled": false,
+  "questions": [
+    {
+      "id": "sa-g1-u6-l2-extra-1",
+      "unitId": 6,
+      "lessonId": "sa-g1-u6-l2",
+      "skill": "word-analysis",
+      "type": "oral-response",
+      "visiblePrompt": "اختر كلمة من النص ثم حللها إلى حروف.",
+      "spokenPrompt": "اختر كلمة من النص ثم حللها إلى حروف.",
+      "stimulus": {
+        "text": "شَرِبَ سَالِمٌ عَسَلًا مَعَ مَاءٍ."
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": "تحديد حروف الكلمة بالترتيب الصحيح.",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "assessmentEligibility": false,
+      "reviewStatus": "needs-review",
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u6-l2-extra-2",
+      "unitId": 6,
+      "lessonId": "sa-g1-u6-l2",
+      "skill": "sentence-building",
+      "type": "written-response",
+      "visiblePrompt": "كون جملة مفيدة باستخدام كلمة من النص.",
+      "spokenPrompt": "كون جملة مفيدة باستخدام كلمة من النص.",
+      "stimulus": {
+        "text": "شَرِبَ سَالِمٌ عَسَلًا مَعَ مَاءٍ."
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": "جملة صحيحة المعنى والتركيب.",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "assessmentEligibility": false,
+      "reviewStatus": "needs-review",
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u6-l2-extra-3",
+      "unitId": 6,
+      "lessonId": "sa-g1-u6-l2",
+      "skill": "word-extraction",
+      "type": "oral-response",
+      "visiblePrompt": "استخرج كلمة من النص ثم اقرأها قراءة صحيحة.",
+      "spokenPrompt": "استخرج كلمة من النص ثم اقرأها قراءة صحيحة.",
+      "stimulus": {
+        "text": "شَرِبَ سَالِمٌ عَسَلًا مَعَ مَاءٍ."
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": "اختيار كلمة موجودة في النص وقراءتها بدقة.",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "assessmentEligibility": false,
+      "reviewStatus": "needs-review",
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u6-l2-extra-4",
+      "unitId": 6,
+      "lessonId": "sa-g1-u6-l2",
+      "skill": "sentence-connection",
+      "type": "oral-response",
+      "visiblePrompt": "اشرح العلاقة بين أحداث النص بجملة واضحة.",
+      "spokenPrompt": "اشرح العلاقة بين أحداث النص بجملة واضحة.",
+      "stimulus": {
+        "text": "شَرِبَ سَالِمٌ عَسَلًا مَعَ مَاءٍ."
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": "تفسير مناسب لأحداث النص دون اختلاق معلومات.",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "assessmentEligibility": false,
+      "reviewStatus": "needs-review",
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u6-l3-extra-1",
+      "unitId": 6,
+      "lessonId": "sa-g1-u6-l3",
+      "skill": "word-analysis",
+      "type": "oral-response",
+      "visiblePrompt": "اختر كلمة من النص ثم حللها إلى حروف.",
+      "spokenPrompt": "اختر كلمة من النص ثم حللها إلى حروف.",
+      "stimulus": {
+        "text": "زَارَ خَالِدٌ سَالِمًا. سَالِمٌ مَرِيضٌ."
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": "تحديد حروف الكلمة بالترتيب الصحيح.",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "assessmentEligibility": false,
+      "reviewStatus": "needs-review",
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u6-l3-extra-2",
+      "unitId": 6,
+      "lessonId": "sa-g1-u6-l3",
+      "skill": "sentence-building",
+      "type": "written-response",
+      "visiblePrompt": "كون جملة مفيدة باستخدام كلمة من النص.",
+      "spokenPrompt": "كون جملة مفيدة باستخدام كلمة من النص.",
+      "stimulus": {
+        "text": "زَارَ خَالِدٌ سَالِمًا. سَالِمٌ مَرِيضٌ."
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": "جملة صحيحة المعنى والتركيب.",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "assessmentEligibility": false,
+      "reviewStatus": "needs-review",
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u6-l3-extra-3",
+      "unitId": 6,
+      "lessonId": "sa-g1-u6-l3",
+      "skill": "word-extraction",
+      "type": "oral-response",
+      "visiblePrompt": "استخرج كلمة من النص ثم اقرأها قراءة صحيحة.",
+      "spokenPrompt": "استخرج كلمة من النص ثم اقرأها قراءة صحيحة.",
+      "stimulus": {
+        "text": "زَارَ خَالِدٌ سَالِمًا. سَالِمٌ مَرِيضٌ."
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": "اختيار كلمة موجودة في النص وقراءتها بدقة.",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "assessmentEligibility": false,
+      "reviewStatus": "needs-review",
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u6-l3-extra-4",
+      "unitId": 6,
+      "lessonId": "sa-g1-u6-l3",
+      "skill": "sentence-connection",
+      "type": "oral-response",
+      "visiblePrompt": "اشرح العلاقة بين أحداث النص بجملة واضحة.",
+      "spokenPrompt": "اشرح العلاقة بين أحداث النص بجملة واضحة.",
+      "stimulus": {
+        "text": "زَارَ خَالِدٌ سَالِمًا. سَالِمٌ مَرِيضٌ."
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": "تفسير مناسب لأحداث النص دون اختلاق معلومات.",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "assessmentEligibility": false,
+      "reviewStatus": "needs-review",
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u6-l4-extra-1",
+      "unitId": 6,
+      "lessonId": "sa-g1-u6-l4",
+      "skill": "word-analysis",
+      "type": "oral-response",
+      "visiblePrompt": "اختر كلمة من النص ثم حللها إلى حروف.",
+      "spokenPrompt": "اختر كلمة من النص ثم حللها إلى حروف.",
+      "stimulus": {
+        "text": "رَفَعَ حَامِدٌ يَدًا. ثُمَّ خَفَضَ يَدًا."
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": "تحديد حروف الكلمة بالترتيب الصحيح.",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "assessmentEligibility": false,
+      "reviewStatus": "needs-review",
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u6-l4-extra-2",
+      "unitId": 6,
+      "lessonId": "sa-g1-u6-l4",
+      "skill": "sentence-building",
+      "type": "written-response",
+      "visiblePrompt": "كون جملة مفيدة باستخدام كلمة من النص.",
+      "spokenPrompt": "كون جملة مفيدة باستخدام كلمة من النص.",
+      "stimulus": {
+        "text": "رَفَعَ حَامِدٌ يَدًا. ثُمَّ خَفَضَ يَدًا."
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": "جملة صحيحة المعنى والتركيب.",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "assessmentEligibility": false,
+      "reviewStatus": "needs-review",
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u6-l4-extra-3",
+      "unitId": 6,
+      "lessonId": "sa-g1-u6-l4",
+      "skill": "word-extraction",
+      "type": "oral-response",
+      "visiblePrompt": "استخرج كلمة من النص ثم اقرأها قراءة صحيحة.",
+      "spokenPrompt": "استخرج كلمة من النص ثم اقرأها قراءة صحيحة.",
+      "stimulus": {
+        "text": "رَفَعَ حَامِدٌ يَدًا. ثُمَّ خَفَضَ يَدًا."
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": "اختيار كلمة موجودة في النص وقراءتها بدقة.",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "assessmentEligibility": false,
+      "reviewStatus": "needs-review",
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u6-l4-extra-4",
+      "unitId": 6,
+      "lessonId": "sa-g1-u6-l4",
+      "skill": "sentence-connection",
+      "type": "oral-response",
+      "visiblePrompt": "اشرح العلاقة بين أحداث النص بجملة واضحة.",
+      "spokenPrompt": "اشرح العلاقة بين أحداث النص بجملة واضحة.",
+      "stimulus": {
+        "text": "رَفَعَ حَامِدٌ يَدًا. ثُمَّ خَفَضَ يَدًا."
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": "تفسير مناسب لأحداث النص دون اختلاق معلومات.",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "assessmentEligibility": false,
+      "reviewStatus": "needs-review",
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u7-l2-extra-1",
+      "unitId": 7,
+      "lessonId": "sa-g1-u7-l2",
+      "skill": "word-analysis",
+      "type": "oral-response",
+      "visiblePrompt": "اختر كلمة من النص ثم حللها إلى حروف.",
+      "spokenPrompt": "اختر كلمة من النص ثم حللها إلى حروف.",
+      "stimulus": {
+        "text": "رَأَى خَرُوفٌ ذِئْبًا. هَرَبَ خَرُوفٌ."
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": "تحديد حروف الكلمة بالترتيب الصحيح.",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "assessmentEligibility": false,
+      "reviewStatus": "needs-review",
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u7-l2-extra-2",
+      "unitId": 7,
+      "lessonId": "sa-g1-u7-l2",
+      "skill": "sentence-building",
+      "type": "written-response",
+      "visiblePrompt": "كون جملة مفيدة باستخدام كلمة من النص.",
+      "spokenPrompt": "كون جملة مفيدة باستخدام كلمة من النص.",
+      "stimulus": {
+        "text": "رَأَى خَرُوفٌ ذِئْبًا. هَرَبَ خَرُوفٌ."
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": "جملة صحيحة المعنى والتركيب.",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "assessmentEligibility": false,
+      "reviewStatus": "needs-review",
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u7-l2-extra-3",
+      "unitId": 7,
+      "lessonId": "sa-g1-u7-l2",
+      "skill": "word-extraction",
+      "type": "oral-response",
+      "visiblePrompt": "استخرج كلمة من النص ثم اقرأها قراءة صحيحة.",
+      "spokenPrompt": "استخرج كلمة من النص ثم اقرأها قراءة صحيحة.",
+      "stimulus": {
+        "text": "رَأَى خَرُوفٌ ذِئْبًا. هَرَبَ خَرُوفٌ."
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": "اختيار كلمة موجودة في النص وقراءتها بدقة.",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "assessmentEligibility": false,
+      "reviewStatus": "needs-review",
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u7-l2-extra-4",
+      "unitId": 7,
+      "lessonId": "sa-g1-u7-l2",
+      "skill": "sentence-connection",
+      "type": "oral-response",
+      "visiblePrompt": "اشرح العلاقة بين أحداث النص بجملة واضحة.",
+      "spokenPrompt": "اشرح العلاقة بين أحداث النص بجملة واضحة.",
+      "stimulus": {
+        "text": "رَأَى خَرُوفٌ ذِئْبًا. هَرَبَ خَرُوفٌ."
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": "تفسير مناسب لأحداث النص دون اختلاق معلومات.",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "assessmentEligibility": false,
+      "reviewStatus": "needs-review",
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u7-l3-extra-1",
+      "unitId": 7,
+      "lessonId": "sa-g1-u7-l3",
+      "skill": "word-analysis",
+      "type": "oral-response",
+      "visiblePrompt": "اختر كلمة من النص ثم حللها إلى حروف.",
+      "spokenPrompt": "اختر كلمة من النص ثم حللها إلى حروف.",
+      "stimulus": {
+        "text": "سَقَطَ قَلَمٌ. رَفَعَ سَالِمٌ قَلَمًا."
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": "تحديد حروف الكلمة بالترتيب الصحيح.",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "assessmentEligibility": false,
+      "reviewStatus": "needs-review",
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u7-l3-extra-2",
+      "unitId": 7,
+      "lessonId": "sa-g1-u7-l3",
+      "skill": "sentence-building",
+      "type": "written-response",
+      "visiblePrompt": "كون جملة مفيدة باستخدام كلمة من النص.",
+      "spokenPrompt": "كون جملة مفيدة باستخدام كلمة من النص.",
+      "stimulus": {
+        "text": "سَقَطَ قَلَمٌ. رَفَعَ سَالِمٌ قَلَمًا."
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": "جملة صحيحة المعنى والتركيب.",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "assessmentEligibility": false,
+      "reviewStatus": "needs-review",
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u7-l3-extra-3",
+      "unitId": 7,
+      "lessonId": "sa-g1-u7-l3",
+      "skill": "word-extraction",
+      "type": "oral-response",
+      "visiblePrompt": "استخرج كلمة من النص ثم اقرأها قراءة صحيحة.",
+      "spokenPrompt": "استخرج كلمة من النص ثم اقرأها قراءة صحيحة.",
+      "stimulus": {
+        "text": "سَقَطَ قَلَمٌ. رَفَعَ سَالِمٌ قَلَمًا."
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": "اختيار كلمة موجودة في النص وقراءتها بدقة.",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "assessmentEligibility": false,
+      "reviewStatus": "needs-review",
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u7-l3-extra-4",
+      "unitId": 7,
+      "lessonId": "sa-g1-u7-l3",
+      "skill": "sentence-connection",
+      "type": "oral-response",
+      "visiblePrompt": "اشرح العلاقة بين أحداث النص بجملة واضحة.",
+      "spokenPrompt": "اشرح العلاقة بين أحداث النص بجملة واضحة.",
+      "stimulus": {
+        "text": "سَقَطَ قَلَمٌ. رَفَعَ سَالِمٌ قَلَمًا."
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": "تفسير مناسب لأحداث النص دون اختلاق معلومات.",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "assessmentEligibility": false,
+      "reviewStatus": "needs-review",
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u7-l4-extra-1",
+      "unitId": 7,
+      "lessonId": "sa-g1-u7-l4",
+      "skill": "word-analysis",
+      "type": "oral-response",
+      "visiblePrompt": "اختر كلمة من النص ثم حللها إلى حروف.",
+      "spokenPrompt": "اختر كلمة من النص ثم حللها إلى حروف.",
+      "stimulus": {
+        "text": "وَقَفَ ثَعْلَبٌ. طَارَ عُصْفُورٌ."
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": "تحديد حروف الكلمة بالترتيب الصحيح.",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "assessmentEligibility": false,
+      "reviewStatus": "needs-review",
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u7-l4-extra-2",
+      "unitId": 7,
+      "lessonId": "sa-g1-u7-l4",
+      "skill": "sentence-building",
+      "type": "written-response",
+      "visiblePrompt": "كون جملة مفيدة باستخدام كلمة من النص.",
+      "spokenPrompt": "كون جملة مفيدة باستخدام كلمة من النص.",
+      "stimulus": {
+        "text": "وَقَفَ ثَعْلَبٌ. طَارَ عُصْفُورٌ."
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": "جملة صحيحة المعنى والتركيب.",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "assessmentEligibility": false,
+      "reviewStatus": "needs-review",
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u7-l4-extra-3",
+      "unitId": 7,
+      "lessonId": "sa-g1-u7-l4",
+      "skill": "word-extraction",
+      "type": "oral-response",
+      "visiblePrompt": "استخرج كلمة من النص ثم اقرأها قراءة صحيحة.",
+      "spokenPrompt": "استخرج كلمة من النص ثم اقرأها قراءة صحيحة.",
+      "stimulus": {
+        "text": "وَقَفَ ثَعْلَبٌ. طَارَ عُصْفُورٌ."
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": "اختيار كلمة موجودة في النص وقراءتها بدقة.",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "assessmentEligibility": false,
+      "reviewStatus": "needs-review",
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u7-l4-extra-4",
+      "unitId": 7,
+      "lessonId": "sa-g1-u7-l4",
+      "skill": "sentence-connection",
+      "type": "oral-response",
+      "visiblePrompt": "اشرح العلاقة بين أحداث النص بجملة واضحة.",
+      "spokenPrompt": "اشرح العلاقة بين أحداث النص بجملة واضحة.",
+      "stimulus": {
+        "text": "وَقَفَ ثَعْلَبٌ. طَارَ عُصْفُورٌ."
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": "تفسير مناسب لأحداث النص دون اختلاق معلومات.",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "assessmentEligibility": false,
+      "reviewStatus": "needs-review",
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u8-l2-extra-1",
+      "unitId": 8,
+      "lessonId": "sa-g1-u8-l2",
+      "skill": "word-analysis",
+      "type": "oral-response",
+      "visiblePrompt": "اختر كلمة من النص ثم حللها إلى حروف.",
+      "spokenPrompt": "اختر كلمة من النص ثم حللها إلى حروف.",
+      "stimulus": {
+        "text": "زَارَ ضَيْفٌ سَالِمًا. رَحَّبَ سَالِمٌ بِضَيْفٍ."
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": "تحديد حروف الكلمة بالترتيب الصحيح.",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "assessmentEligibility": false,
+      "reviewStatus": "needs-review",
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u8-l2-extra-2",
+      "unitId": 8,
+      "lessonId": "sa-g1-u8-l2",
+      "skill": "sentence-building",
+      "type": "written-response",
+      "visiblePrompt": "كون جملة مفيدة باستخدام كلمة من النص.",
+      "spokenPrompt": "كون جملة مفيدة باستخدام كلمة من النص.",
+      "stimulus": {
+        "text": "زَارَ ضَيْفٌ سَالِمًا. رَحَّبَ سَالِمٌ بِضَيْفٍ."
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": "جملة صحيحة المعنى والتركيب.",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "assessmentEligibility": false,
+      "reviewStatus": "needs-review",
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u8-l2-extra-3",
+      "unitId": 8,
+      "lessonId": "sa-g1-u8-l2",
+      "skill": "word-extraction",
+      "type": "oral-response",
+      "visiblePrompt": "استخرج كلمة من النص ثم اقرأها قراءة صحيحة.",
+      "spokenPrompt": "استخرج كلمة من النص ثم اقرأها قراءة صحيحة.",
+      "stimulus": {
+        "text": "زَارَ ضَيْفٌ سَالِمًا. رَحَّبَ سَالِمٌ بِضَيْفٍ."
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": "اختيار كلمة موجودة في النص وقراءتها بدقة.",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "assessmentEligibility": false,
+      "reviewStatus": "needs-review",
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u8-l2-extra-4",
+      "unitId": 8,
+      "lessonId": "sa-g1-u8-l2",
+      "skill": "sentence-connection",
+      "type": "oral-response",
+      "visiblePrompt": "اشرح العلاقة بين أحداث النص بجملة واضحة.",
+      "spokenPrompt": "اشرح العلاقة بين أحداث النص بجملة واضحة.",
+      "stimulus": {
+        "text": "زَارَ ضَيْفٌ سَالِمًا. رَحَّبَ سَالِمٌ بِضَيْفٍ."
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": "تفسير مناسب لأحداث النص دون اختلاق معلومات.",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "assessmentEligibility": false,
+      "reviewStatus": "needs-review",
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u8-l3-extra-1",
+      "unitId": 8,
+      "lessonId": "sa-g1-u8-l3",
+      "skill": "word-analysis",
+      "type": "oral-response",
+      "visiblePrompt": "اختر كلمة من النص ثم حللها إلى حروف.",
+      "spokenPrompt": "اختر كلمة من النص ثم حللها إلى حروف.",
+      "stimulus": {
+        "text": "جَفَّ غُصْنٌ. سَقَى سَالِمٌ غُصْنًا."
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": "تحديد حروف الكلمة بالترتيب الصحيح.",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "assessmentEligibility": false,
+      "reviewStatus": "needs-review",
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u8-l3-extra-2",
+      "unitId": 8,
+      "lessonId": "sa-g1-u8-l3",
+      "skill": "sentence-building",
+      "type": "written-response",
+      "visiblePrompt": "كون جملة مفيدة باستخدام كلمة من النص.",
+      "spokenPrompt": "كون جملة مفيدة باستخدام كلمة من النص.",
+      "stimulus": {
+        "text": "جَفَّ غُصْنٌ. سَقَى سَالِمٌ غُصْنًا."
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": "جملة صحيحة المعنى والتركيب.",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "assessmentEligibility": false,
+      "reviewStatus": "needs-review",
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u8-l3-extra-3",
+      "unitId": 8,
+      "lessonId": "sa-g1-u8-l3",
+      "skill": "word-extraction",
+      "type": "oral-response",
+      "visiblePrompt": "استخرج كلمة من النص ثم اقرأها قراءة صحيحة.",
+      "spokenPrompt": "استخرج كلمة من النص ثم اقرأها قراءة صحيحة.",
+      "stimulus": {
+        "text": "جَفَّ غُصْنٌ. سَقَى سَالِمٌ غُصْنًا."
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": "اختيار كلمة موجودة في النص وقراءتها بدقة.",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "assessmentEligibility": false,
+      "reviewStatus": "needs-review",
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u8-l3-extra-4",
+      "unitId": 8,
+      "lessonId": "sa-g1-u8-l3",
+      "skill": "sentence-connection",
+      "type": "oral-response",
+      "visiblePrompt": "اشرح العلاقة بين أحداث النص بجملة واضحة.",
+      "spokenPrompt": "اشرح العلاقة بين أحداث النص بجملة واضحة.",
+      "stimulus": {
+        "text": "جَفَّ غُصْنٌ. سَقَى سَالِمٌ غُصْنًا."
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": "تفسير مناسب لأحداث النص دون اختلاق معلومات.",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "assessmentEligibility": false,
+      "reviewStatus": "needs-review",
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u8-l4-extra-1",
+      "unitId": 8,
+      "lessonId": "sa-g1-u8-l4",
+      "skill": "word-analysis",
+      "type": "oral-response",
+      "visiblePrompt": "اختر كلمة من النص ثم حللها إلى حروف.",
+      "spokenPrompt": "اختر كلمة من النص ثم حللها إلى حروف.",
+      "stimulus": {
+        "text": "غَرَسَ حَامِدٌ غَرْسًا. حَافَظَ سَالِمٌ عَلَى غَرْسٍ."
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": "تحديد حروف الكلمة بالترتيب الصحيح.",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "assessmentEligibility": false,
+      "reviewStatus": "needs-review",
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u8-l4-extra-2",
+      "unitId": 8,
+      "lessonId": "sa-g1-u8-l4",
+      "skill": "sentence-building",
+      "type": "written-response",
+      "visiblePrompt": "كون جملة مفيدة باستخدام كلمة من النص.",
+      "spokenPrompt": "كون جملة مفيدة باستخدام كلمة من النص.",
+      "stimulus": {
+        "text": "غَرَسَ حَامِدٌ غَرْسًا. حَافَظَ سَالِمٌ عَلَى غَرْسٍ."
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": "جملة صحيحة المعنى والتركيب.",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "assessmentEligibility": false,
+      "reviewStatus": "needs-review",
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u8-l4-extra-3",
+      "unitId": 8,
+      "lessonId": "sa-g1-u8-l4",
+      "skill": "word-extraction",
+      "type": "oral-response",
+      "visiblePrompt": "استخرج كلمة من النص ثم اقرأها قراءة صحيحة.",
+      "spokenPrompt": "استخرج كلمة من النص ثم اقرأها قراءة صحيحة.",
+      "stimulus": {
+        "text": "غَرَسَ حَامِدٌ غَرْسًا. حَافَظَ سَالِمٌ عَلَى غَرْسٍ."
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": "اختيار كلمة موجودة في النص وقراءتها بدقة.",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "assessmentEligibility": false,
+      "reviewStatus": "needs-review",
+      "runtimeEnabled": false
+    },
+    {
+      "id": "sa-g1-u8-l4-extra-4",
+      "unitId": 8,
+      "lessonId": "sa-g1-u8-l4",
+      "skill": "sentence-connection",
+      "type": "oral-response",
+      "visiblePrompt": "اشرح العلاقة بين أحداث النص بجملة واضحة.",
+      "spokenPrompt": "اشرح العلاقة بين أحداث النص بجملة واضحة.",
+      "stimulus": {
+        "text": "غَرَسَ حَامِدٌ غَرْسًا. حَافَظَ سَالِمٌ عَلَى غَرْسٍ."
+      },
+      "options": [],
+      "correctAnswer": null,
+      "rubric": "تفسير مناسب لأحداث النص دون اختلاق معلومات.",
+      "audioPolicy": {
+        "readPrompt": true,
+        "readOptions": false,
+        "autoReadStimulus": false,
+        "humanRecordingOverridesTTS": true
+      },
+      "assessmentEligibility": false,
+      "reviewStatus": "needs-review",
+      "runtimeEnabled": false
+    }
+  ]
+}

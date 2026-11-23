@@ -1,0 +1,930 @@
+{
+  "version": 1,
+  "runtimeEnabled": false,
+  "lessons": {
+    "sa-g1-u6-l1": {
+      "lessonId": "sa-g1-u6-l1",
+      "runtimeEnabled": false,
+      "questions": [
+        {
+          "questionId": "afaq-qb1-sa-g1-u6-l1-comprehension-extra",
+          "skill": "comprehension",
+          "type": "single-choice",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u6-l1-comprehension-extra",
+          "audioOptionKeys": [
+            "question-id:afaq-qb1-sa-g1-u6-l1-comprehension-extra:option:0",
+            "question-id:afaq-qb1-sa-g1-u6-l1-comprehension-extra:option:1",
+            "question-id:afaq-qb1-sa-g1-u6-l1-comprehension-extra:option:2"
+          ],
+          "requiresTeacherEvaluation": false,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "afaq-qb1-sa-g1-u6-l1-event-order",
+          "skill": "sentence-analysis",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u6-l1-event-order",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "afaq-qb1-sa-g1-u6-l1-word-recognition",
+          "skill": "word-reading",
+          "type": "single-choice",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u6-l1-word-recognition",
+          "audioOptionKeys": [
+            "question-id:afaq-qb1-sa-g1-u6-l1-word-recognition:option:0",
+            "question-id:afaq-qb1-sa-g1-u6-l1-word-recognition:option:1",
+            "question-id:afaq-qb1-sa-g1-u6-l1-word-recognition:option:2"
+          ],
+          "requiresTeacherEvaluation": false,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "afaq-qb1-sa-g1-u6-l1-oral-expression-extra",
+          "skill": "oral-expression",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u6-l1-oral-expression-extra",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        }
+      ]
+    },
+    "sa-g1-u6-l2": {
+      "lessonId": "sa-g1-u6-l2",
+      "runtimeEnabled": false,
+      "questions": [
+        {
+          "questionId": "afaq-qb1-sa-g1-u6-l2-comprehension-extra",
+          "skill": "comprehension",
+          "type": "single-choice",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u6-l2-comprehension-extra",
+          "audioOptionKeys": [
+            "question-id:afaq-qb1-sa-g1-u6-l2-comprehension-extra:option:0",
+            "question-id:afaq-qb1-sa-g1-u6-l2-comprehension-extra:option:1",
+            "question-id:afaq-qb1-sa-g1-u6-l2-comprehension-extra:option:2"
+          ],
+          "requiresTeacherEvaluation": false,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "afaq-qb1-sa-g1-u6-l2-event-order",
+          "skill": "sentence-analysis",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u6-l2-event-order",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "afaq-qb1-sa-g1-u6-l2-word-recognition",
+          "skill": "word-reading",
+          "type": "single-choice",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u6-l2-word-recognition",
+          "audioOptionKeys": [
+            "question-id:afaq-qb1-sa-g1-u6-l2-word-recognition:option:0",
+            "question-id:afaq-qb1-sa-g1-u6-l2-word-recognition:option:1",
+            "question-id:afaq-qb1-sa-g1-u6-l2-word-recognition:option:2"
+          ],
+          "requiresTeacherEvaluation": false,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "afaq-qb1-sa-g1-u6-l2-oral-expression-extra",
+          "skill": "oral-expression",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u6-l2-oral-expression-extra",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "sa-g1-u6-l2-extra-1",
+          "skill": "word-analysis",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:sa-g1-u6-l2-extra-1",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "sa-g1-u6-l2-extra-2",
+          "skill": "sentence-building",
+          "type": "written-response",
+          "audioPromptKey": "question-id:sa-g1-u6-l2-extra-2",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "sa-g1-u6-l2-extra-3",
+          "skill": "word-extraction",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:sa-g1-u6-l2-extra-3",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "sa-g1-u6-l2-extra-4",
+          "skill": "sentence-connection",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:sa-g1-u6-l2-extra-4",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        }
+      ]
+    },
+    "sa-g1-u6-l3": {
+      "lessonId": "sa-g1-u6-l3",
+      "runtimeEnabled": false,
+      "questions": [
+        {
+          "questionId": "afaq-qb1-sa-g1-u6-l3-comprehension-extra",
+          "skill": "comprehension",
+          "type": "single-choice",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u6-l3-comprehension-extra",
+          "audioOptionKeys": [
+            "question-id:afaq-qb1-sa-g1-u6-l3-comprehension-extra:option:0",
+            "question-id:afaq-qb1-sa-g1-u6-l3-comprehension-extra:option:1",
+            "question-id:afaq-qb1-sa-g1-u6-l3-comprehension-extra:option:2"
+          ],
+          "requiresTeacherEvaluation": false,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "afaq-qb1-sa-g1-u6-l3-event-order",
+          "skill": "sentence-analysis",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u6-l3-event-order",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "afaq-qb1-sa-g1-u6-l3-word-recognition",
+          "skill": "word-reading",
+          "type": "single-choice",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u6-l3-word-recognition",
+          "audioOptionKeys": [
+            "question-id:afaq-qb1-sa-g1-u6-l3-word-recognition:option:0",
+            "question-id:afaq-qb1-sa-g1-u6-l3-word-recognition:option:1",
+            "question-id:afaq-qb1-sa-g1-u6-l3-word-recognition:option:2"
+          ],
+          "requiresTeacherEvaluation": false,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "afaq-qb1-sa-g1-u6-l3-oral-expression-extra",
+          "skill": "oral-expression",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u6-l3-oral-expression-extra",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "sa-g1-u6-l3-extra-1",
+          "skill": "word-analysis",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:sa-g1-u6-l3-extra-1",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "sa-g1-u6-l3-extra-2",
+          "skill": "sentence-building",
+          "type": "written-response",
+          "audioPromptKey": "question-id:sa-g1-u6-l3-extra-2",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "sa-g1-u6-l3-extra-3",
+          "skill": "word-extraction",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:sa-g1-u6-l3-extra-3",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "sa-g1-u6-l3-extra-4",
+          "skill": "sentence-connection",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:sa-g1-u6-l3-extra-4",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        }
+      ]
+    },
+    "sa-g1-u6-l4": {
+      "lessonId": "sa-g1-u6-l4",
+      "runtimeEnabled": false,
+      "questions": [
+        {
+          "questionId": "afaq-qb1-sa-g1-u6-l4-comprehension-extra",
+          "skill": "comprehension",
+          "type": "single-choice",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u6-l4-comprehension-extra",
+          "audioOptionKeys": [
+            "question-id:afaq-qb1-sa-g1-u6-l4-comprehension-extra:option:0",
+            "question-id:afaq-qb1-sa-g1-u6-l4-comprehension-extra:option:1",
+            "question-id:afaq-qb1-sa-g1-u6-l4-comprehension-extra:option:2"
+          ],
+          "requiresTeacherEvaluation": false,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "afaq-qb1-sa-g1-u6-l4-event-order",
+          "skill": "sentence-analysis",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u6-l4-event-order",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "afaq-qb1-sa-g1-u6-l4-word-recognition",
+          "skill": "word-reading",
+          "type": "single-choice",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u6-l4-word-recognition",
+          "audioOptionKeys": [
+            "question-id:afaq-qb1-sa-g1-u6-l4-word-recognition:option:0",
+            "question-id:afaq-qb1-sa-g1-u6-l4-word-recognition:option:1",
+            "question-id:afaq-qb1-sa-g1-u6-l4-word-recognition:option:2"
+          ],
+          "requiresTeacherEvaluation": false,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "afaq-qb1-sa-g1-u6-l4-oral-expression-extra",
+          "skill": "oral-expression",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u6-l4-oral-expression-extra",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "sa-g1-u6-l4-extra-1",
+          "skill": "word-analysis",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:sa-g1-u6-l4-extra-1",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "sa-g1-u6-l4-extra-2",
+          "skill": "sentence-building",
+          "type": "written-response",
+          "audioPromptKey": "question-id:sa-g1-u6-l4-extra-2",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "sa-g1-u6-l4-extra-3",
+          "skill": "word-extraction",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:sa-g1-u6-l4-extra-3",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "sa-g1-u6-l4-extra-4",
+          "skill": "sentence-connection",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:sa-g1-u6-l4-extra-4",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        }
+      ]
+    },
+    "sa-g1-u7-l1": {
+      "lessonId": "sa-g1-u7-l1",
+      "runtimeEnabled": false,
+      "questions": [
+        {
+          "questionId": "afaq-qb1-sa-g1-u7-l1-comprehension-extra",
+          "skill": "comprehension",
+          "type": "single-choice",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u7-l1-comprehension-extra",
+          "audioOptionKeys": [
+            "question-id:afaq-qb1-sa-g1-u7-l1-comprehension-extra:option:0",
+            "question-id:afaq-qb1-sa-g1-u7-l1-comprehension-extra:option:1",
+            "question-id:afaq-qb1-sa-g1-u7-l1-comprehension-extra:option:2"
+          ],
+          "requiresTeacherEvaluation": false,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "afaq-qb1-sa-g1-u7-l1-event-order",
+          "skill": "sentence-analysis",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u7-l1-event-order",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "afaq-qb1-sa-g1-u7-l1-word-recognition",
+          "skill": "word-reading",
+          "type": "single-choice",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u7-l1-word-recognition",
+          "audioOptionKeys": [
+            "question-id:afaq-qb1-sa-g1-u7-l1-word-recognition:option:0",
+            "question-id:afaq-qb1-sa-g1-u7-l1-word-recognition:option:1",
+            "question-id:afaq-qb1-sa-g1-u7-l1-word-recognition:option:2"
+          ],
+          "requiresTeacherEvaluation": false,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "afaq-qb1-sa-g1-u7-l1-oral-expression-extra",
+          "skill": "oral-expression",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u7-l1-oral-expression-extra",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        }
+      ]
+    },
+    "sa-g1-u7-l2": {
+      "lessonId": "sa-g1-u7-l2",
+      "runtimeEnabled": false,
+      "questions": [
+        {
+          "questionId": "afaq-qb1-sa-g1-u7-l2-comprehension-extra",
+          "skill": "comprehension",
+          "type": "single-choice",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u7-l2-comprehension-extra",
+          "audioOptionKeys": [
+            "question-id:afaq-qb1-sa-g1-u7-l2-comprehension-extra:option:0",
+            "question-id:afaq-qb1-sa-g1-u7-l2-comprehension-extra:option:1",
+            "question-id:afaq-qb1-sa-g1-u7-l2-comprehension-extra:option:2"
+          ],
+          "requiresTeacherEvaluation": false,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "afaq-qb1-sa-g1-u7-l2-event-order",
+          "skill": "sentence-analysis",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u7-l2-event-order",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "afaq-qb1-sa-g1-u7-l2-word-recognition",
+          "skill": "word-reading",
+          "type": "single-choice",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u7-l2-word-recognition",
+          "audioOptionKeys": [
+            "question-id:afaq-qb1-sa-g1-u7-l2-word-recognition:option:0",
+            "question-id:afaq-qb1-sa-g1-u7-l2-word-recognition:option:1",
+            "question-id:afaq-qb1-sa-g1-u7-l2-word-recognition:option:2"
+          ],
+          "requiresTeacherEvaluation": false,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "afaq-qb1-sa-g1-u7-l2-oral-expression-extra",
+          "skill": "oral-expression",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u7-l2-oral-expression-extra",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "sa-g1-u7-l2-extra-1",
+          "skill": "word-analysis",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:sa-g1-u7-l2-extra-1",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "sa-g1-u7-l2-extra-2",
+          "skill": "sentence-building",
+          "type": "written-response",
+          "audioPromptKey": "question-id:sa-g1-u7-l2-extra-2",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "sa-g1-u7-l2-extra-3",
+          "skill": "word-extraction",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:sa-g1-u7-l2-extra-3",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "sa-g1-u7-l2-extra-4",
+          "skill": "sentence-connection",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:sa-g1-u7-l2-extra-4",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        }
+      ]
+    },
+    "sa-g1-u7-l3": {
+      "lessonId": "sa-g1-u7-l3",
+      "runtimeEnabled": false,
+      "questions": [
+        {
+          "questionId": "afaq-qb1-sa-g1-u7-l3-comprehension-extra",
+          "skill": "comprehension",
+          "type": "single-choice",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u7-l3-comprehension-extra",
+          "audioOptionKeys": [
+            "question-id:afaq-qb1-sa-g1-u7-l3-comprehension-extra:option:0",
+            "question-id:afaq-qb1-sa-g1-u7-l3-comprehension-extra:option:1",
+            "question-id:afaq-qb1-sa-g1-u7-l3-comprehension-extra:option:2"
+          ],
+          "requiresTeacherEvaluation": false,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "afaq-qb1-sa-g1-u7-l3-event-order",
+          "skill": "sentence-analysis",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u7-l3-event-order",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "afaq-qb1-sa-g1-u7-l3-word-recognition",
+          "skill": "word-reading",
+          "type": "single-choice",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u7-l3-word-recognition",
+          "audioOptionKeys": [
+            "question-id:afaq-qb1-sa-g1-u7-l3-word-recognition:option:0",
+            "question-id:afaq-qb1-sa-g1-u7-l3-word-recognition:option:1",
+            "question-id:afaq-qb1-sa-g1-u7-l3-word-recognition:option:2"
+          ],
+          "requiresTeacherEvaluation": false,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "afaq-qb1-sa-g1-u7-l3-oral-expression-extra",
+          "skill": "oral-expression",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u7-l3-oral-expression-extra",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "sa-g1-u7-l3-extra-1",
+          "skill": "word-analysis",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:sa-g1-u7-l3-extra-1",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "sa-g1-u7-l3-extra-2",
+          "skill": "sentence-building",
+          "type": "written-response",
+          "audioPromptKey": "question-id:sa-g1-u7-l3-extra-2",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "sa-g1-u7-l3-extra-3",
+          "skill": "word-extraction",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:sa-g1-u7-l3-extra-3",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "sa-g1-u7-l3-extra-4",
+          "skill": "sentence-connection",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:sa-g1-u7-l3-extra-4",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        }
+      ]
+    },
+    "sa-g1-u7-l4": {
+      "lessonId": "sa-g1-u7-l4",
+      "runtimeEnabled": false,
+      "questions": [
+        {
+          "questionId": "afaq-qb1-sa-g1-u7-l4-comprehension-extra",
+          "skill": "comprehension",
+          "type": "single-choice",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u7-l4-comprehension-extra",
+          "audioOptionKeys": [
+            "question-id:afaq-qb1-sa-g1-u7-l4-comprehension-extra:option:0",
+            "question-id:afaq-qb1-sa-g1-u7-l4-comprehension-extra:option:1",
+            "question-id:afaq-qb1-sa-g1-u7-l4-comprehension-extra:option:2"
+          ],
+          "requiresTeacherEvaluation": false,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "afaq-qb1-sa-g1-u7-l4-event-order",
+          "skill": "sentence-analysis",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u7-l4-event-order",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "afaq-qb1-sa-g1-u7-l4-word-recognition",
+          "skill": "word-reading",
+          "type": "single-choice",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u7-l4-word-recognition",
+          "audioOptionKeys": [
+            "question-id:afaq-qb1-sa-g1-u7-l4-word-recognition:option:0",
+            "question-id:afaq-qb1-sa-g1-u7-l4-word-recognition:option:1",
+            "question-id:afaq-qb1-sa-g1-u7-l4-word-recognition:option:2"
+          ],
+          "requiresTeacherEvaluation": false,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "afaq-qb1-sa-g1-u7-l4-oral-expression-extra",
+          "skill": "oral-expression",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u7-l4-oral-expression-extra",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "sa-g1-u7-l4-extra-1",
+          "skill": "word-analysis",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:sa-g1-u7-l4-extra-1",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "sa-g1-u7-l4-extra-2",
+          "skill": "sentence-building",
+          "type": "written-response",
+          "audioPromptKey": "question-id:sa-g1-u7-l4-extra-2",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "sa-g1-u7-l4-extra-3",
+          "skill": "word-extraction",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:sa-g1-u7-l4-extra-3",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "sa-g1-u7-l4-extra-4",
+          "skill": "sentence-connection",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:sa-g1-u7-l4-extra-4",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        }
+      ]
+    },
+    "sa-g1-u8-l1": {
+      "lessonId": "sa-g1-u8-l1",
+      "runtimeEnabled": false,
+      "questions": [
+        {
+          "questionId": "afaq-qb1-sa-g1-u8-l1-comprehension-extra",
+          "skill": "comprehension",
+          "type": "single-choice",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u8-l1-comprehension-extra",
+          "audioOptionKeys": [
+            "question-id:afaq-qb1-sa-g1-u8-l1-comprehension-extra:option:0",
+            "question-id:afaq-qb1-sa-g1-u8-l1-comprehension-extra:option:1",
+            "question-id:afaq-qb1-sa-g1-u8-l1-comprehension-extra:option:2"
+          ],
+          "requiresTeacherEvaluation": false,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "afaq-qb1-sa-g1-u8-l1-event-order",
+          "skill": "sentence-analysis",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u8-l1-event-order",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "afaq-qb1-sa-g1-u8-l1-word-recognition",
+          "skill": "word-reading",
+          "type": "single-choice",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u8-l1-word-recognition",
+          "audioOptionKeys": [
+            "question-id:afaq-qb1-sa-g1-u8-l1-word-recognition:option:0",
+            "question-id:afaq-qb1-sa-g1-u8-l1-word-recognition:option:1",
+            "question-id:afaq-qb1-sa-g1-u8-l1-word-recognition:option:2"
+          ],
+          "requiresTeacherEvaluation": false,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "afaq-qb1-sa-g1-u8-l1-oral-expression-extra",
+          "skill": "oral-expression",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u8-l1-oral-expression-extra",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        }
+      ]
+    },
+    "sa-g1-u8-l2": {
+      "lessonId": "sa-g1-u8-l2",
+      "runtimeEnabled": false,
+      "questions": [
+        {
+          "questionId": "afaq-qb1-sa-g1-u8-l2-comprehension-extra",
+          "skill": "comprehension",
+          "type": "single-choice",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u8-l2-comprehension-extra",
+          "audioOptionKeys": [
+            "question-id:afaq-qb1-sa-g1-u8-l2-comprehension-extra:option:0",
+            "question-id:afaq-qb1-sa-g1-u8-l2-comprehension-extra:option:1",
+            "question-id:afaq-qb1-sa-g1-u8-l2-comprehension-extra:option:2"
+          ],
+          "requiresTeacherEvaluation": false,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "afaq-qb1-sa-g1-u8-l2-event-order",
+          "skill": "sentence-analysis",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u8-l2-event-order",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "afaq-qb1-sa-g1-u8-l2-word-recognition",
+          "skill": "word-reading",
+          "type": "single-choice",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u8-l2-word-recognition",
+          "audioOptionKeys": [
+            "question-id:afaq-qb1-sa-g1-u8-l2-word-recognition:option:0",
+            "question-id:afaq-qb1-sa-g1-u8-l2-word-recognition:option:1",
+            "question-id:afaq-qb1-sa-g1-u8-l2-word-recognition:option:2"
+          ],
+          "requiresTeacherEvaluation": false,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "afaq-qb1-sa-g1-u8-l2-oral-expression-extra",
+          "skill": "oral-expression",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u8-l2-oral-expression-extra",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "sa-g1-u8-l2-extra-1",
+          "skill": "word-analysis",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:sa-g1-u8-l2-extra-1",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "sa-g1-u8-l2-extra-2",
+          "skill": "sentence-building",
+          "type": "written-response",
+          "audioPromptKey": "question-id:sa-g1-u8-l2-extra-2",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "sa-g1-u8-l2-extra-3",
+          "skill": "word-extraction",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:sa-g1-u8-l2-extra-3",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "sa-g1-u8-l2-extra-4",
+          "skill": "sentence-connection",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:sa-g1-u8-l2-extra-4",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        }
+      ]
+    },
+    "sa-g1-u8-l3": {
+      "lessonId": "sa-g1-u8-l3",
+      "runtimeEnabled": false,
+      "questions": [
+        {
+          "questionId": "afaq-qb1-sa-g1-u8-l3-comprehension-extra",
+          "skill": "comprehension",
+          "type": "single-choice",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u8-l3-comprehension-extra",
+          "audioOptionKeys": [
+            "question-id:afaq-qb1-sa-g1-u8-l3-comprehension-extra:option:0",
+            "question-id:afaq-qb1-sa-g1-u8-l3-comprehension-extra:option:1",
+            "question-id:afaq-qb1-sa-g1-u8-l3-comprehension-extra:option:2"
+          ],
+          "requiresTeacherEvaluation": false,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "afaq-qb1-sa-g1-u8-l3-event-order",
+          "skill": "sentence-analysis",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u8-l3-event-order",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "afaq-qb1-sa-g1-u8-l3-word-recognition",
+          "skill": "word-reading",
+          "type": "single-choice",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u8-l3-word-recognition",
+          "audioOptionKeys": [
+            "question-id:afaq-qb1-sa-g1-u8-l3-word-recognition:option:0",
+            "question-id:afaq-qb1-sa-g1-u8-l3-word-recognition:option:1",
+            "question-id:afaq-qb1-sa-g1-u8-l3-word-recognition:option:2"
+          ],
+          "requiresTeacherEvaluation": false,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "afaq-qb1-sa-g1-u8-l3-oral-expression-extra",
+          "skill": "oral-expression",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u8-l3-oral-expression-extra",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "sa-g1-u8-l3-extra-1",
+          "skill": "word-analysis",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:sa-g1-u8-l3-extra-1",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "sa-g1-u8-l3-extra-2",
+          "skill": "sentence-building",
+          "type": "written-response",
+          "audioPromptKey": "question-id:sa-g1-u8-l3-extra-2",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "sa-g1-u8-l3-extra-3",
+          "skill": "word-extraction",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:sa-g1-u8-l3-extra-3",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "sa-g1-u8-l3-extra-4",
+          "skill": "sentence-connection",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:sa-g1-u8-l3-extra-4",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        }
+      ]
+    },
+    "sa-g1-u8-l4": {
+      "lessonId": "sa-g1-u8-l4",
+      "runtimeEnabled": false,
+      "questions": [
+        {
+          "questionId": "afaq-qb1-sa-g1-u8-l4-comprehension-extra",
+          "skill": "comprehension",
+          "type": "single-choice",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u8-l4-comprehension-extra",
+          "audioOptionKeys": [
+            "question-id:afaq-qb1-sa-g1-u8-l4-comprehension-extra:option:0",
+            "question-id:afaq-qb1-sa-g1-u8-l4-comprehension-extra:option:1",
+            "question-id:afaq-qb1-sa-g1-u8-l4-comprehension-extra:option:2"
+          ],
+          "requiresTeacherEvaluation": false,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "afaq-qb1-sa-g1-u8-l4-event-order",
+          "skill": "sentence-analysis",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u8-l4-event-order",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "afaq-qb1-sa-g1-u8-l4-word-recognition",
+          "skill": "word-reading",
+          "type": "single-choice",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u8-l4-word-recognition",
+          "audioOptionKeys": [
+            "question-id:afaq-qb1-sa-g1-u8-l4-word-recognition:option:0",
+            "question-id:afaq-qb1-sa-g1-u8-l4-word-recognition:option:1",
+            "question-id:afaq-qb1-sa-g1-u8-l4-word-recognition:option:2"
+          ],
+          "requiresTeacherEvaluation": false,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "afaq-qb1-sa-g1-u8-l4-oral-expression-extra",
+          "skill": "oral-expression",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:afaq-qb1-sa-g1-u8-l4-oral-expression-extra",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "sa-g1-u8-l4-extra-1",
+          "skill": "word-analysis",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:sa-g1-u8-l4-extra-1",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "sa-g1-u8-l4-extra-2",
+          "skill": "sentence-building",
+          "type": "written-response",
+          "audioPromptKey": "question-id:sa-g1-u8-l4-extra-2",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "sa-g1-u8-l4-extra-3",
+          "skill": "word-extraction",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:sa-g1-u8-l4-extra-3",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        },
+        {
+          "questionId": "sa-g1-u8-l4-extra-4",
+          "skill": "sentence-connection",
+          "type": "oral-response",
+          "audioPromptKey": "question-id:sa-g1-u8-l4-extra-4",
+          "audioOptionKeys": [],
+          "requiresTeacherEvaluation": true,
+          "runtimeEnabled": false
+        }
+      ]
+    }
+  }
+}

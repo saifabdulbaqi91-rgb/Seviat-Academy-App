@@ -24,6 +24,42 @@
     ]);
   }
 
+  // Presentation identity is deliberately separate from historical evidence keys.
+  // Option order and source IDs must not turn the same task into two session items.
+  function sessionKey(question) {
+    const normalize = value => String(value ?? '')
+      .normalize('NFC')
+      .replace(/[\u200b-\u200f\u202a-\u202e\u2066-\u2069]/g, '')
+      .replace(/\s+/g, ' ')
+      .trim();
+
+    const options = Array.isArray(question.visual?.options)
+      ? question.visual.options
+      : Array.isArray(question.options)
+        ? question.options
+        : [];
+
+    const index = Number(question.answer);
+
+    const correct = Number.isInteger(index) &&
+      index >= 0 && index < options.length
+        ? options[index]
+        : question.answer;
+
+    return JSON.stringify([
+      normalize(question.letter),
+      normalize(question.skill),
+      normalize(question.prompt),
+      normalize(question.stimulus),
+      normalize(question.audioText),
+      question.sounds || null,
+      !!question.memory,
+      normalize(question.visual?.target),
+      normalize(correct),
+      options.map(normalize).sort()
+    ]);
+  }
+
   function runsFor(state, nodeId) {
     const seen = new Set();
     return (Array.isArray(state.runs) ? state.runs : []).filter(run => {
@@ -126,6 +162,23 @@
     const available = node => !['planned','unavailable'].includes(node.status) && !excluded.includes(node.id) && state.overrides?.[node.id] !== 'lock';
     const assignment = rules.nodes.find(node => node.id === state.homework && available(node));
     if (assignment) return {nodeId:assignment.id, reason:'teacher-assignment', difficulty:difficulty(state, assignment.id, now)};
+    const teaching = host.AfaqTeachingProgression;
+    if (teaching && rules.letters) {
+      const teachingId = teaching.nextTeachingStep(state, rules);
+      const teachingNode = rules.nodes.find(n => n.id === teachingId);
+
+      if (
+        teachingNode &&
+        available(teachingNode) &&
+        rules.available(state, teachingNode, api)
+      ) {
+        return {
+          nodeId: teachingId,
+          reason: 'teaching-progression',
+          difficulty: difficulty(state, teachingId, now)
+        };
+      }
+    }
     const candidates = rules.nodes.filter(node => available(node) && !node.supervised && state.overrides?.[node.id] !== 'allow' && autoAvailable(state, node, rules));
     const summaries = candidates.map(node => ({node, summary:analyze(state, node.id, now)}));
     const weak = summaries.filter(({summary}) => summary.weakItems.length && summary.lastAccuracy !== null && summary.lastAccuracy < .8)
@@ -151,11 +204,12 @@
     const desired = clamp(Number(options.count) || MAX_SESSION, 1, MAX_SESSION);
     const summary = analyze(state, nodeId, options.now);
     const weaknesses = new Set(summary.weakItems.flatMap(item => [item.key, item.id]));
-    const seen = new Set();
+    const seen = new Set(), presentations = new Set();
     const unique = bank.filter(question => {
       const key = taskKey(question);
-      if (seen.has(key)) return false;
-      seen.add(key); return true;
+      const presentation = sessionKey(question);
+      if (seen.has(key) || presentations.has(presentation)) return false;
+      seen.add(key); presentations.add(presentation); return true;
     });
     const level = options.difficulty || difficulty(state, nodeId, options.now);
     const itemLevel = question => Number(question.difficulty) || (/combine|analyse|analyze|build/.test(question.operation || '') ? 3 : /mark|match/.test(question.operation || '') ? 1 : 2);
@@ -182,7 +236,7 @@
     return {...state,legacyEvidence};
   }
   function recommendLesson(state,catalog,rules,path,now=Date.now(),excluded=[]){const recommendation=recommend(state,path.curriculumRules(catalog,rules,undefined,api),now,excluded),lesson=path.lessonFor(catalog,recommendation.nodeId);return {...recommendation,lessonId:lesson?.id||null,levelId:lesson?.levelId||null,worldId:lesson?.worldId||null};}
-  const api = {version:1, legacyView, recommendLesson, taskKey, analyze, mastery, planSession, autoAvailable, progressReady, difficulty, recommend, selectQuestions};
+  const api = {version:1, legacyView, recommendLesson, taskKey, sessionKey, analyze, mastery, planSession, autoAvailable, progressReady, difficulty, recommend, selectQuestions};
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else host.SeviatAdaptive = api;
 })(typeof window === 'undefined' ? globalThis : window);

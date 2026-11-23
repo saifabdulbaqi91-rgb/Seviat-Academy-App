@@ -1,15 +1,72 @@
 (function(host){
 'use strict';
-const letters=['م','ب','ل','د','ن','ر','ص','ف','س','ق','ت','ح'];
+const letters=['م','ب','ل','د','ن','ر','ص','ف','س','ق','ت','ح','أ','ط','ز','و','ج','ش','ض','ع','ك','خ','ي','ذ','ه','ث','غ','ظ'];
+const unitForLetter=i=>i<24?Math.floor(i/6)+1:5;
 const skills=['letter-shape','short-vowels','long-vowels','sukoon','letter-positions','letter-detection','sound-analysis','syllable-building'];
 const nodes=[{id:'prep:matching',title:'لنكتشف الأشكال',kind:'prep',requires:[]}];
-letters.forEach((letter,i)=>skills.filter(s=>i<6||!['letter-detection','sound-analysis'].includes(s)).forEach((skill,j,list)=>nodes.push({id:letter+':'+skill,letter,skill,unit:i<6?1:2,title:letter+' — '+skill,requires:[j?letter+':'+list[j-1]:i?letters[i-1]+':'+skills.at(-1):'prep:matching']})));
+letters.forEach((letter,i)=>skills.filter(s=>i<6||!['letter-detection','sound-analysis'].includes(s)).forEach((skill,j,list)=>nodes.push({id:letter+':'+skill,letter,skill,unit:unitForLetter(i),title:letter+' — '+skill,requires:[j?letter+':'+list[j-1]:i?letters[i-1]+':'+skills.at(-1):'prep:matching']})));
 const prep=[];
 for(const family of ['visual','memory','auditory','attention','observation','sequence'])for(let level=1;level<=5;level++)prep.push({id:'prep:'+family+':'+level,kind:'preparation',family,level,optional:true,title:({'visual':'التمييز البصري',memory:'الذاكرة',auditory:'الاستماع',attention:'الانتباه',observation:'الملاحظة',sequence:'التسلسل'})[family]+' '+level,requires:[level===1?'prep:matching':'prep:'+family+':'+(level-1)]});
 for(let group=0;group<4;group++)for(let level=0;level<4;level++)prep.push({id:'prep:extended:'+group+':'+level,kind:'preparation',family:'extended',group,level,optional:true,title:'التهيئة الثانية '+(group+1)+' / '+(level+1),requires:[level?'prep:extended:'+group+':'+(level-1):'prep:matching']});
+
+/* AFAQ: complete missing skills for units 3–5 */
+for (let i = 6; i < letters.length; i++) {
+  const letter = letters[i];
+
+  for (const skill of ['letter-detection', 'sound-analysis']) {
+    const id = letter + ':' + skill;
+
+    if (nodes.some(node => node.id === id)) continue;
+
+    nodes.push({
+      id,
+      letter,
+      skill,
+      unit: unitForLetter(i),
+      title: letter + ' — ' + skill,
+      requires: [letter + ':letter-shape']
+    });
+  }
+}
+
 nodes.push(...prep);
 for(const unit of [1,2])nodes.push({id:'word-game:'+unit,kind:'word-game',skill:'word-building',unit,optional:true,title:'لعبة تركيب الكلمات — '+unit,requires:letters.slice(0,unit*6).map(l=>l+':syllable-building')});
-for(const letter of letters)for(const skill of ['letter-name','letter-sound','letter-writing','word-writing','word-reading'])nodes.push({id:letter+':'+skill,letter,skill,unit:letters.indexOf(letter)<6?1:2,optional:true,supervised:true,title:letter+' — '+skill,requires:['word-writing','word-reading'].includes(skill)?letters.slice(0,letters.indexOf(letter)<6?6:12).map(l=>l+':syllable-building'):[letter+':letter-shape']});
+for(const letter of letters)for(const skill of ['letter-name','letter-sound','letter-writing','word-writing','word-reading'])nodes.push({id:letter+':'+skill,letter,skill,unit:unitForLetter(letters.indexOf(letter)),optional:true,supervised:true,title:letter+' — '+skill,requires:['word-writing','word-reading'].includes(skill)?letters.slice(0,Math.min(letters.length,unitForLetter(letters.indexOf(letter))*6)).map(l=>l+':syllable-building'):[letter+':letter-shape']});
+
+// CURRICULUM_SKILL_ORDER_V1
+const curriculumSkillOrder=[
+ 'letter-shape','letter-name','letter-sound',
+ 'short-vowels','sukoon','long-vowels',
+ 'letter-positions','letter-detection','sound-analysis',
+ 'syllable-building','word-reading','letter-writing','word-writing'
+];
+const curriculumOrder=new Map(curriculumSkillOrder.map((skill,index)=>[skill,index]));
+const letterOrder=new Map(letters.map((letter,index)=>[letter,index]));
+const letterNodes=nodes.filter(node=>node.letter);
+const firstLetterIndex=nodes.findIndex(node=>node.letter);
+// The prefix before firstLetterIndex stays in place when splice replaces the tail.
+const otherNodes=nodes.slice(firstLetterIndex).filter(node=>!node.letter);
+letterNodes.sort((a,b)=>
+ letterOrder.get(a.letter)-letterOrder.get(b.letter) ||
+ curriculumOrder.get(a.skill)-curriculumOrder.get(b.skill)
+);
+nodes.splice(firstLetterIndex,nodes.length-firstLetterIndex,...letterNodes,...otherNodes);
+
+
+// CURRICULUM_PREREQUISITES_V1
+for (const node of nodes) {
+  if (!node.letter) continue;
+  if (node.skill === 'sukoon') {
+    node.requires = [node.letter + ':short-vowels'];
+  }
+  if (node.skill === 'letter-positions') {
+    node.requires = [node.letter + ':long-vowels'];
+  }
+  if (node.skill === 'long-vowels') {
+    node.requires = [node.letter + ':sukoon'];
+  }
+}
+
 function evidence(state,id,engine=host.SeviatAdaptive){if((state.runs||[]).some(r=>r.node===id&&r.evidenceVersion===2)){const legacy={...state,runs:(state.runs||[]).filter(r=>r.evidenceVersion!==2)};return evidence(legacy,id,engine)||!!engine?.progressReady(state,id);}const runs=(state.runs||[]).filter(r=>r.node===id&&r.independent&&r.results.length>=5&&new Set(r.results.map(x=>x.id)).size>=5&&r.results.filter(x=>x.correct).length/r.results.length>=Math.max(.8,Math.min(1,(state.criteria?.correct||4)/5)));return runs.length>=Math.max(2,Math.min(3,state.criteria?.runs||2));}
 function complete(state,id,engine=host.SeviatAdaptive){return state.overrides?.[id]==='allow'||(state.overrides?.[id]!=='lock'&&(state.legacyEvidence?.[id]===true||evidence(state,id,engine)));}
 function available(state,node,engine=host.SeviatAdaptive){return state.overrides?.[node.id]!=='lock'&&(state.overrides?.[node.id]==='allow'||node.requires.every(id=>complete(state,id,engine)));}

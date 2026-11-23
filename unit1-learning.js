@@ -11,6 +11,7 @@
   };
   const nameMap={'م':'ميم','ب':'باء','ل':'لام','د':'دال','ن':'نون','ر':'راء'};
   let bank=[],activities=[],state={version:2,attempts:[],practice:{},writing:[]};
+  let modalWatch=null;
   let activeLetter='م',session=null,storageError=false;
   const freeBoard=(...args)=>window.openWritingBoard(...args);
   const oldPicker=renderLetterPicker;
@@ -36,13 +37,14 @@
     const b=el('button',text,parent);b.type='button';b.className='primary-button';b.style.cssText='margin:6px;padding:12px;min-height:46px';b.disabled=disabled;if(id)b.id=id;b.onclick=fn;return b;
   }
   function clear(title,cancel=true) {
+    modalWatch?.();modalWatch=null;
     if(autoNextTimer!==null){clearTimeout(autoNextTimer);autoNextTimer=null;}
     if(cancel)session=null;
     const area=createActivityArea();area.innerHTML='';area.style.direction='rtl';el('h2',title,area);area.scrollIntoView({behavior:'smooth'});return area;
   }
   function note(parent,text){return el('p',text,parent);}
   function teacherPanel(parent,text) {
-    const details=el('details',undefined,parent);details.style.cssText='margin:15px 0;padding:12px;border:1px solid #7995af;border-radius:8px';el('summary','للمعلم أو ولي الأمر — يُفتح بعيدًا عن نظر الطفل',details);note(details,text);details.querySelector('summary').addEventListener('click',event=>{if(!window.SeviatParentControls.isAuthenticated()){event.preventDefault();window.SeviatParentControls.requireTeacher(()=>{if(details.isConnected)details.open=true;});}});details.addEventListener('toggle',()=>{if(!details.open)window.AfaqAdult.lock();});return details;
+    const details=el('details',undefined,parent);details.style.cssText='margin:15px 0;padding:12px;border:1px solid #7995af;border-radius:8px';el('summary','للمعلم أو ولي الأمر — يُفتح بعيدًا عن نظر الطفل',details);note(details,text);details.querySelector('summary').addEventListener('click',event=>{if(!window.SeviatParentControls.isAuthenticated()){event.preventDefault();window.SeviatParentControls.requireTeacher(()=>{if(details.isConnected)details.open=true;});}});return details;
   }
   function checkbox(parent,text,id) {const label=el('label',undefined,parent);label.style.display='block';const input=el('input',undefined,label);input.type='checkbox';if(id)input.id=id;label.append(document.createTextNode(' '+text));return input;}
 
@@ -171,7 +173,11 @@
     area.dataset.questionId = q.id;
 
     note(area, 'السؤال ' + (run.index + 1) + ' من ' + run.questions.length);
-    el('h3', q.prompt, area);
+    const spoken=window.SeviatGuidedAudioCore?.studentContext(q,{letter:run.letter,skill:run.skill});
+    el('h3', spoken?.displayPrompt||q.prompt, area);
+    if(spoken&&!spoken.hideModel&&q.stimulus){const model=el('div',q.stimulus,area);model.className='student-question-model';model.style.cssText='font-size:48px;text-align:center;line-height:1.8';}
+    const requiresNarration=!!spoken?.audioFirst||q.type!=='teacher-listening';
+    const narration=window.SeviatGuidedAudio?.mount(area,'choose',{...spoken,lessonLetter:run.letter,questionKey:q.id,prompt:spoken?.spokenPrompt||q.prompt,skill:run.skill,questionNarration:requiresNarration,automatic:requiresNarration});
 
     const options = el('div', undefined, area);
     options.id = 'u1-options';
@@ -182,7 +188,7 @@
     feedback.id = 'u1-feedback';
     feedback.setAttribute('aria-live', 'polite');
 
-    let teacherReady = q.type !== 'teacher-listening';
+    let teacherReady = !narration&&q.type !== 'teacher-listening';
     let answered = false;
     let transitioning = false;
     const tried = new Set();
@@ -217,7 +223,7 @@
 
     const buttons = shuffleArray(q.options).map(option => {
       const b = button(options, option, () => {
-        if (answered || !teacherReady || session !== run) return;
+        if (answered || !teacherReady || tried.has(option) || session !== run) return;
         if(!runAllowed(run))return deny();
 
         const correct = option === q.answer;
@@ -307,7 +313,15 @@
       return b;
     });
 
-    if (q.type === 'teacher-listening') {
+    if(narration){narration.addEventListener('afaq-lesson-listening',event=>{if(session!==run||answered)return;teacherReady=teacherReady||!!event.detail;for(const b of buttons)b.disabled=!teacherReady||tried.has(b.dataset.answerValue);});}
+    narration?.addEventListener('afaq-lesson-audio-failed',event=>{
+      if(session!==run||answered||event.detail?.teacherRequired)return;
+      teacherReady=true;
+      for(const b of buttons)b.disabled=tried.has(b.dataset.answerValue);
+      feedback.textContent='تعذر تشغيل الصوت. اقرأ السؤال أو استعن بالمعلم ثم اختر الإجابة.';
+    });
+    let pausedAdvance=false;modalWatch=window.SeviatGuidedAudio?.watchModals({pause:()=>{if(transitioning&&autoNextTimer!==null){clearTimeout(autoNextTimer);autoNextTimer=null;pausedAdvance=true;}},resume:()=>{if(session===run&&pausedAdvance){pausedAdvance=false;transitioning=false;advance();}}});
+    if (q.type === 'teacher-listening'&&!spoken) {
       const teacher = teacherPanel(
         area,
         'النص الذي ينطقه المعلم: ' +
@@ -334,7 +348,7 @@
         area,
         'يقرأ المعلم النموذج بعيدًا عن نظر الطفل قبل إتاحة الخيارات.'
       );
-    } else if (q.teacherNote) {
+    } else if (q.teacherNote&&!spoken) {
       const hint=el('details',undefined,area);el('summary','إرشادات إضافية للمعلم',hint);note(hint,q.teacherNote);
     }
 
@@ -423,7 +437,7 @@
     button(area,'العودة',()=>phase==='cumulative'?openCumulative():openLetter(l),'u1-writing-back');
   }
   renderLetterPicker=openLetters;
-  openLetterActivity=function(){openLetter(currentLetter);};
+  openLetterActivity=function(){if(window.SeviatUnit2 && ['ص','ف','س','ق','ت','ح'].includes(currentLetter)){window.SeviatUnit2.openLetter(currentLetter);return;}if(!R.letters.includes(currentLetter)){showMessage('الحرف غير متاح','تدريبات هذا الحرف قيد الإعداد.');return;}openLetter(currentLetter);};
   openLetterPractice=function(){openLetter(currentLetter||activeLetter);};
   openLegacyLetterPractice=openLetterPractice;
   openLetterAssessment=function(){openLetter(currentLetter||activeLetter);};
