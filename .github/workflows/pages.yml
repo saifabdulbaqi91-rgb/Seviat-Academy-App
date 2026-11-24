@@ -1,0 +1,54 @@
+name: Prepare AFAQ Pages testing release
+on:
+  workflow_dispatch:
+    inputs:
+      deploy:
+        description: 'Publish the reviewed artifact to the existing GitHub Pages site'
+        required: true
+        type: boolean
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: afaq-pages
+  cancel-in-progress: false
+jobs:
+  build:
+    if: ${{ github.ref == 'refs/heads/afaq-development' }}
+    runs-on: ubuntu-latest
+    env:
+      CHROME_PATH: /usr/bin/google-chrome
+    steps:
+      - uses: actions/checkout@v6
+      - name: Verify isolated testing source and runtime allowlist
+        run: node tests/student-testing-check.cjs
+      - name: Verify public security boundary
+        run: node tests/public-deployment-security-check.cjs
+      - name: Verify native audio transport and playback
+        run: |
+          node tests/audio-transport-check.cjs
+          node tests/native-audio-browser.cjs
+          node tests/native-audio-controls-browser.cjs
+      - name: Copy only application runtime files
+        run: node tools/prepare-pages.cjs --output "$RUNNER_TEMP/afaq-pages"
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: ${{ runner.temp }}/afaq-pages
+      - name: Refuse publication while verification is unresolved
+        if: ${{ inputs.deploy }}
+        run: node -e "const m=require('./docs/deployment/2026-11-24-student-testing-files.json'); if(m.remainingVerification?.length) throw Error(m.remainingVerification.join(' | '));"
+  deploy:
+    if: ${{ inputs.deploy && github.ref == 'refs/heads/afaq-development' }}
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@v5
+      - name: Deploy explicitly requested release
+        id: deployment
+        uses: actions/deploy-pages@v4
