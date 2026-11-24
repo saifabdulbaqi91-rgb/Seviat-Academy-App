@@ -66,6 +66,16 @@ html[data-seviat-theme="dark"] #activityArea .answer-option {
 }
 
 
+/* Question bank: instructional Arabic retains readable marks on narrow screens. */
+.afaq-bank-stimulus,.afaq-bank-activity > p,.afaq-bank-option-row > button:first-child,
+.afaq-bank-word-cards,.afaq-bank-constructed-answer {
+ font-family:'Noto Naskh Arabic',serif!important;line-height:2;overflow-wrap:anywhere;
+}
+.afaq-bank-stimulus,.afaq-bank-option-row > button:first-child{font-size:clamp(24px,5vw,36px)}
+.afaq-bank-controls button{min-height:44px;max-width:100%}
+.afaq-bank-controls textarea{box-sizing:border-box;max-width:100%;width:100%}
+.afaq-bank-option-row{display:flex;flex-wrap:wrap;gap:8px;margin-block:8px}
+
 /* Journey and current lesson renderers: preserve Arabic shaping and marks. */
 #journey h3,#journey .journey-model,#journey .journey-options button,
 #u1-options button,#activityArea .sv2-prompt,#activityArea .sv2-options button,

@@ -1,0 +1,50 @@
+{
+  "status": "PREPARED ONLY ? NO COMMANDS EXECUTED",
+  "prerequisite": "Review and commit only the deployment manifest recommendedCommitFiles on afaq-development after authorization. Record the exact verified commit SHA. Never merge development into main.",
+  "steps": [
+    {
+      "step": 1,
+      "action": "After explicit authorization, fetch origin without changing the current working tree.",
+      "command": "git fetch origin"
+    },
+    {
+      "step": 2,
+      "action": "Create a NEW dedicated worktree from origin/main. Choose a directory that does not exist; preserve the original worktree and all its untracked files.",
+      "command": "git worktree add -b afaq-pages-workflow-bootstrap <NEW_WORKTREE_DIRECTORY> origin/main"
+    },
+    {
+      "step": 3,
+      "action": "Inside the new worktree, restore ONLY the reviewed workflow from the verified commit.",
+      "command": "git restore --source=<VERIFIED_DEVELOPMENT_COMMIT_SHA> -- .github/workflows/pages.yml"
+    },
+    {
+      "step": 4,
+      "action": "Review diff. It must contain only .github/workflows/pages.yml; do not merge/cherry-pick a mixed development commit.",
+      "commands": [
+        "git diff -- .github/workflows/pages.yml",
+        "git status --short",
+        "git add -- .github/workflows/pages.yml",
+        "git diff --cached --name-only",
+        "git diff --cached --check"
+      ]
+    },
+    {
+      "step": 5,
+      "action": "After authorization, commit that one file, push the bootstrap branch and open a PR targeting main. Review and merge ONLY this workflow PR; never force-push.",
+      "command": "git commit -m \"Add manual isolated AFAQ Pages workflow\""
+    },
+    {
+      "step": 6,
+      "action": "Check GitHub Pages Settings > Build and deployment. Last observed configuration was Deploy from a branch, main /(root). An authorized owner must choose GitHub Actions before publishing. No settings changed here."
+    },
+    {
+      "step": 7,
+      "action": "Ensure github-pages environment permits afaq-development. Dispatch workflow from afaq-development with deploy=false first; inspect downloadable artifact against publishedRuntimeFiles. main dispatch intentionally skips both jobs."
+    },
+    {
+      "step": 8,
+      "action": "Local native audio verification passed for all 21 originals in headed and headless Chrome; remainingVerification is empty. Workflow still reruns genuine native playback/controls/transport checks before upload/deployment. After explicit release authorization only, dispatch afaq-development with deploy=true; verify public testing.html and root portal build 20261124-testing-3, and owner URLs 404. Stop on any failure."
+    }
+  ],
+  "warning": "GitHub repository is public: artifact exclusion does not remove owner source or historical data from Git history. Never commit credentials or private student records; genuine remote owner access and confidential grading require backend authentication/authorization."
+}

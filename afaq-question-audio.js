@@ -25,7 +25,7 @@
   async function automated(id,ticket) {
     const speech=host.AfaqSpeech;
     if(!speech?.speak)return {ok:false,reason:'speech-unavailable'};
-    const started=await speech.speak(id),completion=speech.done?.();
+    const started=await speech.speak(id,{volume:host.SeviatGuidedAudio?.settings?.().volume??.8}),completion=speech.done?.();
     if(ticket!==active)return {ok:false,reason:'cancelled'};
     if(!started?.ok)return started;
     const ended=completion&&await completion;
@@ -38,6 +38,8 @@
     }
 
     stop();
+    const preference=host.SeviatGuidedAudio?.settings?.();
+    if(preference?.muted || preference?.volume===0)return {ok:false,reason:'muted'};
 
     const ticket = active;
     const speech = host.AfaqSpeech;
@@ -113,6 +115,8 @@
     }
 
     stop();
+    const preference=host.SeviatGuidedAudio?.settings?.();
+    if(preference?.muted || preference?.volume===0)return {ok:false,reason:'muted'};
     const ticket = active;
 
     try {

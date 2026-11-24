@@ -1,0 +1,23 @@
+﻿'use strict';
+const assert=require('assert/strict'),fs=require('fs'),os=require('os'),path=require('path'),crypto=require('crypto'),P=require('../tools/prepare-pages.cjs');let b;
+(async()=>{
+ const root=path.join(fs.mkdtempSync(path.join(os.tmpdir(),'afaq-native-audio-')),'site');P.build(root);
+ b=await require('./fixtures/browser-session.cjs')({root,basePath:'/Seviat-Academy-App/',page:'testing.html',headless:process.env.AFAQ_HEADED_AUDIO!=='1',nativeMedia:true,ready:'document.querySelectorAll("[data-unit]").length===8'});
+ const e=b.evaluate;await b.until(()=>e('!!navigator.serviceWorker.controller'),'active service worker');
+ const version=await b.send('Browser.getVersion');assert(await e('String(Audio).includes("[native code]")&&String(HTMLMediaElement.prototype.play).includes("[native code]")'));
+ await b.send('Input.dispatchMouseEvent',{type:'mousePressed',x:20,y:200,button:'left',clickCount:1});await b.send('Input.dispatchMouseEvent',{type:'mouseReleased',x:20,y:200,button:'left',clickCount:1});
+ const base=await e('new URL("./",location.href).href'),media=P.files().filter(p=>/\.(mp3|wav)$/.test(p)),rows=[];
+ for(const file of media){
+  // Node verifies origin bytes independently; playback below uses the browser's native media request.
+  const original=fs.readFileSync(path.resolve(__dirname,'..',file)),url=new URL(file+'?v=20261124-testing-3',base).href;
+  const response=await fetch(url),bytes=Buffer.from(await response.arrayBuffer());assert.equal(response.status,200);assert(bytes.equals(original));assert.equal(response.headers.get('content-type'),file.endsWith('.mp3')?'audio/mpeg':'audio/wav');
+  const range=await fetch(url,{headers:{Range:'bytes=0-63'}});assert.equal(range.status,206);assert.equal(range.headers.get('content-range'),`bytes 0-63/${original.length}`);assert(Buffer.from(await range.arrayBuffer()).equals(original.subarray(0,64)));
+  const result=await e(`(async()=>new Promise(resolve=>{const a=new Audio(${JSON.stringify(url)});document.body.append(a);let started=false,advanced=false,maxTime=0,playResolved=false;const events=[];const timer=setTimeout(()=>finish('timeout'),16000);const finish=reason=>{clearTimeout(timer);const row={reason,duration:a.duration,time:a.currentTime,started,advanced,maxTime,playResolved,ended:a.ended,error:a.error?.message||null,events};a.pause();a.remove();resolve(row);};for(const name of ['loadedmetadata','playing','timeupdate','ended','error'])a.addEventListener(name,()=>{events.push({name,time:a.currentTime});if(name==='playing')started=true;if(name==='timeupdate'){maxTime=Math.max(maxTime,a.currentTime);if(a.currentTime>.05)advanced=true;}if(name==='ended'||name==='error')finish(name);});a.play().then(()=>playResolved=true).catch(x=>finish(x.name+': '+x.message));}))()`);
+  assert.equal(result.reason,'ended',file+': '+JSON.stringify(result));assert(result.started&&result.advanced&&result.playResolved&&result.ended&&result.duration>0&&!result.error,file);assert(Math.abs(result.time-result.duration)<.08,file+' completion');
+  const network=b.networkResponses.filter(r=>r.url===url&&r.mimeType.startsWith('audio/')).at(-1);assert(network&&!network.fromServiceWorker&&[200,206].includes(network.status),file+' must retain native media transport with worker active');
+  rows.push({file,sha256:crypto.createHash('sha256').update(original).digest('hex'),http:{status:response.status,mime:response.headers.get('content-type'),rangeStatus:range.status},network:{status:network.status,fromServiceWorker:!!network.fromServiceWorker},...result});console.log('Native completed '+rows.length+'/21 '+file);
+ }
+ const decoderErrors=b.mediaEvents.filter(x=>x.method==='Media.playerErrorsRaised');assert.equal(decoderErrors.length,0,JSON.stringify(decoderErrors));assert.equal(b.errors.length,0,JSON.stringify(b.errors));
+ const report={passed:true,browser:version,installedChrome:true,mode:process.env.AFAQ_HEADED_AUDIO==='1'?'headed-minimized':'headless',nativeMedia:true,speechMocked:false,audioMocked:false,serviceWorkerActive:await e('navigator.serviceWorker.controller.scriptURL'),basePath:'/Seviat-Academy-App/',filesCompleted:rows.length,rows,decoderErrors,technicalPlaybackOnly:true,humanListeningReview:false,artifact:root};
+ fs.writeFileSync(path.resolve(__dirname,'../docs/deployment/2026-11-24-native-audio-results.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({passed:true,filesCompleted:rows.length,product:version.product,decoderErrors:decoderErrors.length,report:'docs/deployment/2026-11-24-native-audio-results.json'}));
+})().catch(error=>{console.error(error.stack);process.exitCode=1;}).finally(async()=>{await b?.close();});

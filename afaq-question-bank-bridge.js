@@ -6,10 +6,12 @@
     map: 'data/afaq-curriculum-question-map.json',
     catalog: 'data/afaq-journey-lesson-catalog.json',
     progression: 'data/afaq-curriculum-progression.json',
-    specialGates: 'data/afaq-question-special-gates.json'
+    specialGates: 'data/afaq-question-special-gates.json',
+    official: 'data/official-curriculum-map.json'
   };
 
   let snapshot = null;
+  let pendingLoad = null;
 
   async function readJSON(path) {
     const response = await fetch(path, { cache: 'no-store' });
@@ -17,8 +19,13 @@
     return response.json();
   }
 
-  async function load() {
-    const [bank, map, catalog, progression, specialGates] =
+  function load() {
+    if (!pendingLoad) pendingLoad = readSnapshot().catch(error => { pendingLoad = null; throw error; });
+    return pendingLoad;
+  }
+
+  async function readSnapshot() {
+    const [bank, map, catalog, progression, specialGates, official] =
       await Promise.all(Object.values(files).map(readJSON));
 
     const questions = new Map(bank.questions.map(q => [q.id, q]));
@@ -77,6 +84,9 @@
       lessonCount: lessons.size,
       lessons,
       gates,
+      specialGatesEnabled: specialGates.runtimeEnabled === true,
+      catalog: catalog.lessons,
+      official: official.units.flatMap(unit => unit.lessons.map(lesson => ({...lesson, unitId:unit.number, unitTitle:unit.title}))),
       progression: progression.lessons
     };
 
@@ -99,11 +109,15 @@
     masteredSkills = [],
     masteredOrthography = []
   ) {
+    if (!snapshot?.enabled || snapshot.catalog.find(l=>l.id===lessonId)?.runtimeEnabled !== true || snapshot.progression.find(l=>l.id===lessonId)?.runtimeEnabled !== true) return [];
     const learned = new Set(masteredLetters);
     const skills = new Set(masteredSkills);
     const orthography = new Set(masteredOrthography);
 
     return questionsForLesson(lessonId).filter(q => {
+      if(q.reviewStatus!=='teacher-reviewed')return false;
+      if(q.specialGateRequired&&!snapshot.gates.has(q.id))return false;
+      if(snapshot.gates.has(q.id)&&!snapshot.specialGatesEnabled)return false;
       const gate = snapshot?.gates.get(q.id);
       if (gate && (
         gate.reviewStatus !== 'approved' ||
@@ -128,6 +142,8 @@
 
   function verifiedQuestionsForLesson(lessonId, context) {
     if (!snapshot || snapshot.enabled !== true) return [];
+    if (snapshot.catalog.find(l => l.id === lessonId)?.runtimeEnabled !== true ||
+        snapshot.progression.find(l => l.id === lessonId)?.runtimeEnabled !== true) return [];
 
     const c = context || {};
     const integration = host.AfaqQuestionIntegration;
@@ -148,6 +164,7 @@
       if (question.reviewStatus !== 'teacher-reviewed') return false;
       const gate = snapshot.gates.get(question.id);
       if (!gate && question.specialGateRequired === true) return false;
+      if (gate && !snapshot.specialGatesEnabled) return false;
       if (gate && (
         gate.reviewStatus !== 'approved' ||
         gate.runtimeEnabled !== true ||
@@ -176,15 +193,15 @@
   }
 
   function contextForNode(node, rules, profile) {
-    if (!snapshot || !node?.letter || !rules || !profile) return null;
-    const lesson = snapshot.progression.find(l => l.letter === node.letter);
+    if (!snapshot || !node || !rules || !profile) return null;
+    const lesson = snapshot.progression.find(l => node.lessonId ? l.id === node.lessonId : l.letter === node.letter);
     const mapping = host.AfaqQuestionSkillMapping;
     const adapter = host.AfaqQuestionJourneyAdapter;
     if (!lesson || !mapping || !adapter) return null;
     const context = adapter.createContext({rules, profile, letter:node.letter, mapping});
     const allowedLetters = snapshot.progression.filter(l => l.letter && context.letterReady(l.letter)).map(l => l.letter);
     // The current target is taught at this lesson; future letters require real evidence.
-    if (!allowedLetters.includes(node.letter)) allowedLetters.push(node.letter);
+    if (node.letter && !allowedLetters.includes(node.letter)) allowedLetters.push(node.letter);
     return {lessonId:lesson.id, currentLessonId:lesson.id, allowedLetters, progression:snapshot.progression};
   }
 
@@ -194,6 +211,12 @@
     eligibleQuestions,
     verifiedQuestionsForLesson,
     contextForNode,
+    curriculumLessons: () => snapshot ? snapshot.progression.map(lesson => ({
+      ...lesson,
+      title: snapshot.official.find(item => item.id === lesson.id)?.title || lesson.letter || lesson.id,
+      unitTitle: snapshot.official.find(item => item.id === lesson.id)?.unitTitle || '',
+      teacherReviewRequired: snapshot.catalog.find(item => item.id === lesson.id)?.teacherReviewRequired !== false
+    })) : [],
     status: () => snapshot
       ? {
           loaded: true,

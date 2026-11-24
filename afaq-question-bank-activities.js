@@ -42,7 +42,7 @@
     const audio = window.AfaqQuestionAudio;
     const audioStatus=element('p','',panel);audioStatus.setAttribute('role','status');
     let playback=0;
-    async function playAudio(action){const token=++playback;try{const result=await action();if(panel.isConnected&&token===playback)audioStatus.textContent=result?.ok?'انتهى الصوت. يمكنك الاستماع مجددًا.':'تعذر تشغيل الصوت المعتمد. أعد المحاولة أو اطلب من المعلم قراءة المطلوب دون إظهار الإجابة.';}catch(error){console.error('AFAQ bank audio failed',question.id,error);if(panel.isConnected&&token===playback)audioStatus.textContent='تعذر تشغيل الصوت. اطلب مساعدة المعلم.';}}
+    async function playAudio(action){const token=++playback;try{const result=await action();if(panel.isConnected&&token===playback)audioStatus.textContent=result?.ok?(result.source==='automated-speech'?'انتهت معاينة صوت آلي؛ ليست تسجيلًا بشريًا معتمدًا.':'انتهى الصوت. يمكنك الاستماع مجددًا.'):'تعذر تشغيل الصوت المعتمد. أعد المحاولة أو اطلب من المعلم قراءة المطلوب دون إظهار الإجابة.';}catch(error){console.error('AFAQ bank audio failed',question.id,error);if(panel.isConnected&&token===playback)audioStatus.textContent='تعذر تشغيل الصوت. اطلب مساعدة المعلم.';}}
 
     if(audio?.instruction){const method=element('button','طريقة النشاط',panel);method.type='button';method.className='afaq-bank-listen-instruction';method.addEventListener('click',()=>void playAudio(()=>audio.instruction(question)));}
     if (audio?.questionPrompt) {
